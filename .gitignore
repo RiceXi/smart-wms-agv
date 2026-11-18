@@ -1,47 +1,44 @@
-# Java
-target/
-*.class
-*.log
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
 
 # Node
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Java
+target/
+*.class
+
+# Build output
 dist/
-.vite/
+build/
 coverage/
-playwright-report/
-test-results/
 
 # IDE
-.idea/
 .vscode/
-*.iml
+.idea/
+*.swp
+*.swo
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Local configuration
-.env
-.env.*
-!.env.example
-application-local.yml
-application-local.yaml
-
-# Runtime data
-data/
-*.sqlite
-*.sqlite3
+# Local data
+data.json
+data.sqlite
+data.sqlite3
 *.db
-*.mv.db
+*.log
+
+# Runtime captures
 captures/
 recordings/
 *.pcap
 
-# Generated document QA
-page-*.png
-*.pdf
-
-# Maven and Gradle caches
-.mvn/wrapper/maven-wrapper.jar
-.gradle/
-build/
+# OS
+.DS_Store
+Thumbs.db
