@@ -1,0 +1,317 @@
+[
+  {
+    "scenario": "single-agv",
+    "ticks": 200,
+    "agvs": 1,
+    "tasks": 1,
+    "taskStatus": {
+      "completed": 1
+    },
+    "orderStatus": {
+      "completed": 1
+    },
+    "stats": {
+      "conflicts": 0,
+      "deadlocks": 0,
+      "recoveries": 0,
+      "rollbacks": 0,
+      "completedTasks": 1,
+      "failedTasks": 0,
+      "cancelledTasks": 0
+    },
+    "wallClockSeconds": 0.104,
+    "msPerTick": 0.522,
+    "eventCounts": {
+      "agv.position.changed": 44,
+      "agv.state.changed": 5,
+      "order.completed": 1,
+      "order.released": 1,
+      "sim.reset": 1,
+      "task.assigned": 1,
+      "task.completed": 1,
+      "task.created": 1,
+      "task.replanned": 2,
+      "task.started": 1
+    },
+    "alerts": 0
+  },
+  {
+    "scenario": "peak-10",
+    "ticks": 400,
+    "agvs": 10,
+    "tasks": 10,
+    "taskStatus": {
+      "completed": 10
+    },
+    "orderStatus": {
+      "completed": 10
+    },
+    "stats": {
+      "conflicts": 0,
+      "deadlocks": 0,
+      "recoveries": 0,
+      "rollbacks": 0,
+      "completedTasks": 10,
+      "failedTasks": 0,
+      "cancelledTasks": 0
+    },
+    "wallClockSeconds": 0.654,
+    "msPerTick": 1.636,
+    "eventCounts": {
+      "agv.blocked": 9,
+      "agv.position.changed": 424,
+      "agv.state.changed": 47,
+      "order.completed": 10,
+      "order.released": 10,
+      "sim.reset": 1,
+      "task.assigned": 10,
+      "task.completed": 10,
+      "task.created": 10,
+      "task.replanned": 22,
+      "task.started": 10
+    },
+    "alerts": 0
+  },
+  {
+    "scenario": "peak-30",
+    "ticks": 600,
+    "agvs": 30,
+    "tasks": 30,
+    "taskStatus": {
+      "completed": 23,
+      "failed": 7
+    },
+    "orderStatus": {
+      "released": 7,
+      "completed": 23
+    },
+    "stats": {
+      "conflicts": 16,
+      "deadlocks": 3,
+      "recoveries": 3,
+      "rollbacks": 3,
+      "completedTasks": 23,
+      "failedTasks": 7,
+      "cancelledTasks": 0
+    },
+    "wallClockSeconds": 2.901,
+    "msPerTick": 4.835,
+    "eventCounts": {
+      "agv.blocked": 254,
+      "agv.position.changed": 1111,
+      "agv.state.changed": 1271,
+      "alert": 10,
+      "conflict.detected": 16,
+      "deadlock.detected": 3,
+      "deadlock.resolved": 3,
+      "order.completed": 23,
+      "order.released": 30,
+      "rollback.executed": 3,
+      "sim.reset": 1,
+      "task.assigned": 30,
+      "task.completed": 23,
+      "task.created": 30,
+      "task.failed": 7,
+      "task.replanned": 170,
+      "task.started": 30
+    },
+    "alerts": 10
+  },
+  {
+    "scenario": "head-to-head",
+    "ticks": 200,
+    "agvs": 2,
+    "tasks": 2,
+    "taskStatus": {
+      "completed": 2
+    },
+    "orderStatus": {
+      "completed": 2
+    },
+    "stats": {
+      "conflicts": 1,
+      "deadlocks": 0,
+      "recoveries": 0,
+      "rollbacks": 0,
+      "completedTasks": 2,
+      "failedTasks": 0,
+      "cancelledTasks": 0
+    },
+    "wallClockSeconds": 0.139,
+    "msPerTick": 0.695,
+    "eventCounts": {
+      "agv.blocked": 2,
+      "agv.position.changed": 63,
+      "agv.state.changed": 10,
+      "conflict.detected": 1,
+      "order.completed": 2,
+      "order.released": 2,
+      "sim.reset": 1,
+      "task.assigned": 2,
+      "task.completed": 2,
+      "task.created": 2,
+      "task.replanned": 5,
+      "task.started": 2
+    },
+    "alerts": 0
+  },
+  {
+    "scenario": "cycle-deadlock",
+    "ticks": 200,
+    "agvs": 3,
+    "tasks": 3,
+    "taskStatus": {
+      "completed": 2,
+      "failed": 1
+    },
+    "orderStatus": {
+      "released": 1,
+      "completed": 2
+    },
+    "stats": {
+      "conflicts": 0,
+      "deadlocks": 1,
+      "recoveries": 1,
+      "rollbacks": 1,
+      "completedTasks": 2,
+      "failedTasks": 1,
+      "cancelledTasks": 0
+    },
+    "wallClockSeconds": 0.156,
+    "msPerTick": 0.78,
+    "eventCounts": {
+      "agv.blocked": 4,
+      "agv.position.changed": 35,
+      "agv.state.changed": 32,
+      "alert": 2,
+      "deadlock.detected": 1,
+      "deadlock.resolved": 1,
+      "order.completed": 2,
+      "order.released": 3,
+      "rollback.executed": 1,
+      "sim.reset": 1,
+      "task.assigned": 3,
+      "task.completed": 2,
+      "task.created": 3,
+      "task.failed": 1,
+      "task.replanned": 24,
+      "task.started": 3
+    },
+    "alerts": 2
+  },
+  {
+    "scenario": "roadblock",
+    "ticks": 300,
+    "agvs": 10,
+    "tasks": 10,
+    "taskStatus": {
+      "completed": 10
+    },
+    "orderStatus": {
+      "completed": 10
+    },
+    "stats": {
+      "conflicts": 0,
+      "deadlocks": 0,
+      "recoveries": 0,
+      "rollbacks": 0,
+      "completedTasks": 10,
+      "failedTasks": 0,
+      "cancelledTasks": 0
+    },
+    "wallClockSeconds": 0.714,
+    "msPerTick": 2.381,
+    "eventCounts": {
+      "agv.blocked": 6,
+      "agv.position.changed": 373,
+      "agv.state.changed": 51,
+      "map.roadblock.added": 3,
+      "map.version.changed": 4,
+      "order.completed": 10,
+      "order.released": 10,
+      "sim.reset": 1,
+      "task.assigned": 10,
+      "task.completed": 10,
+      "task.created": 10,
+      "task.replanned": 27,
+      "task.started": 10
+    },
+    "alerts": 0
+  },
+  {
+    "scenario": "low-battery",
+    "ticks": 300,
+    "agvs": 6,
+    "tasks": 3,
+    "taskStatus": {
+      "completed": 3
+    },
+    "orderStatus": {
+      "completed": 3
+    },
+    "stats": {
+      "conflicts": 0,
+      "deadlocks": 0,
+      "recoveries": 0,
+      "rollbacks": 0,
+      "completedTasks": 3,
+      "failedTasks": 0,
+      "cancelledTasks": 0
+    },
+    "wallClockSeconds": 0.385,
+    "msPerTick": 1.282,
+    "eventCounts": {
+      "agv.blocked": 1,
+      "agv.charging": 90,
+      "agv.position.changed": 246,
+      "agv.state.changed": 27,
+      "order.completed": 3,
+      "order.released": 3,
+      "sim.reset": 1,
+      "task.assigned": 3,
+      "task.completed": 3,
+      "task.created": 3,
+      "task.replanned": 7,
+      "task.started": 3
+    },
+    "alerts": 0
+  },
+  {
+    "scenario": "rush-order",
+    "ticks": 300,
+    "agvs": 4,
+    "tasks": 6,
+    "taskStatus": {
+      "completed": 6
+    },
+    "orderStatus": {
+      "completed": 6
+    },
+    "stats": {
+      "conflicts": 0,
+      "deadlocks": 0,
+      "recoveries": 0,
+      "rollbacks": 0,
+      "completedTasks": 6,
+      "failedTasks": 0,
+      "cancelledTasks": 0
+    },
+    "wallClockSeconds": 0.439,
+    "msPerTick": 1.463,
+    "eventCounts": {
+      "agv.blocked": 1,
+      "agv.position.changed": 225,
+      "agv.state.changed": 29,
+      "order.completed": 6,
+      "order.released": 6,
+      "sim.injected": 2,
+      "sim.reset": 1,
+      "task.assigned": 6,
+      "task.completed": 6,
+      "task.created": 6,
+      "task.replanned": 12,
+      "task.started": 6
+    },
+    "alerts": 0
+  }
+]

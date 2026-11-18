@@ -1,0 +1,18 @@
+[single-agv] tick=200 任务={'completed': 1} 订单={'completed': 1} 统计={'conflicts': 0, 'deadlocks': 0, 'recoveries': 0, 'rollbacks': 0, 'completedTasks': 1, 'failedTasks': 0, 'cancelledTasks': 0} 耗时=0.104s (0.522 ms/tick)
+    关键事件：{}
+[peak-10] tick=400 任务={'completed': 10} 订单={'completed': 10} 统计={'conflicts': 0, 'deadlocks': 0, 'recoveries': 0, 'rollbacks': 0, 'completedTasks': 10, 'failedTasks': 0, 'cancelledTasks': 0} 耗时=0.654s (1.636 ms/tick)
+    关键事件：{}
+[peak-30] tick=600 任务={'completed': 23, 'failed': 7} 订单={'released': 7, 'completed': 23} 统计={'conflicts': 16, 'deadlocks': 3, 'recoveries': 3, 'rollbacks': 3, 'completedTasks': 23, 'failedTasks': 7, 'cancelledTasks': 0} 耗时=2.901s (4.835 ms/tick)
+    关键事件：{'conflict.detected': 16, 'deadlock.detected': 3, 'deadlock.resolved': 3, 'rollback.executed': 3, 'task.failed': 7}
+[head-to-head] tick=200 任务={'completed': 2} 订单={'completed': 2} 统计={'conflicts': 1, 'deadlocks': 0, 'recoveries': 0, 'rollbacks': 0, 'completedTasks': 2, 'failedTasks': 0, 'cancelledTasks': 0} 耗时=0.139s (0.695 ms/tick)
+    关键事件：{'conflict.detected': 1}
+[cycle-deadlock] tick=200 任务={'completed': 2, 'failed': 1} 订单={'released': 1, 'completed': 2} 统计={'conflicts': 0, 'deadlocks': 1, 'recoveries': 1, 'rollbacks': 1, 'completedTasks': 2, 'failedTasks': 1, 'cancelledTasks': 0} 耗时=0.156s (0.78 ms/tick)
+    关键事件：{'deadlock.detected': 1, 'deadlock.resolved': 1, 'rollback.executed': 1, 'task.failed': 1}
+[roadblock] tick=300 任务={'completed': 10} 订单={'completed': 10} 统计={'conflicts': 0, 'deadlocks': 0, 'recoveries': 0, 'rollbacks': 0, 'completedTasks': 10, 'failedTasks': 0, 'cancelledTasks': 0} 耗时=0.714s (2.381 ms/tick)
+    关键事件：{'map.roadblock.added': 3, 'map.version.changed': 4}
+[low-battery] tick=300 任务={'completed': 3} 订单={'completed': 3} 统计={'conflicts': 0, 'deadlocks': 0, 'recoveries': 0, 'rollbacks': 0, 'completedTasks': 3, 'failedTasks': 0, 'cancelledTasks': 0} 耗时=0.385s (1.282 ms/tick)
+    关键事件：{'agv.charging': 90}
+[rush-order] tick=300 任务={'completed': 6} 订单={'completed': 6} 统计={'conflicts': 0, 'deadlocks': 0, 'recoveries': 0, 'rollbacks': 0, 'completedTasks': 6, 'failedTasks': 0, 'cancelledTasks': 0} 耗时=0.439s (1.463 ms/tick)
+    关键事件：{}
+
+结果已写入 D:\smart-wms-agv\implementations\member-2\docs\scenario-results.json

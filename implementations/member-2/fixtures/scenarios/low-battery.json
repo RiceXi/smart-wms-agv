@@ -1,0 +1,129 @@
+{
+  "id": "low-battery",
+  "title": "低电量充电",
+  "description": "多台 AGV 电量低于阈值，验证进入充电队列、充电位容量不被突破。",
+  "map": "warehouse-24",
+  "seed": 20261118,
+  "skus": [
+    {
+      "code": "SKU-001",
+      "name": "折叠周转箱",
+      "spec": "60x40x30",
+      "batchRule": "fifo"
+    },
+    {
+      "code": "SKU-002",
+      "name": "标签纸卷",
+      "spec": "100mm",
+      "batchRule": "fefo"
+    },
+    {
+      "code": "SKU-003",
+      "name": "缓冲垫片",
+      "spec": "标准",
+      "batchRule": "none"
+    }
+  ],
+  "locations": [],
+  "inventory": [
+    {
+      "skuCode": "SKU-001",
+      "locationCode": "SHELF-A-001",
+      "qty": 200,
+      "batch": "B-A-2026"
+    },
+    {
+      "skuCode": "SKU-002",
+      "locationCode": "SHELF-B-001",
+      "qty": 200,
+      "batch": "B-B-2026"
+    },
+    {
+      "skuCode": "SKU-003",
+      "locationCode": "SHELF-C-001",
+      "qty": 200,
+      "batch": "B-C-2026"
+    }
+  ],
+  "agvs": [
+    {
+      "id": "AGV-01",
+      "x": 2,
+      "y": 1,
+      "battery": 14.0
+    },
+    {
+      "id": "AGV-02",
+      "x": 4,
+      "y": 1,
+      "battery": 14.0
+    },
+    {
+      "id": "AGV-03",
+      "x": 6,
+      "y": 1,
+      "battery": 14.0
+    },
+    {
+      "id": "AGV-04",
+      "x": 8,
+      "y": 1,
+      "battery": 14.0
+    },
+    {
+      "id": "AGV-05",
+      "x": 10,
+      "y": 1,
+      "battery": 14.0
+    },
+    {
+      "id": "AGV-06",
+      "x": 12,
+      "y": 1,
+      "battery": 14.0
+    }
+  ],
+  "orders": [
+    {
+      "code": "OUT-CHARGE-001",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-CHARGE-002",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-CHARGE-003",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-3",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "assignments": [],
+  "events": [],
+  "expect": {
+    "charging": 1
+  }
+}

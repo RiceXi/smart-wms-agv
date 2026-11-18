@@ -1,0 +1,90 @@
+[
+  {
+    "id": "single-agv",
+    "title": "单 AGV 闭环",
+    "description": "1 台 AGV、1 个出库订单，验证订单->任务->路径->仿真->完成的闭环。",
+    "map": "warehouse-24",
+    "seed": 20261118,
+    "expect": {
+      "completedTasks": 1,
+      "deadlocks": 0
+    }
+  },
+  {
+    "id": "peak-10",
+    "title": "10 台并发",
+    "description": "10 台 AGV、10 个订单，个人版规模基线场景。",
+    "map": "warehouse-24",
+    "seed": 20261118,
+    "expect": {
+      "completedTasks": 10
+    }
+  },
+  {
+    "id": "peak-30",
+    "title": "30 台并发",
+    "description": "30 台 AGV、30 个订单，整合版规模基线场景。",
+    "map": "warehouse-24",
+    "seed": 20261118,
+    "expect": {
+      "completedTasks": 30
+    }
+  },
+  {
+    "id": "head-to-head",
+    "title": "窄巷相向冲突",
+    "description": "两台 AGV 在 1 格宽窄巷相向而行，验证禁止穿边、等待与回退恢复。",
+    "map": "warehouse-24",
+    "seed": 20261118,
+    "expect": {
+      "deadlocks": 1,
+      "rollbacks": 1,
+      "headOnBlocked": true
+    }
+  },
+  {
+    "id": "cycle-deadlock",
+    "title": "三车环形等待",
+    "description": "三台 AGV 在三角形环路互相等待，等待图成环后按优先级回退恢复。",
+    "map": "ring-3",
+    "seed": 20261118,
+    "expect": {
+      "deadlocks": 1,
+      "rollbacks": 1,
+      "cycleLength": 3,
+      "completedTasks": 3
+    }
+  },
+  {
+    "id": "roadblock",
+    "title": "临时封路重规划",
+    "description": "运行中封闭正在使用的巷道，验证受影响路径升版本重规划且不进入封路格。",
+    "map": "warehouse-24",
+    "seed": 20261118,
+    "expect": {
+      "replans": 1,
+      "roadblocks": 3
+    }
+  },
+  {
+    "id": "low-battery",
+    "title": "低电量充电",
+    "description": "多台 AGV 电量低于阈值，验证进入充电队列、充电位容量不被突破。",
+    "map": "warehouse-24",
+    "seed": 20261118,
+    "expect": {
+      "charging": 1
+    }
+  },
+  {
+    "id": "rush-order",
+    "title": "急单插入",
+    "description": "运行中插入高优先级订单，验证任务队列与指派顺序体现优先级变化。",
+    "map": "warehouse-24",
+    "seed": 20261118,
+    "expect": {
+      "rushPriority": 10,
+      "rushOrders": 2
+    }
+  }
+]

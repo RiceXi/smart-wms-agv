@@ -1,0 +1,597 @@
+{
+  "id": "peak-30",
+  "title": "30 台并发",
+  "description": "30 台 AGV、30 个订单，整合版规模基线场景。",
+  "map": "warehouse-24",
+  "seed": 20261118,
+  "skus": [
+    {
+      "code": "SKU-001",
+      "name": "折叠周转箱",
+      "spec": "60x40x30",
+      "batchRule": "fifo"
+    },
+    {
+      "code": "SKU-002",
+      "name": "标签纸卷",
+      "spec": "100mm",
+      "batchRule": "fefo"
+    },
+    {
+      "code": "SKU-003",
+      "name": "缓冲垫片",
+      "spec": "标准",
+      "batchRule": "none"
+    }
+  ],
+  "locations": [],
+  "inventory": [
+    {
+      "skuCode": "SKU-001",
+      "locationCode": "SHELF-A-001",
+      "qty": 200,
+      "batch": "B-A-2026"
+    },
+    {
+      "skuCode": "SKU-002",
+      "locationCode": "SHELF-B-001",
+      "qty": 200,
+      "batch": "B-B-2026"
+    },
+    {
+      "skuCode": "SKU-003",
+      "locationCode": "SHELF-C-001",
+      "qty": 200,
+      "batch": "B-C-2026"
+    }
+  ],
+  "agvs": [
+    {
+      "id": "AGV-01",
+      "x": 2,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-02",
+      "x": 4,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-03",
+      "x": 6,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-04",
+      "x": 8,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-05",
+      "x": 10,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-06",
+      "x": 12,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-07",
+      "x": 14,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-08",
+      "x": 16,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-09",
+      "x": 18,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-10",
+      "x": 20,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-11",
+      "x": 1,
+      "y": 5,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-12",
+      "x": 3,
+      "y": 5,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-13",
+      "x": 5,
+      "y": 5,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-14",
+      "x": 7,
+      "y": 5,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-15",
+      "x": 9,
+      "y": 5,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-16",
+      "x": 11,
+      "y": 5,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-17",
+      "x": 13,
+      "y": 5,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-18",
+      "x": 15,
+      "y": 5,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-19",
+      "x": 17,
+      "y": 5,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-20",
+      "x": 19,
+      "y": 5,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-21",
+      "x": 2,
+      "y": 11,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-22",
+      "x": 4,
+      "y": 11,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-23",
+      "x": 6,
+      "y": 11,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-24",
+      "x": 8,
+      "y": 11,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-25",
+      "x": 10,
+      "y": 11,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-26",
+      "x": 12,
+      "y": 11,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-27",
+      "x": 14,
+      "y": 11,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-28",
+      "x": 16,
+      "y": 11,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-29",
+      "x": 18,
+      "y": 11,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-30",
+      "x": 20,
+      "y": 11,
+      "battery": 100.0
+    }
+  ],
+  "orders": [
+    {
+      "code": "OUT-PEAK30-001",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-002",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-003",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-3",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-004",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-4",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-005",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-006",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-007",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-3",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-008",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-4",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-009",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-010",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-011",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-3",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-012",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-4",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-013",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-014",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-015",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-3",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-016",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-4",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-017",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-018",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-019",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-3",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-020",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-4",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-021",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-022",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-023",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-3",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-024",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-4",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-025",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-026",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-027",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-3",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-028",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-4",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-029",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-PEAK30-030",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "assignments": [],
+  "events": [],
+  "expect": {
+    "completedTasks": 30
+  }
+}

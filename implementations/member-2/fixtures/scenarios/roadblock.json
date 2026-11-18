@@ -1,0 +1,263 @@
+{
+  "id": "roadblock",
+  "title": "临时封路重规划",
+  "description": "运行中封闭正在使用的巷道，验证受影响路径升版本重规划且不进入封路格。",
+  "map": "warehouse-24",
+  "seed": 20261118,
+  "skus": [
+    {
+      "code": "SKU-001",
+      "name": "折叠周转箱",
+      "spec": "60x40x30",
+      "batchRule": "fifo"
+    },
+    {
+      "code": "SKU-002",
+      "name": "标签纸卷",
+      "spec": "100mm",
+      "batchRule": "fefo"
+    },
+    {
+      "code": "SKU-003",
+      "name": "缓冲垫片",
+      "spec": "标准",
+      "batchRule": "none"
+    }
+  ],
+  "locations": [],
+  "inventory": [
+    {
+      "skuCode": "SKU-001",
+      "locationCode": "SHELF-A-001",
+      "qty": 200,
+      "batch": "B-A-2026"
+    },
+    {
+      "skuCode": "SKU-002",
+      "locationCode": "SHELF-B-001",
+      "qty": 200,
+      "batch": "B-B-2026"
+    },
+    {
+      "skuCode": "SKU-003",
+      "locationCode": "SHELF-C-001",
+      "qty": 200,
+      "batch": "B-C-2026"
+    }
+  ],
+  "agvs": [
+    {
+      "id": "AGV-01",
+      "x": 2,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-02",
+      "x": 4,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-03",
+      "x": 6,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-04",
+      "x": 8,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-05",
+      "x": 10,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-06",
+      "x": 12,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-07",
+      "x": 14,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-08",
+      "x": 16,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-09",
+      "x": 18,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-10",
+      "x": 20,
+      "y": 1,
+      "battery": 100.0
+    }
+  ],
+  "orders": [
+    {
+      "code": "OUT-ROAD-001",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-ROAD-002",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-ROAD-003",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-3",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-ROAD-004",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-4",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-ROAD-005",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-ROAD-006",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-ROAD-007",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-3",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-ROAD-008",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-4",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-ROAD-009",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-ROAD-010",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "assignments": [],
+  "events": [
+    {
+      "atTick": 25,
+      "type": "roadblock",
+      "cells": [
+        "12,6"
+      ],
+      "reason": "巷道临时施工"
+    },
+    {
+      "atTick": 60,
+      "type": "roadblock",
+      "cells": [
+        "12,12"
+      ],
+      "reason": "货物占道"
+    },
+    {
+      "atTick": 120,
+      "type": "roadblock",
+      "cells": [
+        "12,18"
+      ],
+      "reason": "临时封路"
+    }
+  ],
+  "expect": {
+    "replans": 1,
+    "roadblocks": 3
+  }
+}

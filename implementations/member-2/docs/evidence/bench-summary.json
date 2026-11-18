@@ -1,0 +1,83 @@
+[
+  {
+    "scenario": "single-agv",
+    "seed": 20261118,
+    "ticks": 600,
+    "agvs": 1,
+    "tasks": 1,
+    "wallClockSeconds": 0.36,
+    "msPerTick": 0.6,
+    "assignmentCount": 1,
+    "assignmentLatencyTicks": {
+      "count": 1,
+      "avg": 1.0,
+      "max": 1,
+      "unit": "tick",
+      "definition": "task.assigned 的 tick - task.created 的 tick"
+    },
+    "stats": {
+      "conflicts": 0,
+      "deadlocks": 0,
+      "recoveries": 0,
+      "rollbacks": 0,
+      "completedTasks": 1,
+      "failedTasks": 0,
+      "cancelledTasks": 0
+    },
+    "pythonHeapMb": 0.62
+  },
+  {
+    "scenario": "peak-10",
+    "seed": 20261118,
+    "ticks": 600,
+    "agvs": 10,
+    "tasks": 10,
+    "wallClockSeconds": 1.309,
+    "msPerTick": 2.181,
+    "assignmentCount": 10,
+    "assignmentLatencyTicks": {
+      "count": 10,
+      "avg": 1.0,
+      "max": 1,
+      "unit": "tick",
+      "definition": "task.assigned 的 tick - task.created 的 tick"
+    },
+    "stats": {
+      "conflicts": 0,
+      "deadlocks": 0,
+      "recoveries": 0,
+      "rollbacks": 0,
+      "completedTasks": 10,
+      "failedTasks": 0,
+      "cancelledTasks": 0
+    },
+    "pythonHeapMb": 1.79
+  },
+  {
+    "scenario": "peak-30",
+    "seed": 20261118,
+    "ticks": 600,
+    "agvs": 30,
+    "tasks": 30,
+    "wallClockSeconds": 5.522,
+    "msPerTick": 9.203,
+    "assignmentCount": 30,
+    "assignmentLatencyTicks": {
+      "count": 30,
+      "avg": 1.0,
+      "max": 1,
+      "unit": "tick",
+      "definition": "task.assigned 的 tick - task.created 的 tick"
+    },
+    "stats": {
+      "conflicts": 16,
+      "deadlocks": 3,
+      "recoveries": 3,
+      "rollbacks": 3,
+      "completedTasks": 23,
+      "failedTasks": 7,
+      "cancelledTasks": 0
+    },
+    "pythonHeapMb": 2.27
+  }
+]

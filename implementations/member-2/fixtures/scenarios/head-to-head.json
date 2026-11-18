@@ -1,0 +1,175 @@
+{
+  "id": "head-to-head",
+  "title": "窄巷相向冲突",
+  "description": "两台 AGV 在 1 格宽窄巷相向而行，验证禁止穿边、等待与回退恢复。",
+  "map": "warehouse-24",
+  "seed": 20261118,
+  "skus": [
+    {
+      "code": "SKU-001",
+      "name": "折叠周转箱",
+      "spec": "60x40x30",
+      "batchRule": "fifo"
+    },
+    {
+      "code": "SKU-002",
+      "name": "标签纸卷",
+      "spec": "100mm",
+      "batchRule": "fefo"
+    },
+    {
+      "code": "SKU-003",
+      "name": "缓冲垫片",
+      "spec": "标准",
+      "batchRule": "none"
+    }
+  ],
+  "locations": [
+    {
+      "code": "PICK-H1",
+      "zone": "A",
+      "x": 4,
+      "y": 0,
+      "type": "pick",
+      "capacity": 1
+    }
+  ],
+  "inventory": [
+    {
+      "skuCode": "SKU-001",
+      "locationCode": "SHELF-A-001",
+      "qty": 200,
+      "batch": "B-A-2026"
+    },
+    {
+      "skuCode": "SKU-002",
+      "locationCode": "SHELF-B-001",
+      "qty": 200,
+      "batch": "B-B-2026"
+    },
+    {
+      "skuCode": "SKU-003",
+      "locationCode": "SHELF-C-001",
+      "qty": 200,
+      "batch": "B-C-2026"
+    }
+  ],
+  "agvs": [
+    {
+      "id": "AGV-A",
+      "x": 4,
+      "y": 2,
+      "battery": 100.0,
+      "priority": 5
+    },
+    {
+      "id": "AGV-B",
+      "x": 4,
+      "y": 4,
+      "battery": 100.0,
+      "priority": 3
+    }
+  ],
+  "orders": [
+    {
+      "code": "OUT-HEAD-001",
+      "priority": 5,
+      "requester": "demo",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 1,
+          "pickupLocationCode": "PICK-A1"
+        }
+      ]
+    },
+    {
+      "code": "OUT-HEAD-002",
+      "priority": 5,
+      "requester": "demo",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 1,
+          "pickupLocationCode": "PICK-H1"
+        }
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "agvId": "AGV-A",
+      "orderCode": "OUT-HEAD-001",
+      "lineIndex": 0,
+      "plan": {
+        "goal": "4,6",
+        "steps": [
+          [
+            "4,2",
+            "wait"
+          ],
+          [
+            "4,3",
+            "move"
+          ],
+          [
+            "4,4",
+            "move"
+          ],
+          [
+            "4,5",
+            "move"
+          ],
+          [
+            "4,6",
+            "move"
+          ]
+        ]
+      }
+    },
+    {
+      "agvId": "AGV-B",
+      "orderCode": "OUT-HEAD-002",
+      "lineIndex": 0,
+      "plan": {
+        "goal": "4,0",
+        "steps": [
+          [
+            "4,4",
+            "wait"
+          ],
+          [
+            "4,4",
+            "wait"
+          ],
+          [
+            "4,4",
+            "wait"
+          ],
+          [
+            "4,3",
+            "move"
+          ],
+          [
+            "4,2",
+            "move"
+          ],
+          [
+            "4,1",
+            "move"
+          ],
+          [
+            "4,0",
+            "move"
+          ]
+        ]
+      }
+    }
+  ],
+  "events": [],
+  "expect": {
+    "deadlocks": 1,
+    "rollbacks": 1,
+    "headOnBlocked": true
+  }
+}

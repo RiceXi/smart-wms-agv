@@ -1,0 +1,27 @@
+{
+  "scenario": "single-agv",
+  "seed": 20261118,
+  "ticks": 600,
+  "agvs": 1,
+  "tasks": 1,
+  "wallClockSeconds": 0.36,
+  "msPerTick": 0.6,
+  "assignmentCount": 1,
+  "assignmentLatencyTicks": {
+    "count": 1,
+    "avg": 1.0,
+    "max": 1,
+    "unit": "tick",
+    "definition": "task.assigned 的 tick - task.created 的 tick"
+  },
+  "stats": {
+    "conflicts": 0,
+    "deadlocks": 0,
+    "recoveries": 0,
+    "rollbacks": 0,
+    "completedTasks": 1,
+    "failedTasks": 0,
+    "cancelledTasks": 0
+  },
+  "pythonHeapMb": 0.62
+}

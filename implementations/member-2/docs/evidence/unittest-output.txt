@@ -1,0 +1,150 @@
+test_bottlenecks_shape (test_api.AnalyticsApiTests.test_bottlenecks_shape) ... ok
+test_summary_matches_records (test_api.AnalyticsApiTests.test_summary_matches_records) ... ok
+test_utilization_and_throughput (test_api.AnalyticsApiTests.test_utilization_and_throughput) ... ok
+test_health (test_api.HealthAndMetaTests.test_health) ... ok
+test_meta (test_api.HealthAndMetaTests.test_meta) ... ok
+test_scenarios_listed (test_api.HealthAndMetaTests.test_scenarios_listed) ... ok
+test_duplicate_sku_returns_409 (test_api.MasterDataApiTests.test_duplicate_sku_returns_409) ... C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\tempfile.py:484: ResourceWarning: Implicitly cleaning up <HTTPError 409: 'Conflict'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+ok
+test_pagination_shape (test_api.MasterDataApiTests.test_pagination_shape) ... ok
+test_sku_lifecycle (test_api.MasterDataApiTests.test_sku_lifecycle) ... C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\tempfile.py:484: ResourceWarning: Implicitly cleaning up <HTTPError 404: 'Not Found'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+ok
+test_validation_error_shape (test_api.MasterDataApiTests.test_validation_error_shape) ... C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\tempfile.py:484: ResourceWarning: Implicitly cleaning up <HTTPError 400: 'Bad Request'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+ok
+test_agv_detail_contains_plan (test_api.SimulationApiTests.test_agv_detail_contains_plan) ... ok
+test_events_query (test_api.SimulationApiTests.test_events_query) ... ok
+test_inject_fault_and_recover (test_api.SimulationApiTests.test_inject_fault_and_recover) ... ok
+test_inject_roadblock_updates_map (test_api.SimulationApiTests.test_inject_roadblock_updates_map) ... ok
+test_sim_state_and_controls (test_api.SimulationApiTests.test_sim_state_and_controls) ... ok
+test_index_and_assets_served (test_api.StaticAndStreamTests.test_index_and_assets_served) ... ok
+test_sse_data_is_valid_json (test_api.StaticAndStreamTests.test_sse_data_is_valid_json) ... ok
+test_sse_stream_pushes_state_events (test_api.StaticAndStreamTests.test_sse_stream_pushes_state_events) ... ok
+test_order_release_and_task_query (test_api.TaskAndOrderApiTests.test_order_release_and_task_query) ... ok
+test_task_cancel_and_reassign (test_api.TaskAndOrderApiTests.test_task_cancel_and_reassign) ... ok
+test_task_filter_by_status_and_priority (test_api.TaskAndOrderApiTests.test_task_filter_by_status_and_priority) ... ok
+test_task_priority_update (test_api.TaskAndOrderApiTests.test_task_priority_update) ... ok
+test_unknown_route_returns_404 (test_api.TaskAndOrderApiTests.test_unknown_route_returns_404) ... ok
+test_wrong_method_returns_405_like_error (test_api.TaskAndOrderApiTests.test_wrong_method_returns_405_like_error) ... ok
+test_create_sku_location_and_inventory (test_domain.MasterDataTests.test_create_sku_location_and_inventory) ... ok
+test_delete_sku_with_inventory_conflicts (test_domain.MasterDataTests.test_delete_sku_with_inventory_conflicts) ... ok
+test_duplicate_location_code_rejected (test_domain.MasterDataTests.test_duplicate_location_code_rejected) ... ok
+test_duplicate_sku_code_rejected (test_domain.MasterDataTests.test_duplicate_sku_code_rejected) ... ok
+test_invalid_coordinates_rejected (test_domain.MasterDataTests.test_invalid_coordinates_rejected) ... ok
+test_invalid_enums_rejected (test_domain.MasterDataTests.test_invalid_enums_rejected) ... ok
+test_missing_resource_raises_not_found (test_domain.MasterDataTests.test_missing_resource_raises_not_found) ... ok
+test_negative_inventory_rejected (test_domain.MasterDataTests.test_negative_inventory_rejected) ... ok
+test_cancel_order_rolls_back_reservation (test_domain.OrderTests.test_cancel_order_rolls_back_reservation) ... ok
+test_create_and_release_order_creates_tasks (test_domain.OrderTests.test_create_and_release_order_creates_tasks) ... ok
+test_release_is_idempotent (test_domain.OrderTests.test_release_is_idempotent) ... ok
+test_release_without_stock_raises_and_keeps_state (test_domain.OrderTests.test_release_without_stock_raises_and_keeps_state) ... ok
+test_unknown_sku_in_order_rejected (test_domain.OrderTests.test_unknown_sku_in_order_rejected) ... ok
+test_cancel_task_from_pending (test_domain.TaskStateMachineTests.test_cancel_task_from_pending) ... ok
+test_illegal_transition_rejected (test_domain.TaskStateMachineTests.test_illegal_transition_rejected) ... ok
+test_legal_transitions (test_domain.TaskStateMachineTests.test_legal_transitions) ... ----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 51702)
+Traceback (most recent call last):
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 498, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 464, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+----------------------------------------
+ok
+test_priority_change_recorded (test_domain.TaskStateMachineTests.test_priority_change_recorded) ... ----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 51705)
+Traceback (most recent call last):
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 498, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 464, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+----------------------------------------
+ok
+test_reassign_returns_task_to_pool (test_domain.TaskStateMachineTests.test_reassign_returns_task_to_pool) ... ok
+test_map_fixture_roundtrip (test_fixtures.MapFixtureTests.test_map_fixture_roundtrip) ... ok
+test_map_fixtures_match_code (test_fixtures.MapFixtureTests.test_map_fixtures_match_code) ... ok
+test_every_scenario_has_expectations (test_fixtures.ScenarioFixtureTests.test_every_scenario_has_expectations) ... ok
+test_scenario_fixtures_match_code (test_fixtures.ScenarioFixtureTests.test_scenario_fixtures_match_code) ... ok
+test_scenario_index_matches (test_fixtures.ScenarioFixtureTests.test_scenario_index_matches) ... ok
+test_find_free_cell_returns_path_or_none (test_pathfinding.PathPlanTests.test_find_free_cell_returns_path_or_none) ... ok
+test_plan_is_continuous_and_passable (test_pathfinding.PathPlanTests.test_plan_is_continuous_and_passable) ... ok
+test_plan_respects_blocked_cell (test_pathfinding.PathPlanTests.test_plan_respects_blocked_cell) ... ok
+test_safe_cell_avoids_articulation_points (test_pathfinding.PathPlanTests.test_safe_cell_avoids_articulation_points) ... ok
+test_static_block_prevents_planning_through_parked_agv (test_pathfinding.PathPlanTests.test_static_block_prevents_planning_through_parked_agv) ... ok
+test_static_distance_and_manhattan (test_pathfinding.PathPlanTests.test_static_distance_and_manhattan) ... ok
+test_unreachable_goal_returns_none (test_pathfinding.PathPlanTests.test_unreachable_goal_returns_none) ... ok
+test_batch_acquire_is_atomic (test_pathfinding.ReservationTests.test_batch_acquire_is_atomic) ... ok
+test_expired_reservation_released (test_pathfinding.ReservationTests.test_expired_reservation_released) ... ok
+test_handoff_next_tick_allowed (test_pathfinding.ReservationTests.test_handoff_next_tick_allowed)
+AC8：A 在 tick t 离开格点，B 在 t+1 进入，允许预约。 ... ok
+test_high_priority_preempts_low_priority_future_reservation (test_pathfinding.ReservationTests.test_high_priority_preempts_low_priority_future_reservation) ... ok
+test_low_priority_cannot_preempt_high_priority (test_pathfinding.ReservationTests.test_low_priority_cannot_preempt_high_priority) ... ok
+test_opposite_edge_conflicts (test_pathfinding.ReservationTests.test_opposite_edge_conflicts) ... ok
+test_same_cell_same_tick_conflicts (test_pathfinding.ReservationTests.test_same_cell_same_tick_conflicts) ... ok
+test_data_dir_created_on_demand (test_persistence.DataDirectoryTests.test_data_dir_created_on_demand) ... ok
+test_reset_clears_previous_scenario (test_persistence.DataDirectoryTests.test_reset_clears_previous_scenario) ... ok
+test_data_survives_restart (test_persistence.PersistenceTests.test_data_survives_restart) ... ok
+test_events_are_persisted (test_persistence.PersistenceTests.test_events_are_persisted) ... ok
+test_map_version_restored (test_persistence.PersistenceTests.test_map_version_restored) ... ok
+test_battery_increases_while_charging (test_simulation.ChargingTests.test_battery_increases_while_charging) ... ok
+test_low_battery_agv_charges (test_simulation.ChargingTests.test_low_battery_agv_charges) ... ok
+test_deadlock_detected_and_recovered (test_simulation.CycleDeadlockScenarioTests.test_deadlock_detected_and_recovered) ... ok
+test_no_agv_enters_deadlock_forever (test_simulation.CycleDeadlockScenarioTests.test_no_agv_enters_deadlock_forever) ... ok
+test_different_seed_is_documented_as_same_scenario (test_simulation.DeterminismTests.test_different_seed_is_documented_as_same_scenario) ... ok
+test_same_seed_produces_same_agv_trajectories (test_simulation.DeterminismTests.test_same_seed_produces_same_agv_trajectories) ... ok
+test_same_seed_produces_same_event_sequence (test_simulation.DeterminismTests.test_same_seed_produces_same_event_sequence) ... ok
+test_same_seed_produces_same_task_outcomes (test_simulation.DeterminismTests.test_same_seed_produces_same_task_outcomes) ... ok
+test_conflict_counter_matches_conflict_events (test_simulation.HeadToHeadTests.test_conflict_counter_matches_conflict_events)
+回归缺陷：`stats["conflicts"]` 有两处计数点没有发出 `conflict.detected` 事件， ... ok
+test_head_on_conflict_is_blocked (test_simulation.HeadToHeadTests.test_head_on_conflict_is_blocked) ... ok
+test_idle_returning_agv_also_replans (test_simulation.RoadblockTests.test_idle_returning_agv_also_replans)
+空闲返程中的车辆（没有任务）也必须跟随封路重规划。 ... ok
+test_roadblock_triggers_replan_and_is_respected (test_simulation.RoadblockTests.test_roadblock_triggers_replan_and_is_respected) ... ok
+test_unblock_restores_passability (test_simulation.RoadblockTests.test_unblock_restores_passability) ... ok
+test_rush_order_assigned_before_normal_tasks (test_simulation.RushOrderTests.test_rush_order_assigned_before_normal_tasks)
+从空闲状态插入急单：急单必须第一个被指派。 ... ok
+test_rush_order_takes_priority (test_simulation.RushOrderTests.test_rush_order_takes_priority)
+AC12：急单必须排在待办队列最前，并在首次指派时领先普通任务。 ... ok
+test_task_queue_sorted_by_priority (test_simulation.RushOrderTests.test_task_queue_sorted_by_priority) ... ok
+test_all_scenarios_load (test_simulation.ScenarioCatalogueTests.test_all_scenarios_load) ... ok
+test_scenario_expectation_metadata_present (test_simulation.ScenarioCatalogueTests.test_scenario_expectation_metadata_present) ... ok
+test_choose_victim_prefers_rollbackable_then_lowest_priority (test_simulation.WaitGraphTests.test_choose_victim_prefers_rollbackable_then_lowest_priority) ... ok
+test_cycle_detection (test_simulation.WaitGraphTests.test_cycle_detection) ... ok
+test_cycle_detection_is_deterministic (test_simulation.WaitGraphTests.test_cycle_detection_is_deterministic) ... ok
+test_no_cycle_in_chain (test_simulation.WaitGraphTests.test_no_cycle_in_chain) ... ok
+
+----------------------------------------------------------------------
+Ran 88 tests in 25.563s
+
+OK

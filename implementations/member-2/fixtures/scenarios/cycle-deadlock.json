@@ -1,0 +1,169 @@
+{
+  "id": "cycle-deadlock",
+  "title": "三车环形等待",
+  "description": "三台 AGV 在三角形环路互相等待，等待图成环后按优先级回退恢复。",
+  "map": "ring-3",
+  "seed": 20261118,
+  "skus": [
+    {
+      "code": "SKU-001",
+      "name": "折叠周转箱",
+      "spec": "60x40x30",
+      "batchRule": "fifo"
+    },
+    {
+      "code": "SKU-002",
+      "name": "标签纸卷",
+      "spec": "100mm",
+      "batchRule": "fefo"
+    },
+    {
+      "code": "SKU-003",
+      "name": "缓冲垫片",
+      "spec": "标准",
+      "batchRule": "none"
+    }
+  ],
+  "locations": [
+    {
+      "code": "SHELF-R1",
+      "zone": "R",
+      "x": 6,
+      "y": 6,
+      "type": "shelf",
+      "capacity": 1
+    }
+  ],
+  "inventory": [
+    {
+      "skuCode": "SKU-001",
+      "locationCode": "SHELF-R1",
+      "qty": 100,
+      "batch": "B-R-2026"
+    }
+  ],
+  "agvs": [
+    {
+      "id": "AGV-A",
+      "x": 7,
+      "y": 3,
+      "battery": 100.0,
+      "priority": 5
+    },
+    {
+      "id": "AGV-B",
+      "x": 8,
+      "y": 3,
+      "battery": 100.0,
+      "priority": 5
+    },
+    {
+      "id": "AGV-C",
+      "x": 8,
+      "y": 4,
+      "battery": 100.0,
+      "priority": 1
+    }
+  ],
+  "orders": [
+    {
+      "code": "OUT-CYCLE-001",
+      "priority": 5,
+      "requester": "demo",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 1,
+          "pickupLocationCode": "PICK-R2"
+        }
+      ]
+    },
+    {
+      "code": "OUT-CYCLE-002",
+      "priority": 5,
+      "requester": "demo",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 1,
+          "pickupLocationCode": "PICK-R3"
+        }
+      ]
+    },
+    {
+      "code": "OUT-CYCLE-003",
+      "priority": 1,
+      "requester": "demo",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 1,
+          "pickupLocationCode": "PICK-R1"
+        }
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "agvId": "AGV-A",
+      "orderCode": "OUT-CYCLE-001",
+      "lineIndex": 0,
+      "plan": {
+        "goal": "8,3",
+        "steps": [
+          [
+            "7,3",
+            "wait"
+          ],
+          [
+            "8,3",
+            "move"
+          ]
+        ]
+      }
+    },
+    {
+      "agvId": "AGV-B",
+      "orderCode": "OUT-CYCLE-002",
+      "lineIndex": 0,
+      "plan": {
+        "goal": "8,4",
+        "steps": [
+          [
+            "8,3",
+            "wait"
+          ],
+          [
+            "8,4",
+            "move"
+          ]
+        ]
+      }
+    },
+    {
+      "agvId": "AGV-C",
+      "orderCode": "OUT-CYCLE-003",
+      "lineIndex": 0,
+      "plan": {
+        "goal": "7,3",
+        "steps": [
+          [
+            "8,4",
+            "wait"
+          ],
+          [
+            "7,3",
+            "move"
+          ]
+        ]
+      }
+    }
+  ],
+  "events": [],
+  "expect": {
+    "deadlocks": 1,
+    "rollbacks": 1,
+    "cycleLength": 3,
+    "completedTasks": 3
+  }
+}

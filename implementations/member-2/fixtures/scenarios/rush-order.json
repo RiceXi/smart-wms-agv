@@ -1,0 +1,147 @@
+{
+  "id": "rush-order",
+  "title": "急单插入",
+  "description": "运行中插入高优先级订单，验证任务队列与指派顺序体现优先级变化。",
+  "map": "warehouse-24",
+  "seed": 20261118,
+  "skus": [
+    {
+      "code": "SKU-001",
+      "name": "折叠周转箱",
+      "spec": "60x40x30",
+      "batchRule": "fifo"
+    },
+    {
+      "code": "SKU-002",
+      "name": "标签纸卷",
+      "spec": "100mm",
+      "batchRule": "fefo"
+    },
+    {
+      "code": "SKU-003",
+      "name": "缓冲垫片",
+      "spec": "标准",
+      "batchRule": "none"
+    }
+  ],
+  "locations": [],
+  "inventory": [
+    {
+      "skuCode": "SKU-001",
+      "locationCode": "SHELF-A-001",
+      "qty": 200,
+      "batch": "B-A-2026"
+    },
+    {
+      "skuCode": "SKU-002",
+      "locationCode": "SHELF-B-001",
+      "qty": 200,
+      "batch": "B-B-2026"
+    },
+    {
+      "skuCode": "SKU-003",
+      "locationCode": "SHELF-C-001",
+      "qty": 200,
+      "batch": "B-C-2026"
+    }
+  ],
+  "agvs": [
+    {
+      "id": "AGV-01",
+      "x": 2,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-02",
+      "x": 4,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-03",
+      "x": 6,
+      "y": 1,
+      "battery": 100.0
+    },
+    {
+      "id": "AGV-04",
+      "x": 8,
+      "y": 1,
+      "battery": 100.0
+    }
+  ],
+  "orders": [
+    {
+      "code": "OUT-RUSH-001",
+      "priority": 2,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-RUSH-002",
+      "priority": 2,
+      "requester": "demo",
+      "dropLocationCode": "DROP-2",
+      "lines": [
+        {
+          "skuCode": "SKU-002",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-RUSH-003",
+      "priority": 2,
+      "requester": "demo",
+      "dropLocationCode": "DROP-3",
+      "lines": [
+        {
+          "skuCode": "SKU-003",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "code": "OUT-RUSH-004",
+      "priority": 2,
+      "requester": "demo",
+      "dropLocationCode": "DROP-4",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "assignments": [],
+  "events": [
+    {
+      "atTick": 20,
+      "type": "rush_order",
+      "priority": 10,
+      "skuCode": "SKU-001",
+      "qty": 1,
+      "code": "OUT-RUSH-0001"
+    },
+    {
+      "atTick": 90,
+      "type": "rush_order",
+      "priority": 9,
+      "skuCode": "SKU-002",
+      "qty": 1,
+      "code": "OUT-RUSH-0002"
+    }
+  ],
+  "expect": {
+    "rushPriority": 10,
+    "rushOrders": 2
+  }
+}

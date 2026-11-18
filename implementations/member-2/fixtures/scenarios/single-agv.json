@@ -1,0 +1,76 @@
+{
+  "id": "single-agv",
+  "title": "单 AGV 闭环",
+  "description": "1 台 AGV、1 个出库订单，验证订单->任务->路径->仿真->完成的闭环。",
+  "map": "warehouse-24",
+  "seed": 20261118,
+  "skus": [
+    {
+      "code": "SKU-001",
+      "name": "折叠周转箱",
+      "spec": "60x40x30",
+      "batchRule": "fifo"
+    },
+    {
+      "code": "SKU-002",
+      "name": "标签纸卷",
+      "spec": "100mm",
+      "batchRule": "fefo"
+    },
+    {
+      "code": "SKU-003",
+      "name": "缓冲垫片",
+      "spec": "标准",
+      "batchRule": "none"
+    }
+  ],
+  "locations": [],
+  "inventory": [
+    {
+      "skuCode": "SKU-001",
+      "locationCode": "SHELF-A-001",
+      "qty": 200,
+      "batch": "B-A-2026"
+    },
+    {
+      "skuCode": "SKU-002",
+      "locationCode": "SHELF-B-001",
+      "qty": 200,
+      "batch": "B-B-2026"
+    },
+    {
+      "skuCode": "SKU-003",
+      "locationCode": "SHELF-C-001",
+      "qty": 200,
+      "batch": "B-C-2026"
+    }
+  ],
+  "agvs": [
+    {
+      "id": "AGV-01",
+      "x": 12,
+      "y": 18,
+      "battery": 100.0
+    }
+  ],
+  "orders": [
+    {
+      "code": "OUT-SINGLE-001",
+      "priority": 5,
+      "requester": "demo",
+      "dropLocationCode": "DROP-1",
+      "lines": [
+        {
+          "skuCode": "SKU-001",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "assignments": [],
+  "events": [],
+  "expect": {
+    "completedTasks": 1,
+    "deadlocks": 0
+  }
+}

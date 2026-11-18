@@ -1,0 +1,8657 @@
+{
+  "mapId": "warehouse-24",
+  "version": "map-1",
+  "width": 24,
+  "height": 24,
+  "tickSeconds": 1,
+  "cells": [
+    {
+      "id": "0,0",
+      "x": 0,
+      "y": 0,
+      "type": "charger",
+      "passable": true,
+      "capacity": 1,
+      "zone": "CHG"
+    },
+    {
+      "id": "1,0",
+      "x": 1,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,0",
+      "x": 2,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "3,0",
+      "x": 3,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,0",
+      "x": 4,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,0",
+      "x": 5,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,0",
+      "x": 6,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,0",
+      "x": 7,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,0",
+      "x": 8,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,0",
+      "x": 9,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,0",
+      "x": 10,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,0",
+      "x": 11,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "12,0",
+      "x": 12,
+      "y": 0,
+      "type": "drop",
+      "passable": true,
+      "capacity": 2,
+      "zone": "OUT"
+    },
+    {
+      "id": "13,0",
+      "x": 13,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,0",
+      "x": 14,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,0",
+      "x": 15,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,0",
+      "x": 16,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,0",
+      "x": 17,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,0",
+      "x": 18,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,0",
+      "x": 19,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,0",
+      "x": 20,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,0",
+      "x": 21,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,0",
+      "x": 22,
+      "y": 0,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,0",
+      "x": 23,
+      "y": 0,
+      "type": "charger",
+      "passable": true,
+      "capacity": 1,
+      "zone": "CHG"
+    },
+    {
+      "id": "0,1",
+      "x": 0,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,1",
+      "x": 1,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,1",
+      "x": 2,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "3,1",
+      "x": 3,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,1",
+      "x": 4,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,1",
+      "x": 5,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,1",
+      "x": 6,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,1",
+      "x": 7,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,1",
+      "x": 8,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,1",
+      "x": 9,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,1",
+      "x": 10,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,1",
+      "x": 11,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "12,1",
+      "x": 12,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "13,1",
+      "x": 13,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,1",
+      "x": 14,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,1",
+      "x": 15,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,1",
+      "x": 16,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,1",
+      "x": 17,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,1",
+      "x": 18,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,1",
+      "x": 19,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,1",
+      "x": 20,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,1",
+      "x": 21,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,1",
+      "x": 22,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,1",
+      "x": 23,
+      "y": 1,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,2",
+      "x": 0,
+      "y": 2,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,2",
+      "x": 1,
+      "y": 2,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,2",
+      "x": 2,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "3,2",
+      "x": 3,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "4,2",
+      "x": 4,
+      "y": 2,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,2",
+      "x": 5,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "6,2",
+      "x": 6,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "7,2",
+      "x": 7,
+      "y": 2,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,2",
+      "x": 8,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "9,2",
+      "x": 9,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "10,2",
+      "x": 10,
+      "y": 2,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,2",
+      "x": 11,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "12,2",
+      "x": 12,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "13,2",
+      "x": 13,
+      "y": 2,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,2",
+      "x": 14,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "15,2",
+      "x": 15,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "16,2",
+      "x": 16,
+      "y": 2,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,2",
+      "x": 17,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "18,2",
+      "x": 18,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "19,2",
+      "x": 19,
+      "y": 2,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,2",
+      "x": 20,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "21,2",
+      "x": 21,
+      "y": 2,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "22,2",
+      "x": 22,
+      "y": 2,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,2",
+      "x": 23,
+      "y": 2,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,3",
+      "x": 0,
+      "y": 3,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,3",
+      "x": 1,
+      "y": 3,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,3",
+      "x": 2,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "3,3",
+      "x": 3,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "4,3",
+      "x": 4,
+      "y": 3,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,3",
+      "x": 5,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "6,3",
+      "x": 6,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "7,3",
+      "x": 7,
+      "y": 3,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,3",
+      "x": 8,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "9,3",
+      "x": 9,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "10,3",
+      "x": 10,
+      "y": 3,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,3",
+      "x": 11,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "12,3",
+      "x": 12,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "13,3",
+      "x": 13,
+      "y": 3,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,3",
+      "x": 14,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "15,3",
+      "x": 15,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "16,3",
+      "x": 16,
+      "y": 3,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,3",
+      "x": 17,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "18,3",
+      "x": 18,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "19,3",
+      "x": 19,
+      "y": 3,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,3",
+      "x": 20,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "21,3",
+      "x": 21,
+      "y": 3,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "22,3",
+      "x": 22,
+      "y": 3,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,3",
+      "x": 23,
+      "y": 3,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,4",
+      "x": 0,
+      "y": 4,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,4",
+      "x": 1,
+      "y": 4,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,4",
+      "x": 2,
+      "y": 4,
+      "type": "pick",
+      "passable": true,
+      "capacity": 2,
+      "zone": "A"
+    },
+    {
+      "id": "3,4",
+      "x": 3,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "4,4",
+      "x": 4,
+      "y": 4,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,4",
+      "x": 5,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "6,4",
+      "x": 6,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "7,4",
+      "x": 7,
+      "y": 4,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,4",
+      "x": 8,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "9,4",
+      "x": 9,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "10,4",
+      "x": 10,
+      "y": 4,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,4",
+      "x": 11,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "12,4",
+      "x": 12,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "13,4",
+      "x": 13,
+      "y": 4,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,4",
+      "x": 14,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "15,4",
+      "x": 15,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "16,4",
+      "x": 16,
+      "y": 4,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,4",
+      "x": 17,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "18,4",
+      "x": 18,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "19,4",
+      "x": 19,
+      "y": 4,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,4",
+      "x": 20,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "21,4",
+      "x": 21,
+      "y": 4,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "A"
+    },
+    {
+      "id": "22,4",
+      "x": 22,
+      "y": 4,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,4",
+      "x": 23,
+      "y": 4,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,5",
+      "x": 0,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,5",
+      "x": 1,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,5",
+      "x": 2,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "3,5",
+      "x": 3,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,5",
+      "x": 4,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,5",
+      "x": 5,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,5",
+      "x": 6,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,5",
+      "x": 7,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,5",
+      "x": 8,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,5",
+      "x": 9,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,5",
+      "x": 10,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,5",
+      "x": 11,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "12,5",
+      "x": 12,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "13,5",
+      "x": 13,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,5",
+      "x": 14,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,5",
+      "x": 15,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,5",
+      "x": 16,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,5",
+      "x": 17,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,5",
+      "x": 18,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,5",
+      "x": 19,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,5",
+      "x": 20,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,5",
+      "x": 21,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,5",
+      "x": 22,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,5",
+      "x": 23,
+      "y": 5,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,6",
+      "x": 0,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,6",
+      "x": 1,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,6",
+      "x": 2,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "3,6",
+      "x": 3,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,6",
+      "x": 4,
+      "y": 6,
+      "type": "pick",
+      "passable": true,
+      "capacity": 2,
+      "zone": "A"
+    },
+    {
+      "id": "5,6",
+      "x": 5,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,6",
+      "x": 6,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,6",
+      "x": 7,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,6",
+      "x": 8,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,6",
+      "x": 9,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,6",
+      "x": 10,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,6",
+      "x": 11,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "12,6",
+      "x": 12,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "13,6",
+      "x": 13,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,6",
+      "x": 14,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,6",
+      "x": 15,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,6",
+      "x": 16,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,6",
+      "x": 17,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,6",
+      "x": 18,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,6",
+      "x": 19,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,6",
+      "x": 20,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,6",
+      "x": 21,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,6",
+      "x": 22,
+      "y": 6,
+      "type": "drop",
+      "passable": true,
+      "capacity": 2,
+      "zone": "OUT"
+    },
+    {
+      "id": "23,6",
+      "x": 23,
+      "y": 6,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,7",
+      "x": 0,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,7",
+      "x": 1,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,7",
+      "x": 2,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "3,7",
+      "x": 3,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,7",
+      "x": 4,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,7",
+      "x": 5,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,7",
+      "x": 6,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,7",
+      "x": 7,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,7",
+      "x": 8,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,7",
+      "x": 9,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,7",
+      "x": 10,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,7",
+      "x": 11,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "12,7",
+      "x": 12,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "13,7",
+      "x": 13,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,7",
+      "x": 14,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,7",
+      "x": 15,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,7",
+      "x": 16,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,7",
+      "x": 17,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,7",
+      "x": 18,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,7",
+      "x": 19,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,7",
+      "x": 20,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,7",
+      "x": 21,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,7",
+      "x": 22,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,7",
+      "x": 23,
+      "y": 7,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,8",
+      "x": 0,
+      "y": 8,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,8",
+      "x": 1,
+      "y": 8,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,8",
+      "x": 2,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "3,8",
+      "x": 3,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "4,8",
+      "x": 4,
+      "y": 8,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,8",
+      "x": 5,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "6,8",
+      "x": 6,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "7,8",
+      "x": 7,
+      "y": 8,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,8",
+      "x": 8,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "9,8",
+      "x": 9,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "10,8",
+      "x": 10,
+      "y": 8,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,8",
+      "x": 11,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "12,8",
+      "x": 12,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "13,8",
+      "x": 13,
+      "y": 8,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,8",
+      "x": 14,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "15,8",
+      "x": 15,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "16,8",
+      "x": 16,
+      "y": 8,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,8",
+      "x": 17,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "18,8",
+      "x": 18,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "19,8",
+      "x": 19,
+      "y": 8,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,8",
+      "x": 20,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "21,8",
+      "x": 21,
+      "y": 8,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "22,8",
+      "x": 22,
+      "y": 8,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,8",
+      "x": 23,
+      "y": 8,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,9",
+      "x": 0,
+      "y": 9,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,9",
+      "x": 1,
+      "y": 9,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,9",
+      "x": 2,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "3,9",
+      "x": 3,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "4,9",
+      "x": 4,
+      "y": 9,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,9",
+      "x": 5,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "6,9",
+      "x": 6,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "7,9",
+      "x": 7,
+      "y": 9,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,9",
+      "x": 8,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "9,9",
+      "x": 9,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "10,9",
+      "x": 10,
+      "y": 9,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,9",
+      "x": 11,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "12,9",
+      "x": 12,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "13,9",
+      "x": 13,
+      "y": 9,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,9",
+      "x": 14,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "15,9",
+      "x": 15,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "16,9",
+      "x": 16,
+      "y": 9,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,9",
+      "x": 17,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "18,9",
+      "x": 18,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "19,9",
+      "x": 19,
+      "y": 9,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,9",
+      "x": 20,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "21,9",
+      "x": 21,
+      "y": 9,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "22,9",
+      "x": 22,
+      "y": 9,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,9",
+      "x": 23,
+      "y": 9,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,10",
+      "x": 0,
+      "y": 10,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,10",
+      "x": 1,
+      "y": 10,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,10",
+      "x": 2,
+      "y": 10,
+      "type": "pick",
+      "passable": true,
+      "capacity": 2,
+      "zone": "B"
+    },
+    {
+      "id": "3,10",
+      "x": 3,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "4,10",
+      "x": 4,
+      "y": 10,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,10",
+      "x": 5,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "6,10",
+      "x": 6,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "7,10",
+      "x": 7,
+      "y": 10,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,10",
+      "x": 8,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "9,10",
+      "x": 9,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "10,10",
+      "x": 10,
+      "y": 10,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,10",
+      "x": 11,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "12,10",
+      "x": 12,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "13,10",
+      "x": 13,
+      "y": 10,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,10",
+      "x": 14,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "15,10",
+      "x": 15,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "16,10",
+      "x": 16,
+      "y": 10,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,10",
+      "x": 17,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "18,10",
+      "x": 18,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "19,10",
+      "x": 19,
+      "y": 10,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,10",
+      "x": 20,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "21,10",
+      "x": 21,
+      "y": 10,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "B"
+    },
+    {
+      "id": "22,10",
+      "x": 22,
+      "y": 10,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,10",
+      "x": 23,
+      "y": 10,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,11",
+      "x": 0,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,11",
+      "x": 1,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,11",
+      "x": 2,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "3,11",
+      "x": 3,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,11",
+      "x": 4,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,11",
+      "x": 5,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,11",
+      "x": 6,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,11",
+      "x": 7,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,11",
+      "x": 8,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,11",
+      "x": 9,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,11",
+      "x": 10,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,11",
+      "x": 11,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "12,11",
+      "x": 12,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "13,11",
+      "x": 13,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,11",
+      "x": 14,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,11",
+      "x": 15,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,11",
+      "x": 16,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,11",
+      "x": 17,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,11",
+      "x": 18,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,11",
+      "x": 19,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,11",
+      "x": 20,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,11",
+      "x": 21,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,11",
+      "x": 22,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,11",
+      "x": 23,
+      "y": 11,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,12",
+      "x": 0,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,12",
+      "x": 1,
+      "y": 12,
+      "type": "drop",
+      "passable": true,
+      "capacity": 2,
+      "zone": "OUT"
+    },
+    {
+      "id": "2,12",
+      "x": 2,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "3,12",
+      "x": 3,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,12",
+      "x": 4,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,12",
+      "x": 5,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,12",
+      "x": 6,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,12",
+      "x": 7,
+      "y": 12,
+      "type": "pick",
+      "passable": true,
+      "capacity": 2,
+      "zone": "B"
+    },
+    {
+      "id": "8,12",
+      "x": 8,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,12",
+      "x": 9,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,12",
+      "x": 10,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,12",
+      "x": 11,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "12,12",
+      "x": 12,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "13,12",
+      "x": 13,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,12",
+      "x": 14,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,12",
+      "x": 15,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,12",
+      "x": 16,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,12",
+      "x": 17,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,12",
+      "x": 18,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,12",
+      "x": 19,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,12",
+      "x": 20,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,12",
+      "x": 21,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,12",
+      "x": 22,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,12",
+      "x": 23,
+      "y": 12,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,13",
+      "x": 0,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,13",
+      "x": 1,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,13",
+      "x": 2,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "3,13",
+      "x": 3,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,13",
+      "x": 4,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,13",
+      "x": 5,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,13",
+      "x": 6,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,13",
+      "x": 7,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,13",
+      "x": 8,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,13",
+      "x": 9,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,13",
+      "x": 10,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,13",
+      "x": 11,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "12,13",
+      "x": 12,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "13,13",
+      "x": 13,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,13",
+      "x": 14,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,13",
+      "x": 15,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,13",
+      "x": 16,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,13",
+      "x": 17,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,13",
+      "x": 18,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,13",
+      "x": 19,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,13",
+      "x": 20,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,13",
+      "x": 21,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,13",
+      "x": 22,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,13",
+      "x": 23,
+      "y": 13,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,14",
+      "x": 0,
+      "y": 14,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,14",
+      "x": 1,
+      "y": 14,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,14",
+      "x": 2,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "3,14",
+      "x": 3,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "4,14",
+      "x": 4,
+      "y": 14,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,14",
+      "x": 5,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "6,14",
+      "x": 6,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "7,14",
+      "x": 7,
+      "y": 14,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,14",
+      "x": 8,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "9,14",
+      "x": 9,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "10,14",
+      "x": 10,
+      "y": 14,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,14",
+      "x": 11,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "12,14",
+      "x": 12,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "13,14",
+      "x": 13,
+      "y": 14,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,14",
+      "x": 14,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "15,14",
+      "x": 15,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "16,14",
+      "x": 16,
+      "y": 14,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,14",
+      "x": 17,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "18,14",
+      "x": 18,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "19,14",
+      "x": 19,
+      "y": 14,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,14",
+      "x": 20,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "21,14",
+      "x": 21,
+      "y": 14,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "22,14",
+      "x": 22,
+      "y": 14,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,14",
+      "x": 23,
+      "y": 14,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,15",
+      "x": 0,
+      "y": 15,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,15",
+      "x": 1,
+      "y": 15,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,15",
+      "x": 2,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "3,15",
+      "x": 3,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "4,15",
+      "x": 4,
+      "y": 15,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,15",
+      "x": 5,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "6,15",
+      "x": 6,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "7,15",
+      "x": 7,
+      "y": 15,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,15",
+      "x": 8,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "9,15",
+      "x": 9,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "10,15",
+      "x": 10,
+      "y": 15,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,15",
+      "x": 11,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "12,15",
+      "x": 12,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "13,15",
+      "x": 13,
+      "y": 15,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,15",
+      "x": 14,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "15,15",
+      "x": 15,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "16,15",
+      "x": 16,
+      "y": 15,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,15",
+      "x": 17,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "18,15",
+      "x": 18,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "19,15",
+      "x": 19,
+      "y": 15,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,15",
+      "x": 20,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "21,15",
+      "x": 21,
+      "y": 15,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "22,15",
+      "x": 22,
+      "y": 15,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,15",
+      "x": 23,
+      "y": 15,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,16",
+      "x": 0,
+      "y": 16,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,16",
+      "x": 1,
+      "y": 16,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,16",
+      "x": 2,
+      "y": 16,
+      "type": "pick",
+      "passable": true,
+      "capacity": 2,
+      "zone": "C"
+    },
+    {
+      "id": "3,16",
+      "x": 3,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "4,16",
+      "x": 4,
+      "y": 16,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,16",
+      "x": 5,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "6,16",
+      "x": 6,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "7,16",
+      "x": 7,
+      "y": 16,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,16",
+      "x": 8,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "9,16",
+      "x": 9,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "10,16",
+      "x": 10,
+      "y": 16,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,16",
+      "x": 11,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "12,16",
+      "x": 12,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "13,16",
+      "x": 13,
+      "y": 16,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,16",
+      "x": 14,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "15,16",
+      "x": 15,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "16,16",
+      "x": 16,
+      "y": 16,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,16",
+      "x": 17,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "18,16",
+      "x": 18,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "19,16",
+      "x": 19,
+      "y": 16,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,16",
+      "x": 20,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "21,16",
+      "x": 21,
+      "y": 16,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "C"
+    },
+    {
+      "id": "22,16",
+      "x": 22,
+      "y": 16,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,16",
+      "x": 23,
+      "y": 16,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,17",
+      "x": 0,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,17",
+      "x": 1,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,17",
+      "x": 2,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "3,17",
+      "x": 3,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,17",
+      "x": 4,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,17",
+      "x": 5,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,17",
+      "x": 6,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,17",
+      "x": 7,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,17",
+      "x": 8,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,17",
+      "x": 9,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,17",
+      "x": 10,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,17",
+      "x": 11,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "12,17",
+      "x": 12,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "13,17",
+      "x": 13,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,17",
+      "x": 14,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,17",
+      "x": 15,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,17",
+      "x": 16,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,17",
+      "x": 17,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,17",
+      "x": 18,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,17",
+      "x": 19,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,17",
+      "x": 20,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,17",
+      "x": 21,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,17",
+      "x": 22,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,17",
+      "x": 23,
+      "y": 17,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,18",
+      "x": 0,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,18",
+      "x": 1,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,18",
+      "x": 2,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "3,18",
+      "x": 3,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,18",
+      "x": 4,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,18",
+      "x": 5,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,18",
+      "x": 6,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,18",
+      "x": 7,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,18",
+      "x": 8,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,18",
+      "x": 9,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,18",
+      "x": 10,
+      "y": 18,
+      "type": "pick",
+      "passable": true,
+      "capacity": 2,
+      "zone": "C"
+    },
+    {
+      "id": "11,18",
+      "x": 11,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "12,18",
+      "x": 12,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "13,18",
+      "x": 13,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,18",
+      "x": 14,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,18",
+      "x": 15,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,18",
+      "x": 16,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,18",
+      "x": 17,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,18",
+      "x": 18,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,18",
+      "x": 19,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,18",
+      "x": 20,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,18",
+      "x": 21,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,18",
+      "x": 22,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,18",
+      "x": 23,
+      "y": 18,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,19",
+      "x": 0,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,19",
+      "x": 1,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,19",
+      "x": 2,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "3,19",
+      "x": 3,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,19",
+      "x": 4,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,19",
+      "x": 5,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,19",
+      "x": 6,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,19",
+      "x": 7,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,19",
+      "x": 8,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,19",
+      "x": 9,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,19",
+      "x": 10,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,19",
+      "x": 11,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "12,19",
+      "x": 12,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "13,19",
+      "x": 13,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,19",
+      "x": 14,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,19",
+      "x": 15,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,19",
+      "x": 16,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,19",
+      "x": 17,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,19",
+      "x": 18,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,19",
+      "x": 19,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,19",
+      "x": 20,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,19",
+      "x": 21,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,19",
+      "x": 22,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,19",
+      "x": 23,
+      "y": 19,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,20",
+      "x": 0,
+      "y": 20,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,20",
+      "x": 1,
+      "y": 20,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,20",
+      "x": 2,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "3,20",
+      "x": 3,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "4,20",
+      "x": 4,
+      "y": 20,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,20",
+      "x": 5,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "6,20",
+      "x": 6,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "7,20",
+      "x": 7,
+      "y": 20,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,20",
+      "x": 8,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "9,20",
+      "x": 9,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "10,20",
+      "x": 10,
+      "y": 20,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,20",
+      "x": 11,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "12,20",
+      "x": 12,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "13,20",
+      "x": 13,
+      "y": 20,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,20",
+      "x": 14,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "15,20",
+      "x": 15,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "16,20",
+      "x": 16,
+      "y": 20,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,20",
+      "x": 17,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "18,20",
+      "x": 18,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "19,20",
+      "x": 19,
+      "y": 20,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,20",
+      "x": 20,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "21,20",
+      "x": 21,
+      "y": 20,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "22,20",
+      "x": 22,
+      "y": 20,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,20",
+      "x": 23,
+      "y": 20,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,21",
+      "x": 0,
+      "y": 21,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,21",
+      "x": 1,
+      "y": 21,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,21",
+      "x": 2,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "3,21",
+      "x": 3,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "4,21",
+      "x": 4,
+      "y": 21,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,21",
+      "x": 5,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "6,21",
+      "x": 6,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "7,21",
+      "x": 7,
+      "y": 21,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,21",
+      "x": 8,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "9,21",
+      "x": 9,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "10,21",
+      "x": 10,
+      "y": 21,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,21",
+      "x": 11,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "12,21",
+      "x": 12,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "13,21",
+      "x": 13,
+      "y": 21,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,21",
+      "x": 14,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "15,21",
+      "x": 15,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "16,21",
+      "x": 16,
+      "y": 21,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,21",
+      "x": 17,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "18,21",
+      "x": 18,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "19,21",
+      "x": 19,
+      "y": 21,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,21",
+      "x": 20,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "21,21",
+      "x": 21,
+      "y": 21,
+      "type": "shelf",
+      "passable": false,
+      "capacity": 1,
+      "zone": "D"
+    },
+    {
+      "id": "22,21",
+      "x": 22,
+      "y": 21,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,21",
+      "x": 23,
+      "y": 21,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,22",
+      "x": 0,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "1,22",
+      "x": 1,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,22",
+      "x": 2,
+      "y": 22,
+      "type": "pick",
+      "passable": true,
+      "capacity": 2,
+      "zone": "D"
+    },
+    {
+      "id": "3,22",
+      "x": 3,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,22",
+      "x": 4,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,22",
+      "x": 5,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,22",
+      "x": 6,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,22",
+      "x": 7,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,22",
+      "x": 8,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,22",
+      "x": 9,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,22",
+      "x": 10,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,22",
+      "x": 11,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "12,22",
+      "x": 12,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "13,22",
+      "x": 13,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "14,22",
+      "x": 14,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,22",
+      "x": 15,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,22",
+      "x": 16,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,22",
+      "x": 17,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,22",
+      "x": 18,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,22",
+      "x": 19,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,22",
+      "x": 20,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,22",
+      "x": 21,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,22",
+      "x": 22,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,22",
+      "x": 23,
+      "y": 22,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "0,23",
+      "x": 0,
+      "y": 23,
+      "type": "charger",
+      "passable": true,
+      "capacity": 1,
+      "zone": "CHG"
+    },
+    {
+      "id": "1,23",
+      "x": 1,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "2,23",
+      "x": 2,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "3,23",
+      "x": 3,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "4,23",
+      "x": 4,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "5,23",
+      "x": 5,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "6,23",
+      "x": 6,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "7,23",
+      "x": 7,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "8,23",
+      "x": 8,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "9,23",
+      "x": 9,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "10,23",
+      "x": 10,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "11,23",
+      "x": 11,
+      "y": 23,
+      "type": "drop",
+      "passable": true,
+      "capacity": 2,
+      "zone": "OUT"
+    },
+    {
+      "id": "12,23",
+      "x": 12,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "13,23",
+      "x": 13,
+      "y": 23,
+      "type": "pick",
+      "passable": true,
+      "capacity": 2,
+      "zone": "D"
+    },
+    {
+      "id": "14,23",
+      "x": 14,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "15,23",
+      "x": 15,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "16,23",
+      "x": 16,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "17,23",
+      "x": 17,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "18,23",
+      "x": 18,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "19,23",
+      "x": 19,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "20,23",
+      "x": 20,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "21,23",
+      "x": 21,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "22,23",
+      "x": 22,
+      "y": 23,
+      "type": "floor",
+      "passable": true,
+      "capacity": 1,
+      "zone": ""
+    },
+    {
+      "id": "23,23",
+      "x": 23,
+      "y": 23,
+      "type": "charger",
+      "passable": true,
+      "capacity": 1,
+      "zone": "CHG"
+    }
+  ],
+  "edges": [
+    {
+      "from": "0,0",
+      "to": "1,0",
+      "bidirectional": true
+    },
+    {
+      "from": "0,0",
+      "to": "0,1",
+      "bidirectional": true
+    },
+    {
+      "from": "1,0",
+      "to": "2,0",
+      "bidirectional": true
+    },
+    {
+      "from": "1,0",
+      "to": "1,1",
+      "bidirectional": true
+    },
+    {
+      "from": "2,0",
+      "to": "3,0",
+      "bidirectional": true
+    },
+    {
+      "from": "2,0",
+      "to": "2,1",
+      "bidirectional": true
+    },
+    {
+      "from": "3,0",
+      "to": "4,0",
+      "bidirectional": true
+    },
+    {
+      "from": "3,0",
+      "to": "3,1",
+      "bidirectional": true
+    },
+    {
+      "from": "4,0",
+      "to": "5,0",
+      "bidirectional": true
+    },
+    {
+      "from": "4,0",
+      "to": "4,1",
+      "bidirectional": true
+    },
+    {
+      "from": "5,0",
+      "to": "6,0",
+      "bidirectional": true
+    },
+    {
+      "from": "5,0",
+      "to": "5,1",
+      "bidirectional": true
+    },
+    {
+      "from": "6,0",
+      "to": "7,0",
+      "bidirectional": true
+    },
+    {
+      "from": "6,0",
+      "to": "6,1",
+      "bidirectional": true
+    },
+    {
+      "from": "7,0",
+      "to": "8,0",
+      "bidirectional": true
+    },
+    {
+      "from": "7,0",
+      "to": "7,1",
+      "bidirectional": true
+    },
+    {
+      "from": "8,0",
+      "to": "9,0",
+      "bidirectional": true
+    },
+    {
+      "from": "8,0",
+      "to": "8,1",
+      "bidirectional": true
+    },
+    {
+      "from": "9,0",
+      "to": "10,0",
+      "bidirectional": true
+    },
+    {
+      "from": "9,0",
+      "to": "9,1",
+      "bidirectional": true
+    },
+    {
+      "from": "10,0",
+      "to": "11,0",
+      "bidirectional": true
+    },
+    {
+      "from": "10,0",
+      "to": "10,1",
+      "bidirectional": true
+    },
+    {
+      "from": "11,0",
+      "to": "12,0",
+      "bidirectional": true
+    },
+    {
+      "from": "11,0",
+      "to": "11,1",
+      "bidirectional": true
+    },
+    {
+      "from": "12,0",
+      "to": "13,0",
+      "bidirectional": true
+    },
+    {
+      "from": "12,0",
+      "to": "12,1",
+      "bidirectional": true
+    },
+    {
+      "from": "13,0",
+      "to": "14,0",
+      "bidirectional": true
+    },
+    {
+      "from": "13,0",
+      "to": "13,1",
+      "bidirectional": true
+    },
+    {
+      "from": "14,0",
+      "to": "15,0",
+      "bidirectional": true
+    },
+    {
+      "from": "14,0",
+      "to": "14,1",
+      "bidirectional": true
+    },
+    {
+      "from": "15,0",
+      "to": "16,0",
+      "bidirectional": true
+    },
+    {
+      "from": "15,0",
+      "to": "15,1",
+      "bidirectional": true
+    },
+    {
+      "from": "16,0",
+      "to": "17,0",
+      "bidirectional": true
+    },
+    {
+      "from": "16,0",
+      "to": "16,1",
+      "bidirectional": true
+    },
+    {
+      "from": "17,0",
+      "to": "18,0",
+      "bidirectional": true
+    },
+    {
+      "from": "17,0",
+      "to": "17,1",
+      "bidirectional": true
+    },
+    {
+      "from": "18,0",
+      "to": "19,0",
+      "bidirectional": true
+    },
+    {
+      "from": "18,0",
+      "to": "18,1",
+      "bidirectional": true
+    },
+    {
+      "from": "19,0",
+      "to": "20,0",
+      "bidirectional": true
+    },
+    {
+      "from": "19,0",
+      "to": "19,1",
+      "bidirectional": true
+    },
+    {
+      "from": "20,0",
+      "to": "21,0",
+      "bidirectional": true
+    },
+    {
+      "from": "20,0",
+      "to": "20,1",
+      "bidirectional": true
+    },
+    {
+      "from": "21,0",
+      "to": "22,0",
+      "bidirectional": true
+    },
+    {
+      "from": "21,0",
+      "to": "21,1",
+      "bidirectional": true
+    },
+    {
+      "from": "22,0",
+      "to": "23,0",
+      "bidirectional": true
+    },
+    {
+      "from": "22,0",
+      "to": "22,1",
+      "bidirectional": true
+    },
+    {
+      "from": "23,0",
+      "to": "23,1",
+      "bidirectional": true
+    },
+    {
+      "from": "0,1",
+      "to": "1,1",
+      "bidirectional": true
+    },
+    {
+      "from": "0,1",
+      "to": "0,2",
+      "bidirectional": true
+    },
+    {
+      "from": "1,1",
+      "to": "2,1",
+      "bidirectional": true
+    },
+    {
+      "from": "1,1",
+      "to": "1,2",
+      "bidirectional": true
+    },
+    {
+      "from": "2,1",
+      "to": "3,1",
+      "bidirectional": true
+    },
+    {
+      "from": "3,1",
+      "to": "4,1",
+      "bidirectional": true
+    },
+    {
+      "from": "4,1",
+      "to": "5,1",
+      "bidirectional": true
+    },
+    {
+      "from": "4,1",
+      "to": "4,2",
+      "bidirectional": true
+    },
+    {
+      "from": "5,1",
+      "to": "6,1",
+      "bidirectional": true
+    },
+    {
+      "from": "6,1",
+      "to": "7,1",
+      "bidirectional": true
+    },
+    {
+      "from": "7,1",
+      "to": "8,1",
+      "bidirectional": true
+    },
+    {
+      "from": "7,1",
+      "to": "7,2",
+      "bidirectional": true
+    },
+    {
+      "from": "8,1",
+      "to": "9,1",
+      "bidirectional": true
+    },
+    {
+      "from": "9,1",
+      "to": "10,1",
+      "bidirectional": true
+    },
+    {
+      "from": "10,1",
+      "to": "11,1",
+      "bidirectional": true
+    },
+    {
+      "from": "10,1",
+      "to": "10,2",
+      "bidirectional": true
+    },
+    {
+      "from": "11,1",
+      "to": "12,1",
+      "bidirectional": true
+    },
+    {
+      "from": "12,1",
+      "to": "13,1",
+      "bidirectional": true
+    },
+    {
+      "from": "13,1",
+      "to": "14,1",
+      "bidirectional": true
+    },
+    {
+      "from": "13,1",
+      "to": "13,2",
+      "bidirectional": true
+    },
+    {
+      "from": "14,1",
+      "to": "15,1",
+      "bidirectional": true
+    },
+    {
+      "from": "15,1",
+      "to": "16,1",
+      "bidirectional": true
+    },
+    {
+      "from": "16,1",
+      "to": "17,1",
+      "bidirectional": true
+    },
+    {
+      "from": "16,1",
+      "to": "16,2",
+      "bidirectional": true
+    },
+    {
+      "from": "17,1",
+      "to": "18,1",
+      "bidirectional": true
+    },
+    {
+      "from": "18,1",
+      "to": "19,1",
+      "bidirectional": true
+    },
+    {
+      "from": "19,1",
+      "to": "20,1",
+      "bidirectional": true
+    },
+    {
+      "from": "19,1",
+      "to": "19,2",
+      "bidirectional": true
+    },
+    {
+      "from": "20,1",
+      "to": "21,1",
+      "bidirectional": true
+    },
+    {
+      "from": "21,1",
+      "to": "22,1",
+      "bidirectional": true
+    },
+    {
+      "from": "22,1",
+      "to": "23,1",
+      "bidirectional": true
+    },
+    {
+      "from": "22,1",
+      "to": "22,2",
+      "bidirectional": true
+    },
+    {
+      "from": "23,1",
+      "to": "23,2",
+      "bidirectional": true
+    },
+    {
+      "from": "0,2",
+      "to": "1,2",
+      "bidirectional": true
+    },
+    {
+      "from": "0,2",
+      "to": "0,3",
+      "bidirectional": true
+    },
+    {
+      "from": "1,2",
+      "to": "1,3",
+      "bidirectional": true
+    },
+    {
+      "from": "4,2",
+      "to": "4,3",
+      "bidirectional": true
+    },
+    {
+      "from": "7,2",
+      "to": "7,3",
+      "bidirectional": true
+    },
+    {
+      "from": "10,2",
+      "to": "10,3",
+      "bidirectional": true
+    },
+    {
+      "from": "13,2",
+      "to": "13,3",
+      "bidirectional": true
+    },
+    {
+      "from": "16,2",
+      "to": "16,3",
+      "bidirectional": true
+    },
+    {
+      "from": "19,2",
+      "to": "19,3",
+      "bidirectional": true
+    },
+    {
+      "from": "22,2",
+      "to": "23,2",
+      "bidirectional": true
+    },
+    {
+      "from": "22,2",
+      "to": "22,3",
+      "bidirectional": true
+    },
+    {
+      "from": "23,2",
+      "to": "23,3",
+      "bidirectional": true
+    },
+    {
+      "from": "0,3",
+      "to": "1,3",
+      "bidirectional": true
+    },
+    {
+      "from": "0,3",
+      "to": "0,4",
+      "bidirectional": true
+    },
+    {
+      "from": "1,3",
+      "to": "1,4",
+      "bidirectional": true
+    },
+    {
+      "from": "4,3",
+      "to": "4,4",
+      "bidirectional": true
+    },
+    {
+      "from": "7,3",
+      "to": "7,4",
+      "bidirectional": true
+    },
+    {
+      "from": "10,3",
+      "to": "10,4",
+      "bidirectional": true
+    },
+    {
+      "from": "13,3",
+      "to": "13,4",
+      "bidirectional": true
+    },
+    {
+      "from": "16,3",
+      "to": "16,4",
+      "bidirectional": true
+    },
+    {
+      "from": "19,3",
+      "to": "19,4",
+      "bidirectional": true
+    },
+    {
+      "from": "22,3",
+      "to": "23,3",
+      "bidirectional": true
+    },
+    {
+      "from": "22,3",
+      "to": "22,4",
+      "bidirectional": true
+    },
+    {
+      "from": "23,3",
+      "to": "23,4",
+      "bidirectional": true
+    },
+    {
+      "from": "0,4",
+      "to": "1,4",
+      "bidirectional": true
+    },
+    {
+      "from": "0,4",
+      "to": "0,5",
+      "bidirectional": true
+    },
+    {
+      "from": "1,4",
+      "to": "2,4",
+      "bidirectional": true
+    },
+    {
+      "from": "1,4",
+      "to": "1,5",
+      "bidirectional": true
+    },
+    {
+      "from": "2,4",
+      "to": "2,5",
+      "bidirectional": true
+    },
+    {
+      "from": "4,4",
+      "to": "4,5",
+      "bidirectional": true
+    },
+    {
+      "from": "7,4",
+      "to": "7,5",
+      "bidirectional": true
+    },
+    {
+      "from": "10,4",
+      "to": "10,5",
+      "bidirectional": true
+    },
+    {
+      "from": "13,4",
+      "to": "13,5",
+      "bidirectional": true
+    },
+    {
+      "from": "16,4",
+      "to": "16,5",
+      "bidirectional": true
+    },
+    {
+      "from": "19,4",
+      "to": "19,5",
+      "bidirectional": true
+    },
+    {
+      "from": "22,4",
+      "to": "23,4",
+      "bidirectional": true
+    },
+    {
+      "from": "22,4",
+      "to": "22,5",
+      "bidirectional": true
+    },
+    {
+      "from": "23,4",
+      "to": "23,5",
+      "bidirectional": true
+    },
+    {
+      "from": "0,5",
+      "to": "1,5",
+      "bidirectional": true
+    },
+    {
+      "from": "0,5",
+      "to": "0,6",
+      "bidirectional": true
+    },
+    {
+      "from": "1,5",
+      "to": "2,5",
+      "bidirectional": true
+    },
+    {
+      "from": "1,5",
+      "to": "1,6",
+      "bidirectional": true
+    },
+    {
+      "from": "2,5",
+      "to": "3,5",
+      "bidirectional": true
+    },
+    {
+      "from": "2,5",
+      "to": "2,6",
+      "bidirectional": true
+    },
+    {
+      "from": "3,5",
+      "to": "4,5",
+      "bidirectional": true
+    },
+    {
+      "from": "3,5",
+      "to": "3,6",
+      "bidirectional": true
+    },
+    {
+      "from": "4,5",
+      "to": "5,5",
+      "bidirectional": true
+    },
+    {
+      "from": "4,5",
+      "to": "4,6",
+      "bidirectional": true
+    },
+    {
+      "from": "5,5",
+      "to": "6,5",
+      "bidirectional": true
+    },
+    {
+      "from": "5,5",
+      "to": "5,6",
+      "bidirectional": true
+    },
+    {
+      "from": "6,5",
+      "to": "7,5",
+      "bidirectional": true
+    },
+    {
+      "from": "6,5",
+      "to": "6,6",
+      "bidirectional": true
+    },
+    {
+      "from": "7,5",
+      "to": "8,5",
+      "bidirectional": true
+    },
+    {
+      "from": "7,5",
+      "to": "7,6",
+      "bidirectional": true
+    },
+    {
+      "from": "8,5",
+      "to": "9,5",
+      "bidirectional": true
+    },
+    {
+      "from": "8,5",
+      "to": "8,6",
+      "bidirectional": true
+    },
+    {
+      "from": "9,5",
+      "to": "10,5",
+      "bidirectional": true
+    },
+    {
+      "from": "9,5",
+      "to": "9,6",
+      "bidirectional": true
+    },
+    {
+      "from": "10,5",
+      "to": "11,5",
+      "bidirectional": true
+    },
+    {
+      "from": "10,5",
+      "to": "10,6",
+      "bidirectional": true
+    },
+    {
+      "from": "11,5",
+      "to": "12,5",
+      "bidirectional": true
+    },
+    {
+      "from": "11,5",
+      "to": "11,6",
+      "bidirectional": true
+    },
+    {
+      "from": "12,5",
+      "to": "13,5",
+      "bidirectional": true
+    },
+    {
+      "from": "12,5",
+      "to": "12,6",
+      "bidirectional": true
+    },
+    {
+      "from": "13,5",
+      "to": "14,5",
+      "bidirectional": true
+    },
+    {
+      "from": "13,5",
+      "to": "13,6",
+      "bidirectional": true
+    },
+    {
+      "from": "14,5",
+      "to": "15,5",
+      "bidirectional": true
+    },
+    {
+      "from": "14,5",
+      "to": "14,6",
+      "bidirectional": true
+    },
+    {
+      "from": "15,5",
+      "to": "16,5",
+      "bidirectional": true
+    },
+    {
+      "from": "15,5",
+      "to": "15,6",
+      "bidirectional": true
+    },
+    {
+      "from": "16,5",
+      "to": "17,5",
+      "bidirectional": true
+    },
+    {
+      "from": "16,5",
+      "to": "16,6",
+      "bidirectional": true
+    },
+    {
+      "from": "17,5",
+      "to": "18,5",
+      "bidirectional": true
+    },
+    {
+      "from": "17,5",
+      "to": "17,6",
+      "bidirectional": true
+    },
+    {
+      "from": "18,5",
+      "to": "19,5",
+      "bidirectional": true
+    },
+    {
+      "from": "18,5",
+      "to": "18,6",
+      "bidirectional": true
+    },
+    {
+      "from": "19,5",
+      "to": "20,5",
+      "bidirectional": true
+    },
+    {
+      "from": "19,5",
+      "to": "19,6",
+      "bidirectional": true
+    },
+    {
+      "from": "20,5",
+      "to": "21,5",
+      "bidirectional": true
+    },
+    {
+      "from": "20,5",
+      "to": "20,6",
+      "bidirectional": true
+    },
+    {
+      "from": "21,5",
+      "to": "22,5",
+      "bidirectional": true
+    },
+    {
+      "from": "21,5",
+      "to": "21,6",
+      "bidirectional": true
+    },
+    {
+      "from": "22,5",
+      "to": "23,5",
+      "bidirectional": true
+    },
+    {
+      "from": "22,5",
+      "to": "22,6",
+      "bidirectional": true
+    },
+    {
+      "from": "23,5",
+      "to": "23,6",
+      "bidirectional": true
+    },
+    {
+      "from": "0,6",
+      "to": "1,6",
+      "bidirectional": true
+    },
+    {
+      "from": "0,6",
+      "to": "0,7",
+      "bidirectional": true
+    },
+    {
+      "from": "1,6",
+      "to": "2,6",
+      "bidirectional": true
+    },
+    {
+      "from": "1,6",
+      "to": "1,7",
+      "bidirectional": true
+    },
+    {
+      "from": "2,6",
+      "to": "3,6",
+      "bidirectional": true
+    },
+    {
+      "from": "2,6",
+      "to": "2,7",
+      "bidirectional": true
+    },
+    {
+      "from": "3,6",
+      "to": "4,6",
+      "bidirectional": true
+    },
+    {
+      "from": "3,6",
+      "to": "3,7",
+      "bidirectional": true
+    },
+    {
+      "from": "4,6",
+      "to": "5,6",
+      "bidirectional": true
+    },
+    {
+      "from": "4,6",
+      "to": "4,7",
+      "bidirectional": true
+    },
+    {
+      "from": "5,6",
+      "to": "6,6",
+      "bidirectional": true
+    },
+    {
+      "from": "5,6",
+      "to": "5,7",
+      "bidirectional": true
+    },
+    {
+      "from": "6,6",
+      "to": "7,6",
+      "bidirectional": true
+    },
+    {
+      "from": "6,6",
+      "to": "6,7",
+      "bidirectional": true
+    },
+    {
+      "from": "7,6",
+      "to": "8,6",
+      "bidirectional": true
+    },
+    {
+      "from": "7,6",
+      "to": "7,7",
+      "bidirectional": true
+    },
+    {
+      "from": "8,6",
+      "to": "9,6",
+      "bidirectional": true
+    },
+    {
+      "from": "8,6",
+      "to": "8,7",
+      "bidirectional": true
+    },
+    {
+      "from": "9,6",
+      "to": "10,6",
+      "bidirectional": true
+    },
+    {
+      "from": "9,6",
+      "to": "9,7",
+      "bidirectional": true
+    },
+    {
+      "from": "10,6",
+      "to": "11,6",
+      "bidirectional": true
+    },
+    {
+      "from": "10,6",
+      "to": "10,7",
+      "bidirectional": true
+    },
+    {
+      "from": "11,6",
+      "to": "12,6",
+      "bidirectional": true
+    },
+    {
+      "from": "11,6",
+      "to": "11,7",
+      "bidirectional": true
+    },
+    {
+      "from": "12,6",
+      "to": "13,6",
+      "bidirectional": true
+    },
+    {
+      "from": "12,6",
+      "to": "12,7",
+      "bidirectional": true
+    },
+    {
+      "from": "13,6",
+      "to": "14,6",
+      "bidirectional": true
+    },
+    {
+      "from": "13,6",
+      "to": "13,7",
+      "bidirectional": true
+    },
+    {
+      "from": "14,6",
+      "to": "15,6",
+      "bidirectional": true
+    },
+    {
+      "from": "14,6",
+      "to": "14,7",
+      "bidirectional": true
+    },
+    {
+      "from": "15,6",
+      "to": "16,6",
+      "bidirectional": true
+    },
+    {
+      "from": "15,6",
+      "to": "15,7",
+      "bidirectional": true
+    },
+    {
+      "from": "16,6",
+      "to": "17,6",
+      "bidirectional": true
+    },
+    {
+      "from": "16,6",
+      "to": "16,7",
+      "bidirectional": true
+    },
+    {
+      "from": "17,6",
+      "to": "18,6",
+      "bidirectional": true
+    },
+    {
+      "from": "17,6",
+      "to": "17,7",
+      "bidirectional": true
+    },
+    {
+      "from": "18,6",
+      "to": "19,6",
+      "bidirectional": true
+    },
+    {
+      "from": "18,6",
+      "to": "18,7",
+      "bidirectional": true
+    },
+    {
+      "from": "19,6",
+      "to": "20,6",
+      "bidirectional": true
+    },
+    {
+      "from": "19,6",
+      "to": "19,7",
+      "bidirectional": true
+    },
+    {
+      "from": "20,6",
+      "to": "21,6",
+      "bidirectional": true
+    },
+    {
+      "from": "20,6",
+      "to": "20,7",
+      "bidirectional": true
+    },
+    {
+      "from": "21,6",
+      "to": "22,6",
+      "bidirectional": true
+    },
+    {
+      "from": "21,6",
+      "to": "21,7",
+      "bidirectional": true
+    },
+    {
+      "from": "22,6",
+      "to": "23,6",
+      "bidirectional": true
+    },
+    {
+      "from": "22,6",
+      "to": "22,7",
+      "bidirectional": true
+    },
+    {
+      "from": "23,6",
+      "to": "23,7",
+      "bidirectional": true
+    },
+    {
+      "from": "0,7",
+      "to": "1,7",
+      "bidirectional": true
+    },
+    {
+      "from": "0,7",
+      "to": "0,8",
+      "bidirectional": true
+    },
+    {
+      "from": "1,7",
+      "to": "2,7",
+      "bidirectional": true
+    },
+    {
+      "from": "1,7",
+      "to": "1,8",
+      "bidirectional": true
+    },
+    {
+      "from": "2,7",
+      "to": "3,7",
+      "bidirectional": true
+    },
+    {
+      "from": "3,7",
+      "to": "4,7",
+      "bidirectional": true
+    },
+    {
+      "from": "4,7",
+      "to": "5,7",
+      "bidirectional": true
+    },
+    {
+      "from": "4,7",
+      "to": "4,8",
+      "bidirectional": true
+    },
+    {
+      "from": "5,7",
+      "to": "6,7",
+      "bidirectional": true
+    },
+    {
+      "from": "6,7",
+      "to": "7,7",
+      "bidirectional": true
+    },
+    {
+      "from": "7,7",
+      "to": "8,7",
+      "bidirectional": true
+    },
+    {
+      "from": "7,7",
+      "to": "7,8",
+      "bidirectional": true
+    },
+    {
+      "from": "8,7",
+      "to": "9,7",
+      "bidirectional": true
+    },
+    {
+      "from": "9,7",
+      "to": "10,7",
+      "bidirectional": true
+    },
+    {
+      "from": "10,7",
+      "to": "11,7",
+      "bidirectional": true
+    },
+    {
+      "from": "10,7",
+      "to": "10,8",
+      "bidirectional": true
+    },
+    {
+      "from": "11,7",
+      "to": "12,7",
+      "bidirectional": true
+    },
+    {
+      "from": "12,7",
+      "to": "13,7",
+      "bidirectional": true
+    },
+    {
+      "from": "13,7",
+      "to": "14,7",
+      "bidirectional": true
+    },
+    {
+      "from": "13,7",
+      "to": "13,8",
+      "bidirectional": true
+    },
+    {
+      "from": "14,7",
+      "to": "15,7",
+      "bidirectional": true
+    },
+    {
+      "from": "15,7",
+      "to": "16,7",
+      "bidirectional": true
+    },
+    {
+      "from": "16,7",
+      "to": "17,7",
+      "bidirectional": true
+    },
+    {
+      "from": "16,7",
+      "to": "16,8",
+      "bidirectional": true
+    },
+    {
+      "from": "17,7",
+      "to": "18,7",
+      "bidirectional": true
+    },
+    {
+      "from": "18,7",
+      "to": "19,7",
+      "bidirectional": true
+    },
+    {
+      "from": "19,7",
+      "to": "20,7",
+      "bidirectional": true
+    },
+    {
+      "from": "19,7",
+      "to": "19,8",
+      "bidirectional": true
+    },
+    {
+      "from": "20,7",
+      "to": "21,7",
+      "bidirectional": true
+    },
+    {
+      "from": "21,7",
+      "to": "22,7",
+      "bidirectional": true
+    },
+    {
+      "from": "22,7",
+      "to": "23,7",
+      "bidirectional": true
+    },
+    {
+      "from": "22,7",
+      "to": "22,8",
+      "bidirectional": true
+    },
+    {
+      "from": "23,7",
+      "to": "23,8",
+      "bidirectional": true
+    },
+    {
+      "from": "0,8",
+      "to": "1,8",
+      "bidirectional": true
+    },
+    {
+      "from": "0,8",
+      "to": "0,9",
+      "bidirectional": true
+    },
+    {
+      "from": "1,8",
+      "to": "1,9",
+      "bidirectional": true
+    },
+    {
+      "from": "4,8",
+      "to": "4,9",
+      "bidirectional": true
+    },
+    {
+      "from": "7,8",
+      "to": "7,9",
+      "bidirectional": true
+    },
+    {
+      "from": "10,8",
+      "to": "10,9",
+      "bidirectional": true
+    },
+    {
+      "from": "13,8",
+      "to": "13,9",
+      "bidirectional": true
+    },
+    {
+      "from": "16,8",
+      "to": "16,9",
+      "bidirectional": true
+    },
+    {
+      "from": "19,8",
+      "to": "19,9",
+      "bidirectional": true
+    },
+    {
+      "from": "22,8",
+      "to": "23,8",
+      "bidirectional": true
+    },
+    {
+      "from": "22,8",
+      "to": "22,9",
+      "bidirectional": true
+    },
+    {
+      "from": "23,8",
+      "to": "23,9",
+      "bidirectional": true
+    },
+    {
+      "from": "0,9",
+      "to": "1,9",
+      "bidirectional": true
+    },
+    {
+      "from": "0,9",
+      "to": "0,10",
+      "bidirectional": true
+    },
+    {
+      "from": "1,9",
+      "to": "1,10",
+      "bidirectional": true
+    },
+    {
+      "from": "4,9",
+      "to": "4,10",
+      "bidirectional": true
+    },
+    {
+      "from": "7,9",
+      "to": "7,10",
+      "bidirectional": true
+    },
+    {
+      "from": "10,9",
+      "to": "10,10",
+      "bidirectional": true
+    },
+    {
+      "from": "13,9",
+      "to": "13,10",
+      "bidirectional": true
+    },
+    {
+      "from": "16,9",
+      "to": "16,10",
+      "bidirectional": true
+    },
+    {
+      "from": "19,9",
+      "to": "19,10",
+      "bidirectional": true
+    },
+    {
+      "from": "22,9",
+      "to": "23,9",
+      "bidirectional": true
+    },
+    {
+      "from": "22,9",
+      "to": "22,10",
+      "bidirectional": true
+    },
+    {
+      "from": "23,9",
+      "to": "23,10",
+      "bidirectional": true
+    },
+    {
+      "from": "0,10",
+      "to": "1,10",
+      "bidirectional": true
+    },
+    {
+      "from": "0,10",
+      "to": "0,11",
+      "bidirectional": true
+    },
+    {
+      "from": "1,10",
+      "to": "2,10",
+      "bidirectional": true
+    },
+    {
+      "from": "1,10",
+      "to": "1,11",
+      "bidirectional": true
+    },
+    {
+      "from": "2,10",
+      "to": "2,11",
+      "bidirectional": true
+    },
+    {
+      "from": "4,10",
+      "to": "4,11",
+      "bidirectional": true
+    },
+    {
+      "from": "7,10",
+      "to": "7,11",
+      "bidirectional": true
+    },
+    {
+      "from": "10,10",
+      "to": "10,11",
+      "bidirectional": true
+    },
+    {
+      "from": "13,10",
+      "to": "13,11",
+      "bidirectional": true
+    },
+    {
+      "from": "16,10",
+      "to": "16,11",
+      "bidirectional": true
+    },
+    {
+      "from": "19,10",
+      "to": "19,11",
+      "bidirectional": true
+    },
+    {
+      "from": "22,10",
+      "to": "23,10",
+      "bidirectional": true
+    },
+    {
+      "from": "22,10",
+      "to": "22,11",
+      "bidirectional": true
+    },
+    {
+      "from": "23,10",
+      "to": "23,11",
+      "bidirectional": true
+    },
+    {
+      "from": "0,11",
+      "to": "1,11",
+      "bidirectional": true
+    },
+    {
+      "from": "0,11",
+      "to": "0,12",
+      "bidirectional": true
+    },
+    {
+      "from": "1,11",
+      "to": "2,11",
+      "bidirectional": true
+    },
+    {
+      "from": "1,11",
+      "to": "1,12",
+      "bidirectional": true
+    },
+    {
+      "from": "2,11",
+      "to": "3,11",
+      "bidirectional": true
+    },
+    {
+      "from": "2,11",
+      "to": "2,12",
+      "bidirectional": true
+    },
+    {
+      "from": "3,11",
+      "to": "4,11",
+      "bidirectional": true
+    },
+    {
+      "from": "3,11",
+      "to": "3,12",
+      "bidirectional": true
+    },
+    {
+      "from": "4,11",
+      "to": "5,11",
+      "bidirectional": true
+    },
+    {
+      "from": "4,11",
+      "to": "4,12",
+      "bidirectional": true
+    },
+    {
+      "from": "5,11",
+      "to": "6,11",
+      "bidirectional": true
+    },
+    {
+      "from": "5,11",
+      "to": "5,12",
+      "bidirectional": true
+    },
+    {
+      "from": "6,11",
+      "to": "7,11",
+      "bidirectional": true
+    },
+    {
+      "from": "6,11",
+      "to": "6,12",
+      "bidirectional": true
+    },
+    {
+      "from": "7,11",
+      "to": "8,11",
+      "bidirectional": true
+    },
+    {
+      "from": "7,11",
+      "to": "7,12",
+      "bidirectional": true
+    },
+    {
+      "from": "8,11",
+      "to": "9,11",
+      "bidirectional": true
+    },
+    {
+      "from": "8,11",
+      "to": "8,12",
+      "bidirectional": true
+    },
+    {
+      "from": "9,11",
+      "to": "10,11",
+      "bidirectional": true
+    },
+    {
+      "from": "9,11",
+      "to": "9,12",
+      "bidirectional": true
+    },
+    {
+      "from": "10,11",
+      "to": "11,11",
+      "bidirectional": true
+    },
+    {
+      "from": "10,11",
+      "to": "10,12",
+      "bidirectional": true
+    },
+    {
+      "from": "11,11",
+      "to": "12,11",
+      "bidirectional": true
+    },
+    {
+      "from": "11,11",
+      "to": "11,12",
+      "bidirectional": true
+    },
+    {
+      "from": "12,11",
+      "to": "13,11",
+      "bidirectional": true
+    },
+    {
+      "from": "12,11",
+      "to": "12,12",
+      "bidirectional": true
+    },
+    {
+      "from": "13,11",
+      "to": "14,11",
+      "bidirectional": true
+    },
+    {
+      "from": "13,11",
+      "to": "13,12",
+      "bidirectional": true
+    },
+    {
+      "from": "14,11",
+      "to": "15,11",
+      "bidirectional": true
+    },
+    {
+      "from": "14,11",
+      "to": "14,12",
+      "bidirectional": true
+    },
+    {
+      "from": "15,11",
+      "to": "16,11",
+      "bidirectional": true
+    },
+    {
+      "from": "15,11",
+      "to": "15,12",
+      "bidirectional": true
+    },
+    {
+      "from": "16,11",
+      "to": "17,11",
+      "bidirectional": true
+    },
+    {
+      "from": "16,11",
+      "to": "16,12",
+      "bidirectional": true
+    },
+    {
+      "from": "17,11",
+      "to": "18,11",
+      "bidirectional": true
+    },
+    {
+      "from": "17,11",
+      "to": "17,12",
+      "bidirectional": true
+    },
+    {
+      "from": "18,11",
+      "to": "19,11",
+      "bidirectional": true
+    },
+    {
+      "from": "18,11",
+      "to": "18,12",
+      "bidirectional": true
+    },
+    {
+      "from": "19,11",
+      "to": "20,11",
+      "bidirectional": true
+    },
+    {
+      "from": "19,11",
+      "to": "19,12",
+      "bidirectional": true
+    },
+    {
+      "from": "20,11",
+      "to": "21,11",
+      "bidirectional": true
+    },
+    {
+      "from": "20,11",
+      "to": "20,12",
+      "bidirectional": true
+    },
+    {
+      "from": "21,11",
+      "to": "22,11",
+      "bidirectional": true
+    },
+    {
+      "from": "21,11",
+      "to": "21,12",
+      "bidirectional": true
+    },
+    {
+      "from": "22,11",
+      "to": "23,11",
+      "bidirectional": true
+    },
+    {
+      "from": "22,11",
+      "to": "22,12",
+      "bidirectional": true
+    },
+    {
+      "from": "23,11",
+      "to": "23,12",
+      "bidirectional": true
+    },
+    {
+      "from": "0,12",
+      "to": "1,12",
+      "bidirectional": true
+    },
+    {
+      "from": "0,12",
+      "to": "0,13",
+      "bidirectional": true
+    },
+    {
+      "from": "1,12",
+      "to": "2,12",
+      "bidirectional": true
+    },
+    {
+      "from": "1,12",
+      "to": "1,13",
+      "bidirectional": true
+    },
+    {
+      "from": "2,12",
+      "to": "3,12",
+      "bidirectional": true
+    },
+    {
+      "from": "2,12",
+      "to": "2,13",
+      "bidirectional": true
+    },
+    {
+      "from": "3,12",
+      "to": "4,12",
+      "bidirectional": true
+    },
+    {
+      "from": "3,12",
+      "to": "3,13",
+      "bidirectional": true
+    },
+    {
+      "from": "4,12",
+      "to": "5,12",
+      "bidirectional": true
+    },
+    {
+      "from": "4,12",
+      "to": "4,13",
+      "bidirectional": true
+    },
+    {
+      "from": "5,12",
+      "to": "6,12",
+      "bidirectional": true
+    },
+    {
+      "from": "5,12",
+      "to": "5,13",
+      "bidirectional": true
+    },
+    {
+      "from": "6,12",
+      "to": "7,12",
+      "bidirectional": true
+    },
+    {
+      "from": "6,12",
+      "to": "6,13",
+      "bidirectional": true
+    },
+    {
+      "from": "7,12",
+      "to": "8,12",
+      "bidirectional": true
+    },
+    {
+      "from": "7,12",
+      "to": "7,13",
+      "bidirectional": true
+    },
+    {
+      "from": "8,12",
+      "to": "9,12",
+      "bidirectional": true
+    },
+    {
+      "from": "8,12",
+      "to": "8,13",
+      "bidirectional": true
+    },
+    {
+      "from": "9,12",
+      "to": "10,12",
+      "bidirectional": true
+    },
+    {
+      "from": "9,12",
+      "to": "9,13",
+      "bidirectional": true
+    },
+    {
+      "from": "10,12",
+      "to": "11,12",
+      "bidirectional": true
+    },
+    {
+      "from": "10,12",
+      "to": "10,13",
+      "bidirectional": true
+    },
+    {
+      "from": "11,12",
+      "to": "12,12",
+      "bidirectional": true
+    },
+    {
+      "from": "11,12",
+      "to": "11,13",
+      "bidirectional": true
+    },
+    {
+      "from": "12,12",
+      "to": "13,12",
+      "bidirectional": true
+    },
+    {
+      "from": "12,12",
+      "to": "12,13",
+      "bidirectional": true
+    },
+    {
+      "from": "13,12",
+      "to": "14,12",
+      "bidirectional": true
+    },
+    {
+      "from": "13,12",
+      "to": "13,13",
+      "bidirectional": true
+    },
+    {
+      "from": "14,12",
+      "to": "15,12",
+      "bidirectional": true
+    },
+    {
+      "from": "14,12",
+      "to": "14,13",
+      "bidirectional": true
+    },
+    {
+      "from": "15,12",
+      "to": "16,12",
+      "bidirectional": true
+    },
+    {
+      "from": "15,12",
+      "to": "15,13",
+      "bidirectional": true
+    },
+    {
+      "from": "16,12",
+      "to": "17,12",
+      "bidirectional": true
+    },
+    {
+      "from": "16,12",
+      "to": "16,13",
+      "bidirectional": true
+    },
+    {
+      "from": "17,12",
+      "to": "18,12",
+      "bidirectional": true
+    },
+    {
+      "from": "17,12",
+      "to": "17,13",
+      "bidirectional": true
+    },
+    {
+      "from": "18,12",
+      "to": "19,12",
+      "bidirectional": true
+    },
+    {
+      "from": "18,12",
+      "to": "18,13",
+      "bidirectional": true
+    },
+    {
+      "from": "19,12",
+      "to": "20,12",
+      "bidirectional": true
+    },
+    {
+      "from": "19,12",
+      "to": "19,13",
+      "bidirectional": true
+    },
+    {
+      "from": "20,12",
+      "to": "21,12",
+      "bidirectional": true
+    },
+    {
+      "from": "20,12",
+      "to": "20,13",
+      "bidirectional": true
+    },
+    {
+      "from": "21,12",
+      "to": "22,12",
+      "bidirectional": true
+    },
+    {
+      "from": "21,12",
+      "to": "21,13",
+      "bidirectional": true
+    },
+    {
+      "from": "22,12",
+      "to": "23,12",
+      "bidirectional": true
+    },
+    {
+      "from": "22,12",
+      "to": "22,13",
+      "bidirectional": true
+    },
+    {
+      "from": "23,12",
+      "to": "23,13",
+      "bidirectional": true
+    },
+    {
+      "from": "0,13",
+      "to": "1,13",
+      "bidirectional": true
+    },
+    {
+      "from": "0,13",
+      "to": "0,14",
+      "bidirectional": true
+    },
+    {
+      "from": "1,13",
+      "to": "2,13",
+      "bidirectional": true
+    },
+    {
+      "from": "1,13",
+      "to": "1,14",
+      "bidirectional": true
+    },
+    {
+      "from": "2,13",
+      "to": "3,13",
+      "bidirectional": true
+    },
+    {
+      "from": "3,13",
+      "to": "4,13",
+      "bidirectional": true
+    },
+    {
+      "from": "4,13",
+      "to": "5,13",
+      "bidirectional": true
+    },
+    {
+      "from": "4,13",
+      "to": "4,14",
+      "bidirectional": true
+    },
+    {
+      "from": "5,13",
+      "to": "6,13",
+      "bidirectional": true
+    },
+    {
+      "from": "6,13",
+      "to": "7,13",
+      "bidirectional": true
+    },
+    {
+      "from": "7,13",
+      "to": "8,13",
+      "bidirectional": true
+    },
+    {
+      "from": "7,13",
+      "to": "7,14",
+      "bidirectional": true
+    },
+    {
+      "from": "8,13",
+      "to": "9,13",
+      "bidirectional": true
+    },
+    {
+      "from": "9,13",
+      "to": "10,13",
+      "bidirectional": true
+    },
+    {
+      "from": "10,13",
+      "to": "11,13",
+      "bidirectional": true
+    },
+    {
+      "from": "10,13",
+      "to": "10,14",
+      "bidirectional": true
+    },
+    {
+      "from": "11,13",
+      "to": "12,13",
+      "bidirectional": true
+    },
+    {
+      "from": "12,13",
+      "to": "13,13",
+      "bidirectional": true
+    },
+    {
+      "from": "13,13",
+      "to": "14,13",
+      "bidirectional": true
+    },
+    {
+      "from": "13,13",
+      "to": "13,14",
+      "bidirectional": true
+    },
+    {
+      "from": "14,13",
+      "to": "15,13",
+      "bidirectional": true
+    },
+    {
+      "from": "15,13",
+      "to": "16,13",
+      "bidirectional": true
+    },
+    {
+      "from": "16,13",
+      "to": "17,13",
+      "bidirectional": true
+    },
+    {
+      "from": "16,13",
+      "to": "16,14",
+      "bidirectional": true
+    },
+    {
+      "from": "17,13",
+      "to": "18,13",
+      "bidirectional": true
+    },
+    {
+      "from": "18,13",
+      "to": "19,13",
+      "bidirectional": true
+    },
+    {
+      "from": "19,13",
+      "to": "20,13",
+      "bidirectional": true
+    },
+    {
+      "from": "19,13",
+      "to": "19,14",
+      "bidirectional": true
+    },
+    {
+      "from": "20,13",
+      "to": "21,13",
+      "bidirectional": true
+    },
+    {
+      "from": "21,13",
+      "to": "22,13",
+      "bidirectional": true
+    },
+    {
+      "from": "22,13",
+      "to": "23,13",
+      "bidirectional": true
+    },
+    {
+      "from": "22,13",
+      "to": "22,14",
+      "bidirectional": true
+    },
+    {
+      "from": "23,13",
+      "to": "23,14",
+      "bidirectional": true
+    },
+    {
+      "from": "0,14",
+      "to": "1,14",
+      "bidirectional": true
+    },
+    {
+      "from": "0,14",
+      "to": "0,15",
+      "bidirectional": true
+    },
+    {
+      "from": "1,14",
+      "to": "1,15",
+      "bidirectional": true
+    },
+    {
+      "from": "4,14",
+      "to": "4,15",
+      "bidirectional": true
+    },
+    {
+      "from": "7,14",
+      "to": "7,15",
+      "bidirectional": true
+    },
+    {
+      "from": "10,14",
+      "to": "10,15",
+      "bidirectional": true
+    },
+    {
+      "from": "13,14",
+      "to": "13,15",
+      "bidirectional": true
+    },
+    {
+      "from": "16,14",
+      "to": "16,15",
+      "bidirectional": true
+    },
+    {
+      "from": "19,14",
+      "to": "19,15",
+      "bidirectional": true
+    },
+    {
+      "from": "22,14",
+      "to": "23,14",
+      "bidirectional": true
+    },
+    {
+      "from": "22,14",
+      "to": "22,15",
+      "bidirectional": true
+    },
+    {
+      "from": "23,14",
+      "to": "23,15",
+      "bidirectional": true
+    },
+    {
+      "from": "0,15",
+      "to": "1,15",
+      "bidirectional": true
+    },
+    {
+      "from": "0,15",
+      "to": "0,16",
+      "bidirectional": true
+    },
+    {
+      "from": "1,15",
+      "to": "1,16",
+      "bidirectional": true
+    },
+    {
+      "from": "4,15",
+      "to": "4,16",
+      "bidirectional": true
+    },
+    {
+      "from": "7,15",
+      "to": "7,16",
+      "bidirectional": true
+    },
+    {
+      "from": "10,15",
+      "to": "10,16",
+      "bidirectional": true
+    },
+    {
+      "from": "13,15",
+      "to": "13,16",
+      "bidirectional": true
+    },
+    {
+      "from": "16,15",
+      "to": "16,16",
+      "bidirectional": true
+    },
+    {
+      "from": "19,15",
+      "to": "19,16",
+      "bidirectional": true
+    },
+    {
+      "from": "22,15",
+      "to": "23,15",
+      "bidirectional": true
+    },
+    {
+      "from": "22,15",
+      "to": "22,16",
+      "bidirectional": true
+    },
+    {
+      "from": "23,15",
+      "to": "23,16",
+      "bidirectional": true
+    },
+    {
+      "from": "0,16",
+      "to": "1,16",
+      "bidirectional": true
+    },
+    {
+      "from": "0,16",
+      "to": "0,17",
+      "bidirectional": true
+    },
+    {
+      "from": "1,16",
+      "to": "2,16",
+      "bidirectional": true
+    },
+    {
+      "from": "1,16",
+      "to": "1,17",
+      "bidirectional": true
+    },
+    {
+      "from": "2,16",
+      "to": "2,17",
+      "bidirectional": true
+    },
+    {
+      "from": "4,16",
+      "to": "4,17",
+      "bidirectional": true
+    },
+    {
+      "from": "7,16",
+      "to": "7,17",
+      "bidirectional": true
+    },
+    {
+      "from": "10,16",
+      "to": "10,17",
+      "bidirectional": true
+    },
+    {
+      "from": "13,16",
+      "to": "13,17",
+      "bidirectional": true
+    },
+    {
+      "from": "16,16",
+      "to": "16,17",
+      "bidirectional": true
+    },
+    {
+      "from": "19,16",
+      "to": "19,17",
+      "bidirectional": true
+    },
+    {
+      "from": "22,16",
+      "to": "23,16",
+      "bidirectional": true
+    },
+    {
+      "from": "22,16",
+      "to": "22,17",
+      "bidirectional": true
+    },
+    {
+      "from": "23,16",
+      "to": "23,17",
+      "bidirectional": true
+    },
+    {
+      "from": "0,17",
+      "to": "1,17",
+      "bidirectional": true
+    },
+    {
+      "from": "0,17",
+      "to": "0,18",
+      "bidirectional": true
+    },
+    {
+      "from": "1,17",
+      "to": "2,17",
+      "bidirectional": true
+    },
+    {
+      "from": "1,17",
+      "to": "1,18",
+      "bidirectional": true
+    },
+    {
+      "from": "2,17",
+      "to": "3,17",
+      "bidirectional": true
+    },
+    {
+      "from": "2,17",
+      "to": "2,18",
+      "bidirectional": true
+    },
+    {
+      "from": "3,17",
+      "to": "4,17",
+      "bidirectional": true
+    },
+    {
+      "from": "3,17",
+      "to": "3,18",
+      "bidirectional": true
+    },
+    {
+      "from": "4,17",
+      "to": "5,17",
+      "bidirectional": true
+    },
+    {
+      "from": "4,17",
+      "to": "4,18",
+      "bidirectional": true
+    },
+    {
+      "from": "5,17",
+      "to": "6,17",
+      "bidirectional": true
+    },
+    {
+      "from": "5,17",
+      "to": "5,18",
+      "bidirectional": true
+    },
+    {
+      "from": "6,17",
+      "to": "7,17",
+      "bidirectional": true
+    },
+    {
+      "from": "6,17",
+      "to": "6,18",
+      "bidirectional": true
+    },
+    {
+      "from": "7,17",
+      "to": "8,17",
+      "bidirectional": true
+    },
+    {
+      "from": "7,17",
+      "to": "7,18",
+      "bidirectional": true
+    },
+    {
+      "from": "8,17",
+      "to": "9,17",
+      "bidirectional": true
+    },
+    {
+      "from": "8,17",
+      "to": "8,18",
+      "bidirectional": true
+    },
+    {
+      "from": "9,17",
+      "to": "10,17",
+      "bidirectional": true
+    },
+    {
+      "from": "9,17",
+      "to": "9,18",
+      "bidirectional": true
+    },
+    {
+      "from": "10,17",
+      "to": "11,17",
+      "bidirectional": true
+    },
+    {
+      "from": "10,17",
+      "to": "10,18",
+      "bidirectional": true
+    },
+    {
+      "from": "11,17",
+      "to": "12,17",
+      "bidirectional": true
+    },
+    {
+      "from": "11,17",
+      "to": "11,18",
+      "bidirectional": true
+    },
+    {
+      "from": "12,17",
+      "to": "13,17",
+      "bidirectional": true
+    },
+    {
+      "from": "12,17",
+      "to": "12,18",
+      "bidirectional": true
+    },
+    {
+      "from": "13,17",
+      "to": "14,17",
+      "bidirectional": true
+    },
+    {
+      "from": "13,17",
+      "to": "13,18",
+      "bidirectional": true
+    },
+    {
+      "from": "14,17",
+      "to": "15,17",
+      "bidirectional": true
+    },
+    {
+      "from": "14,17",
+      "to": "14,18",
+      "bidirectional": true
+    },
+    {
+      "from": "15,17",
+      "to": "16,17",
+      "bidirectional": true
+    },
+    {
+      "from": "15,17",
+      "to": "15,18",
+      "bidirectional": true
+    },
+    {
+      "from": "16,17",
+      "to": "17,17",
+      "bidirectional": true
+    },
+    {
+      "from": "16,17",
+      "to": "16,18",
+      "bidirectional": true
+    },
+    {
+      "from": "17,17",
+      "to": "18,17",
+      "bidirectional": true
+    },
+    {
+      "from": "17,17",
+      "to": "17,18",
+      "bidirectional": true
+    },
+    {
+      "from": "18,17",
+      "to": "19,17",
+      "bidirectional": true
+    },
+    {
+      "from": "18,17",
+      "to": "18,18",
+      "bidirectional": true
+    },
+    {
+      "from": "19,17",
+      "to": "20,17",
+      "bidirectional": true
+    },
+    {
+      "from": "19,17",
+      "to": "19,18",
+      "bidirectional": true
+    },
+    {
+      "from": "20,17",
+      "to": "21,17",
+      "bidirectional": true
+    },
+    {
+      "from": "20,17",
+      "to": "20,18",
+      "bidirectional": true
+    },
+    {
+      "from": "21,17",
+      "to": "22,17",
+      "bidirectional": true
+    },
+    {
+      "from": "21,17",
+      "to": "21,18",
+      "bidirectional": true
+    },
+    {
+      "from": "22,17",
+      "to": "23,17",
+      "bidirectional": true
+    },
+    {
+      "from": "22,17",
+      "to": "22,18",
+      "bidirectional": true
+    },
+    {
+      "from": "23,17",
+      "to": "23,18",
+      "bidirectional": true
+    },
+    {
+      "from": "0,18",
+      "to": "1,18",
+      "bidirectional": true
+    },
+    {
+      "from": "0,18",
+      "to": "0,19",
+      "bidirectional": true
+    },
+    {
+      "from": "1,18",
+      "to": "2,18",
+      "bidirectional": true
+    },
+    {
+      "from": "1,18",
+      "to": "1,19",
+      "bidirectional": true
+    },
+    {
+      "from": "2,18",
+      "to": "3,18",
+      "bidirectional": true
+    },
+    {
+      "from": "2,18",
+      "to": "2,19",
+      "bidirectional": true
+    },
+    {
+      "from": "3,18",
+      "to": "4,18",
+      "bidirectional": true
+    },
+    {
+      "from": "3,18",
+      "to": "3,19",
+      "bidirectional": true
+    },
+    {
+      "from": "4,18",
+      "to": "5,18",
+      "bidirectional": true
+    },
+    {
+      "from": "4,18",
+      "to": "4,19",
+      "bidirectional": true
+    },
+    {
+      "from": "5,18",
+      "to": "6,18",
+      "bidirectional": true
+    },
+    {
+      "from": "5,18",
+      "to": "5,19",
+      "bidirectional": true
+    },
+    {
+      "from": "6,18",
+      "to": "7,18",
+      "bidirectional": true
+    },
+    {
+      "from": "6,18",
+      "to": "6,19",
+      "bidirectional": true
+    },
+    {
+      "from": "7,18",
+      "to": "8,18",
+      "bidirectional": true
+    },
+    {
+      "from": "7,18",
+      "to": "7,19",
+      "bidirectional": true
+    },
+    {
+      "from": "8,18",
+      "to": "9,18",
+      "bidirectional": true
+    },
+    {
+      "from": "8,18",
+      "to": "8,19",
+      "bidirectional": true
+    },
+    {
+      "from": "9,18",
+      "to": "10,18",
+      "bidirectional": true
+    },
+    {
+      "from": "9,18",
+      "to": "9,19",
+      "bidirectional": true
+    },
+    {
+      "from": "10,18",
+      "to": "11,18",
+      "bidirectional": true
+    },
+    {
+      "from": "10,18",
+      "to": "10,19",
+      "bidirectional": true
+    },
+    {
+      "from": "11,18",
+      "to": "12,18",
+      "bidirectional": true
+    },
+    {
+      "from": "11,18",
+      "to": "11,19",
+      "bidirectional": true
+    },
+    {
+      "from": "12,18",
+      "to": "13,18",
+      "bidirectional": true
+    },
+    {
+      "from": "12,18",
+      "to": "12,19",
+      "bidirectional": true
+    },
+    {
+      "from": "13,18",
+      "to": "14,18",
+      "bidirectional": true
+    },
+    {
+      "from": "13,18",
+      "to": "13,19",
+      "bidirectional": true
+    },
+    {
+      "from": "14,18",
+      "to": "15,18",
+      "bidirectional": true
+    },
+    {
+      "from": "14,18",
+      "to": "14,19",
+      "bidirectional": true
+    },
+    {
+      "from": "15,18",
+      "to": "16,18",
+      "bidirectional": true
+    },
+    {
+      "from": "15,18",
+      "to": "15,19",
+      "bidirectional": true
+    },
+    {
+      "from": "16,18",
+      "to": "17,18",
+      "bidirectional": true
+    },
+    {
+      "from": "16,18",
+      "to": "16,19",
+      "bidirectional": true
+    },
+    {
+      "from": "17,18",
+      "to": "18,18",
+      "bidirectional": true
+    },
+    {
+      "from": "17,18",
+      "to": "17,19",
+      "bidirectional": true
+    },
+    {
+      "from": "18,18",
+      "to": "19,18",
+      "bidirectional": true
+    },
+    {
+      "from": "18,18",
+      "to": "18,19",
+      "bidirectional": true
+    },
+    {
+      "from": "19,18",
+      "to": "20,18",
+      "bidirectional": true
+    },
+    {
+      "from": "19,18",
+      "to": "19,19",
+      "bidirectional": true
+    },
+    {
+      "from": "20,18",
+      "to": "21,18",
+      "bidirectional": true
+    },
+    {
+      "from": "20,18",
+      "to": "20,19",
+      "bidirectional": true
+    },
+    {
+      "from": "21,18",
+      "to": "22,18",
+      "bidirectional": true
+    },
+    {
+      "from": "21,18",
+      "to": "21,19",
+      "bidirectional": true
+    },
+    {
+      "from": "22,18",
+      "to": "23,18",
+      "bidirectional": true
+    },
+    {
+      "from": "22,18",
+      "to": "22,19",
+      "bidirectional": true
+    },
+    {
+      "from": "23,18",
+      "to": "23,19",
+      "bidirectional": true
+    },
+    {
+      "from": "0,19",
+      "to": "1,19",
+      "bidirectional": true
+    },
+    {
+      "from": "0,19",
+      "to": "0,20",
+      "bidirectional": true
+    },
+    {
+      "from": "1,19",
+      "to": "2,19",
+      "bidirectional": true
+    },
+    {
+      "from": "1,19",
+      "to": "1,20",
+      "bidirectional": true
+    },
+    {
+      "from": "2,19",
+      "to": "3,19",
+      "bidirectional": true
+    },
+    {
+      "from": "3,19",
+      "to": "4,19",
+      "bidirectional": true
+    },
+    {
+      "from": "4,19",
+      "to": "5,19",
+      "bidirectional": true
+    },
+    {
+      "from": "4,19",
+      "to": "4,20",
+      "bidirectional": true
+    },
+    {
+      "from": "5,19",
+      "to": "6,19",
+      "bidirectional": true
+    },
+    {
+      "from": "6,19",
+      "to": "7,19",
+      "bidirectional": true
+    },
+    {
+      "from": "7,19",
+      "to": "8,19",
+      "bidirectional": true
+    },
+    {
+      "from": "7,19",
+      "to": "7,20",
+      "bidirectional": true
+    },
+    {
+      "from": "8,19",
+      "to": "9,19",
+      "bidirectional": true
+    },
+    {
+      "from": "9,19",
+      "to": "10,19",
+      "bidirectional": true
+    },
+    {
+      "from": "10,19",
+      "to": "11,19",
+      "bidirectional": true
+    },
+    {
+      "from": "10,19",
+      "to": "10,20",
+      "bidirectional": true
+    },
+    {
+      "from": "11,19",
+      "to": "12,19",
+      "bidirectional": true
+    },
+    {
+      "from": "12,19",
+      "to": "13,19",
+      "bidirectional": true
+    },
+    {
+      "from": "13,19",
+      "to": "14,19",
+      "bidirectional": true
+    },
+    {
+      "from": "13,19",
+      "to": "13,20",
+      "bidirectional": true
+    },
+    {
+      "from": "14,19",
+      "to": "15,19",
+      "bidirectional": true
+    },
+    {
+      "from": "15,19",
+      "to": "16,19",
+      "bidirectional": true
+    },
+    {
+      "from": "16,19",
+      "to": "17,19",
+      "bidirectional": true
+    },
+    {
+      "from": "16,19",
+      "to": "16,20",
+      "bidirectional": true
+    },
+    {
+      "from": "17,19",
+      "to": "18,19",
+      "bidirectional": true
+    },
+    {
+      "from": "18,19",
+      "to": "19,19",
+      "bidirectional": true
+    },
+    {
+      "from": "19,19",
+      "to": "20,19",
+      "bidirectional": true
+    },
+    {
+      "from": "19,19",
+      "to": "19,20",
+      "bidirectional": true
+    },
+    {
+      "from": "20,19",
+      "to": "21,19",
+      "bidirectional": true
+    },
+    {
+      "from": "21,19",
+      "to": "22,19",
+      "bidirectional": true
+    },
+    {
+      "from": "22,19",
+      "to": "23,19",
+      "bidirectional": true
+    },
+    {
+      "from": "22,19",
+      "to": "22,20",
+      "bidirectional": true
+    },
+    {
+      "from": "23,19",
+      "to": "23,20",
+      "bidirectional": true
+    },
+    {
+      "from": "0,20",
+      "to": "1,20",
+      "bidirectional": true
+    },
+    {
+      "from": "0,20",
+      "to": "0,21",
+      "bidirectional": true
+    },
+    {
+      "from": "1,20",
+      "to": "1,21",
+      "bidirectional": true
+    },
+    {
+      "from": "4,20",
+      "to": "4,21",
+      "bidirectional": true
+    },
+    {
+      "from": "7,20",
+      "to": "7,21",
+      "bidirectional": true
+    },
+    {
+      "from": "10,20",
+      "to": "10,21",
+      "bidirectional": true
+    },
+    {
+      "from": "13,20",
+      "to": "13,21",
+      "bidirectional": true
+    },
+    {
+      "from": "16,20",
+      "to": "16,21",
+      "bidirectional": true
+    },
+    {
+      "from": "19,20",
+      "to": "19,21",
+      "bidirectional": true
+    },
+    {
+      "from": "22,20",
+      "to": "23,20",
+      "bidirectional": true
+    },
+    {
+      "from": "22,20",
+      "to": "22,21",
+      "bidirectional": true
+    },
+    {
+      "from": "23,20",
+      "to": "23,21",
+      "bidirectional": true
+    },
+    {
+      "from": "0,21",
+      "to": "1,21",
+      "bidirectional": true
+    },
+    {
+      "from": "0,21",
+      "to": "0,22",
+      "bidirectional": true
+    },
+    {
+      "from": "1,21",
+      "to": "1,22",
+      "bidirectional": true
+    },
+    {
+      "from": "4,21",
+      "to": "4,22",
+      "bidirectional": true
+    },
+    {
+      "from": "7,21",
+      "to": "7,22",
+      "bidirectional": true
+    },
+    {
+      "from": "10,21",
+      "to": "10,22",
+      "bidirectional": true
+    },
+    {
+      "from": "13,21",
+      "to": "13,22",
+      "bidirectional": true
+    },
+    {
+      "from": "16,21",
+      "to": "16,22",
+      "bidirectional": true
+    },
+    {
+      "from": "19,21",
+      "to": "19,22",
+      "bidirectional": true
+    },
+    {
+      "from": "22,21",
+      "to": "23,21",
+      "bidirectional": true
+    },
+    {
+      "from": "22,21",
+      "to": "22,22",
+      "bidirectional": true
+    },
+    {
+      "from": "23,21",
+      "to": "23,22",
+      "bidirectional": true
+    },
+    {
+      "from": "0,22",
+      "to": "1,22",
+      "bidirectional": true
+    },
+    {
+      "from": "0,22",
+      "to": "0,23",
+      "bidirectional": true
+    },
+    {
+      "from": "1,22",
+      "to": "2,22",
+      "bidirectional": true
+    },
+    {
+      "from": "1,22",
+      "to": "1,23",
+      "bidirectional": true
+    },
+    {
+      "from": "2,22",
+      "to": "3,22",
+      "bidirectional": true
+    },
+    {
+      "from": "2,22",
+      "to": "2,23",
+      "bidirectional": true
+    },
+    {
+      "from": "3,22",
+      "to": "4,22",
+      "bidirectional": true
+    },
+    {
+      "from": "3,22",
+      "to": "3,23",
+      "bidirectional": true
+    },
+    {
+      "from": "4,22",
+      "to": "5,22",
+      "bidirectional": true
+    },
+    {
+      "from": "4,22",
+      "to": "4,23",
+      "bidirectional": true
+    },
+    {
+      "from": "5,22",
+      "to": "6,22",
+      "bidirectional": true
+    },
+    {
+      "from": "5,22",
+      "to": "5,23",
+      "bidirectional": true
+    },
+    {
+      "from": "6,22",
+      "to": "7,22",
+      "bidirectional": true
+    },
+    {
+      "from": "6,22",
+      "to": "6,23",
+      "bidirectional": true
+    },
+    {
+      "from": "7,22",
+      "to": "8,22",
+      "bidirectional": true
+    },
+    {
+      "from": "7,22",
+      "to": "7,23",
+      "bidirectional": true
+    },
+    {
+      "from": "8,22",
+      "to": "9,22",
+      "bidirectional": true
+    },
+    {
+      "from": "8,22",
+      "to": "8,23",
+      "bidirectional": true
+    },
+    {
+      "from": "9,22",
+      "to": "10,22",
+      "bidirectional": true
+    },
+    {
+      "from": "9,22",
+      "to": "9,23",
+      "bidirectional": true
+    },
+    {
+      "from": "10,22",
+      "to": "11,22",
+      "bidirectional": true
+    },
+    {
+      "from": "10,22",
+      "to": "10,23",
+      "bidirectional": true
+    },
+    {
+      "from": "11,22",
+      "to": "12,22",
+      "bidirectional": true
+    },
+    {
+      "from": "11,22",
+      "to": "11,23",
+      "bidirectional": true
+    },
+    {
+      "from": "12,22",
+      "to": "13,22",
+      "bidirectional": true
+    },
+    {
+      "from": "12,22",
+      "to": "12,23",
+      "bidirectional": true
+    },
+    {
+      "from": "13,22",
+      "to": "14,22",
+      "bidirectional": true
+    },
+    {
+      "from": "13,22",
+      "to": "13,23",
+      "bidirectional": true
+    },
+    {
+      "from": "14,22",
+      "to": "15,22",
+      "bidirectional": true
+    },
+    {
+      "from": "14,22",
+      "to": "14,23",
+      "bidirectional": true
+    },
+    {
+      "from": "15,22",
+      "to": "16,22",
+      "bidirectional": true
+    },
+    {
+      "from": "15,22",
+      "to": "15,23",
+      "bidirectional": true
+    },
+    {
+      "from": "16,22",
+      "to": "17,22",
+      "bidirectional": true
+    },
+    {
+      "from": "16,22",
+      "to": "16,23",
+      "bidirectional": true
+    },
+    {
+      "from": "17,22",
+      "to": "18,22",
+      "bidirectional": true
+    },
+    {
+      "from": "17,22",
+      "to": "17,23",
+      "bidirectional": true
+    },
+    {
+      "from": "18,22",
+      "to": "19,22",
+      "bidirectional": true
+    },
+    {
+      "from": "18,22",
+      "to": "18,23",
+      "bidirectional": true
+    },
+    {
+      "from": "19,22",
+      "to": "20,22",
+      "bidirectional": true
+    },
+    {
+      "from": "19,22",
+      "to": "19,23",
+      "bidirectional": true
+    },
+    {
+      "from": "20,22",
+      "to": "21,22",
+      "bidirectional": true
+    },
+    {
+      "from": "20,22",
+      "to": "20,23",
+      "bidirectional": true
+    },
+    {
+      "from": "21,22",
+      "to": "22,22",
+      "bidirectional": true
+    },
+    {
+      "from": "21,22",
+      "to": "21,23",
+      "bidirectional": true
+    },
+    {
+      "from": "22,22",
+      "to": "23,22",
+      "bidirectional": true
+    },
+    {
+      "from": "22,22",
+      "to": "22,23",
+      "bidirectional": true
+    },
+    {
+      "from": "23,22",
+      "to": "23,23",
+      "bidirectional": true
+    },
+    {
+      "from": "0,23",
+      "to": "1,23",
+      "bidirectional": true
+    },
+    {
+      "from": "1,23",
+      "to": "2,23",
+      "bidirectional": true
+    },
+    {
+      "from": "2,23",
+      "to": "3,23",
+      "bidirectional": true
+    },
+    {
+      "from": "3,23",
+      "to": "4,23",
+      "bidirectional": true
+    },
+    {
+      "from": "4,23",
+      "to": "5,23",
+      "bidirectional": true
+    },
+    {
+      "from": "5,23",
+      "to": "6,23",
+      "bidirectional": true
+    },
+    {
+      "from": "6,23",
+      "to": "7,23",
+      "bidirectional": true
+    },
+    {
+      "from": "7,23",
+      "to": "8,23",
+      "bidirectional": true
+    },
+    {
+      "from": "8,23",
+      "to": "9,23",
+      "bidirectional": true
+    },
+    {
+      "from": "9,23",
+      "to": "10,23",
+      "bidirectional": true
+    },
+    {
+      "from": "10,23",
+      "to": "11,23",
+      "bidirectional": true
+    },
+    {
+      "from": "11,23",
+      "to": "12,23",
+      "bidirectional": true
+    },
+    {
+      "from": "12,23",
+      "to": "13,23",
+      "bidirectional": true
+    },
+    {
+      "from": "13,23",
+      "to": "14,23",
+      "bidirectional": true
+    },
+    {
+      "from": "14,23",
+      "to": "15,23",
+      "bidirectional": true
+    },
+    {
+      "from": "15,23",
+      "to": "16,23",
+      "bidirectional": true
+    },
+    {
+      "from": "16,23",
+      "to": "17,23",
+      "bidirectional": true
+    },
+    {
+      "from": "17,23",
+      "to": "18,23",
+      "bidirectional": true
+    },
+    {
+      "from": "18,23",
+      "to": "19,23",
+      "bidirectional": true
+    },
+    {
+      "from": "19,23",
+      "to": "20,23",
+      "bidirectional": true
+    },
+    {
+      "from": "20,23",
+      "to": "21,23",
+      "bidirectional": true
+    },
+    {
+      "from": "21,23",
+      "to": "22,23",
+      "bidirectional": true
+    },
+    {
+      "from": "22,23",
+      "to": "23,23",
+      "bidirectional": true
+    }
+  ],
+  "stations": [
+    {
+      "type": "pick",
+      "cellId": "4,6",
+      "capacity": 2,
+      "code": "PICK-A1"
+    },
+    {
+      "type": "pick",
+      "cellId": "7,12",
+      "capacity": 2,
+      "code": "PICK-B1"
+    },
+    {
+      "type": "pick",
+      "cellId": "10,18",
+      "capacity": 2,
+      "code": "PICK-C1"
+    },
+    {
+      "type": "pick",
+      "cellId": "13,23",
+      "capacity": 2,
+      "code": "PICK-D1"
+    },
+    {
+      "type": "pick",
+      "cellId": "2,4",
+      "capacity": 2,
+      "code": "PICK-A2"
+    },
+    {
+      "type": "pick",
+      "cellId": "2,10",
+      "capacity": 2,
+      "code": "PICK-B2"
+    },
+    {
+      "type": "pick",
+      "cellId": "2,16",
+      "capacity": 2,
+      "code": "PICK-C2"
+    },
+    {
+      "type": "pick",
+      "cellId": "2,22",
+      "capacity": 2,
+      "code": "PICK-D2"
+    },
+    {
+      "type": "drop",
+      "cellId": "12,0",
+      "capacity": 3,
+      "code": "DROP-1"
+    },
+    {
+      "type": "drop",
+      "cellId": "11,23",
+      "capacity": 3,
+      "code": "DROP-2"
+    },
+    {
+      "type": "drop",
+      "cellId": "22,6",
+      "capacity": 3,
+      "code": "DROP-3"
+    },
+    {
+      "type": "drop",
+      "cellId": "1,12",
+      "capacity": 3,
+      "code": "DROP-4"
+    },
+    {
+      "type": "charger",
+      "cellId": "0,0",
+      "capacity": 1,
+      "code": "CHG-1"
+    },
+    {
+      "type": "charger",
+      "cellId": "23,0",
+      "capacity": 1,
+      "code": "CHG-2"
+    },
+    {
+      "type": "charger",
+      "cellId": "0,23",
+      "capacity": 1,
+      "code": "CHG-3"
+    },
+    {
+      "type": "charger",
+      "cellId": "23,23",
+      "capacity": 1,
+      "code": "CHG-4"
+    }
+  ],
+  "parkingCells": [
+    "0,0",
+    "0,1",
+    "1,0",
+    "1,1",
+    "0,22",
+    "0,23",
+    "1,22",
+    "1,23",
+    "22,0",
+    "22,1",
+    "23,0",
+    "23,1",
+    "22,22",
+    "22,23",
+    "23,22",
+    "23,23"
+  ],
+  "parentVersion": null
+}
