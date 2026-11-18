@@ -1,5 +1,25 @@
 # 协作规范
 
+## 单主仓库模式
+
+本项目默认使用一个远端主仓库协作，成员无需各自创建 fork：
+
+```text
+https://github.com/RiceXi/smart-wms-agv.git
+```
+
+三名成员都是主仓库协作者。每人从 `main` 创建或更新自己的分支，将提交直接推送回 `origin`，然后通过 PR 合入 `main`。
+
+首次加入后执行：
+
+```powershell
+git clone https://github.com/RiceXi/smart-wms-agv.git
+cd smart-wms-agv
+git switch dev/member-2
+```
+
+成员二、成员三将示例中的 `dev/member-2` 换成本人的 `dev/member-N`。个人 fork 不是必需流程；如果因为实验或个人备份需要创建 fork，最终仍应把变更以 PR 形式提交到主仓库的 `main`。
+
 ## 分支模型
 
 `main` 始终保持可构建、可启动。三名成员使用长期个人集成分支：
