@@ -8,36 +8,30 @@
 https://github.com/RiceXi/smart-wms-agv.git
 ```
 
-三名成员都是主仓库协作者。每人从 `main` 创建或更新自己的分支，将提交直接推送回 `origin`，然后通过 PR 合入 `main`。
+三名成员都是主仓库协作者。所有工作分支都从最新 `main` 创建，按功能命名，将提交直接推送回 `origin`，然后通过 PR 合入 `main`。
 
 首次加入后执行：
 
 ```powershell
 git clone https://github.com/RiceXi/smart-wms-agv.git
 cd smart-wms-agv
-git switch dev/member-2
+git switch main
 ```
 
-成员二、成员三将示例中的 `dev/member-2` 换成本人的 `dev/member-N`。个人 fork 不是必需流程；如果因为实验或个人备份需要创建 fork，最终仍应把变更以 PR 形式提交到主仓库的 `main`。
+个人 fork 不是必需流程；如果因为实验或个人备份需要创建 fork，最终仍应把变更以 PR 形式提交到主仓库的 `main`。
 
 ## 分支模型
 
-`main` 始终保持可构建、可启动。三名成员使用长期个人集成分支：
-
-- `dev/member-1`
-- `dev/member-2`
-- `dev/member-3`
-
-单个功能从个人分支创建短分支：
+`main` 始终保持可构建、可启动。项目不设置长期个人分支；每项工作从 `main` 创建短生命周期共享功能分支：
 
 ```text
-feat/member-2/dispatch-reservation
-fix/member-3/websocket-reconnect
-docs/member-1/api-contract
-test/member-2/deadlock-cycle
+feat/dispatch-reservation
+fix/websocket-reconnect
+docs/api-contract
+test/deadlock-cycle
 ```
 
-短分支合并回个人分支后，再以 PR 合并到 `main`。禁止在 `main` 直接提交。
+功能分支完成后直接以 PR 合并到 `main`。禁止在 `main` 直接提交。
 
 ## 提交信息
 
@@ -84,16 +78,16 @@ test(member-3/web): cover websocket reconnect snapshot
 
 ## 每次提交前
 
-- 拉取 `main` 和个人分支最新提交。
+- 拉取 `main` 和工作分支最新提交。
 - 运行受影响模块的测试。
 - 更新 AI 日志中的问题与修复。
 - 在任务看板更新阻塞项。
 
 ## 里程碑集成
 
-满足一个里程碑的退出条件时进行共同集成：
+满足一个里程碑的退出条件时进行团队集成：
 
-- 从最新 `main` 合入三条个人分支。
+- 通过 PR 合入该里程碑的共享功能分支。
 - 用固定 seed 启动完整场景。
 - 记录失败用例、冲突次数、死锁次数和性能。
 - 形成下一里程碑唯一的最高优先级技术目标。

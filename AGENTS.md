@@ -1,6 +1,6 @@
 # Agent 开发说明
 
-本文件定义 SmartWMS 项目的主要开发守则、基本要求、代码归属和完成标准。所有成员以及协助编码的 Agent 在修改仓库前都必须遵守。
+本文件定义 SmartWMS 单一协作项目的主要开发守则、基本要求、共享代码规则和完成标准。所有成员以及协助编码的 Agent 在修改仓库前都必须遵守。
 
 ## 1. 文档效力与阅读顺序
 
@@ -31,7 +31,7 @@
 总开发计划和分工以 Markdown 版本为权威源：
 
 - [总开发计划](docs/01-development-plan.md)：项目范围、M0-M7 里程碑、退出条件、合并门禁和范围调整规则。
-- [分工与工作分解](docs/02-work-breakdown.md)：成员角色、目录归属、工作包、接口交接和评审责任。
+- [协作分工与工作分解](docs/02-work-breakdown.md)：共享工作包、协作视角、接口交接和评审责任。
 - [总开发文档 Word 分发版](docs/仓储WMS与AGV调度开发计划与分工.docx)：与总开发计划配套的评审和分发版本。
 
 详细实现约束分布在：
@@ -106,50 +106,29 @@
 
 只读操作，例如读取文件、`git status`、`git diff`、`git log` 和运行测试，不需要额外确认。
 
-## 8. 代码归属
+## 8. 共享代码与评审视角
 
-每个成员只直接修改自己的主要目录。跨目录修改必须先提交接口变更说明，并由接口归属人评审。
+代码、文档、测试和接口属于整个项目，不划分个人目录或个人版本。每项变更由 PR 作者负责，并根据影响范围邀请相关视角评审。
 
-### 成员一：RiceXi
+| 协作视角 | 主要范围 | 评审重点 |
+| --- | --- | --- |
+| 平台与契约 | gateway、auth、wms、task、infra、CI、contracts | 服务边界、事务、幂等、契约兼容、可启动性 |
+| 调度与仿真 | dispatch、sim、地图、路径、预约、测试场景 | 路径正确、冲突与死锁、确定性、性能 |
+| 交互与实时 | web、push、analytics、回放和演示 | 状态一致、可理解性、性能、端到端体验 |
 
-- `services/gateway/`
-- `services/auth/`
-- `services/wms/`
-- `services/task/`
-- `infra/compose/`
-- `infra/docker/`
-- `.github/workflows/`
-- `scripts/dev-*`
+规则：
 
-### 成员二：Zsource-Fuyi
-
-- `services/dispatch/`
-- `services/sim/`
-- `packages/test-fixtures/`
-- `tests/scenarios/`
-- `tests/performance/dispatch-*`
-- `scripts/seed-*`
-
-### 成员三：KingSure000
-
-- `apps/web/`
-- `services/push/`
-- `services/analytics/`
-- `tests/e2e/`
-- `tests/performance/web-*`
-- `scripts/demo-*`
-
-### 共同目录
-
-- `packages/contracts/`：提案人提交 PR，成员一负责最终合并；涉及调度字段时必须由成员二确认，涉及展示字段时必须由成员三确认。
-- `docs/03-architecture.md`、`docs/04-domain-model.md`、`docs/05-api-event-contract.md`：任何成员可提案，至少两人批准后合并。
-- `docs/01-development-plan.md`、`docs/02-work-breakdown.md`：成员一维护，其他成员通过 PR 调整。
-- `evidence/ai-logs/member-N.md`：仅本人修改。
-- `AGENTS.md`、`CONTRIBUTING.md`：至少两名成员评审后修改。
+- 任何成员都可以修改任何共享模块，不设置长期个人代码目录。
+- 每项变更至少由一名非作者评审；涉及共享契约或跨服务行为时至少两人评审。
+- `packages/contracts/` 的变更必须同时核对平台、调度和展示影响。
+- 评审视角是责任分工，不是任务所有权，也不阻止成员跨领域协作。
+- 开发过程记录按成员维护在 `evidence/ai-logs/member-N.md`，仅用于过程留痕，不代表独立实现。
+- `AGENTS.md`、`CONTRIBUTING.md` 和总开发文档至少两人评审后修改。
 
 ## 9. 分支、提交与 PR
 
 - 默认使用单一主仓库，成员不需要各自创建 fork。
+- 不建立 `dev/member-N` 等长期个人分支；所有功能分支都从最新 `main` 创建。
 - 禁止直接向 `main` 推送；所有进入 `main` 的变更必须通过 PR。
 - 每个 PR 只解决一个可验证问题，并保持可独立审查。
 - 提交格式：`feat:`、`fix:`、`refactor:`、`docs:`、`test:` 或 `chore:`；正文说明动机和影响范围。
