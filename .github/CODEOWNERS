@@ -1,0 +1,23 @@
+# The final owner is the contract gatekeeper. Add a second reviewer in the PR.
+/packages/contracts/          @RiceXi
+/services/gateway/            @RiceXi
+/services/auth/               @RiceXi
+/services/wms/                @RiceXi
+/services/task/               @RiceXi
+/infra/compose/               @RiceXi
+/infra/docker/                @RiceXi
+/.github/workflows/           @RiceXi
+
+/services/dispatch/           @Zsource-Fuyi
+/services/sim/                @Zsource-Fuyi
+/packages/test-fixtures/      @Zsource-Fuyi
+/tests/scenarios/             @Zsource-Fuyi
+/tests/performance/dispatch-* @Zsource-Fuyi
+
+/apps/web/                    @KingSure000
+/services/push/               @KingSure000
+/services/analytics/          @KingSure000
+/tests/e2e/                   @KingSure000
+/tests/performance/web-*      @KingSure000
+
+/docs/                        @RiceXi @Zsource-Fuyi @KingSure000

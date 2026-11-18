@@ -1,0 +1,33 @@
+name: Bug
+description: 记录可复现的缺陷
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: 实际现象
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 包含 seed、场景、时间和相关日志。
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 严重程度
+      options:
+        - P0 演示阻断
+        - P1 核心功能错误
+        - P2 一般缺陷
+        - P3 体验问题

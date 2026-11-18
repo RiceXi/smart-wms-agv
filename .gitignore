@@ -1,0 +1,47 @@
+# Java
+target/
+*.class
+*.log
+
+# Node
+node_modules/
+dist/
+.vite/
+coverage/
+playwright-report/
+test-results/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local configuration
+.env
+.env.*
+!.env.example
+application-local.yml
+application-local.yaml
+
+# Runtime data
+data/
+*.sqlite
+*.sqlite3
+*.db
+*.mv.db
+captures/
+recordings/
+*.pcap
+
+# Generated document QA
+page-*.png
+*.pdf
+
+# Maven and Gradle caches
+.mvn/wrapper/maven-wrapper.jar
+.gradle/
+build/
