@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SmartWMS | Member 01</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">MEMBER 01 · DEEPSEEK-V4.1-FLASH</p>
+        <h1>SmartWMS 仓储与 AGV 调度</h1>
+        <p class="muted">出库订单、任务、时空路径、tick 仿真与仓库地图</p>
+      </div>
+      <div class="topbar-actions">
+        <span id="connection" class="status-pill">连接中</span>
+        <button id="startBtn" class="primary">运行仿真</button>
+        <button id="pauseBtn">暂停</button>
+        <button id="stepBtn">单步</button>
+        <select id="speedSelect" aria-label="仿真速度">
+          <option value="1">1x</option>
+          <option value="4">4x</option>
+          <option value="8">8x</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <section class="metric-grid" aria-label="关键指标">
+        <article class="metric"><span>仿真 tick</span><strong id="metricTick">0</strong></article>
+        <article class="metric"><span>活动任务</span><strong id="metricActive">0</strong></article>
+        <article class="metric"><span>已完成</span><strong id="metricCompleted">0</strong></article>
+        <article class="metric"><span>AGV</span><strong id="metricAgvs">0</strong></article>
+        <article class="metric"><span>冲突阻断</span><strong id="metricConflicts">0</strong></article>
+        <article class="metric"><span>死锁恢复</span><strong id="metricDeadlocks">0</strong></article>
+      </section>
+
+      <section class="workspace">
+        <article class="panel map-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">LIVE WAREHOUSE MAP</p>
+              <h2>仓库实时态势</h2>
+            </div>
+            <div class="map-actions">
+              <button id="blockModeBtn">选择封路点</button>
+              <button id="deadlockBtn">死锁演示</button>
+              <button id="resetSimBtn">重置仿真</button>
+            </div>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="warehouseCanvas" aria-label="仓库 AGV 地图"></canvas>
+          </div>
+          <div class="legend">
+            <span><i class="swatch shelf"></i>货架</span>
+            <span><i class="swatch pick"></i>拣选点</span>
+            <span><i class="swatch drop"></i>放货点</span>
+            <span><i class="swatch charger"></i>充电位</span>
+            <span><i class="swatch blocked"></i>封路</span>
+            <span><i class="swatch path"></i>路径</span>
+          </div>
+        </article>
+
+        <aside class="panel side-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">OPERATIONS</p>
+              <h2>任务与车辆</h2>
+            </div>
+            <button id="demoOrderBtn" class="primary">生成演示订单</button>
+          </div>
+
+          <section class="selected-agv">
+            <div class="section-title">
+              <h3>选中 AGV</h3>
+              <span id="selectedAgvName" class="tag">未选择</span>
+            </div>
+            <div id="agvDetail" class="detail-grid muted">点击地图上的车辆查看详情</div>
+            <div class="button-row">
+              <button id="faultAgvBtn">注入故障</button>
+              <button id="recoverAgvBtn">恢复车辆</button>
+              <button id="lowBatteryBtn">低电量</button>
+            </div>
+          </section>
+
+          <section>
+            <div class="section-title">
+              <h3>任务队列</h3>
+              <span id="taskCount" class="tag">0</span>
+            </div>
+            <div class="filter-row">
+              <select id="taskStatusFilter" aria-label="任务状态筛选">
+                <option value="">全部状态</option>
+                <option value="pending">待处理</option>
+                <option value="assigned">已指派</option>
+                <option value="running">运行中</option>
+                <option value="completed">已完成</option>
+                <option value="cancelled">已取消</option>
+              </select>
+              <select id="taskAgvFilter" aria-label="AGV 筛选"></select>
+              <input id="taskPriorityFilter" type="number" min="1" max="10" placeholder="最低优先级" aria-label="最低优先级" />
+            </div>
+            <div id="taskList" class="scroll-list"></div>
+          </section>
+
+          <section>
+            <div class="section-title">
+              <h3>事件流</h3>
+              <span class="tag">最近 80 条</span>
+            </div>
+            <div id="eventList" class="event-list"></div>
+          </section>
+        </aside>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">WMS MASTER DATA</p>
+              <h2>主数据与库存</h2>
+            </div>
+          </div>
+          <div class="form-grid">
+            <form id="skuForm" class="compact-form">
+              <h3>新增 SKU</h3>
+              <label>编码<input name="code" required placeholder="SKU-400" /></label>
+              <label>名称<input name="name" required placeholder="驱动模块" /></label>
+              <label>规格<input name="spec" placeholder="D-400" /></label>
+              <label>批次规则
+                <select name="batch_rule">
+                  <option value="none">none</option>
+                  <option value="fifo">fifo</option>
+                  <option value="fefo">fefo</option>
+                </select>
+              </label>
+              <button class="primary" type="submit">保存 SKU</button>
+            </form>
+            <form id="locationForm" class="compact-form">
+              <h3>新增库位</h3>
+              <label>编码<input name="code" required placeholder="LOC-FLOOR-1" /></label>
+              <label>区域<input name="zone" value="A" /></label>
+              <div class="inline-fields">
+                <label>x<input name="x" type="number" min="0" max="11" value="1" /></label>
+                <label>y<input name="y" type="number" min="0" max="7" value="4" /></label>
+              </div>
+              <label>类型
+                <select name="type">
+                  <option value="floor">floor</option>
+                  <option value="shelf">shelf</option>
+                  <option value="pick">pick</option>
+                  <option value="drop">drop</option>
+                  <option value="charger">charger</option>
+                </select>
+              </label>
+              <label>容量<input name="capacity" type="number" min="1" value="10" /></label>
+              <button class="primary" type="submit">保存库位</button>
+            </form>
+            <form id="inventoryForm" class="compact-form">
+              <h3>登记库存</h3>
+              <label>SKU<select name="sku_id" id="inventorySku" required></select></label>
+              <label>货架<select name="location_id" id="inventoryLocation" required></select></label>
+              <label>数量<input name="qty" type="number" min="1" value="10" /></label>
+              <label>批次<input name="batch" value="B-NEW" /></label>
+              <button class="primary" type="submit">登记库存</button>
+            </form>
+          </div>
+          <div id="inventoryTable" class="table-wrap"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">OUTBOUND ORDERS</p>
+              <h2>出库订单</h2>
+            </div>
+          </div>
+          <form id="orderForm" class="order-form">
+            <label>订单号<input name="code" required placeholder="OUT-001" /></label>
+            <label>预约人<input name="requester" value="operator" /></label>
+            <label>优先级<input name="priority" type="number" min="1" max="10" value="7" /></label>
+            <label>SKU<select name="sku_id" id="orderSku" required></select></label>
+            <label>数量<input name="qty" type="number" min="1" value="2" /></label>
+            <button class="primary" type="submit">创建订单</button>
+          </form>
+          <div class="filter-row order-filter">
+            <select id="orderStatusFilter" aria-label="订单状态筛选">
+              <option value="">全部订单</option>
+              <option value="draft">草稿</option>
+              <option value="released">已释放</option>
+              <option value="completed">已完成</option>
+              <option value="cancelled">已取消</option>
+              <option value="failed">失败</option>
+            </select>
+          </div>
+          <div id="orderTable" class="table-wrap"></div>
+        </article>
+      </section>
+
+      <section class="analytics-grid">
+        <article class="panel">
+          <p class="eyebrow">TASK STATUS</p>
+          <h2>任务状态</h2>
+          <div id="statusBars" class="bar-chart"></div>
+        </article>
+        <article class="panel">
+          <p class="eyebrow">AGV UTILIZATION</p>
+          <h2>车辆利用率</h2>
+          <div id="utilizationList" class="utilization-list"></div>
+        </article>
+        <article class="panel">
+          <p class="eyebrow">BOTTLENECK</p>
+          <h2>瓶颈格点 Top 5</h2>
+          <div id="bottleneckList" class="bottleneck-list"></div>
+        </article>
+      </section>
+
+      <section class="panel master-lists">
+        <div>
+          <h2>SKU 列表</h2>
+          <div id="skuTable" class="table-wrap"></div>
+        </div>
+        <div>
+          <h2>库位列表</h2>
+          <div id="locationTable" class="table-wrap"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer>
+      <span>Member 01 · Python 3 · SQLite · No external runtime dependencies</span>
+      <button id="demoResetBtn" class="danger-link">重置全部演示数据</button>
+    </footer>
+    <script src="/app.js"></script>
+  </body>
+</html>
