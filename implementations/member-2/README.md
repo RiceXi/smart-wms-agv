@@ -9,13 +9,13 @@
 
 ## 1. 技术选型
 
-| 项 | 选择 | 理由 |
-| --- | --- | --- |
-| 运行时 | Python 3.11+（只用标准库） | 干净环境零安装即可启动，满足 AC1；无 pip 依赖，离线可跑 |
-| 存储 | SQLite（标准库 `sqlite3`，WAL 模式） | 单文件、事务安全、便于"重启后数据不丢"的验收 |
-| 后端 | `http.server.ThreadingHTTPServer` | 标准库即可提供并发 HTTP + SSE |
-| 前端 | 原生 HTML/CSS/JS + Canvas | 无 npm 依赖；地图用 Canvas 绘制，帧率 120 fps |
-| 测试 | `unittest`（标准库） | `python -m unittest discover -s tests` 直接跑 |
+| 项     | 选择                                   | 理由                                                    |
+| ------ | -------------------------------------- | ------------------------------------------------------- |
+| 运行时 | Python 3.11+（只用标准库）             | 干净环境零安装即可启动，满足 AC1；无 pip 依赖，离线可跑 |
+| 存储   | SQLite（标准库 `sqlite3`，WAL 模式） | 单文件、事务安全、便于"重启后数据不丢"的验收            |
+| 后端   | `http.server.ThreadingHTTPServer`    | 标准库即可提供并发 HTTP + SSE                           |
+| 前端   | 原生 HTML/CSS/JS + Canvas              | 无 npm 依赖；地图用 Canvas 绘制，帧率 120 fps           |
+| 测试   | `unittest`（标准库）                 | `python -m unittest discover -s tests` 直接跑         |
 
 课程推荐技术栈（Spring Boot / Kafka / Redis / Eureka）由整合版承担，本个人版不引入。
 两者的对应关系见 `docs/design.md` 第 7 节。
@@ -41,7 +41,7 @@ implementations/member-2/
 │   ├── save_test_evidence.py  跑全量测试并把输出落盘为证据
 │   ├── smoke_api.py           REST/SSE 冒烟
 │   └── debug_*.py             开发期排查脚本
-├── tests/                 自动化测试（91 个用例）
+├── tests/                 自动化测试（88 个用例）
 ├── web/                   前端（index.html / app.js / style.css）
 └── wms/                   后端包
     ├── app.py             应用上下文（装配、场景重置、注入）
@@ -81,20 +81,10 @@ python -m wms serve --port 8099
 
 首次启动会自动导入 `single-agv` 场景并建库（SQLite 文件位于 `implementations/member-2/data/wms.db`）。
 
-> **端口被占用怎么办**：服务在启动前会先探测端口。若已被别的程序监听，会直接报错退出，
-> 而不会像普通 HTTP 服务那样"启动成功"却把浏览器请求分流给别的程序：
->
-> ```text
-> 启动失败：端口 127.0.0.1:8099 已被另一个程序占用。
-> 请换一个端口，例如：python -m wms serve --port 8099
-> ```
->
-> 换个端口即可。要确认是谁占着：`netstat -ano | findstr :8099`，再用 `tasklist /FI "PID eq <pid>"`。
-
 常用命令：
 
 ```text
-python -m wms serve  --host 127.0.0.1 --port 8099   # 启动服务
+python -m wms serve  --host 127.0.0.1 --port 8080   # 启动服务
 python -m wms seed   --scenario peak-10             # 导入指定场景
 python -m wms demo   --scenario peak-10 --ticks 300 # 无界面跑一段仿真
 python -m wms bench  --scenario peak-30 --ticks 600 # 采集性能数据
@@ -104,7 +94,7 @@ python -m wms export-fixtures                       # 重新导出 fixtures
 数据目录可用 `--data-dir` 或环境变量 `WMS_DATA_DIR` 覆盖：
 
 ```text
-python -m wms --data-dir D:\tmp\wms-data serve --port 8099
+python -m wms --data-dir D:\tmp\wms-data serve --port 8080
 ```
 
 ## 4. 运行测试
@@ -114,7 +104,7 @@ cd implementations/member-2
 python -m unittest discover -s tests -t tests -v
 ```
 
-预期结果：`Ran 91 tests ... OK`。
+预期结果：`Ran 88 tests ... OK`。
 
 场景回归（同时把结果写入 `docs/scenario-results.json`）：
 
@@ -124,16 +114,16 @@ python scripts\run_scenarios.py
 
 ## 5. 固定演示场景
 
-| 场景 id | 说明 | 关键看点 |
-| --- | --- | --- |
-| `single-agv` | 单 AGV 闭环 | 订单 → 任务 → 路径 → 仿真 → 完成 |
-| `peak-10` | 10 台并发 | 个人版规模基线，10/10 完成、0 死锁 |
-| `peak-30` | 30 台并发 | 整合版规模基线，能检测并恢复死锁 |
-| `head-to-head` | 窄巷相向冲突 | 禁止穿边、等待与绕行 |
-| `cycle-deadlock` | 三车环形等待 | 等待图成环 → 选牺牲者 → 回退重规划 |
-| `roadblock` | 临时封路重规划 | tick 25/60/120 三次封路，受影响路径升版本重规划 |
-| `low-battery` | 低电量充电 | 充电队列、充电位容量不突破 |
-| `rush-order` | 急单插入 | tick 20/90 插入优先级 10/9 的急单 |
+| 场景 id            | 说明           | 关键看点                                        |
+| ------------------ | -------------- | ----------------------------------------------- |
+| `single-agv`     | 单 AGV 闭环    | 订单 → 任务 → 路径 → 仿真 → 完成            |
+| `peak-10`        | 10 台并发      | 个人版规模基线，10/10 完成、0 死锁              |
+| `peak-30`        | 30 台并发      | 整合版规模基线，能检测并恢复死锁                |
+| `head-to-head`   | 窄巷相向冲突   | 禁止穿边、等待与绕行                            |
+| `cycle-deadlock` | 三车环形等待   | 等待图成环 → 选牺牲者 → 回退重规划            |
+| `roadblock`      | 临时封路重规划 | tick 25/60/120 三次封路，受影响路径升版本重规划 |
+| `low-battery`    | 低电量充电     | 充电队列、充电位容量不突破                      |
+| `rush-order`     | 急单插入       | tick 20/90 插入优先级 10/9 的急单               |
 
 在页面顶部"重置"按钮的下拉框里可以直接切换场景。
 
@@ -141,13 +131,13 @@ python scripts\run_scenarios.py
 
 页面顶部"事件注入"支持以下类型（后端 `POST /api/v1/sim/inject`）：
 
-| type | 字段 | 说明 |
-| --- | --- | --- |
-| `fault` | `target`、`code` | AGV 进入 `fault` |
-| `offline` | `target` | AGV 进入 `offline` |
-| `recover` | `target` | 故障/离线 AGV 恢复为 `idle` |
-| `roadblock` | `cells`、`reason` | 封路并生成新地图版本 |
-| `rush_order` | `priority`、`skuCode`、`qty` | 插入高优先级订单并立即释放 |
+| type           | 字段                               | 说明                          |
+| -------------- | ---------------------------------- | ----------------------------- |
+| `fault`      | `target`、`code`               | AGV 进入 `fault`            |
+| `offline`    | `target`                         | AGV 进入 `offline`          |
+| `recover`    | `target`                         | 故障/离线 AGV 恢复为 `idle` |
+| `roadblock`  | `cells`、`reason`              | 封路并生成新地图版本          |
+| `rush_order` | `priority`、`skuCode`、`qty` | 插入高优先级订单并立即释放    |
 
 ## 7. 已知限制
 
