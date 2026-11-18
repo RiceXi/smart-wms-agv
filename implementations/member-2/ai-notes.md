@@ -49,7 +49,7 @@
 | --- | --- |
 | `wms/`（19 个功能模块 + 2 个包文件，约 5400 行） | 配置、错误、工具、SQLite 持久化、地图模型与生成、预约表、时空 A*、指派评分、死锁检测、事件总线、业务服务层、tick 仿真引擎、统计、固定场景、应用装配、REST 路由、HTTP 服务、CLI |
 | `web/`（3 个文件，2351 行） | Canvas 实时地图、订单/任务/AGV/分析/事件五个面板、仿真控制条、事件注入面板 |
-| `tests/`（88 个用例，6 个测试模块） | 领域与状态机、路径与预约、仿真与场景、REST 与 SSE、持久化、fixture 同源 |
+| `tests/`（91 个用例，6 个测试模块） | 领域与状态机、路径与预约、仿真与场景、REST 与 SSE、持久化、fixture 同源 |
 | `fixtures/` | 2 张地图 + 8 个场景的 JSON，由 `python -m wms export-fixtures` 导出 |
 | `docs/` | 接口契约、设计说明、验收记录、AI 记录、场景结果 JSON、证据文件 |
 | `scripts/` | 场景回归、基准采集、REST/SSE 冒烟、5 个开发期排查脚本 |
@@ -80,6 +80,7 @@
 | A18 | `service._allocate` 返回值 | 多返回值下标错位 | 分配记录指向错误库位 |
 | A19 | `simulator._replan` | 入口处判断 `if not agv.active_task_id: return`，把所有"没有任务的车辆"排除在重规划之外 | 空闲返程/回退中的车辆会沿旧计划开进已封路的格点，AC10 不通过（封路格上出现轨迹） |
 | A20 | `simulator` 冲突计数点 | `stats["conflicts"]` 有 5 处计数点，其中"前往放货点预约冲突"和"初始路径与现有预约冲突"两处只加计数、不发 `conflict.detected` 事件 | 统计口径与事件流不一致：`head-to-head` 场景统计报冲突 1 次，事件流里却查不到该事件 |
+| A21 | `server.WmsServer` | 只设了 `allow_reuse_address = True`，没有在绑定前探测端口 | Windows 上 SO_REUSEADDR 允许两个服务"同时"绑定同一端口，浏览器请求被两个程序随机分流——用户打开 `http://127.0.0.1:8080/` 看到的是别的程序（本机就撞上了另一个课程的 HTTP 实验脚本），表现为"我的界面怎么长这样" |
 
 ### B. 接口与前端不一致（子 Agent 产出，主会话修正）
 
@@ -128,14 +129,15 @@
 | `wms/scenarios.py` | 场景增加 `events` 字段；封路/急单场景补定时事件 | C1/C2 | 场景回归输出 `map.roadblock.added: 3`、`task.replanned: 27`、`sim.injected: 2` |
 | `wms/simulator.py` `_replan_after_map_change` | 空闲车辆分支改调新方法 `_replan_idle_after_map_change`；`_replan` 本身保持"无任务即返回" | A19 | `test_idle_returning_agv_also_replans`：AGV-01 由 (1,20) 绕行至 (0,19)→(0,22)，`plan_version` 4→5，封路格上无轨迹 |
 | `wms/simulator.py` 两处冲突分支 | 补发 `conflict.detected` 事件（含 `agvId`/`reason`/`keys`） | A20 | `test_conflict_counter_matches_conflict_events`：`head-to-head` 计数 1 = 事件 1；`peak-30` 计数 16 = 事件 16 |
-| `tests/test_fixtures.py` | 新增 fixture 同源校验 | C3 | `Ran 88 tests ... OK` |
+| `wms/server.py` `serve()` | 新增 `detect_port_conflict()`：绑定前先用普通套接字探测，再确认端口上确有监听者（区分 TIME_WAIT 残留）；冲突时抛 `PortInUseError`；默认端口 8080 改为 8099 | A21 | `tests/test_api.py::PortConflictTests`（3 个用例）；实测在 8080 被占用时启动直接报错退出 |
+| `tests/test_fixtures.py` | 新增 fixture 同源校验 | C3 | `Ran 91 tests ... OK` |
 | `implementations/member-2/.gitignore` | 忽略 `data/`、`*.db`、`*.log` | C5 | `git status` 不出现数据文件 |
 
 ## 验证
 
 | 命令或场景 | 结果 | 证据 |
 | --- | --- | --- |
-| `python -m unittest discover -s tests -t tests -v` | 88 个用例全绿 | `docs/evidence/unittest-output.txt` |
+| `python -m unittest discover -s tests -t tests -v` | 91 个用例全绿 | `docs/evidence/unittest-output.txt` |
 | `python scripts\run_scenarios.py` | 8 个场景全部跑通，关键指标见下表 | `docs/evidence/scenario-run.txt`、`docs/scenario-results.json` |
 | `python scripts\save_bench.py` | 性能数据落盘 | `docs/evidence/bench-summary.json` |
 | `python -m wms serve --port 8099` + 浏览器 | 页面正常渲染，SSE 已连接，120 fps，控制台 0 error/0 warning | `docs/evidence/ui-console.png` |

@@ -6,12 +6,14 @@
 from __future__ import annotations
 
 import json
+import socket
 import unittest
 import urllib.error
 import urllib.request
 
 from helpers import AppTestCase
-from wms.server import serve_in_background
+from wms.errors import PortInUseError
+from wms.server import detect_port_conflict, serve, serve_in_background
 
 
 class ApiTestCase(AppTestCase):
@@ -338,6 +340,47 @@ class StaticAndStreamTests(ApiTestCase):
         self.assertIn("seq", payload)
         self.assertIn("tick", payload)
         self.assertIn("events", payload)
+
+
+class PortConflictTests(AppTestCase):
+    """端口占用必须显式报错。
+
+    回归缺陷：Windows 上 `allow_reuse_address`（SO_REUSEADDR）允许两个服务
+    "同时"绑定 8080，浏览器请求被两个程序随机分流，表现为
+    "打开 http://127.0.0.1:8080/ 看到的不是自己的页面"。
+    """
+
+    def test_detect_port_conflict_reports_busy_port(self):
+        httpd, thread, _ = serve_in_background(self.app, host="127.0.0.1", port=0)
+        try:
+            port = httpd.server_address[1]
+            message = detect_port_conflict("127.0.0.1", port)
+            self.assertIsNotNone(message, "端口被占用时必须给出提示")
+            self.assertIn(str(port), message)
+        finally:
+            httpd.shutdown()
+            httpd.server_close()
+
+    def test_detect_port_conflict_returns_none_for_free_port(self):
+        probe = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        try:
+            probe.bind(("127.0.0.1", 0))
+            port = probe.getsockname()[1]
+        finally:
+            probe.close()
+        self.assertIsNone(detect_port_conflict("127.0.0.1", port))
+
+    def test_serve_raises_port_in_use_error(self):
+        httpd, thread, _ = serve_in_background(self.app, host="127.0.0.1", port=0)
+        try:
+            port = httpd.server_address[1]
+            with self.assertRaises(PortInUseError) as ctx:
+                serve(self.app, host="127.0.0.1", port=port)
+            self.assertIn(str(port), ctx.exception.message)
+            self.assertEqual(ctx.exception.code, "PORT_IN_USE")
+        finally:
+            httpd.shutdown()
+            httpd.server_close()
 
 
 if __name__ == "__main__":

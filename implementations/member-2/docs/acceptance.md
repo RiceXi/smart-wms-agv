@@ -7,17 +7,17 @@
 
 ```text
 cd implementations/member-2
-python -m unittest discover -s tests -t tests -v     # 88 个用例
+python -m unittest discover -s tests -t tests -v     # 91 个用例
 python scripts\run_scenarios.py                      # 8 个固定场景
 python scripts\save_bench.py                         # 性能数据
-python -m wms serve --port 8080                      # 启动服务与前端
+python -m wms serve --port 8099                      # 启动服务与前端
 ```
 
 证据文件位于 `implementations/member-2/docs/evidence/`：
 
 | 文件 | 内容 |
 | --- | --- |
-| `unittest-output.txt` | 88 个用例的完整输出（末行 `Ran 88 tests ... OK`） |
+| `unittest-output.txt` | 91 个用例的完整输出（末行 `Ran 91 tests ... OK`） |
 | `scenario-run.txt` | 8 个固定场景的回归输出 |
 | `scenario-results.json` | 场景结果的机器可读版本 |
 | `bench-summary.json` / `bench_*.json` | 性能基准数据 |
@@ -27,7 +27,7 @@ python -m wms serve --port 8080                      # 启动服务与前端
 
 | 用例 | 结果 | 证据 | 备注 |
 | --- | --- | --- | --- |
-| AC1 本地启动 | **通过** | `python -m wms serve --port 8099` 后 `GET /api/v1/health` 返回 `{"status":"ok","tick":30,"running":false,"seed":20261118,"version":"0.2.0-member-2"}`；浏览器打开 `http://127.0.0.1:8099/` 正常渲染 | 干净环境零依赖（只用 Python 标准库），无 pip/npm 安装步骤 |
+| AC1 本地启动 | **通过** | `python -m wms serve --port 8099` 后 `GET /api/v1/health` 返回 `{"status":"ok","tick":30,"running":false,"seed":20261118,"version":"0.2.0-member-2"}`；浏览器打开 `http://127.0.0.1:8099/` 正常渲染；`tests/test_api.py::PortConflictTests` 断言端口被别的进程监听时 `serve` 抛 `PORT_IN_USE` 并给出换端口提示 | 干净环境零依赖（只用 Python 标准库），无 pip/npm 安装步骤；端口冲突显式报错，不会静默分流请求 |
 | AC2 主数据 | **通过** | `tests/test_domain.py::MasterDataTests`（8 个用例全绿）：创建 3 SKU / 5 库位 / 初始库存；重复 SKU 编码 → `DUPLICATE_CODE`；非法坐标（x=999、y=-3）→ `VALIDATION_FAILED`；负库存 → `VALIDATION_FAILED`；有库存时删 SKU → `CONFLICT` | |
 | AC3 出库订单 | **通过** | `tests/test_domain.py::OrderTests`（6 个用例）：多明细订单释放后生成 2 个任务；重复释放后 `reserved_qty` 不变（幂等）；库存不足抛 `INSUFFICIENT_INVENTORY` 且订单仍为 `draft`、无残留预占；取消订单回滚预占 | 分配失败的部分预占回滚是本轮修复的缺陷（见 ai-notes） |
 | AC4 任务状态 | **通过** | `tests/test_domain.py::TaskStateMachineTests`（5 个用例）：`pending→assigned→running→completed` 逐级合法流转；`pending→completed` 与终态再流转抛 `INVALID_STATE`；重派回到 `pending` 且清空 `assigned_agv_id` | |
@@ -109,8 +109,8 @@ AGV-05 前往放货 坐标 13,12    AGV-10 前往放货 坐标 2,7
   三个场景平均都是 1 tick（即任务创建后的下一个 tick 就被指派）。
 - **前端帧率**：8 倍速运行 peak-10 场景时，页面 FPS 计数器稳定显示 **120 fps**
   （受显示器刷新率上限约束），浏览器控制台无 error/warning。
-- **测试时长**：全量 88 个用例 `Ran 88 tests in 25.6 s`（证据文件 `unittest-output.txt`）。
-  机器完全空闲时约 25–35 s；同机并发跑 `serve` 或其它仿真任务时会退化到 100 s 量级（CPU 争用），
+- **测试时长**：全量 91 个用例 `Ran 91 tests in 23.7 s`（证据文件 `unittest-output.txt`）。
+  机器完全空闲时约 23–35 s；同机并发跑 `serve` 或其它仿真任务时会退化到 100 s 量级（CPU 争用），
   结果不受影响。
 
 ## 已知限制（AC20）

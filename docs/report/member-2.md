@@ -53,7 +53,7 @@
 | ③ 调度内核 | 时空 A*、预约表、指派评分、等待图死锁检测 | 四个模块都是纯函数/纯内存对象，不依赖 DB 与 UI |
 | ④ 仿真运行时 | tick 主循环、装卸、充电、故障、封路、急单 | 单 AGV 场景能闭环完成一个订单 |
 | ⑤ 接口与前端 | REST、SSE、Canvas 控制台 | 浏览器打开页面能实时看到 10 台车跑起来 |
-| ⑥ 验收与交付 | 88 个用例、8 个场景回归、AC1–AC20、文档与报告 | 逐条有命令级证据 |
+| ⑥ 验收与交付 | 91 个用例、8 个场景回归、AC1–AC20、文档与报告 | 逐条有命令级证据 |
 
 阶段②→③之间有一次调整：原计划把地图版本管理放在②，实践中发现"封路必须生成新版本"
 和"重启后要恢复版本"是同一件事，于是把 `MapStore.restore_current()` 提前到②做，
@@ -165,7 +165,7 @@ tick 循环
 
 表现好的部分：
 
-- **结构化代码的产出速度**。19 个后端功能模块、88 个测试用例、前端 2351 行，
+- **结构化代码的产出速度**。19 个后端功能模块、91 个测试用例、前端 2351 行，
   从零到可运行版本大约用了三轮迭代。模块边界清晰、注释密度合理、
   中文错误信息到位，这些都符合仓库的文档风格要求。
 - **纯算法模块的初版质量高**。时空 A*、Tarjan 割点、等待图 DFS 三处初版几乎没有 bug，
@@ -193,8 +193,8 @@ AI 显著提升了产出速度，但没有提升"发现系统性问题"的能力
 
 ## 8. AI 错误、幻觉与人工修改
 
-完整清单见 `implementations/member-2/ai-notes.md`（20 条业务缺陷 + 9 条接口不一致 +
-5 条场景/工具链问题）。这里列最有代表性的 8 条：
+完整清单见 `implementations/member-2/ai-notes.md`（21 条业务缺陷 + 9 条接口不一致 +
+5 条场景/工具链问题）。这里列最有代表性的 9 条：
 
 | 位置 | AI 的错误 | 为什么是错的 | 我的修改与验证 |
 | --- | --- | --- | --- |
@@ -206,6 +206,7 @@ AI 显著提升了产出速度，但没有提升"发现系统性问题"的能力
 | `simulator._replan` | 重规划失败时保留旧计划 | 车辆会沿旧计划走进已封路格点 | 失败时清空 `agv.plan` 并进入冷却重试 → `test_roadblock_triggers_replan_and_is_respected` |
 | `simulator._replan` | 入口处 `if not agv.active_task_id: return`，把"没有任务的车辆"整个排除在重规划之外 | 空闲返程中的车会沿旧计划开进已封路的格点——AC10 的封路格里出现了车辆轨迹 | 新增 `_replan_idle_after_map_change`，仅在"地图版本变化"路径上对空闲车重规划 → `test_idle_returning_agv_also_replans` |
 | `simulator` 冲突分支 | `stats["conflicts"]` 有两处只加计数、不发 `conflict.detected` 事件 | 统计口径与事件流对不上：`head-to-head` 场景统计报冲突 1 次，事件流里查不到 | 补发事件 → `test_conflict_counter_matches_conflict_events`（计数 1 = 事件 1，`peak-30` 计数 16 = 事件 16） |
+| `server.WmsServer` | 只设 `allow_reuse_address = True`，绑定前不探测端口 | Windows 上 SO_REUSEADDR 允许两个服务"同时"绑定同一端口，浏览器请求被两个程序随机分流——用户打开 `127.0.0.1:8080` 看到的根本不是自己的页面 | 绑定前显式探测端口，冲突时抛 `PORT_IN_USE` 并提示换端口；默认端口改 8099 → `tests/test_api.py::PortConflictTests` |
 
 **一条值得单独说的修复回退**（A19）：AI 给的第一版修法是把 `_replan` 改成"任何无任务车辆都重规划"。
 单看 AC10 它是对的，但 8 个固定场景一回归，`peak-10` 从 10/10 完成退化成 9/10——多出来的重规划
@@ -233,7 +234,7 @@ implementations/member-2/
 │   └── evidence/          测试输出、场景输出、基准 JSON、前端截图
 ├── fixtures/              2 张地图 + 8 个场景 JSON（由代码导出，有测试守着不漂移）
 ├── scripts/               场景回归、基准采集、REST/SSE 冒烟、5 个排查脚本
-├── tests/                 88 个用例（domain / pathfinding / simulation / api / persistence / fixtures）
+├── tests/                 91 个用例（domain / pathfinding / simulation / api / persistence / fixtures）
 ├── web/                   index.html + app.js + style.css（Canvas 控制台）
 └── wms/                   后端 19 个功能模块
 ```
@@ -287,7 +288,7 @@ AC1–AC20 **全部通过**。逐条命令与证据见 `implementations/member-2
 | AC19 性能记录 | 通过 | 见第 11 节，全部为实测值 |
 | AC20 错误与限制 | 通过 | 统一错误结构；限制见第 11 节与报告 |
 
-自动化测试：**88 个用例全部通过**（`Ran 88 tests in 25.6 s`）。
+自动化测试：**91 个用例全部通过**（`Ran 91 tests in 23.7 s`）。
 
 ## 11. 性能与限制
 
@@ -304,7 +305,7 @@ AC1–AC20 **全部通过**。逐条命令与证据见 `implementations/member-2
 - 指派延迟定义：`task.assigned` 的 tick − `task.created` 的 tick。三个场景平均 1 tick。
 - 前端帧率：8 倍速运行 `peak-10` 时页面 FPS 计数器稳定 **120 fps**（显示器刷新率上限），
   浏览器控制台 0 error / 0 warning。
-- 测试时长：88 个用例 25–35 s（机器空闲时；同机并发跑 `serve` 或其它仿真任务时约 100 s，属 CPU 争用）。
+- 测试时长：91 个用例 23–35 s（机器空闲时；同机并发跑 `serve` 或其它仿真任务时约 100 s，属 CPU 争用）。
 - 场景回归总耗时：8 个场景合计约 5.5 s。
 
 ### 限制与风险
@@ -335,7 +336,7 @@ AC1–AC20 **全部通过**。逐条命令与证据见 `implementations/member-2
 2. **验收阶段没有粉饰**。`peak-30` 的 7 个失败、`cycle-deadlock` 的 1 个失败，
    我都写进了报告并说明了失败规则。AC20 明确要求"不得把未运行功能标记为通过"，
    我认为这也是个人版本的信誉所在。
-3. **缺陷分析做到底**。本轮记录的 20 条业务缺陷，我没有只修表面症状，
+3. **缺陷分析做到底**。本轮记录的 21 条业务缺陷，我没有只修表面症状，
    而是逐条追问"为什么 AI 会在这里出错"，最后归纳成一条规律：
    **AI 在跨模块状态一致性上系统性薄弱**。这条规律比任何一个具体 bug 更有复用价值。
 
@@ -365,16 +366,20 @@ AC1–AC20 **全部通过**。逐条命令与证据见 `implementations/member-2
 cd implementations/member-2
 
 # 启动服务（含前端页面）
-python -m wms serve --port 8080
-# 浏览器打开 http://127.0.0.1:8080/
+python -m wms serve --port 8099
+# 浏览器打开 http://127.0.0.1:8099/
 ```
 
 首次启动会自动创建 `implementations/member-2/data/wms.db` 并导入 `single-agv` 场景。
 
+> **端口被占用**：服务启动前会探测端口。若已被别的程序监听，会直接报错退出并提示换端口，
+> 不会出现"启动成功但浏览器打开的是别的程序"的静默分流。排查命令：
+> `netstat -ano | findstr :8099` → `tasklist /FI "PID eq <pid>"`。
+
 常用命令：
 
 ```text
-python -m wms serve  --host 127.0.0.1 --port 8080   # 启动服务
+python -m wms serve  --host 127.0.0.1 --port 8099   # 启动服务
 python -m wms seed   --scenario peak-10             # 导入指定场景
 python -m wms demo   --scenario peak-10 --ticks 300 # 无界面跑一段仿真
 python -m wms bench  --scenario peak-30 --ticks 600 # 采集性能数据
@@ -386,7 +391,7 @@ python -m wms export-fixtures                       # 重新导出 fixtures
 测试与场景回归：
 
 ```text
-python -m unittest discover -s tests -t tests -v     # 88 个用例
+python -m unittest discover -s tests -t tests -v     # 91 个用例
 python scripts\run_scenarios.py                      # 8 个固定场景
 python scripts\save_bench.py                         # 性能数据
 ```

@@ -14,6 +14,9 @@ ok
 test_validation_error_shape (test_api.MasterDataApiTests.test_validation_error_shape) ... C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\tempfile.py:484: ResourceWarning: Implicitly cleaning up <HTTPError 400: 'Bad Request'>
   _warnings.warn(self.warn_message, ResourceWarning)
 ok
+test_detect_port_conflict_reports_busy_port (test_api.PortConflictTests.test_detect_port_conflict_reports_busy_port) ... ok
+test_detect_port_conflict_returns_none_for_free_port (test_api.PortConflictTests.test_detect_port_conflict_returns_none_for_free_port) ... ok
+test_serve_raises_port_in_use_error (test_api.PortConflictTests.test_serve_raises_port_in_use_error) ... ok
 test_agv_detail_contains_plan (test_api.SimulationApiTests.test_agv_detail_contains_plan) ... ok
 test_events_query (test_api.SimulationApiTests.test_events_query) ... ok
 test_inject_fault_and_recover (test_api.SimulationApiTests.test_inject_fault_and_recover) ... ok
@@ -43,54 +46,8 @@ test_release_without_stock_raises_and_keeps_state (test_domain.OrderTests.test_r
 test_unknown_sku_in_order_rejected (test_domain.OrderTests.test_unknown_sku_in_order_rejected) ... ok
 test_cancel_task_from_pending (test_domain.TaskStateMachineTests.test_cancel_task_from_pending) ... ok
 test_illegal_transition_rejected (test_domain.TaskStateMachineTests.test_illegal_transition_rejected) ... ok
-test_legal_transitions (test_domain.TaskStateMachineTests.test_legal_transitions) ... ----------------------------------------
-Exception occurred during processing of request from ('127.0.0.1', 51702)
-Traceback (most recent call last):
-  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 697, in process_request_thread
-    self.finish_request(request, client_address)
-    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 362, in finish_request
-    self.RequestHandlerClass(request, client_address, self)
-    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 766, in __init__
-    self.handle()
-    ~~~~~~~~~~~^^
-  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 498, in handle
-    self.handle_one_request()
-    ~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 464, in handle_one_request
-    self.raw_requestline = self.rfile.readline(65537)
-                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 725, in readinto
-    return self._sock.recv_into(b)
-           ~~~~~~~~~~~~~~~~~~~~^^^
-ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
-----------------------------------------
-ok
-test_priority_change_recorded (test_domain.TaskStateMachineTests.test_priority_change_recorded) ... ----------------------------------------
-Exception occurred during processing of request from ('127.0.0.1', 51705)
-Traceback (most recent call last):
-  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 697, in process_request_thread
-    self.finish_request(request, client_address)
-    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 362, in finish_request
-    self.RequestHandlerClass(request, client_address, self)
-    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 766, in __init__
-    self.handle()
-    ~~~~~~~~~~~^^
-  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 498, in handle
-    self.handle_one_request()
-    ~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 464, in handle_one_request
-    self.raw_requestline = self.rfile.readline(65537)
-                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 725, in readinto
-    return self._sock.recv_into(b)
-           ~~~~~~~~~~~~~~~~~~~~^^^
-ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
-----------------------------------------
-ok
+test_legal_transitions (test_domain.TaskStateMachineTests.test_legal_transitions) ... ok
+test_priority_change_recorded (test_domain.TaskStateMachineTests.test_priority_change_recorded) ... ok
 test_reassign_returns_task_to_pool (test_domain.TaskStateMachineTests.test_reassign_returns_task_to_pool) ... ok
 test_map_fixture_roundtrip (test_fixtures.MapFixtureTests.test_map_fixture_roundtrip) ... ok
 test_map_fixtures_match_code (test_fixtures.MapFixtureTests.test_map_fixtures_match_code) ... ok
@@ -98,9 +55,55 @@ test_every_scenario_has_expectations (test_fixtures.ScenarioFixtureTests.test_ev
 test_scenario_fixtures_match_code (test_fixtures.ScenarioFixtureTests.test_scenario_fixtures_match_code) ... ok
 test_scenario_index_matches (test_fixtures.ScenarioFixtureTests.test_scenario_index_matches) ... ok
 test_find_free_cell_returns_path_or_none (test_pathfinding.PathPlanTests.test_find_free_cell_returns_path_or_none) ... ok
-test_plan_is_continuous_and_passable (test_pathfinding.PathPlanTests.test_plan_is_continuous_and_passable) ... ok
+test_plan_is_continuous_and_passable (test_pathfinding.PathPlanTests.test_plan_is_continuous_and_passable) ... ----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54755)
+Traceback (most recent call last):
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 498, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 464, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+----------------------------------------
+ok
 test_plan_respects_blocked_cell (test_pathfinding.PathPlanTests.test_plan_respects_blocked_cell) ... ok
-test_safe_cell_avoids_articulation_points (test_pathfinding.PathPlanTests.test_safe_cell_avoids_articulation_points) ... ok
+test_safe_cell_avoids_articulation_points (test_pathfinding.PathPlanTests.test_safe_cell_avoids_articulation_points) ... ----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54758)
+Traceback (most recent call last):
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 498, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\http\server.py", line 464, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\周盛源\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+----------------------------------------
+ok
 test_static_block_prevents_planning_through_parked_agv (test_pathfinding.PathPlanTests.test_static_block_prevents_planning_through_parked_agv) ... ok
 test_static_distance_and_manhattan (test_pathfinding.PathPlanTests.test_static_distance_and_manhattan) ... ok
 test_unreachable_goal_returns_none (test_pathfinding.PathPlanTests.test_unreachable_goal_returns_none) ... ok
@@ -145,6 +148,6 @@ test_cycle_detection_is_deterministic (test_simulation.WaitGraphTests.test_cycle
 test_no_cycle_in_chain (test_simulation.WaitGraphTests.test_no_cycle_in_chain) ... ok
 
 ----------------------------------------------------------------------
-Ran 88 tests in 25.563s
+Ran 91 tests in 23.749s
 
 OK

@@ -1,7 +1,7 @@
 """命令行入口。
 
 ```text
-python -m wms serve --port 8080            # 启动 HTTP 服务（含前端页面）
+python -m wms serve --port 8099            # 启动 HTTP 服务（含前端页面）
 python -m wms seed --scenario peak-10      # 导入固定场景
 python -m wms demo --scenario single-agv --ticks 200
 python -m wms export-fixtures              # 导出地图与场景 JSON
@@ -25,9 +25,15 @@ from .scenarios import SCENARIOS, list_scenarios
 
 def cmd_serve(args: argparse.Namespace) -> int:
     from .server import serve
+    from .errors import PortInUseError
 
     app = App(data_dir=args.data_dir)
-    serve(app, host=args.host, port=args.port, open_browser=False)
+    try:
+        serve(app, host=args.host, port=args.port, open_browser=False)
+    except PortInUseError as exc:
+        app.close()
+        print(f"启动失败：{exc.message}", file=sys.stderr)
+        return 1
     return 0
 
 
@@ -148,7 +154,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     serve = sub.add_parser("serve", help="启动 HTTP 服务")
     serve.add_argument("--host", default="127.0.0.1")
-    serve.add_argument("--port", type=int, default=8080)
+    serve.add_argument("--port", type=int, default=8099)
     serve.set_defaults(func=cmd_serve)
 
     seed = sub.add_parser("seed", help="导入固定场景")

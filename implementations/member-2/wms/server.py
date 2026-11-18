@@ -15,6 +15,7 @@ import json
 import logging
 import mimetypes
 import queue
+import socket
 import sys
 import threading
 import time
@@ -24,7 +25,7 @@ from urllib.parse import parse_qs, unquote, urlparse
 from . import config
 from .api import Api
 from .app import App, WEB_DIR
-from .errors import AppError
+from .errors import AppError, PortInUseError
 from .util import dumps
 
 LOGGER = logging.getLogger("wms.server")
@@ -278,8 +279,43 @@ class WmsServer(ThreadingHTTPServer):
         self.api = Api(app)
 
 
-def serve(app: App, host: str = "127.0.0.1", port: int = 8080, open_browser: bool = False) -> None:
+def detect_port_conflict(host: str, port: int) -> str | None:
+    """端口已被别的进程监听时返回提示文案，否则返回 None。
+
+    Windows 上 `allow_reuse_address`（SO_REUSEADDR）允许两个套接字绑定同一端口：
+    后启动的服务"绑定成功"，但浏览器请求会被两个程序随机分流，
+    表现为"打开 http://127.0.0.1:8080/ 看到的不是自己的页面"。
+    这里在真正绑定之前显式探测，把这种静默失败变成明确报错。
+
+    区分"端口被占用"和"只是 TIME_WAIT 残留"：前者能连上，后者连不上。
+    """
+
+    probe = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        probe.bind((host, port))
+        return None
+    except OSError:
+        pass
+    finally:
+        probe.close()
+    try:
+        with socket.create_connection((host, port), timeout=1.0):
+            pass
+    except OSError:
+        # 连不上：端口只是 TIME_WAIT 残留，不影响启动
+        return None
+    return (
+        f"端口 {host}:{port} 已被另一个程序占用。"
+        f"请换一个端口，例如：python -m wms serve --port 8099"
+    )
+
+
+def serve(app: App, host: str = "127.0.0.1", port: int = 8099, open_browser: bool = False) -> None:
     """启动 HTTP 服务并阻塞运行，直到 Ctrl+C。"""
+
+    conflict = detect_port_conflict(host, port)
+    if conflict:
+        raise PortInUseError(conflict, details={"host": host, "port": port})
 
     httpd = WmsServer((host, port), WmsHandler, app)
     app.sim.start_thread()

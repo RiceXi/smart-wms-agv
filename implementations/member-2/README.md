@@ -41,7 +41,7 @@ implementations/member-2/
 │   ├── save_test_evidence.py  跑全量测试并把输出落盘为证据
 │   ├── smoke_api.py           REST/SSE 冒烟
 │   └── debug_*.py             开发期排查脚本
-├── tests/                 自动化测试（88 个用例）
+├── tests/                 自动化测试（91 个用例）
 ├── web/                   前端（index.html / app.js / style.css）
 └── wms/                   后端包
     ├── app.py             应用上下文（装配、场景重置、注入）
@@ -72,19 +72,29 @@ implementations/member-2/
 ```text
 cd implementations/member-2
 
-# 1) 启动服务（含前端页面，默认 http://127.0.0.1:8080）
-python -m wms serve --port 8080
+# 1) 启动服务（含前端页面，默认 http://127.0.0.1:8099）
+python -m wms serve --port 8099
 
 # 2) 浏览器打开
-#    http://127.0.0.1:8080/
+#    http://127.0.0.1:8099/
 ```
 
 首次启动会自动导入 `single-agv` 场景并建库（SQLite 文件位于 `implementations/member-2/data/wms.db`）。
 
+> **端口被占用怎么办**：服务在启动前会先探测端口。若已被别的程序监听，会直接报错退出，
+> 而不会像普通 HTTP 服务那样"启动成功"却把浏览器请求分流给别的程序：
+>
+> ```text
+> 启动失败：端口 127.0.0.1:8099 已被另一个程序占用。
+> 请换一个端口，例如：python -m wms serve --port 8099
+> ```
+>
+> 换个端口即可。要确认是谁占着：`netstat -ano | findstr :8099`，再用 `tasklist /FI "PID eq <pid>"`。
+
 常用命令：
 
 ```text
-python -m wms serve  --host 127.0.0.1 --port 8080   # 启动服务
+python -m wms serve  --host 127.0.0.1 --port 8099   # 启动服务
 python -m wms seed   --scenario peak-10             # 导入指定场景
 python -m wms demo   --scenario peak-10 --ticks 300 # 无界面跑一段仿真
 python -m wms bench  --scenario peak-30 --ticks 600 # 采集性能数据
@@ -94,7 +104,7 @@ python -m wms export-fixtures                       # 重新导出 fixtures
 数据目录可用 `--data-dir` 或环境变量 `WMS_DATA_DIR` 覆盖：
 
 ```text
-python -m wms --data-dir D:\tmp\wms-data serve --port 8080
+python -m wms --data-dir D:\tmp\wms-data serve --port 8099
 ```
 
 ## 4. 运行测试
@@ -104,7 +114,7 @@ cd implementations/member-2
 python -m unittest discover -s tests -t tests -v
 ```
 
-预期结果：`Ran 88 tests ... OK`。
+预期结果：`Ran 91 tests ... OK`。
 
 场景回归（同时把结果写入 `docs/scenario-results.json`）：
 

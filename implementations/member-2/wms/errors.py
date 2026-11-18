@@ -58,3 +58,10 @@ class ConflictError(AppError):
 class InsufficientInventoryError(AppError):
     status = 422
     code = "INSUFFICIENT_INVENTORY"
+
+
+class PortInUseError(AppError):
+    """启动服务时端口已被别的进程占用。"""
+
+    status = 409
+    code = "PORT_IN_USE"
