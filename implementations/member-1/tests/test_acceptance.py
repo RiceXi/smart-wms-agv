@@ -65,6 +65,11 @@ class AcceptanceTests(unittest.TestCase):
             with urllib.request.urlopen(f"http://127.0.0.1:{port}/api/state") as response:
                 snapshot = json.loads(response.read().decode("utf-8"))
             self.assertIn("agvs", snapshot)
+            with urllib.request.urlopen(
+                f"http://127.0.0.1:{port}/api/stream", timeout=2
+            ) as response:
+                line = response.readline().decode("utf-8")
+            self.assertTrue(line.startswith("data: "))
         finally:
             server.shutdown()
             server.server_close()

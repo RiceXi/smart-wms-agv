@@ -243,18 +243,20 @@ function renderTables() {
     : orders;
   document.getElementById("orderTable").innerHTML = table(
     ["订单", "状态", "优先级", "明细", "操作"],
-    filteredOrders.map((order) => [
-      order.code,
-      `<span class="status ${escapeHtml(order.status)}">${escapeHtml(statusText[order.status] || order.status)}</span>`,
-      order.priority,
-      `${order.lines.length} 条`,
-      order.status === "draft"
-        ? buttons([
-            ["release-order", order.id, "释放"],
-            ["cancel-order", order.id, "取消"],
-          ])
-        : "",
-    ]),
+    filteredOrders.map((order) => {
+      const actions = [];
+      if (order.status === "draft") actions.push(["release-order", order.id, "释放"]);
+      if (["draft", "released"].includes(order.status)) {
+        actions.push(["cancel-order", order.id, "取消"]);
+      }
+      return [
+        order.code,
+        `<span class="status ${escapeHtml(order.status)}">${escapeHtml(statusText[order.status] || order.status)}</span>`,
+        order.priority,
+        `${order.lines.length} 条`,
+        actions.length ? buttons(actions) : "",
+      ];
+    }),
     true
   );
 }
@@ -460,9 +462,14 @@ function canvasPoint(event) {
   const width = canvas.width;
   const height = canvas.height;
   const margin = 18 * dpr;
-  const cell = Math.min((width - margin * 2) / 12, (height - margin * 2) / 8);
-  const offsetX = (width - cell * 12) / 2;
-  const offsetY = (height - cell * 8) / 2;
+  const gridWidth = state.data?.map?.width || 12;
+  const gridHeight = state.data?.map?.height || 8;
+  const cell = Math.min(
+    (width - margin * 2) / gridWidth,
+    (height - margin * 2) / gridHeight
+  );
+  const offsetX = (width - cell * gridWidth) / 2;
+  const offsetY = (height - cell * gridHeight) / 2;
   return {
     x: Math.floor((xPixel - offsetX) / cell),
     y: Math.floor((yPixel - offsetY) / cell),
@@ -644,8 +651,31 @@ function bindEvents() {
   });
 }
 
+function connectEventStream() {
+  if (typeof EventSource === "undefined") return null;
+  const stream = new EventSource("/api/stream");
+  stream.onmessage = (event) => {
+    try {
+      state.data = JSON.parse(event.data);
+      render();
+      const indicator = document.getElementById("connection");
+      indicator.textContent = state.data.runtime.paused ? "已暂停" : "运行中";
+      indicator.className = "status-pill online";
+    } catch {
+      showToast("实时消息解析失败", true);
+    }
+  };
+  stream.onerror = () => {
+    const indicator = document.getElementById("connection");
+    indicator.textContent = "推送重连中";
+    indicator.className = "status-pill offline";
+  };
+  return stream;
+}
+
 window.addEventListener("resize", drawMap);
 bindEvents();
+connectEventStream();
 document.getElementById("orderForm").elements.code.value = `OUT-${Date.now().toString().slice(-6)}`;
 refresh();
-window.setInterval(refresh, 700);
+window.setInterval(refresh, 5000);

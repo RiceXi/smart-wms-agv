@@ -13,7 +13,10 @@
 - 等待图死锁检测、回退和重派。
 - 临时封路与路径重规划。
 - 低电量阈值、充电位容量和充电恢复。
+- 10-30 台可配置 AGV，默认 10 台。
 - 2D Canvas 仓库地图、路径、AGV 状态、任务、事件和分析。
+- SSE 实时快照推送，并保留 5 秒 HTTP 轮询降级。
+- 释放后的订单可在没有完成任务时安全取消。
 - SQLite 本地持久化。
 - REST API 与原生 Web 界面。
 
@@ -51,6 +54,12 @@ http://127.0.0.1:8000
 python app.py --port 8765 --db .\data\wms.sqlite
 ```
 
+启动 30 台 AGV：
+
+```powershell
+python app.py --port 8765 --agvs 30 --db .\data\wms-30.sqlite
+```
+
 ## 数据位置
 
 默认 SQLite 文件：
@@ -81,7 +90,7 @@ python -m unittest discover -s tests -v
 - 持久化重启。
 - HTTP 健康检查和状态接口。
 
-最终结果：20 个测试全部通过。
+最终结果：22 个测试全部通过。
 
 ## 页面操作
 
@@ -104,6 +113,7 @@ python -m unittest discover -s tests -v
 | --- | --- | --- |
 | GET | `/health` | 健康检查 |
 | GET | `/api/state` | 完整快照 |
+| GET | `/api/stream` | SSE 实时快照流 |
 | POST | `/api/skus` | 创建 SKU |
 | PUT/DELETE | `/api/skus/{id}` | 更新或删除 SKU |
 | POST | `/api/locations` | 创建库位 |
@@ -111,6 +121,7 @@ python -m unittest discover -s tests -v
 | POST | `/api/inventory` | 登记库存 |
 | POST | `/api/orders` | 创建订单 |
 | POST | `/api/orders/{id}/release` | 释放订单 |
+| POST | `/api/orders/{id}/cancel` | 取消草稿或释放后订单 |
 | POST | `/api/tasks/{id}/priority` | 调整优先级 |
 | POST | `/api/tasks/{id}/cancel` | 取消任务 |
 | POST | `/api/tasks/{id}/reassign` | 重派任务 |
@@ -149,7 +160,8 @@ member-1/
 
 - 个人版采用单体进程和 SQLite，不实现 Kafka、Redis、Eureka 和微服务拆分。
 - 地图固定为 12x8，默认 10 台 AGV。
-- 实时更新通过 700ms HTTP 轮询，不使用 WebSocket。
+- 支持命令行配置最多 30 台 AGV；默认页面仍使用 10 台，便于稳定演示。
+- 实时主链路为 SSE；每 5 秒保留 HTTP 轮询作为降级。
 - Canvas 渲染已做视觉检查，但未用专业性能工具测量 30 台规模帧率。
 - 死锁演示使用构造等待环验证检测与恢复，不代表复杂随机交通中的完整工业级死锁覆盖。
 - 3D、3D 物理碰撞、真实 AGV 和外部地图不在个人版范围。

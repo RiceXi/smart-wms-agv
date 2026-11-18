@@ -21,6 +21,13 @@ class ServiceTests(unittest.TestCase):
         self.assertGreaterEqual(len(snapshot["locations"]), 5)
         self.assertEqual(10, len(snapshot["agvs"]))
 
+    def test_thirty_agv_seed(self) -> None:
+        other = WmsService(Path(self.temp.name) / "scale.sqlite", agv_count=30)
+        try:
+            self.assertEqual(30, len(other.snapshot()["agvs"]))
+        finally:
+            other.stop()
+
     def test_duplicate_sku_code_rejected(self) -> None:
         existing = self.service.snapshot()["skus"][0]
         with self.assertRaises(ServiceError) as context:
@@ -68,6 +75,15 @@ class ServiceTests(unittest.TestCase):
         task_id = self.service.snapshot()["tasks"][0]["id"]
         self.service.cancel_task(task_id)
         self.assertEqual("cancelled", self.service.snapshot()["tasks"][0]["status"])
+
+    def test_cancel_released_order(self) -> None:
+        self.service.create_demo_order()
+        order = self.service.snapshot()["orders"][0]
+        self.service.cancel_order(order["id"])
+        snapshot = self.service.snapshot()
+        self.assertEqual("cancelled", snapshot["orders"][0]["status"])
+        self.assertEqual("cancelled", snapshot["tasks"][0]["status"])
+        self.assertTrue(all(item["reserved_qty"] == 0 for item in snapshot["inventory"]))
 
     def test_deadlock_detection_and_resolution(self) -> None:
         result = self.service.inject_deadlock_demo()

@@ -46,14 +46,32 @@ class WmsService:
         "failed": set(),
     }
 
-    def __init__(self, db_path: Path, seed_demo: bool = True) -> None:
+    def __init__(
+        self,
+        db_path: Path,
+        seed_demo: bool = True,
+        agv_count: int = 10,
+        map_width: int = 12,
+        map_height: int = 8,
+    ) -> None:
+        if agv_count < 1:
+            raise ValueError("agv_count must be positive")
+        if map_width < 5 or map_height < 4:
+            raise ValueError("map dimensions are too small")
         self.repo = Repository(db_path)
+        self.agv_count = agv_count
+        self.map_width = map_width
+        self.map_height = map_height
         self.lock = threading.RLock()
         self._stop_event = threading.Event()
         self._worker: threading.Thread | None = None
         self._load()
-        if seed_demo and not self.skus:
-            self._seed_demo_locked()
+        self.runtime["paused"] = True
+        if seed_demo:
+            if not self.skus:
+                self._seed_demo_locked()
+            else:
+                self._ensure_agv_count_locked()
         self._persist_runtime_locked()
 
     def _load(self) -> None:
@@ -139,7 +157,12 @@ class WmsService:
             for loc in self.locations.values()
             if loc["type"] in {"shelf", "blocked"}
         }
-        return GridMap(12, 8, obstacles=obstacles, blocked=blocked)
+        return GridMap(
+            self.map_width,
+            self.map_height,
+            obstacles=obstacles,
+            blocked=blocked,
+        )
 
     def _location_by_id(self, location_id: str) -> dict[str, Any]:
         location = self.locations.get(location_id)
@@ -224,18 +247,24 @@ class WmsService:
             self.inventory[inventory["id"]] = inventory
             self._save_entity("inventory", inventory)
 
+        occupied = {
+            (int(location["x"]), int(location["y"]))
+            for location in self.locations.values()
+            if location["type"] != "floor"
+        }
+        obstacles = {
+            (int(location["x"]), int(location["y"]))
+            for location in self.locations.values()
+            if location["type"] in {"shelf", "blocked"}
+        }
         starts = [
-            (0, 0),
-            (1, 0),
-            (4, 0),
-            (7, 0),
-            (9, 0),
-            (11, 0),
-            (0, 3),
-            (4, 3),
-            (7, 3),
-            (11, 3),
-        ]
+            (x, y)
+            for y in range(self.map_height)
+            for x in range(self.map_width)
+            if (x, y) not in occupied and (x, y) not in obstacles
+        ][: self.agv_count]
+        if len(starts) < self.agv_count:
+            raise ServiceError("VALIDATION_FAILED", "地图空间不足，无法放置全部 AGV")
         for index, (x, y) in enumerate(starts, start=1):
             item = {
                 "id": f"agv-{index:02d}",
@@ -279,6 +308,49 @@ class WmsService:
         self._add_event("system.seeded", "演示数据已初始化")
         self._persist_runtime_locked()
 
+    def _ensure_agv_count_locked(self) -> None:
+        if len(self.agvs) >= self.agv_count:
+            return
+        occupied = {
+            (int(location["x"]), int(location["y"]))
+            for location in self.locations.values()
+            if location["type"] != "floor"
+        }
+        used = {(int(agv["x"]), int(agv["y"])) for agv in self.agvs.values()}
+        free = [
+            (x, y)
+            for y in range(self.map_height)
+            for x in range(self.map_width)
+            if (x, y) not in occupied and (x, y) not in used
+        ]
+        needed = self.agv_count - len(self.agvs)
+        if len(free) < needed:
+            raise ServiceError("VALIDATION_FAILED", "地图空间不足，无法补足 AGV")
+        now = utc_now()
+        next_index = len(self.agvs) + 1
+        for index, (x, y) in enumerate(free[:needed]):
+            item = {
+                "id": f"agv-{next_index + index:02d}",
+                "map_id": "map-1",
+                "status": "idle",
+                "x": x,
+                "y": y,
+                "battery": 68.0,
+                "active_task_id": None,
+                "payload_sku": None,
+                "last_tick": self.tick,
+                "fault_code": None,
+                "waiting_on": None,
+                "waiting_ticks": 0,
+                "rollback_count": 0,
+                "busy_ticks": 0,
+                "created_at": now,
+                "updated_at": now,
+                "version": 1,
+            }
+            self.agvs[item["id"]] = item
+            self._save_entity("agv", item)
+
     def snapshot(self) -> dict[str, Any]:
         with self.lock:
             map_locations = [
@@ -295,8 +367,8 @@ class WmsService:
             return {
                 "runtime": copy.deepcopy(self.runtime),
                 "map": {
-                    "width": 12,
-                    "height": 8,
+                    "width": self.map_width,
+                    "height": self.map_height,
                     "version": self.runtime["map_version"],
                     "locations": map_locations,
                     "blocked_cells": copy.deepcopy(
@@ -403,7 +475,7 @@ class WmsService:
             y = int(require(data, "y"))
             capacity = int(require(data, "capacity"))
             kind = data.get("type", "floor")
-            if not (0 <= x < 12 and 0 <= y < 8):
+            if not (0 <= x < self.map_width and 0 <= y < self.map_height):
                 raise ServiceError("VALIDATION_FAILED", "库位坐标越界")
             if kind not in {"floor", "shelf", "pick", "drop", "charger", "blocked"}:
                 raise ServiceError("VALIDATION_FAILED", "库位类型不合法")
@@ -440,7 +512,7 @@ class WmsService:
             item = self._location_by_id(location_id)
             if "x" in data or "y" in data:
                 x, y = int(data.get("x", item["x"])), int(data.get("y", item["y"]))
-                if not (0 <= x < 12 and 0 <= y < 8):
+                if not (0 <= x < self.map_width and 0 <= y < self.map_height):
                     raise ServiceError("VALIDATION_FAILED", "库位坐标越界")
                 if any(
                     loc["id"] != location_id
@@ -652,12 +724,35 @@ class WmsService:
             order = self.orders.get(order_id)
             if not order:
                 raise ServiceError("RESOURCE_NOT_FOUND", "订单不存在", 404)
-            if order["status"] not in {"draft", "allocated"}:
-                raise ServiceError("ORDER_INVALID_STATE", "只有草稿或已分配订单可直接取消", 409)
+            if order["status"] in {"completed", "cancelled", "failed"}:
+                raise ServiceError("ORDER_INVALID_STATE", "终态订单不能取消", 409)
+            related = [
+                task for task in self.tasks.values() if task["order_id"] == order_id
+            ]
+            if any(task["status"] == "completed" for task in related):
+                raise ServiceError(
+                    "ORDER_INVALID_STATE", "订单已有完成任务，不能整体取消", 409
+                )
+            for task in related:
+                if task["status"] in {"completed", "cancelled", "failed"}:
+                    continue
+                self._release_reserved_inventory_locked(task)
+                if task.get("assigned_agv_id"):
+                    self._release_task_from_agv_locked(task)
+                task["status"] = "cancelled"
+                self._touch(task)
+                self._save_entity("task", task)
             order["status"] = "cancelled"
             self._touch(order)
             self._save_entity("order", order)
-            self._add_event("order.cancelled", f"订单 {order['code']} 已取消", aggregate_id=order["id"])
+            self._add_event(
+                "order.cancelled",
+                f"订单 {order['code']} 已取消",
+                {"cancelled_tasks": [task["id"] for task in related]},
+                order["id"],
+            )
+            self._dispatch_pending_locked()
+            self._persist_runtime_locked()
             return order
 
     def set_task_priority(self, task_id: str, priority: int) -> dict[str, Any]:
@@ -871,9 +966,22 @@ class WmsService:
         for task in candidates_tasks:
             reservations = self._build_reservations_locked()
             candidates: list[tuple[int, str, dict[str, Any]]] = []
-            for agv in sorted(self.agvs.values(), key=lambda item: item["id"]):
-                if agv["status"] != "idle" or float(agv["battery"]) <= 15:
-                    continue
+            pickup = self._location_by_id(task["pickup_location_id"])
+            pickup_point = (int(pickup["x"]), int(pickup["y"]))
+            idle_agvs = [
+                agv
+                for agv in self.agvs.values()
+                if agv["status"] == "idle" and float(agv["battery"]) > 15
+            ]
+            idle_agvs.sort(
+                key=lambda item: (
+                    abs(int(item["x"]) - pickup_point[0])
+                    + abs(int(item["y"]) - pickup_point[1]),
+                    -float(item["battery"]),
+                    item["id"],
+                )
+            )
+            for agv in idle_agvs[:4]:
                 plan = self._build_plan_locked(agv, task, reservations)
                 if plan:
                     candidates.append((int(plan["estimated_ticks"]), agv["id"], plan))
@@ -1207,7 +1315,10 @@ class WmsService:
     def inject_roadblock(self, x: int, y: int, blocked: bool = True) -> dict[str, Any]:
         with self.lock:
             point = [int(x), int(y)]
-            if not (0 <= point[0] < 12 and 0 <= point[1] < 8):
+            if not (
+                0 <= point[0] < self.map_width
+                and 0 <= point[1] < self.map_height
+            ):
                 raise ServiceError("VALIDATION_FAILED", "封路坐标越界")
             cells = {tuple(cell) for cell in self.runtime.get("blocked_cells", [])}
             if blocked:

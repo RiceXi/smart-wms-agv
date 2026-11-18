@@ -7,7 +7,7 @@
 - 使用方式：通过对话式提示完成需求拆解、领域建模、代码生成、测试设计和错误复盘，再由本人执行、检查并修正。
 - 个人版本分支：dev/member-1
 - 源码目录：implementations/member-1/
-- 技术栈：Python 3.14.5、标准库、SQLite、原生 HTML/CSS/JavaScript、Canvas 2D。
+- 技术栈：Python 3.14.5、标准库、SQLite、原生 HTML/CSS/JavaScript、Canvas 2D、SSE。
 
 ## 2. 需求分析
 
@@ -35,6 +35,8 @@
 ## 4. 技术选型与架构设计
 
 个人版选择单体应用，原因是个人开发阶段需要低依赖、可离线、易冻结。后端使用 `ThreadingHTTPServer` 提供 REST 和静态文件，核心服务通过 `RLock` 串行化状态变更，后台仿真线程按 tick 推进。
+
+实时数据以 SSE 快照为主链路，每 500 ms 推送一次；页面保留 5 秒 HTTP 轮询作为断线降级。AGV 数量可通过 `--agvs` 配置，已验证 30 台种子和任务闭环。
 
 模块边界：
 
@@ -139,13 +141,13 @@ member-1/
 python -m unittest discover -s tests -v
 ```
 
-结果：`Ran 20 tests in 3.014s / OK`。
+结果：`Ran 22 tests in 4.324s / OK`。
 
 | 用例 | 结果 | 证据 |
 | --- | --- | --- |
 | AC1 本地启动 | 通过 | Web 服务运行于 `127.0.0.1:8765`，`/health` 返回 `ok` |
 | AC2 主数据 | 通过 | 种子 3 SKU、10 库位、10 AGV；重复编码和非法坐标测试通过 |
-| AC3 出库订单 | 通过 | 订单释放幂等测试通过 |
+| AC3 出库订单 | 通过 | 订单释放幂等、释放后取消和预占释放测试通过 |
 | AC4 任务状态 | 通过 | 终态任务取消被 `TASK_INVALID_STATE` 拒绝 |
 | AC5 单 AGV 路径 | 通过 | 单任务从 assigned 经 running 到 completed |
 | AC6 同格冲突 | 通过 | 顶点预约测试通过 |
@@ -156,12 +158,12 @@ python -m unittest discover -s tests -v
 | AC11 充电 | 通过 | 电量 10% 自动生成 charge plan |
 | AC12 急单 | 通过 | 任务优先级修改接口和优先级队列排序 |
 | AC13 固定 seed | 通过 | 两次相同场景的路径几何一致 |
-| AC14 实时地图 | 通过 | Edge 实际加载 Canvas，AGV 与任务完成状态可见 |
+| AC14 实时地图 | 通过 | Edge 实际加载 Canvas；SSE 快照推送和轮询降级均可用 |
 | AC15 暂停与回放 | 通过 | 暂停后 step 精确推进 2 tick |
 | AC16 持久化 | 通过 | 关闭服务后重新打开 SQLite，新增 SKU 仍存在 |
 | AC17 查询与筛选 | 通过 | API 支持状态/AGV 查询；页面支持状态、AGV、优先级和订单状态筛选 |
 | AC18 统计 | 通过 | 完成订单后统计显示 1 个完成订单和 1 个完成任务 |
-| AC19 性能记录 | 通过 | 10 AGV、10 订单、释放平均 23.393 ms、最大 24.415 ms |
+| AC19 性能记录 | 通过 | 30 AGV、10 订单、释放平均 152.910 ms、最大 176.866 ms |
 | AC20 错误与限制 | 通过 | 未实现和风险已在 README、AI 记录和本报告列出 |
 
 界面检查截图：`implementations/member-1/screenshots/dashboard.png`。
@@ -172,18 +174,18 @@ python -m unittest discover -s tests -v
 
 - Windows 本机。
 - Python 3.14.5。
-- 10 台 AGV。
+- 30 台 AGV。
 - 10 个订单、10 个任务。
-- 释放订单平均 23.393 ms，最大 24.415 ms。
-- 200 tick 推进耗时 0.870 秒。
+- 释放订单平均 152.910 ms，最大 176.866 ms。
+- 300 tick 推进耗时 6.425 秒。
 - 10 个任务全部完成，无活动任务残留。
 
 限制：
 
-- 未测量 30 台 AGV 和 20 fps 的最终前端性能。
+- 未测量 30 台 AGV 场景的最终前端 fps。
 - 未执行 500 场景随机压测和 30 分钟 soak test。
 - 死锁演示是可重复构造场景，不是工业级随机交通覆盖。
-- 未实现 WebSocket、Kafka、Redis、Eureka、微服务和课程分布式技术，这些属于整合版。
+- 未实现 WebSocket、Kafka、Redis、Eureka、微服务和课程分布式技术，这些属于整合版；个人版使用 SSE 完成实时推送。
 - 3D 和真实 AGV 硬件不在个人版范围。
 
 ## 12. 自我评价

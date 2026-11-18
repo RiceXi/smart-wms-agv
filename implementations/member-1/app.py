@@ -21,6 +21,9 @@ def parse_args() -> argparse.Namespace:
         "--db", default=str(ROOT / "data" / "wms.sqlite"), help="SQLite file location"
     )
     parser.add_argument(
+        "--agvs", type=int, default=10, help="Number of demo AGVs (up to map capacity)"
+    )
+    parser.add_argument(
         "--no-seed", action="store_true", help="Do not create demo data for an empty DB"
     )
     return parser.parse_args()
@@ -28,7 +31,9 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    service = WmsService(Path(args.db), seed_demo=not args.no_seed)
+    service = WmsService(
+        Path(args.db), seed_demo=not args.no_seed, agv_count=args.agvs
+    )
     server = create_server(service, args.host, args.port, ROOT / "static")
 
     def shutdown(*_args) -> None:

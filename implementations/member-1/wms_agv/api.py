@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 import mimetypes
+import sys
+import time
 import traceback
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -18,6 +20,14 @@ class ApiServer(ThreadingHTTPServer):
         self.service = service
         self.static_dir = static_dir
         super().__init__(address, ApiHandler)
+
+    def handle_error(self, request, client_address) -> None:
+        error = sys.exception()
+        if isinstance(
+            error, (BrokenPipeError, ConnectionAbortedError, ConnectionResetError)
+        ):
+            return
+        super().handle_error(request, client_address)
 
 
 class ApiHandler(BaseHTTPRequestHandler):
@@ -72,6 +82,25 @@ class ApiHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(body)))
         self.end_headers()
         self.wfile.write(body)
+
+    def _serve_event_stream(self) -> None:
+        self.send_response(200)
+        self.send_header("Content-Type", "text/event-stream; charset=utf-8")
+        self.send_header("Cache-Control", "no-cache")
+        self.send_header("Connection", "keep-alive")
+        self.end_headers()
+        try:
+            while True:
+                payload = json.dumps(
+                    self.server.service.snapshot(),
+                    ensure_ascii=False,
+                    separators=(",", ":"),
+                )
+                self.wfile.write(f"data: {payload}\n\n".encode("utf-8"))
+                self.wfile.flush()
+                time.sleep(0.5)
+        except (BrokenPipeError, ConnectionAbortedError, ConnectionResetError):
+            return
 
     def do_GET(self) -> None:
         try:
@@ -128,6 +157,9 @@ class ApiHandler(BaseHTTPRequestHandler):
                 return
             if path == "/api/analytics":
                 self._send_json(service.snapshot()["analytics"])
+                return
+            if path == "/api/stream":
+                self._serve_event_stream()
                 return
             self._serve_static(path)
         except ServiceError as error:

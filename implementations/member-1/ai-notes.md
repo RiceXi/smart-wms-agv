@@ -5,13 +5,14 @@
 - 工具：DeepSeek-V4.1-Flash
 - 成员：RiceXi
 - 分支：dev/member-1
-- 日期：2026-11-18
+- 日期：2026-11-18 至 2026-11-19
 
 ## 关键提示词
 
 1. 阅读公共需求、数据契约、验收用例和个人开发契约，在 `implementations/member-1/` 内独立完成一个本地可运行版本。
 2. 使用 Python 标准库和 SQLite，避免外部依赖；实现时空 A*、格点/边预约、死锁检测、tick 仿真、REST API 和 Canvas UI。
 3. 完成自动化测试、运行说明、AI 错误记录和个人报告，不修改公共契约。
+4. 增加 30 AGV 可选规模、服务端 SSE 推送和已释放订单取消，同时保持零第三方依赖。
 
 ## AI 生成效果
 
@@ -26,6 +27,8 @@ AI 快速生成了服务分层、SQLite 实体存储、A* 搜索、仿真循环�
 | 候选路径提前写入预约表 | 比较多个候选 AGV 时，未选中的候选也可能占用预约 | 路径构建只返回候选，选中后由下一轮预约重建 | 订单可正常指派 |
 | 线测端口受限 | 本地端口在默认沙箱内被拒绝 | HTTP 集成测试在明确的本地运行审批下执行 | 20 个测试通过 |
 | 充电计划未持久化结构 | 初始实现只能改变状态，没有去充电桩路径 | 增加 charge plan、目标充电位和逐 tick 移动/充电 | `test_low_battery_enters_charging` |
+| 30 AGV 指派过慢 | 首轮对全部 30 台候选逐一做完整 A* | 先按距离和电量预排序，仅对前 4 台做完整时空规划 | 30 AGV 平均 152.910 ms |
+| SSE 客户端断开产生异常 | 关闭页面后服务端写入断开的 socket | 捕获连接中断并在 `ApiServer.handle_error` 忽略 | 22 项测试无断连异常 |
 
 ## 人工判断
 
@@ -38,7 +41,7 @@ AI 快速生成了服务分层、SQLite 实体存储、A* 搜索、仿真循环�
 ## 主要测试结果
 
 ```text
-Ran 20 tests in 3.014s
+Ran 22 tests in 4.324s
 OK
 ```
 
@@ -56,11 +59,11 @@ task.statuses=running
 性能采样：
 
 ```text
-10 AGV
+30 AGV
 10 orders
-release average=23.393 ms
-release max=24.415 ms
-200 tick advance: 0.870 s
+release average=152.910 ms
+release max=176.866 ms
+300 tick advance: 6.425 s
 completed tasks=10
 ```
 
