@@ -127,9 +127,10 @@
 
 ## 9. 分支、提交与 PR
 
-- 默认使用单一主仓库，成员不需要各自创建 fork。
-- 不建立 `dev/member-N` 等长期个人分支；所有功能分支都从最新 `main` 创建。
-- 禁止直接向 `main` 推送；所有进入 `main` 的变更必须通过 PR。
+- 使用 `RiceXi/smart-wms-agv` 作为上游主仓库，三名成员分别 fork，fork 只作为协作工作区。
+- 每个 fork 维护一个长期个人集成分支：`dev/member-1`、`dev/member-2`、`dev/member-3`。
+- 功能分支从最新个人集成分支创建，完成后先合入个人集成分支。
+- 禁止直接向上游 `main` 推送；所有进入 `main` 的变更必须通过跨 fork PR。
 - 每个 PR 只解决一个可验证问题，并保持可独立审查。
 - 提交格式：`feat:`、`fix:`、`refactor:`、`docs:`、`test:` 或 `chore:`；正文说明动机和影响范围。
 - Agent 未经明确要求，不主动 commit、push、merge、amend 或改写已有提交。

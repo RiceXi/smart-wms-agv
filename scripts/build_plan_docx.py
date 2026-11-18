@@ -300,7 +300,7 @@ def add_cover(doc):
     meta_rows = [
         ("项目阶段", "M0 契约基线"),
         ("团队", "RiceXi  /  Zsource-Fuyi  /  KingSure000"),
-        ("仓库模式", "单仓库、共享功能分支、PR 合入"),
+        ("仓库模式", "三人 fork、dev/member-N、跨 fork PR"),
         ("文档版本", "0.1"),
     ]
     meta_widths = [1.25, 5.1]
@@ -367,11 +367,11 @@ def build_document():
     )
     add_table(
         doc,
-        ["成员", "协作视角", "关注范围", "共同质量目标"],
+        ["成员与集成分支", "协作视角", "关注范围", "共同质量目标"],
         [
-            ("RiceXi", "平台与契约", "gateway、auth、wms、task、Compose、CI、OpenAPI", "服务边界、事务、幂等和契约兼容"),
-            ("Zsource-Fuyi", "调度与仿真", "dispatch、sim、地图、路径、预约、死锁、性能", "路径正确、确定性、性能和规模"),
-            ("KingSure000", "交互与实时", "web、push、analytics、Canvas、回放和端到端演示", "状态一致、体验、实时性能"),
+            ("RiceXi\ndev/member-1", "平台与契约", "gateway、auth、wms、task、Compose、CI、OpenAPI", "服务边界、事务、幂等和契约兼容"),
+            ("Zsource-Fuyi\ndev/member-2", "调度与仿真", "dispatch、sim、地图、路径、预约、死锁、性能", "路径正确、确定性、性能和规模"),
+            ("KingSure000\ndev/member-3", "交互与实时", "web、push、analytics、Canvas、回放和端到端演示", "状态一致、体验、实时性能"),
         ],
         [1.18, 1.45, 3.05, 1.82],
         font_size=8.9,
@@ -439,16 +439,16 @@ def build_document():
     )
 
     add_heading(doc, "5  协作方式与交付门禁")
-    add_heading(doc, "5.1 分支与评审", level=2)
+    add_heading(doc, "5.1 Fork 与三分支", level=2)
     add_text(
         doc,
-        "main 始终保持可构建、可启动。所有功能分支都从最新 main 创建，通过 PR 合并到 main；不建立长期个人分支。契约先合并，代码后合并；一个 PR 只处理一个可验证目标。",
+        "上游 main 始终保持可构建、可启动。三名成员分别 fork；每个人在 fork 中维护 dev/member-N 集成分支。功能分支先合入个人集成分支，再以跨 fork PR 合入上游 main。契约先合并，代码后合并。",
     )
     add_table(
         doc,
         ["事项", "规则"],
         [
-            ("直接推送", "禁止直接向 main 推送"),
+            ("直接推送", "禁止直接向上游 main 推送"),
             ("共享契约", "schema 校验通过，至少两名成员批准"),
             ("跨模块修改", "先说明影响，再由相关评审视角确认"),
             ("测试", "新增行为必须有对应单测、集成或端到端测试"),
@@ -462,7 +462,7 @@ def build_document():
     add_heading(doc, "5.2 里程碑集成", level=2)
     add_text(
         doc,
-        "达到里程碑退出条件时，团队通过 PR 汇入共享功能分支，用固定 seed 运行完整场景，并记录冲突、死锁和性能数据。未关闭的 P0/P1 缺陷进入下一里程碑最高优先级修复项。",
+        "达到退出条件时，三人从各自 fork 的 dev/member-N 创建 PR，合入上游 main，并用固定 seed 运行完整场景，记录冲突、死锁和性能。未关闭的 P0/P1 缺陷进入最高优先级修复项。",
     )
 
     add_heading(doc, "5.3 契约变更", level=2)

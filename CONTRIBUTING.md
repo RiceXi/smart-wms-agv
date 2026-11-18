@@ -1,28 +1,37 @@
 # 协作规范
 
-## 单主仓库模式
+## Fork 与三分支模式
 
-本项目默认使用一个远端主仓库协作，成员无需各自创建 fork：
+上游主仓库：
 
 ```text
 https://github.com/RiceXi/smart-wms-agv.git
 ```
 
-三名成员都是主仓库协作者。所有工作分支都从最新 `main` 创建，按功能命名，将提交直接推送回 `origin`，然后通过 PR 合入 `main`。
+三名成员分别 fork 上游仓库，并在自己的 fork 中维护个人集成分支：
 
-首次加入后执行：
+| 成员 | GitHub 账号 | fork 内集成分支 |
+| --- | --- | --- |
+| 成员一 | RiceXi | `dev/member-1` |
+| 成员二 | Zsource-Fuyi | `dev/member-2` |
+| 成员三 | KingSure000 | `dev/member-3` |
+
+首次加入后执行，将 `<account>` 和 `<member-N>` 换成自己的账号与分支：
 
 ```powershell
-git clone https://github.com/RiceXi/smart-wms-agv.git
+git clone https://github.com/<account>/smart-wms-agv.git
 cd smart-wms-agv
-git switch main
+git remote add upstream https://github.com/RiceXi/smart-wms-agv.git
+git fetch upstream
+git switch -c dev/member-N upstream/main
+git push -u origin dev/member-N
 ```
 
-个人 fork 不是必需流程；如果因为实验或个人备份需要创建 fork，最终仍应把变更以 PR 形式提交到主仓库的 `main`。
+fork 与 `dev/member-N` 仅用于隔离并行工作，不代表个人任务或个人交付。所有成果最终通过 PR 进入上游 `main`。
 
 ## 分支模型
 
-`main` 始终保持可构建、可启动。项目不设置长期个人分支；每项工作从 `main` 创建短生命周期共享功能分支：
+上游 `main` 始终保持可构建、可启动。每项工作在个人 fork 中从 `dev/member-N` 创建短生命周期功能分支：
 
 ```text
 feat/dispatch-reservation
@@ -31,7 +40,7 @@ docs/api-contract
 test/deadlock-cycle
 ```
 
-功能分支完成后直接以 PR 合并到 `main`。禁止在 `main` 直接提交。
+功能分支完成后合入 `dev/member-N`，再从个人 fork 的个人集成分支创建跨 fork PR，合入上游 `main`。禁止直接向上游 `main` 推送。
 
 ## 提交信息
 
@@ -78,7 +87,7 @@ test(member-3/web): cover websocket reconnect snapshot
 
 ## 每次提交前
 
-- 拉取 `main` 和工作分支最新提交。
+- 拉取 `upstream/main`、个人集成分支和工作分支最新提交。
 - 运行受影响模块的测试。
 - 更新 AI 日志中的问题与修复。
 - 在任务看板更新阻塞项。
@@ -87,7 +96,8 @@ test(member-3/web): cover websocket reconnect snapshot
 
 满足一个里程碑的退出条件时进行团队集成：
 
-- 通过 PR 合入该里程碑的共享功能分支。
+- 三人分别将 `dev/member-N` 推送到自己的 fork。
+- 从各 fork 的个人集成分支创建 PR，合入上游 `main`。
 - 用固定 seed 启动完整场景。
 - 记录失败用例、冲突次数、死锁次数和性能。
 - 形成下一里程碑唯一的最高优先级技术目标。
