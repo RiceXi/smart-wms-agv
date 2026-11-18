@@ -8,11 +8,11 @@
 
 ## 2. 三项协作视角
 
-| 成员 | fork 内集成分支 | 主要评审视角 | 关注范围 | 协作方式 |
-| --- | --- | --- | --- | --- |
-| RiceXi | `dev/member-1` | 平台与契约 | gateway、auth、wms、task、Compose、CI、OpenAPI、事件 envelope | 参与任一模块；重点保证边界、事务、幂等和契约兼容 |
-| Zsource-Fuyi | `dev/member-2` | 调度与仿真 | dispatch、sim、地图、路径、预约、死锁、充电和性能场景 | 参与任一模块；重点保证调度正确、确定性和规模 |
-| KingSure000 | `dev/member-3` | 交互与实时 | web、push、analytics、Canvas、回放和端到端演示 | 参与任一模块；重点保证状态一致、体验和性能 |
+| 成员 | 使用模型 | fork 内集成分支 | 主要评审视角 | 关注范围 | 协作方式 |
+| --- | --- | --- | --- | --- | --- |
+| RiceXi | DeepSeek-V4.1-Flash | `dev/member-1` | 平台与契约 | gateway、auth、wms、task、Compose、CI、OpenAPI、事件 envelope | 参与任一模块；重点保证边界、事务、幂等和契约兼容 |
+| Zsource-Fuyi | MiniMax M3.1 Flash | `dev/member-2` | 调度与仿真 | dispatch、sim、地图、路径、预约、死锁、充电和性能场景 | 参与任一模块；重点保证调度正确、确定性和规模 |
+| KingSure000 | Gemini-4-Carbon | `dev/member-3` | 交互与实时 | web、push、analytics、Canvas、回放和端到端演示 | 参与任一模块；重点保证状态一致、体验和性能 |
 
 评审视角不等于代码所有权。需求、设计、实现、测试和文档都可以由任一成员发起，其他成员从受影响视角评审。所有个人集成分支最终都进入同一个上游产品。
 

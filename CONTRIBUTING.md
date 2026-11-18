@@ -10,11 +10,11 @@ https://github.com/RiceXi/smart-wms-agv.git
 
 三名成员分别 fork 上游仓库，并在自己的 fork 中维护个人集成分支：
 
-| 成员 | GitHub 账号 | fork 内集成分支 |
-| --- | --- | --- |
-| 成员一 | RiceXi | `dev/member-1` |
-| 成员二 | Zsource-Fuyi | `dev/member-2` |
-| 成员三 | KingSure000 | `dev/member-3` |
+| 成员 | GitHub 账号 | 使用模型 | fork 内集成分支 |
+| --- | --- | --- | --- |
+| 成员一 | RiceXi | DeepSeek-V4.1-Flash | `dev/member-1` |
+| 成员二 | Zsource-Fuyi | MiniMax M3.1 Flash | `dev/member-2` |
+| 成员三 | KingSure000 | Gemini-4-Carbon | `dev/member-3` |
 
 首次加入后执行，将 `<account>` 和 `<member-N>` 换成自己的账号与分支：
 

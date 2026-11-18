@@ -367,13 +367,13 @@ def build_document():
     )
     add_table(
         doc,
-        ["成员与集成分支", "协作视角", "关注范围", "共同质量目标"],
+        ["成员与集成分支", "使用模型", "协作视角", "关注范围", "共同质量目标"],
         [
-            ("RiceXi\ndev/member-1", "平台与契约", "gateway、auth、wms、task、Compose、CI、OpenAPI", "服务边界、事务、幂等和契约兼容"),
-            ("Zsource-Fuyi\ndev/member-2", "调度与仿真", "dispatch、sim、地图、路径、预约、死锁、性能", "路径正确、确定性、性能和规模"),
-            ("KingSure000\ndev/member-3", "交互与实时", "web、push、analytics、Canvas、回放和端到端演示", "状态一致、体验、实时性能"),
+            ("RiceXi\ndev/member-1", "DeepSeek-V4.1-Flash", "平台与契约", "gateway、auth、wms、task、Compose、CI、OpenAPI", "服务边界、事务、幂等和契约兼容"),
+            ("Zsource-Fuyi\ndev/member-2", "MiniMax M3.1 Flash", "调度与仿真", "dispatch、sim、地图、路径、预约、死锁、性能", "路径正确、确定性、性能和规模"),
+            ("KingSure000\ndev/member-3", "Gemini-4-Carbon", "交互与实时", "web、push、analytics、Canvas、回放和端到端演示", "状态一致、体验、实时性能"),
         ],
-        [1.18, 1.45, 3.05, 1.82],
+        [1.1, 1.25, 0.9, 2.15, 1.5],
         font_size=8.9,
     )
 

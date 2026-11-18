@@ -12,13 +12,13 @@
 
 ## 团队成员
 
-| 成员 | GitHub 账号 | 个人集成分支 | 协作视角 |
-| --- | --- | --- | --- |
-| 成员一 | RiceXi | dev/member-1 | 平台、WMS、任务、契约与集成 |
-| 成员二 | Zsource-Fuyi | dev/member-2 | 调度、仿真、算法与性能 |
-| 成员三 | KingSure000 | dev/member-3 | 前端、推送、分析、回放与演示 |
+| 成员 | GitHub 账号 | 使用模型 | 个人集成分支 | 协作视角 |
+| --- | --- | --- | --- | --- |
+| 成员一 | RiceXi | DeepSeek-V4.1-Flash | dev/member-1 | 平台、WMS、任务、契约与集成 |
+| 成员二 | Zsource-Fuyi | MiniMax M3.1 Flash | dev/member-2 | 调度、仿真、算法与性能 |
+| 成员三 | KingSure000 | Gemini-4-Carbon | dev/member-3 | 前端、推送、分析、回放与演示 |
 
-成员分别使用自己的 fork 和 `dev/member-N` 集成分支，最终通过跨 fork PR 合入上游 `main`。fork 只是并行工作区，不产生个人版本或个人交付。所有成员都可以修改共享代码，每项变更由作者提交 PR，并至少由一名相关视角成员评审。
+成员分别使用上述模型、自己的 fork 和 `dev/member-N` 集成分支，最终通过跨 fork PR 合入上游 `main`。fork 只是并行工作区，不产生个人版本或个人交付。所有成员都可以修改共享代码，每项变更由作者提交 PR，并至少由一名相关视角成员评审。
 
 ## 技术基线
 
