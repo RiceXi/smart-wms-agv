@@ -498,6 +498,38 @@ def build_document():
         run = paragraph.add_run(text)
         set_run_font(run, size=9.2, color=TEXT)
 
+    doc.add_page_break()
+    add_heading(doc, "附录 A  课程推荐技术映射")
+    add_text(
+        doc,
+        "课程文档属于推荐要求，不替代业务契约。每个技术项只选择一条可运行路径，并保留代码、启动命令和可观察证据。",
+    )
+    add_table(
+        doc,
+        ["#", "课程技术", "项目落点", "验收证据"],
+        [
+            ("1", "Spring Boot", "8 个业务与接入服务", "服务构建、健康检查"),
+            ("2", "Spring Cloud", "Gateway、调用、配置与注册", "路由、配置和集成测试"),
+            ("3", "SOA / 微服务", "领域服务边界", "Compose 服务清单"),
+            ("4", "Docker / K8s", "Compose 与 kind 单节点", "镜像、清单、扩缩容演示"),
+            ("5", "Redis", "状态、预约、优先级、幂等", "预约键、TTL 与恢复测试"),
+            ("6", "分布式消息", "Kafka 业务与状态事件", "topic、消费者和去重测试"),
+            ("7", "Eureka", "服务注册与发现", "实例列表、下线恢复策略"),
+            ("8", "RESTful API", "WMS、任务、调度、仿真与分析", "OpenAPI 与契约测试"),
+            ("9", "JSON-RPC over HTTP", "sim 与 dispatch 高频调用", "RPC 方法、请求和测试"),
+            ("10", "负载均衡", "gateway 路由 dispatch 双实例", "轮询与实例故障切换"),
+            ("11", "Hadoop", "HDFS 轨迹与 MapReduce 离线作业", "输入输出、作业日志"),
+            ("12", "Elasticsearch", "任务、异常与 trace 检索", "索引、检索 API、同步验证"),
+            ("13", "Serverless / FaaS", "日报、轨迹压缩或快照函数", "函数、触发器与调用日志"),
+            ("14", "Ansible", "演示环境配置管理", "playbook 与执行日志"),
+            ("15", "CI/CD", "GitHub Actions 构建与测试", "workflow 与运行记录"),
+            ("16", "SkyWalking", "跨服务链路追踪", "traceId、拓扑与截图"),
+            ("17", "Prometheus + Grafana", "吞吐、冲突、死锁与利用率", "指标、抓取与面板"),
+        ],
+        [0.35, 1.15, 2.1, 3.2],
+        font_size=7.8,
+    )
+
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     doc.save(OUTPUT)
     print(OUTPUT)

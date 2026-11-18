@@ -25,6 +25,7 @@
 9. `docs/06-development-guide.md`
 10. `docs/07-test-acceptance-plan.md`
 11. `docs/08-risk-register.md`
+12. `docs/09-course-technology-mapping.md`
 
 ## 2. 总开发文档
 
@@ -42,6 +43,7 @@
 - `docs/06-development-guide.md`：环境、代码结构、日志、测试和提交要求。
 - `docs/07-test-acceptance-plan.md`：功能、性能、稳定性和发布验收。
 - `docs/08-risk-register.md`：风险信号、缓解措施和保底方案。
+- `docs/09-course-technology-mapping.md`：17 项课程推荐技术的项目落点、实施阶段和验收证据。
 
 ## 3. 项目基本要求
 

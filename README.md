@@ -76,6 +76,7 @@
 8. [接口与事件契约](docs/05-api-event-contract.md)
 9. [开发指南](docs/06-development-guide.md)
 10. [测试与验收计划](docs/07-test-acceptance-plan.md)
+11. [课程推荐技术映射](docs/09-course-technology-mapping.md)
 
 ## 当前可执行事项
 
