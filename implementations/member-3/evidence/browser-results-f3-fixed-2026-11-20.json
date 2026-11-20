@@ -1,0 +1,573 @@
+{
+  "measuredAt": "2026-11-20T09:14:50.868Z",
+  "elapsedMs": 17937.277000000002,
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Edg/157.0.4341.60",
+    "revision": "@fbcb2989a6c61b72a4919fe1028e58e70131cd46",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0",
+    "jsVersion": "15.7.11.7"
+  },
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "liveTick": 38,
+  "diagnostics": {
+    "fps": 60,
+    "frames": 972,
+    "snapshotTick": 38,
+    "renderedTick": 38,
+    "errors": [
+      {
+        "at": "2026-11-20T09:14:34.052Z",
+        "context": "保存失败",
+        "message": "编码 UI-SKU 已存在",
+        "code": "duplicate_code"
+      }
+    ],
+    "errorCount": 1,
+    "mode": "live",
+    "connection": "live",
+    "snapshots": 51,
+    "sseSnapshots": 24,
+    "renderedAgvs": [
+      {
+        "id": "b3748d78-7d95-4cb1-a05b-5d6a6359dd2b",
+        "code": "AGV-01",
+        "x": 1,
+        "y": 1,
+        "status": "idle",
+        "battery": 99
+      },
+      {
+        "id": "e72e2d2a-b691-4888-a6b7-997caee4b1ac",
+        "code": "AGV-02",
+        "x": 2,
+        "y": 1,
+        "status": "idle",
+        "battery": 86
+      },
+      {
+        "id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+        "code": "AGV-03",
+        "x": 3,
+        "y": 1,
+        "status": "idle",
+        "battery": 89.63999999999987
+      },
+      {
+        "id": "4835da7b-542f-4c98-a2e0-cff97d9b3bec",
+        "code": "AGV-04",
+        "x": 4,
+        "y": 1,
+        "status": "idle",
+        "battery": 77.11999999999989
+      },
+      {
+        "id": "95a14ad0-fbfb-4de1-a356-dd4d761bb64b",
+        "code": "AGV-05",
+        "x": 4,
+        "y": 2,
+        "status": "idle",
+        "battery": 83.63999999999987
+      },
+      {
+        "id": "efba9982-6a67-4f93-a047-74433248d4c2",
+        "code": "AGV-06",
+        "x": 7,
+        "y": 6,
+        "status": "idle",
+        "battery": 90.39999999999986
+      },
+      {
+        "id": "c475604f-cb8d-4bdd-aa26-f4625e016837",
+        "code": "AGV-07",
+        "x": 7,
+        "y": 1,
+        "status": "idle",
+        "battery": 76.91999999999985
+      },
+      {
+        "id": "98af169f-fb47-4273-af4e-cff85e397a68",
+        "code": "AGV-08",
+        "x": 4,
+        "y": 6,
+        "status": "idle",
+        "battery": 83.79999999999984
+      },
+      {
+        "id": "ad104adc-ce44-4318-aee2-73de50de6e0d",
+        "code": "AGV-09",
+        "x": 9,
+        "y": 13,
+        "status": "to_dropoff",
+        "battery": 90.67999999999984
+      },
+      {
+        "id": "e24d1af9-e4a5-4122-a7ea-2005335d164f",
+        "code": "AGV-10",
+        "x": 7,
+        "y": 13,
+        "status": "to_dropoff",
+        "battery": 77.55999999999983
+      }
+    ],
+    "selectedAgv": "e24d1af9-e4a5-4122-a7ea-2005335d164f",
+    "lastCommand": {
+      "action": "sim.step",
+      "status": "success",
+      "result": 37,
+      "tick": 37,
+      "finishedAt": "2026-11-20T09:14:46.089Z"
+    },
+    "pendingCommands": 0,
+    "replayIndex": null,
+    "replayFrames": 50,
+    "canvas": {
+      "width": 927,
+      "height": 488,
+      "dpr": 1
+    },
+    "mapDraws": 806,
+    "page": "overview",
+    "renderedMapVersion": "aae3c0ee-536d-47a1-a8c9-b0f017e3dd9c",
+    "displayTick": 38,
+    "filteredOrders": [
+      "9a307a26-8052-4137-a441-5397e04f76af"
+    ],
+    "filteredTasks": [
+      "8af92f7b-1f16-43ca-a9bd-d6df340f8dac"
+    ],
+    "filteredEvents": [
+      "6da211ce-73a7-4290-af4c-04817f094027",
+      "38bddab1-5138-4069-ab17-ac017fe07bad",
+      "1cf7b09d-9645-4259-ad8f-492c27c00b79",
+      "3ffb7b70-56c9-4dc2-a630-452a1445cef0",
+      "5a8bec23-1015-4246-a61d-cce0477431f0",
+      "1d8870ba-ad72-4e6a-a327-ae9b71820ddb",
+      "0c86896d-f627-49e0-ac3b-f097532c911b"
+    ],
+    "eventHistoryTotal": 7,
+    "eventHistoryTick": 37
+  },
+  "canvas": [
+    {
+      "width": 927,
+      "height": 488
+    },
+    {
+      "width": 694,
+      "height": 220
+    }
+  ],
+  "responsive": {
+    "viewport": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390
+  },
+  "exceptions": [],
+  "buttons": [
+    {
+      "text": "刷新快照",
+      "id": "refresh"
+    },
+    {
+      "text": "关闭",
+      "id": "dismiss-error"
+    },
+    {
+      "text": "返回实时",
+      "id": "exit-replay"
+    },
+    {
+      "text": "▶ 启动",
+      "id": "start-sim"
+    },
+    {
+      "text": "Ⅱ 暂停",
+      "id": ""
+    },
+    {
+      "text": "▷ 单步",
+      "id": ""
+    },
+    {
+      "text": "1×",
+      "id": ""
+    },
+    {
+      "text": "4×",
+      "id": ""
+    },
+    {
+      "text": "8×",
+      "id": ""
+    },
+    {
+      "text": "↺ 重置",
+      "id": "reset-sim"
+    },
+    {
+      "text": "▣AGV-01(1, 1) · 无当前任务空闲99%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-02(2, 1) · 无当前任务空闲86%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-03(3, 1) · 无当前任务空闲93%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-04(4, 1) · 无当前任务空闲80%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-05(5, 1) · 无当前任务空闲87%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-06(6, 1) · 无当前任务空闲94%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-07(7, 1) · 无当前任务空闲81%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-08(8, 1) · 无当前任务空闲88%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-09(9, 1) · 无当前任务空闲95%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-10(10, 1) · 无当前任务空闲82%",
+      "id": ""
+    },
+    {
+      "text": "▤演示订单创建订单并进入业务流程",
+      "id": ""
+    },
+    {
+      "text": "ϟ插入急单观察高优先级任务调度",
+      "id": ""
+    },
+    {
+      "text": "⇆预约竞争演示在线两车真实预约竞争与绕行",
+      "id": ""
+    },
+    {
+      "text": "⟳等待图注入人工注入等待环 · 在线车回退",
+      "id": ""
+    },
+    {
+      "text": "故障",
+      "id": ""
+    },
+    {
+      "text": "离线",
+      "id": ""
+    },
+    {
+      "text": "恢复",
+      "id": ""
+    },
+    {
+      "text": "封路",
+      "id": ""
+    },
+    {
+      "text": "解封",
+      "id": ""
+    },
+    {
+      "text": "商品 SKU",
+      "id": ""
+    },
+    {
+      "text": "库位",
+      "id": ""
+    },
+    {
+      "text": "库存台账",
+      "id": ""
+    },
+    {
+      "text": "＋ 新增商品",
+      "id": "wms-create"
+    },
+    {
+      "text": "编辑",
+      "id": ""
+    },
+    {
+      "text": "删除",
+      "id": ""
+    },
+    {
+      "text": "编辑",
+      "id": ""
+    },
+    {
+      "text": "删除",
+      "id": ""
+    },
+    {
+      "text": "编辑",
+      "id": ""
+    },
+    {
+      "text": "删除",
+      "id": ""
+    },
+    {
+      "text": "编辑",
+      "id": ""
+    },
+    {
+      "text": "删除",
+      "id": ""
+    },
+    {
+      "text": "＋ 创建出库订单",
+      "id": "new-order"
+    },
+    {
+      "text": "详情",
+      "id": ""
+    },
+    {
+      "text": "预占",
+      "id": ""
+    },
+    {
+      "text": "释放",
+      "id": ""
+    },
+    {
+      "text": "取消",
+      "id": ""
+    },
+    {
+      "text": "清空筛选",
+      "id": "clear-event-filters"
+    },
+    {
+      "text": "上一页",
+      "id": "events-prev"
+    },
+    {
+      "text": "下一页",
+      "id": "events-next"
+    },
+    {
+      "text": "载入历史帧",
+      "id": "load-replay"
+    },
+    {
+      "text": "返回实时",
+      "id": "return-live"
+    },
+    {
+      "text": "▶ 播放",
+      "id": "replay-play"
+    },
+    {
+      "text": "←",
+      "id": "replay-prev"
+    },
+    {
+      "text": "→",
+      "id": "replay-next"
+    },
+    {
+      "text": "×",
+      "id": "close-dialog"
+    },
+    {
+      "text": "＋ 添加明细",
+      "id": "add-order-line"
+    },
+    {
+      "text": "×",
+      "id": ""
+    },
+    {
+      "text": "×",
+      "id": ""
+    },
+    {
+      "text": "取消",
+      "id": "cancel-dialog"
+    },
+    {
+      "text": "创建草稿订单",
+      "id": "save-dialog"
+    }
+  ],
+  "fpsSamples": [
+    59.03,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60
+  ],
+  "minimumSampleFps": 59.03,
+  "expectedValidationError": {
+    "form": "[duplicate_code] 编码 UI-SKU 已存在",
+    "banner": "[duplicate_code] 编码 UI-SKU 已存在",
+    "code": "duplicate_code"
+  },
+  "replayChecks": [
+    {
+      "index": 0,
+      "tick": 0,
+      "agvs": 10,
+      "events": 1
+    },
+    {
+      "index": 25,
+      "tick": 14,
+      "agvs": 10,
+      "events": 187
+    },
+    {
+      "index": 49,
+      "tick": 37,
+      "agvs": 10,
+      "events": 200
+    }
+  ],
+  "sustained": null,
+  "historicalQuery": {
+    "total": 373,
+    "snapshotEvents": 200,
+    "earlyEventId": "36dc860d-e28c-47e2-abe7-387f5820d39f",
+    "matchedHistoricalIds": [
+      "36dc860d-e28c-47e2-abe7-387f5820d39f"
+    ],
+    "firstPage": [
+      "f9317555-7505-4afb-ade7-2fdd9bdb5f73",
+      "12aaf777-d641-4a90-a760-8c63bb2edc05",
+      "39dc8bd3-9d4d-4bb6-a1f6-028a1d97dcf8",
+      "692c6ef3-6bf5-45d0-aab5-8e2d81d766e0",
+      "7153ff52-d3fa-4a3d-a47e-da4bb7349a7e",
+      "b130209b-15cc-4d1e-a11f-6819b33cf01e",
+      "d705b601-e68f-4a42-a4dd-9e2a0c3747ee",
+      "8b1a5856-8514-4cf6-a1e5-9f7a7a59068c",
+      "1a86d6ac-0cfb-4ac0-a500-05b261490b64",
+      "cfffbefd-f010-4f3d-a53f-48a954bac8e0",
+      "3b26ef5e-4b23-4df2-a5aa-49eef0eeecae",
+      "10efeb3d-61bb-4d65-a5c6-899034b6c5ed",
+      "f083b62f-114f-4244-a988-a7d37a388c74",
+      "81aadc3f-6f97-4291-ad6e-8b768c4387fb",
+      "03efcafc-a4b3-43d0-a252-2cc76ca38c25",
+      "598d276f-40a2-45b7-a4ca-7c9870aa37bb",
+      "abdede25-5fbc-405a-aa0c-22fadeb78610",
+      "e1b04116-78aa-4424-a85c-68fa4eef03a8",
+      "a23dacae-9ee5-41b5-a8fa-f0ba57bb2a20",
+      "927527f1-3e09-4177-ad4d-e91f8b1c2b40",
+      "66a1cea6-347c-426c-a1c9-71ed4c512dd1",
+      "516a93a9-7787-4bd2-ae3b-a2acdd077390",
+      "c3ccfb8c-9a31-448a-aa56-f6b1a4d2c2cf",
+      "ddee943c-f365-40a9-a369-ea1c57d5154c",
+      "a241367b-8ad4-49dd-a6e7-b9d81101f089",
+      "fca5d9a8-a132-425a-ab46-e8e2e6954bed",
+      "44adb876-57e1-4c02-a94e-962a643cf189",
+      "3594011a-06e5-456a-acfb-ae3b7d3d3540",
+      "a77d14eb-8bed-42f5-a963-2e8ee88449e6",
+      "79a4ca2d-dead-41ec-afe3-ed4505580364",
+      "34fc4ddf-a775-4728-af89-1650337e5d3a",
+      "039a7d86-f474-4898-afe3-0d6cf1a1468c",
+      "b2ec0e3b-2d99-41b8-a2db-1a988a3fcf3e",
+      "6bfdef15-eade-4b21-a869-76dcc717a695",
+      "278c7c3b-3ad6-42b9-a767-849c76465e9e",
+      "c56e1c40-33ca-42ae-ab92-d13ad8bf6daa",
+      "36e61eeb-c47d-4e3f-a89a-346e37b4bef6",
+      "5dd56a3f-c3ac-4a12-a751-00b6d81cef43",
+      "f72ff6ab-8291-4902-a396-5be38e1ce067",
+      "3899aee2-54d8-48fb-ad6c-85c572621b62"
+    ],
+    "secondPage": [
+      "9c2c2ffd-3a8e-4a08-a579-a7fd72a29cd1",
+      "e2089827-7305-47eb-a1a5-72f6b5d6ec3e",
+      "cdce75f0-bf1a-49cf-adc3-d2f5c64ac9f6",
+      "88402e77-624d-4722-aa89-113a33ddd4d2",
+      "9b876176-f8c0-4495-afc9-e517fea6a657",
+      "4269e05d-da31-4f26-a99a-300e64931989",
+      "b5a56741-9a3b-4621-ae1f-77ea0ba3cdad",
+      "1dd0e751-8f3d-45cf-ad42-d0c4021f2e40",
+      "1e3f12e5-7f1c-4cc3-abad-349e6f6c2c7c",
+      "0b042737-3258-4070-a21c-eb038af1968b",
+      "3dd774f9-02df-4c32-aea7-acb83aac79b5",
+      "ca554559-b84e-4f4a-a2b5-0ff0ef22ee70",
+      "0430065d-654b-442d-a91b-ae7770c25950",
+      "4458381a-4e29-43fc-a6e4-b9e1bf8619e4",
+      "e2bfb06b-b55a-48c5-a2a0-12ef941d746f",
+      "40eadc92-9631-4118-a13d-169a3a1b5b39",
+      "309879d2-4412-47df-adce-215bfd7f36ea",
+      "3f1fa404-4391-4897-aa70-7f1ba78d87f4",
+      "1d355fb2-297a-4a89-af83-35a9c621043d",
+      "a6a99e1d-10d5-400b-a0cd-9268c7f576a7",
+      "572ba2d5-a856-4f46-adcf-75921efbc7ab",
+      "a8c99050-3e53-4537-a717-bf60833a5a06",
+      "34af7982-39e3-44fd-a540-96f09fdc8a4a",
+      "2ba88f76-936c-4ed1-af55-539992b1c665",
+      "2f3d4e7f-f32a-4191-afc0-88b9cc5144df",
+      "c6de6088-39e7-4b2d-a8c0-a44e5dea85e5",
+      "58e8bee7-1538-43f9-a79a-36ddcc1de1d3",
+      "962179bb-8bb9-4d37-a16d-b1e92079830d",
+      "175d7a65-58ef-4c88-a53e-ae625113ad25",
+      "b1e9b402-7add-4ff7-ad9c-34fd536bcfc4",
+      "ea01e724-d0e8-4f3d-a9d2-20b729be2704",
+      "bb14d691-be6a-4cf5-a72f-419eed3548bc",
+      "86c1c5e9-ec13-4461-abb9-f1c2a783f731",
+      "4c88dce8-231b-411f-a725-cd6656bb6451",
+      "9b30ce3d-b7f9-4338-a4fe-7cf6a7a36e95",
+      "7e4e98ac-24bd-473f-aec6-87155a134a8c",
+      "71c5a102-43b3-49d3-a766-81064a9c359a",
+      "12c918ed-7bd1-4592-aae1-8dcb690df589",
+      "c8294b18-0c98-46cd-a242-fb06f80232cc",
+      "6351d0fd-5e53-4be0-ad20-34223e1e5ff9"
+    ]
+  },
+  "assertions": {
+    "skuCreateEditAndSafeText": true,
+    "duplicateSkuVisibleError": true,
+    "locationCreateEditVersioned": true,
+    "inventoryFormAndUtcDate": true,
+    "multiLineOrderAllocateRelease": true,
+    "liveCoordinatesMatchBackend": true,
+    "pauseAndSingleStep": true,
+    "combinedTaskOrderEventFilters": true,
+    "completeHistoryBeyond200WithAgvTaskAndDate": true,
+    "completeHistoryServerPagination": true,
+    "historyDomInputQueries": true,
+    "historyIgnoresStaleFilterResponse": true,
+    "replayFramesEventsCoordinatesAndMap": true,
+    "replayWriteLockAndLiveIsolation": true,
+    "returnToLive": true,
+    "analyticsChartAndFleetRows": true,
+    "pageLoaded": true,
+    "canvasRendered": true,
+    "timerAdvanced": true,
+    "fpsAtLeast20": true,
+    "noUncaughtExceptions": true,
+    "mobileNoHorizontalOverflow": true
+  },
+  "screenshots": [
+    "E:\\新软件工程\\implementations\\member-3\\evidence\\dashboard-f3-fixed-2026-11-20.png",
+    "E:\\新软件工程\\implementations\\member-3\\evidence\\dashboard-mobile-f3-fixed-2026-11-20.png",
+    "E:\\新软件工程\\implementations\\member-3\\evidence\\dashboard-mobile-map-f3-fixed-2026-11-20.png",
+    "E:\\新软件工程\\implementations\\member-3\\evidence\\analytics-f3-fixed-2026-11-20.png"
+  ],
+  "limitation": "Windows Edge headless受控环境的短时间实测，不能代表全部用户设备和30分钟帧率稳定性。"
+}

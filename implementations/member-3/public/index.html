@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>序仓 · 智能仓储运行中心</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview"><span class="brand-mark">序</span><span>序仓<span class="brand-en">WAREHOUSE CONTROL</span></span></a>
+    <div class="nav-caption">工作空间 / WORKSPACE</div>
+    <nav aria-label="主导航">
+      <a href="#overview" data-page="overview"><span class="nav-icon">◈</span>运行总览<span class="nav-number">01</span></a>
+      <a href="#wms" data-page="wms"><span class="nav-icon">▦</span>仓储管理<span class="nav-number">02</span></a>
+      <a href="#orders" data-page="orders"><span class="nav-icon">▤</span>出库订单<span class="nav-number">03</span></a>
+      <a href="#tasks" data-page="tasks"><span class="nav-icon">⇄</span>任务调度<span class="nav-number">04</span></a>
+      <a href="#events" data-page="events"><span class="nav-icon">≋</span>事件追踪<span class="nav-number">05</span></a>
+      <a href="#analytics" data-page="analytics"><span class="nav-icon">▥</span>运行分析<span class="nav-number">06</span></a>
+      <a href="#replay" data-page="replay"><span class="nav-icon">↶</span>历史回放<span class="nav-number">07</span></a>
+    </nav>
+    <div class="sidebar-bottom"><div class="system-orbit">◎</div><strong>本地仓储工作站</strong><span>WMS × AGV · 离散时空调度</span><div class="sidebar-status"><i id="side-dot" class="dot"></i><span id="side-status">连接中</span></div></div>
+  </aside>
+  <main>
+    <header class="topbar"><div class="breadcrumb">运营工作台 <span>/</span> <strong id="page-breadcrumb">运行总览</strong></div><div class="topbar-right"><span id="connection" class="connection"><i class="dot"></i>正在连接</span><button id="refresh" class="button ghost small">刷新快照</button><span class="avatar" title="本地演示工作站">仓</span></div></header>
+    <div class="workspace">
+      <div class="page-heading"><div><div class="eyebrow">INTELLIGENT WAREHOUSE OPERATIONS</div><h1 id="page-title">仓库运行总览</h1><p id="page-description">让每一次搬运，都有迹可循。</p></div><div class="heading-meta"><span class="live-label" id="mode-label"><i class="dot"></i>实时工作区</span><span id="snapshot-time">等待首份快照</span></div></div>
+      <div id="error-banner" class="error-banner" role="alert" hidden><div><strong id="error-title">操作失败</strong><div id="error-message"></div></div><button id="dismiss-error" class="button ghost small" aria-label="关闭错误提示">关闭</button></div>
+      <div id="replay-banner" class="replay-banner" hidden><span>正在查看历史快照，所有写入操作已锁定。实时连接继续接收数据。</span><button class="button small" id="exit-replay">返回实时</button></div>
+      <section class="control-strip" aria-label="仿真控制">
+        <div class="sim-state"><i id="sim-dot" class="dot"></i><strong id="sim-state">等待快照</strong><span class="tick-display">TICK <b id="tick">—</b></span></div>
+        <div class="control-actions"><button class="button primary" data-command="sim.start" id="start-sim">▶ 启动</button><button class="button" data-command="sim.pause">Ⅱ 暂停</button><button class="button" data-command="sim.step">▷ 单步</button><div class="segmented" id="speed-controls" aria-label="仿真速度"><button data-speed="1" aria-pressed="true">1×</button><button data-speed="4" aria-pressed="false">4×</button><button data-speed="8" aria-pressed="false">8×</button></div><label class="seed-field">SEED<input id="seed" aria-label="随机种子" type="number" min="0" max="4294967295" step="1" placeholder="默认"></label><button class="button ghost" id="reset-sim">↺ 重置</button></div>
+      </section>
+      <section id="kpis" class="kpi-grid" aria-label="运行指标"></section>
+
+      <section class="view" data-view="overview">
+        <div class="operations-grid">
+          <article class="panel map-panel" id="map-panel"><div class="panel-heading"><div><span class="section-kicker">LIVE FLOORPLAN</span><h2>仓库实时地图 <span id="map-version" class="muted"></span></h2></div><span class="fps-badge"><i class="dot"></i><span id="fps">—</span> FPS</span></div>
+            <div class="map-toolbar"><label>关注车辆<select id="map-agv" aria-label="地图车辆选择"><option value="">全部车辆</option></select></label><div class="map-toggles"><label><input id="show-paths" type="checkbox" checked>未来路径</label><label><input id="show-history" type="checkbox" checked>历史轨迹</label><label><input id="show-links" type="checkbox">任务连线</label><label><input id="show-grid" type="checkbox" checked>网格</label></div></div>
+            <div class="map-wrap"><canvas id="warehouse-map" role="img" aria-label="仓库地图，点击车辆查看详情"></canvas><div id="map-empty" class="map-empty"><span>◎</span><strong>等待仓库地图</strong><p>连接本地服务后，显示真实车辆与调度路径</p></div><div id="map-hover" class="map-tooltip" hidden></div><span class="map-corner" id="map-dimensions">X → / Y ↓</span></div>
+            <div class="map-legend"><span><i class="legend-square shelf"></i>货架</span><span><i class="legend-square pick"></i>拣选点</span><span><i class="legend-square drop"></i>放货点</span><span><i class="legend-square charger"></i>充电桩</span><span><i class="legend-square blocked"></i>封路</span><span><i class="legend-square vehicle"></i>AGV</span><span class="legend-caption">点击车辆可查看任务 · 路径含等待点</span></div>
+          </article>
+          <article class="panel fleet-panel"><div class="panel-heading"><div><span class="section-kicker">FLEET STATUS</span><h2>车队监控 <span id="fleet-count" class="count-badge">0</span></h2></div><select id="fleet-status" aria-label="筛选车队状态"><option value="">全部状态</option></select></div><div id="fleet-list" class="fleet-list"></div><div id="agv-detail" class="agv-detail"></div></article>
+        </div>
+        <div class="bottom-grid"><article class="panel"><div class="panel-heading"><div><span class="section-kicker">SCENARIO LAB</span><h2>场景注入</h2></div><span class="muted">真实请求 · 结果可查</span></div><div class="scenario-grid"><button class="scenario" data-command="demo.orders"><span>▤</span><strong>演示订单</strong><small>创建订单并进入业务流程</small></button><button class="scenario" data-command="inject.urgent"><span>ϟ</span><strong>插入急单</strong><small>观察高优先级任务调度</small></button><button class="scenario" data-command="demo.conflict"><span>⇆</span><strong>预约竞争演示</strong><small>在线两车真实预约竞争与绕行</small></button><button class="scenario" data-command="demo.deadlock"><span>⟳</span><strong>等待图注入</strong><small>人工注入等待环 · 在线车回退</small></button></div><div class="injection-controls"><label>设备<select id="inject-agv" aria-label="注入目标AGV"></select></label><button class="button danger subtle" data-inject="fault">故障</button><button class="button" data-inject="offline">离线</button><button class="button" data-inject="recover">恢复</button><label>可封闭节点<select id="block-cell" aria-label="封路坐标"></select></label><button class="button" data-block="block">封路</button><button class="button" data-block="unblock">解封</button></div><details class="command-evidence" id="command-evidence" hidden><summary id="command-evidence-title">最近命令返回结果</summary><pre id="command-evidence-result"></pre></details></article>
+          <article class="panel"><div class="panel-heading"><div><span class="section-kicker">RECENT SIGNALS</span><h2>最近事件</h2></div><a href="#events" class="text-link">全部事件 ↗</a></div><div id="recent-events" class="recent-events"></div></article></div>
+      </section>
+
+      <section class="view" data-view="wms" hidden><div class="section-toolbar"><div class="tabs" id="wms-tabs"><button data-tab="skus" aria-pressed="true">商品 SKU</button><button data-tab="locations" aria-pressed="false">库位</button><button data-tab="inventory" aria-pressed="false">库存台账</button></div><div class="toolbar-actions"><input id="wms-search" type="search" placeholder="搜索编码、名称、区域或批次" aria-label="搜索主数据"><button class="button primary" id="wms-create">＋ 新增商品</button></div></div><article class="panel"><div class="panel-heading"><h2 id="wms-title">商品主数据</h2><span class="muted" id="wms-count"></span></div><div class="table-wrap" id="wms-table"></div></article><p class="footnote">可用库存 = 在库数量 − 已预占数量。库存流水可在事件追踪中查询；所有写入由后端校验并持久化。</p></section>
+
+      <section class="view" data-view="orders" hidden><div class="section-toolbar"><div class="filters"><input id="order-search" type="search" aria-label="订单单号筛选" placeholder="搜索订单号 / 创建人"><select id="order-status" aria-label="订单状态"><option value="">全部订单状态</option></select></div><button id="new-order" class="button primary">＋ 创建出库订单</button></div><article class="panel"><div class="panel-heading"><h2>出库订单</h2><span class="muted" id="order-count"></span></div><div class="table-wrap" id="orders-table"></div></article></section>
+
+      <section class="view" data-view="tasks" hidden><div class="section-toolbar"><div class="filters"><input id="task-search" type="search" aria-label="搜索任务" placeholder="搜索任务 / 来源订单"><select id="task-status" aria-label="任务状态"><option value="">全部任务状态</option></select><select id="task-priority" aria-label="任务优先级"><option value="">全部优先级</option></select><select id="task-agv" aria-label="任务AGV筛选"><option value="">全部车辆</option><option value="__none">未指派</option></select></div></div><article class="panel"><div class="panel-heading"><h2>调度任务池</h2><span id="task-count" class="muted"></span></div><div class="table-wrap" id="tasks-table"></div></article></section>
+
+      <section class="view" data-view="events" hidden><div class="section-toolbar"><div><h2>事件追踪</h2><p class="muted">设备、任务、事件类型、tick 与发生时间支持组合查询。</p></div><button id="clear-event-filters" class="button">清空筛选</button></div><article class="panel"><div class="event-filters"><label>关键词<input id="event-search" type="search" placeholder="类型 / 内容 / 聚合标识"></label><label>车辆<select id="event-agv"><option value="">全部车辆</option></select></label><label>任务<select id="event-task"><option value="">全部任务</option></select></label><label>事件类型<select id="event-type"><option value="">全部类型</option></select></label><label>起始 tick<input id="event-from" type="number" min="0" step="1" placeholder="不限"></label><label>结束 tick<input id="event-to" type="number" min="0" step="1" placeholder="不限"></label><label>开始时间<input id="event-date-from" type="datetime-local"></label><label>结束时间<input id="event-date-to" type="datetime-local"></label></div><div class="panel-heading compact"><h2>事件日志</h2><span id="event-count" class="muted"></span></div><div class="table-wrap" id="events-table"></div><div class="pagination" id="event-pagination"><button class="button small" id="events-prev">上一页</button><span id="events-page"></span><button class="button small" id="events-next">下一页</button></div></article></section>
+
+      <section class="view" data-view="analytics" hidden><div class="analytics-grid"><article class="panel"><div class="panel-heading"><div><span class="section-kicker">OBSERVED THROUGHPUT</span><h2>吞吐量趋势</h2></div><span class="muted">当前会话收到的快照采样</span></div><div class="chart-wrap"><canvas id="throughput-chart" role="img" aria-label="后端快照吞吐量趋势图"></canvas></div><p class="chart-note" id="trend-note">收到有效统计后显示趋势；不插值补造样本。</p></article><article class="panel"><div class="panel-heading"><div><span class="section-kicker">CONFLICT & RECOVERY</span><h2>冲突与恢复</h2></div></div><div id="safety-stats" class="safety-stats"></div><div id="task-distribution" class="distribution"></div></article><article class="panel"><div class="panel-heading"><div><span class="section-kicker">FLEET UTILIZATION</span><h2>设备利用率</h2></div><span class="muted">利用率 / 完成数</span></div><div id="utilization-chart" class="bar-chart"></div></article><article class="panel"><div class="panel-heading"><div><span class="section-kicker">AISLE BOTTLENECKS</span><h2>瓶颈巷道 Top 8</h2></div></div><div id="bottleneck-chart" class="bar-chart"></div></article></div></section>
+
+      <section class="view" data-view="replay" hidden><article class="panel replay-console"><div class="panel-heading"><div><span class="section-kicker">HISTORY PLAYBACK</span><h2>历史快照回放</h2></div><div class="toolbar-actions"><button id="load-replay" class="button primary">载入历史帧</button><button id="return-live" class="button">返回实时</button></div></div><p class="muted">逐帧展示服务端记录的实际状态。回放期间可切换其他页面查看该帧的数据，地图与实时数据隔离。</p><div class="replay-controls"><button id="replay-play" class="button" disabled>▶ 播放</button><button id="replay-prev" class="button" disabled aria-label="上一帧">←</button><input id="replay-slider" type="range" min="0" max="0" value="0" disabled aria-label="回放历史帧"><button id="replay-next" class="button" disabled aria-label="下一帧">→</button><span id="replay-position">尚未载入</span></div><p id="replay-note" class="footnote">载入后自动显示第一帧。方向键可逐帧查看。</p></article><article class="panel"><div class="panel-heading"><h2>当前回放帧</h2><a href="#overview" class="text-link">查看地图 ↗</a></div><div id="replay-summary" class="replay-summary">尚未选择历史帧</div><div id="replay-events" class="recent-events"></div></article></section>
+      <footer class="workspace-footer"><span>序仓 · 仓储与调度协同工作台</span><span id="footer-diagnostics">本地服务 / 等待数据</span></footer>
+    </div>
+  </main>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <dialog id="editor-dialog" aria-labelledby="dialog-title"><form id="editor-form"><div class="dialog-heading"><div><span class="section-kicker">WAREHOUSE WORKSPACE</span><h2 id="dialog-title">新增</h2></div><button class="icon-button" type="button" id="close-dialog" aria-label="关闭弹窗">×</button></div><div id="dialog-body" class="dialog-body"></div><p id="form-error" class="form-error" role="alert" hidden></p><div class="dialog-footer"><button type="button" class="button" id="cancel-dialog">取消</button><button type="submit" class="button primary" id="save-dialog">保存</button></div></form></dialog>
+</body>
+</html>

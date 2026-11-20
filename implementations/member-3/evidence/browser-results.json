@@ -1,0 +1,468 @@
+{
+  "measuredAt": "2026-11-19T08:16:52.613Z",
+  "elapsedMs": 17884.247399999997,
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Edg/157.0.4341.60",
+    "revision": "@fbcb2989a6c61b72a4919fe1028e58e70131cd46",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0",
+    "jsVersion": "15.7.11.7"
+  },
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "liveTick": 38,
+  "diagnostics": {
+    "fps": 60,
+    "frames": 975,
+    "snapshotTick": 38,
+    "renderedTick": 38,
+    "errors": [
+      {
+        "at": "2026-11-19T08:16:35.780Z",
+        "context": "保存失败",
+        "message": "编码 UI-SKU 已存在",
+        "code": "duplicate_code"
+      }
+    ],
+    "errorCount": 1,
+    "mode": "live",
+    "connection": "live",
+    "snapshots": 51,
+    "sseSnapshots": 24,
+    "renderedAgvs": [
+      {
+        "id": "b3748d78-7d95-4cb1-a05b-5d6a6359dd2b",
+        "code": "AGV-01",
+        "x": 1,
+        "y": 1,
+        "status": "idle",
+        "battery": 99
+      },
+      {
+        "id": "e72e2d2a-b691-4888-a6b7-997caee4b1ac",
+        "code": "AGV-02",
+        "x": 2,
+        "y": 1,
+        "status": "idle",
+        "battery": 86
+      },
+      {
+        "id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+        "code": "AGV-03",
+        "x": 3,
+        "y": 1,
+        "status": "idle",
+        "battery": 89.63999999999987
+      },
+      {
+        "id": "4835da7b-542f-4c98-a2e0-cff97d9b3bec",
+        "code": "AGV-04",
+        "x": 4,
+        "y": 1,
+        "status": "idle",
+        "battery": 77.11999999999989
+      },
+      {
+        "id": "95a14ad0-fbfb-4de1-a356-dd4d761bb64b",
+        "code": "AGV-05",
+        "x": 4,
+        "y": 2,
+        "status": "idle",
+        "battery": 83.63999999999987
+      },
+      {
+        "id": "efba9982-6a67-4f93-a047-74433248d4c2",
+        "code": "AGV-06",
+        "x": 7,
+        "y": 6,
+        "status": "idle",
+        "battery": 90.39999999999986
+      },
+      {
+        "id": "c475604f-cb8d-4bdd-aa26-f4625e016837",
+        "code": "AGV-07",
+        "x": 7,
+        "y": 1,
+        "status": "idle",
+        "battery": 76.91999999999985
+      },
+      {
+        "id": "98af169f-fb47-4273-af4e-cff85e397a68",
+        "code": "AGV-08",
+        "x": 4,
+        "y": 6,
+        "status": "idle",
+        "battery": 83.79999999999984
+      },
+      {
+        "id": "ad104adc-ce44-4318-aee2-73de50de6e0d",
+        "code": "AGV-09",
+        "x": 9,
+        "y": 13,
+        "status": "to_dropoff",
+        "battery": 90.67999999999984
+      },
+      {
+        "id": "e24d1af9-e4a5-4122-a7ea-2005335d164f",
+        "code": "AGV-10",
+        "x": 7,
+        "y": 13,
+        "status": "to_dropoff",
+        "battery": 77.55999999999983
+      }
+    ],
+    "selectedAgv": "e24d1af9-e4a5-4122-a7ea-2005335d164f",
+    "lastCommand": {
+      "action": "sim.step",
+      "status": "success",
+      "result": 37,
+      "tick": 37,
+      "finishedAt": "2026-11-19T08:16:47.832Z"
+    },
+    "pendingCommands": 0,
+    "replayIndex": null,
+    "replayFrames": 50,
+    "canvas": {
+      "width": 927,
+      "height": 488,
+      "dpr": 1
+    },
+    "mapDraws": 862,
+    "page": "overview",
+    "renderedMapVersion": "3e1f8c33-6b26-4707-ae4f-14995c5ec29d",
+    "displayTick": 38,
+    "filteredOrders": [
+      "27680315-85ab-4491-aa05-ae11be048961"
+    ],
+    "filteredTasks": [
+      "f3cb9355-8519-43e4-a04e-e3f6f1a54f7c"
+    ],
+    "filteredEvents": [
+      "b2e90e08-b2c8-406e-a1ad-c5e149dcf8c4"
+    ]
+  },
+  "canvas": [
+    {
+      "width": 927,
+      "height": 488
+    },
+    {
+      "width": 694,
+      "height": 220
+    }
+  ],
+  "responsive": {
+    "viewport": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390
+  },
+  "exceptions": [],
+  "buttons": [
+    {
+      "text": "刷新快照",
+      "id": "refresh"
+    },
+    {
+      "text": "关闭",
+      "id": "dismiss-error"
+    },
+    {
+      "text": "返回实时",
+      "id": "exit-replay"
+    },
+    {
+      "text": "▶ 启动",
+      "id": "start-sim"
+    },
+    {
+      "text": "Ⅱ 暂停",
+      "id": ""
+    },
+    {
+      "text": "▷ 单步",
+      "id": ""
+    },
+    {
+      "text": "1×",
+      "id": ""
+    },
+    {
+      "text": "4×",
+      "id": ""
+    },
+    {
+      "text": "8×",
+      "id": ""
+    },
+    {
+      "text": "↺ 重置",
+      "id": "reset-sim"
+    },
+    {
+      "text": "▣AGV-01(1, 1) · 无当前任务空闲99%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-02(2, 1) · 无当前任务空闲86%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-03(3, 1) · 无当前任务空闲93%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-04(4, 1) · 无当前任务空闲80%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-05(5, 1) · 无当前任务空闲87%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-06(6, 1) · 无当前任务空闲94%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-07(7, 1) · 无当前任务空闲81%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-08(8, 1) · 无当前任务空闲88%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-09(9, 1) · 无当前任务空闲95%",
+      "id": ""
+    },
+    {
+      "text": "▣AGV-10(10, 1) · 无当前任务空闲82%",
+      "id": ""
+    },
+    {
+      "text": "▤演示订单创建订单并进入业务流程",
+      "id": ""
+    },
+    {
+      "text": "ϟ插入急单观察高优先级任务调度",
+      "id": ""
+    },
+    {
+      "text": "⇆预约竞争演示在线两车真实预约竞争与绕行",
+      "id": ""
+    },
+    {
+      "text": "⟳等待图注入人工注入等待环 · 在线车回退",
+      "id": ""
+    },
+    {
+      "text": "故障",
+      "id": ""
+    },
+    {
+      "text": "离线",
+      "id": ""
+    },
+    {
+      "text": "恢复",
+      "id": ""
+    },
+    {
+      "text": "封路",
+      "id": ""
+    },
+    {
+      "text": "解封",
+      "id": ""
+    },
+    {
+      "text": "商品 SKU",
+      "id": ""
+    },
+    {
+      "text": "库位",
+      "id": ""
+    },
+    {
+      "text": "库存台账",
+      "id": ""
+    },
+    {
+      "text": "＋ 新增商品",
+      "id": "wms-create"
+    },
+    {
+      "text": "编辑",
+      "id": ""
+    },
+    {
+      "text": "删除",
+      "id": ""
+    },
+    {
+      "text": "编辑",
+      "id": ""
+    },
+    {
+      "text": "删除",
+      "id": ""
+    },
+    {
+      "text": "编辑",
+      "id": ""
+    },
+    {
+      "text": "删除",
+      "id": ""
+    },
+    {
+      "text": "编辑",
+      "id": ""
+    },
+    {
+      "text": "删除",
+      "id": ""
+    },
+    {
+      "text": "＋ 创建出库订单",
+      "id": "new-order"
+    },
+    {
+      "text": "详情",
+      "id": ""
+    },
+    {
+      "text": "预占",
+      "id": ""
+    },
+    {
+      "text": "释放",
+      "id": ""
+    },
+    {
+      "text": "取消",
+      "id": ""
+    },
+    {
+      "text": "清空筛选",
+      "id": "clear-event-filters"
+    },
+    {
+      "text": "上一页",
+      "id": "events-prev"
+    },
+    {
+      "text": "下一页",
+      "id": "events-next"
+    },
+    {
+      "text": "载入历史帧",
+      "id": "load-replay"
+    },
+    {
+      "text": "返回实时",
+      "id": "return-live"
+    },
+    {
+      "text": "▶ 播放",
+      "id": "replay-play"
+    },
+    {
+      "text": "←",
+      "id": "replay-prev"
+    },
+    {
+      "text": "→",
+      "id": "replay-next"
+    },
+    {
+      "text": "×",
+      "id": "close-dialog"
+    },
+    {
+      "text": "＋ 添加明细",
+      "id": "add-order-line"
+    },
+    {
+      "text": "×",
+      "id": ""
+    },
+    {
+      "text": "×",
+      "id": ""
+    },
+    {
+      "text": "取消",
+      "id": "cancel-dialog"
+    },
+    {
+      "text": "创建草稿订单",
+      "id": "save-dialog"
+    }
+  ],
+  "fpsSamples": [
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60
+  ],
+  "minimumSampleFps": 60,
+  "expectedValidationError": {
+    "form": "[duplicate_code] 编码 UI-SKU 已存在",
+    "banner": "[duplicate_code] 编码 UI-SKU 已存在",
+    "code": "duplicate_code"
+  },
+  "replayChecks": [
+    {
+      "index": 0,
+      "tick": 0,
+      "agvs": 10,
+      "events": 1
+    },
+    {
+      "index": 25,
+      "tick": 14,
+      "agvs": 10,
+      "events": 185
+    },
+    {
+      "index": 49,
+      "tick": 37,
+      "agvs": 10,
+      "events": 200
+    }
+  ],
+  "assertions": {
+    "skuCreateEditAndSafeText": true,
+    "duplicateSkuVisibleError": true,
+    "locationCreateEditVersioned": true,
+    "inventoryFormAndUtcDate": true,
+    "multiLineOrderAllocateRelease": true,
+    "liveCoordinatesMatchBackend": true,
+    "pauseAndSingleStep": true,
+    "combinedTaskOrderEventFilters": true,
+    "replayFramesEventsCoordinatesAndMap": true,
+    "replayWriteLockAndLiveIsolation": true,
+    "returnToLive": true,
+    "analyticsChartAndFleetRows": true,
+    "pageLoaded": true,
+    "canvasRendered": true,
+    "timerAdvanced": true,
+    "fpsAtLeast20": true,
+    "noUncaughtExceptions": true,
+    "mobileNoHorizontalOverflow": true
+  },
+  "screenshots": [
+    "evidence/dashboard.png",
+    "evidence/dashboard-mobile.png",
+    "evidence/dashboard-mobile-map.png",
+    "evidence/analytics.png"
+  ],
+  "limitation": "Windows Edge headless受控环境的短时间实测，不能代表全部用户设备和30分钟帧率稳定性。"
+}

@@ -1,0 +1,31 @@
+{
+  "measuredAt": "2026-11-19T08:19:44.005Z",
+  "runtime": "v24.16.0",
+  "copiedFiles": [
+    "package.json",
+    "src",
+    "public",
+    "scenarios"
+  ],
+  "thirdPartyDependencies": 0,
+  "dependencyInstallRequired": false,
+  "health": {
+    "status": "ok",
+    "version": "0.2.0",
+    "tick": 0
+  },
+  "assets": {
+    "/": 200,
+    "/app.js": 200,
+    "/styles.css": 200
+  },
+  "counts": {
+    "skus": 3,
+    "locations": 9,
+    "inventory": 3,
+    "agvs": 10
+  },
+  "freshDatabaseCreated": true,
+  "passed": true,
+  "scope": "在本机已有Node24环境，把公开运行文件复制到个人runtime隔离目录，从空库启动真实HTTP子进程；不代表无Node机器或其他操作系统测试。"
+}

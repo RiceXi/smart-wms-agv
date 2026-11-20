@@ -1,0 +1,22 @@
+{
+  "auditDate": "2026-11-20",
+  "runtime": "v24.16.0",
+  "scope": "定向内存Engine复现和前端源码检查；未重跑浏览器、完整验收、基准或30分钟实验",
+  "remoteMain": "e6071d919b132ec309140be5b9a18b36b84d36a1",
+  "publicDocumentsCompared": 7,
+  "publicDocumentsMatchingLocal": 7,
+  "blockedCell": { "x": 0, "y": 0 },
+  "blockedCellOnAnyOriginalRoute": false,
+  "assignedTasks": 6,
+  "unaffectedTasksWhosePlanChanged": 6,
+  "tick": 40,
+  "fullEventCount": 309,
+  "snapshotEventCount": 200,
+  "firstEventInFullLog": true,
+  "firstEventInSnapshot": false,
+  "frontendFiltersSnapshotOnly": true,
+  "health3033": "unavailable at audit check",
+  "localFrozenTagFound": false,
+  "upstreamMember3FrozenTagFound": false,
+  "coreCodeChanged": false
+}

@@ -1,0 +1,11 @@
+runtime/
+!runtime/.gitkeep
+
+# Published acceptance evidence
+!evidence/runtime-check-20261120.log
+
+# Publish final UI evidence and the original AC14 references.
+evidence/*.png
+!evidence/*-runtime-check-20261120.png
+!evidence/dashboard.png
+!evidence/dashboard-mobile-map.png

@@ -1,0 +1,2439 @@
+{
+  "measuredAt": "2026-11-20T08:23:55.177Z",
+  "hardware": {
+    "os": "Windows_NT 10.0.26200",
+    "cpu": "AMD Ryzen 9 8940HX with Radeon Graphics        ",
+    "logicalProcessors": 32,
+    "memoryBytes": 16340283392,
+    "runtime": "v24.16.0"
+  },
+  "scenarios": 10,
+  "successes": 5,
+  "successRate": 0.5,
+  "rejectedOriginalConflict": 10,
+  "vertexScenarios": 5,
+  "oppositeEdgeScenarios": 5,
+  "totalTasks": 24,
+  "completedTasks": 24,
+  "safetyChecks": 11250,
+  "safetyViolations": 0,
+  "elapsedMs": 4997.6452,
+  "scope": "500 fixed-seed full 22x16 warehouse Engine fixtures with 10 physical AGVs, 1-3 initial closures, live route closure/unblock, varied orders/priority/drop points and periodic urgent orders. Controlled online pair requests seed 250 vertex and 250 opposite-edge conflicts before tick execution; all vehicles then move through real Engine ticks with WMS traffic. In-memory SQLite, replay disabled, accelerated simulation. Not arbitrary topology or natural deadlock success probability.",
+  "failures": [
+    {
+      "index": 1,
+      "seed": 20262001,
+      "error": {
+        "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+        "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///E:/%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/implementations/member-3/scripts/conflict-scenarios.js:56:12\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:633:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
+        "tick": 0
+      }
+    },
+    {
+      "index": 3,
+      "seed": 20262003,
+      "error": {
+        "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+        "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///E:/%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/implementations/member-3/scripts/conflict-scenarios.js:56:12\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:633:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
+        "tick": 0
+      }
+    },
+    {
+      "index": 5,
+      "seed": 20262005,
+      "error": {
+        "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+        "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///E:/%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/implementations/member-3/scripts/conflict-scenarios.js:56:12\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:633:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
+        "tick": 0
+      }
+    },
+    {
+      "index": 7,
+      "seed": 20262007,
+      "error": {
+        "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+        "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///E:/%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/implementations/member-3/scripts/conflict-scenarios.js:56:12\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:633:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
+        "tick": 0
+      }
+    },
+    {
+      "index": 9,
+      "seed": 20262009,
+      "error": {
+        "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+        "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///E:/%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/implementations/member-3/scripts/conflict-scenarios.js:56:12\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:633:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
+        "tick": 0
+      }
+    }
+  ],
+  "results": [
+    {
+      "index": 0,
+      "seed": 20262000,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "vertex_conflict",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262000-0",
+          "requester": "scenario-runner",
+          "priority": 3,
+          "drop_location_id": "f9cff5c0-99f0-42f0-a535-620da5675143",
+          "lines": [
+            {
+              "sku_id": "29c42bca-df1a-4ca0-abf0-3a519bfb96ae",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262000-1",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "f9cff5c0-99f0-42f0-a535-620da5675143",
+          "lines": [
+            {
+              "sku_id": "f0b2bc35-ef79-47eb-a73c-c3fe355d3a6a",
+              "qty": 5
+            }
+          ]
+        },
+        {
+          "code": "SC-20262000-2",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "cfe618a8-4432-4a41-a149-bf352f252e15",
+          "lines": [
+            {
+              "sku_id": "bb584caf-e92d-4f03-ac7d-109957183dfc",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 9,
+        "y": 7
+      },
+      "checks": 2115,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 10,
+        "y": 2,
+        "action": "scenario_hold",
+        "dwell": 19
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "vertex_conflict",
+        "blocker": "a26d5658-67cc-4401-a0cf-c53d5fc582ac",
+        "tick": 2,
+        "cell": "10,2"
+      },
+      "resolvedRoute": [
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 3,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 4,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 5,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 10,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 11,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 12,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 13,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 14,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 15,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 16,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 17,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 18,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 19,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 20,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 21,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 22,
+          "action": "move"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 23,
+          "action": "scenario_hold"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 24,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 25,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 26,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 27,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 28,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 29,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 30,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 31,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 32,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 33,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 34,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 35,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 36,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 37,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 38,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 39,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 40,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 41,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 42,
+          "action": "move"
+        }
+      ],
+      "ticks": 47,
+      "taskCount": 4,
+      "completed": 4,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 4,
+        "tasks": 4,
+        "agvs": 10,
+        "completed": 4,
+        "cancelled": 0,
+        "effectiveTasks": 4,
+        "throughput": 306.3829787234043,
+        "averageTaskTicks": 21.5,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "eb39c676-35f7-4373-a2d4-1748039230ad",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "6e713f6b-3f3e-4ce9-a4d8-f7c89ca3556e",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "7e6bbf2b-43a9-4280-a40d-8cf058402390",
+            "code": "AGV-03",
+            "utilization": 0.3829787234042553,
+            "completed": 1
+          },
+          {
+            "id": "028ea7e1-fec9-4269-ac06-4ff62363edd4",
+            "code": "AGV-04",
+            "utilization": 0.5319148936170213,
+            "completed": 1
+          },
+          {
+            "id": "e568274f-8270-4679-a2d6-7443aea237ab",
+            "code": "AGV-05",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "a86f91f2-49e6-4fa0-a7b0-41dc89329348",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "da03caf4-0e8a-4072-a4f7-1b017db47909",
+            "code": "AGV-07",
+            "utilization": 0.46808510638297873,
+            "completed": 1
+          },
+          {
+            "id": "244ec434-6c44-43b1-a1cf-915305841853",
+            "code": "AGV-08",
+            "utilization": 0.44680851063829785,
+            "completed": 1
+          },
+          {
+            "id": "a26d5658-67cc-4401-a0cf-c53d5fc582ac",
+            "code": "AGV-09",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "59e6fa32-6dda-4b4d-a787-6099875f1312",
+            "code": "AGV-10",
+            "utilization": 0,
+            "completed": 0
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "9,2",
+            "count": 6
+          },
+          {
+            "cell": "4,2",
+            "count": 5
+          },
+          {
+            "cell": "4,3",
+            "count": 5
+          },
+          {
+            "cell": "4,9",
+            "count": 5
+          },
+          {
+            "cell": "4,10",
+            "count": 4
+          },
+          {
+            "cell": "4,11",
+            "count": 4
+          },
+          {
+            "cell": "4,12",
+            "count": 4
+          },
+          {
+            "cell": "4,4",
+            "count": 4
+          }
+        ]
+      },
+      "elapsedMs": 802.5969
+    },
+    {
+      "index": 1,
+      "seed": 20262001,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "opposite_edge",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        },
+        {
+          "x": 8,
+          "y": 5
+        }
+      ],
+      "orders": [],
+      "injectedBlock": null,
+      "checks": 0,
+      "safetyViolations": 0,
+      "success": false,
+      "target": {
+        "x": 5,
+        "y": 1
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "opposite_edge",
+        "blocker": "e5a4623a-d727-4242-a4fe-55ee81e6f9ae",
+        "tick": 0,
+        "cell": "5,1"
+      },
+      "error": {
+        "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+        "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///E:/%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/implementations/member-3/scripts/conflict-scenarios.js:56:12\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:633:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
+        "tick": 0
+      },
+      "taskStates": [],
+      "elapsedMs": 92.52769999999998
+    },
+    {
+      "index": 2,
+      "seed": 20262002,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "vertex_conflict",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 13,
+          "y": 6
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262002-0",
+          "requester": "scenario-runner",
+          "priority": 8,
+          "drop_location_id": "f0530355-a388-448b-a1a3-93bb290afa8d",
+          "lines": [
+            {
+              "sku_id": "da86a473-6b67-43c9-a604-29117d02b0fd",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "code": "SC-20262002-1",
+          "requester": "scenario-runner",
+          "priority": 1,
+          "drop_location_id": "f0530355-a388-448b-a1a3-93bb290afa8d",
+          "lines": [
+            {
+              "sku_id": "6bd55495-5596-4e69-abb4-5cdfd6befffa",
+              "qty": 5
+            }
+          ]
+        },
+        {
+          "code": "SC-20262002-2",
+          "requester": "scenario-runner",
+          "priority": 5,
+          "drop_location_id": "f0530355-a388-448b-a1a3-93bb290afa8d",
+          "lines": [
+            {
+              "sku_id": "da86a473-6b67-43c9-a604-29117d02b0fd",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262002-3",
+          "requester": "scenario-runner",
+          "priority": 1,
+          "drop_location_id": "4689c349-8f8b-440c-a9dc-38d79a5d19a5",
+          "lines": [
+            {
+              "sku_id": "103d65f5-87b7-4a97-a415-f30a643c046d",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "code": "SC-20262002-4",
+          "requester": "scenario-runner",
+          "priority": 6,
+          "drop_location_id": "f0530355-a388-448b-a1a3-93bb290afa8d",
+          "lines": [
+            {
+              "sku_id": "103d65f5-87b7-4a97-a415-f30a643c046d",
+              "qty": 5
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 12,
+        "y": 3
+      },
+      "checks": 2295,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 5,
+        "y": 2,
+        "action": "scenario_hold",
+        "dwell": 12
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "vertex_conflict",
+        "blocker": "d3af9109-b77d-4047-af13-1078c531061e",
+        "tick": 2,
+        "cell": "5,2"
+      },
+      "resolvedRoute": [
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 3,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 4,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 5,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 10,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 11,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 12,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 13,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 14,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 15,
+          "action": "move"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 16,
+          "action": "scenario_hold"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 17,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 18,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 19,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 20,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 21,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 22,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 23,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 24,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 25,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 26,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 27,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 28,
+          "action": "move"
+        }
+      ],
+      "ticks": 51,
+      "taskCount": 5,
+      "completed": 5,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 5,
+        "tasks": 5,
+        "agvs": 10,
+        "completed": 5,
+        "cancelled": 0,
+        "effectiveTasks": 5,
+        "throughput": 352.94117647058823,
+        "averageTaskTicks": 23.2,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "f371592a-af42-42d8-ad05-f3b1067e663f",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "8e2e8fe4-91a0-4b8e-a144-469b1e7e5087",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "e90e4818-a407-45c9-aa01-fc748fd5a230",
+            "code": "AGV-03",
+            "utilization": 0.5490196078431373,
+            "completed": 1
+          },
+          {
+            "id": "d3af9109-b77d-4047-af13-1078c531061e",
+            "code": "AGV-04",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "d5a8f2f1-de4f-4988-aceb-7d5e061ac562",
+            "code": "AGV-05",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "63acd694-f3e9-4833-a96a-60855bca21b5",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "c821d949-30c0-419d-a6e7-21c2e4deab95",
+            "code": "AGV-07",
+            "utilization": 0.43137254901960786,
+            "completed": 1
+          },
+          {
+            "id": "65238b1f-3096-4393-aeb8-6fce147a1538",
+            "code": "AGV-08",
+            "utilization": 0.49019607843137253,
+            "completed": 1
+          },
+          {
+            "id": "8b86ae04-1faf-4897-a868-1a7f0ea4900f",
+            "code": "AGV-09",
+            "utilization": 0.43137254901960786,
+            "completed": 1
+          },
+          {
+            "id": "0aa1c339-0410-458b-a31a-84293354a9fd",
+            "code": "AGV-10",
+            "utilization": 0.37254901960784315,
+            "completed": 1
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "14,10",
+            "count": 6
+          },
+          {
+            "cell": "14,11",
+            "count": 6
+          },
+          {
+            "cell": "14,12",
+            "count": 6
+          },
+          {
+            "cell": "14,2",
+            "count": 6
+          },
+          {
+            "cell": "14,3",
+            "count": 6
+          },
+          {
+            "cell": "14,4",
+            "count": 6
+          },
+          {
+            "cell": "14,5",
+            "count": 6
+          },
+          {
+            "cell": "14,6",
+            "count": 6
+          }
+        ]
+      },
+      "elapsedMs": 957.9918
+    },
+    {
+      "index": 3,
+      "seed": 20262003,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "opposite_edge",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        }
+      ],
+      "orders": [],
+      "injectedBlock": null,
+      "checks": 0,
+      "safetyViolations": 0,
+      "success": false,
+      "target": {
+        "x": 3,
+        "y": 1
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "opposite_edge",
+        "blocker": "1035b01b-9428-4e08-aeeb-b22ed912f3fb",
+        "tick": 0,
+        "cell": "3,1"
+      },
+      "error": {
+        "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+        "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///E:/%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/implementations/member-3/scripts/conflict-scenarios.js:56:12\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:633:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
+        "tick": 0
+      },
+      "taskStates": [],
+      "elapsedMs": 72.24590000000012
+    },
+    {
+      "index": 4,
+      "seed": 20262004,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "vertex_conflict",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        },
+        {
+          "x": 12,
+          "y": 7
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262004-0",
+          "requester": "scenario-runner",
+          "priority": 4,
+          "drop_location_id": "822c5f46-fb46-4a65-a62c-15254cd78243",
+          "lines": [
+            {
+              "sku_id": "ff12d549-8bd0-451e-a457-e481dbfd2b8c",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262004-1",
+          "requester": "scenario-runner",
+          "priority": 6,
+          "drop_location_id": "822c5f46-fb46-4a65-a62c-15254cd78243",
+          "lines": [
+            {
+              "sku_id": "6813bcb7-7ebc-4c94-a4eb-46acac84987c",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262004-2",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "822c5f46-fb46-4a65-a62c-15254cd78243",
+          "lines": [
+            {
+              "sku_id": "79cba9b3-fe4c-4160-a8f4-c21f24a7a467",
+              "qty": 5
+            }
+          ]
+        },
+        {
+          "code": "SC-20262004-3",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "822c5f46-fb46-4a65-a62c-15254cd78243",
+          "lines": [
+            {
+              "sku_id": "6813bcb7-7ebc-4c94-a4eb-46acac84987c",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "code": "SC-20262004-4",
+          "requester": "scenario-runner",
+          "priority": 8,
+          "drop_location_id": "69460076-4b96-47e6-af63-06693b24dc39",
+          "lines": [
+            {
+              "sku_id": "6813bcb7-7ebc-4c94-a4eb-46acac84987c",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262004-5",
+          "requester": "scenario-runner",
+          "priority": 2,
+          "drop_location_id": "822c5f46-fb46-4a65-a62c-15254cd78243",
+          "lines": [
+            {
+              "sku_id": "6813bcb7-7ebc-4c94-a4eb-46acac84987c",
+              "qty": 5
+            }
+          ]
+        },
+        {
+          "code": "SC-20262004-6",
+          "requester": "scenario-runner",
+          "priority": 9,
+          "drop_location_id": "822c5f46-fb46-4a65-a62c-15254cd78243",
+          "lines": [
+            {
+              "sku_id": "79cba9b3-fe4c-4160-a8f4-c21f24a7a467",
+              "qty": 5
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 12,
+        "y": 3
+      },
+      "checks": 2385,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 7,
+        "y": 2,
+        "action": "scenario_hold",
+        "dwell": 15
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "vertex_conflict",
+        "blocker": "b0fa7749-bbbe-4996-af18-29195fc4e734",
+        "tick": 2,
+        "cell": "7,2"
+      },
+      "resolvedRoute": [
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 3,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 4,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 5,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 10,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 11,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 12,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 13,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 14,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 15,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 16,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 17,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 18,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 19,
+          "action": "scenario_hold"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 20,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 21,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 22,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 23,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 24,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 25,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 26,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 27,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 28,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 29,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 30,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 31,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 32,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 33,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 34,
+          "action": "move"
+        }
+      ],
+      "ticks": 53,
+      "taskCount": 7,
+      "completed": 7,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 7,
+        "tasks": 7,
+        "agvs": 10,
+        "completed": 7,
+        "cancelled": 0,
+        "effectiveTasks": 7,
+        "throughput": 475.47169811320754,
+        "averageTaskTicks": 25.714285714285715,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "e1cfae62-7090-41ed-a28a-5298e4bccdbf",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "3fa141f7-fa60-44d1-a8c9-84154e178f33",
+            "code": "AGV-02",
+            "utilization": 0.7358490566037735,
+            "completed": 1
+          },
+          {
+            "id": "eac3036e-8d02-499e-a808-eee1c7d85f7d",
+            "code": "AGV-03",
+            "utilization": 0.3584905660377358,
+            "completed": 1
+          },
+          {
+            "id": "bd7ad838-08f0-4354-ad4b-c9a4c7f0596c",
+            "code": "AGV-04",
+            "utilization": 0.2830188679245283,
+            "completed": 1
+          },
+          {
+            "id": "1cb564d4-2cd8-4acc-ac97-69e4498cb30c",
+            "code": "AGV-05",
+            "utilization": 0.4528301886792453,
+            "completed": 1
+          },
+          {
+            "id": "b0fa7749-bbbe-4996-af18-29195fc4e734",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "1d2ae0d8-804b-48b7-abf7-ae3b4c7376f2",
+            "code": "AGV-07",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "2a17d68a-110d-45fb-aee0-7eb5f1260c68",
+            "code": "AGV-08",
+            "utilization": 0.6226415094339622,
+            "completed": 1
+          },
+          {
+            "id": "0c9cd43e-f681-4a1c-a06a-11157d0a7468",
+            "code": "AGV-09",
+            "utilization": 0.39622641509433965,
+            "completed": 1
+          },
+          {
+            "id": "a7129309-177e-4966-aa2d-35b2cdc9f44d",
+            "code": "AGV-10",
+            "utilization": 0.5471698113207547,
+            "completed": 1
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "4,12",
+            "count": 10
+          },
+          {
+            "cell": "4,10",
+            "count": 8
+          },
+          {
+            "cell": "4,11",
+            "count": 8
+          },
+          {
+            "cell": "4,2",
+            "count": 8
+          },
+          {
+            "cell": "4,3",
+            "count": 8
+          },
+          {
+            "cell": "4,4",
+            "count": 8
+          },
+          {
+            "cell": "4,5",
+            "count": 8
+          },
+          {
+            "cell": "4,6",
+            "count": 8
+          }
+        ]
+      },
+      "elapsedMs": 1117.9600999999998
+    },
+    {
+      "index": 5,
+      "seed": 20262005,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "opposite_edge",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        },
+        {
+          "x": 7,
+          "y": 8
+        },
+        {
+          "x": 18,
+          "y": 6
+        }
+      ],
+      "orders": [],
+      "injectedBlock": null,
+      "checks": 0,
+      "safetyViolations": 0,
+      "success": false,
+      "target": {
+        "x": 5,
+        "y": 1
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "opposite_edge",
+        "blocker": "d8418d91-244d-48b7-ab27-d9ef632d75c3",
+        "tick": 0,
+        "cell": "5,1"
+      },
+      "error": {
+        "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+        "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///E:/%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/implementations/member-3/scripts/conflict-scenarios.js:56:12\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:633:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
+        "tick": 0
+      },
+      "taskStates": [],
+      "elapsedMs": 88.46180000000004
+    },
+    {
+      "index": 6,
+      "seed": 20262006,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "vertex_conflict",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262006-0",
+          "requester": "scenario-runner",
+          "priority": 5,
+          "drop_location_id": "c888fe4f-3292-44b3-a0b0-06379dd9ceb9",
+          "lines": [
+            {
+              "sku_id": "9c3c06c9-42f3-44f0-a5a0-fae3c4afa836",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "code": "SC-20262006-1",
+          "requester": "scenario-runner",
+          "priority": 5,
+          "drop_location_id": "c888fe4f-3292-44b3-a0b0-06379dd9ceb9",
+          "lines": [
+            {
+              "sku_id": "d6673129-73e2-43df-ad35-9357cc6b0d35",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262006-2",
+          "requester": "scenario-runner",
+          "priority": 1,
+          "drop_location_id": "c888fe4f-3292-44b3-a0b0-06379dd9ceb9",
+          "lines": [
+            {
+              "sku_id": "d6673129-73e2-43df-ad35-9357cc6b0d35",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 11,
+        "y": 3
+      },
+      "checks": 2295,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 6,
+        "y": 2,
+        "action": "scenario_hold",
+        "dwell": 20
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "vertex_conflict",
+        "blocker": "e62bb3fd-4ccf-485d-a4b8-575ebe7d3aa3",
+        "tick": 2,
+        "cell": "6,2"
+      },
+      "resolvedRoute": [
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 3,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 4,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 5,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 10,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 11,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 12,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 13,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 14,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 15,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 16,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 17,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 18,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 19,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 20,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 21,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 22,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 23,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 24,
+          "action": "scenario_hold"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 25,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 26,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 27,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 28,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 29,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 30,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 31,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 32,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 33,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 34,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 35,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 36,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 37,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 38,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 39,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 40,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 41,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 42,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 43,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 44,
+          "action": "move"
+        }
+      ],
+      "ticks": 51,
+      "taskCount": 3,
+      "completed": 3,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 3,
+        "tasks": 3,
+        "agvs": 10,
+        "completed": 3,
+        "cancelled": 0,
+        "effectiveTasks": 3,
+        "throughput": 211.76470588235293,
+        "averageTaskTicks": 24,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "2d9a9eed-dc84-497f-a93a-6d3c64a8cb8b",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "d2e016cb-da92-4edb-a816-40f3cddcffaa",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "162ec858-83a4-4697-a071-ff38d7a02df4",
+            "code": "AGV-03",
+            "utilization": 0.5490196078431373,
+            "completed": 1
+          },
+          {
+            "id": "ff36e16b-2617-4c40-a668-7f267f59eabc",
+            "code": "AGV-04",
+            "utilization": 0.49019607843137253,
+            "completed": 1
+          },
+          {
+            "id": "e62bb3fd-4ccf-485d-a4b8-575ebe7d3aa3",
+            "code": "AGV-05",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "9dba2b44-66b4-4d83-a9f6-9ac9e75dd9e1",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "011a4523-b856-4d9c-a34f-15302ae98609",
+            "code": "AGV-07",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "da979c4e-4517-4a74-afad-2a42f14df44a",
+            "code": "AGV-08",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "c0086c08-d79c-48f3-a685-17757b75eced",
+            "code": "AGV-09",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "4eabe4dc-cff4-454e-a181-dd062ab541ca",
+            "code": "AGV-10",
+            "utilization": 0.37254901960784315,
+            "completed": 1
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "14,12",
+            "count": 5
+          },
+          {
+            "cell": "6,2",
+            "count": 5
+          },
+          {
+            "cell": "14,10",
+            "count": 4
+          },
+          {
+            "cell": "14,11",
+            "count": 4
+          },
+          {
+            "cell": "14,2",
+            "count": 4
+          },
+          {
+            "cell": "14,3",
+            "count": 4
+          },
+          {
+            "cell": "14,4",
+            "count": 4
+          },
+          {
+            "cell": "14,5",
+            "count": 4
+          }
+        ]
+      },
+      "elapsedMs": 702.8323
+    },
+    {
+      "index": 7,
+      "seed": 20262007,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "opposite_edge",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        },
+        {
+          "x": 17,
+          "y": 9
+        }
+      ],
+      "orders": [],
+      "injectedBlock": null,
+      "checks": 0,
+      "safetyViolations": 0,
+      "success": false,
+      "target": {
+        "x": 6,
+        "y": 1
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "opposite_edge",
+        "blocker": "85cde8d4-cf20-44a5-acf7-f6449cf8aa6c",
+        "tick": 0,
+        "cell": "6,1"
+      },
+      "error": {
+        "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+        "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///E:/%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/implementations/member-3/scripts/conflict-scenarios.js:56:12\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:633:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
+        "tick": 0
+      },
+      "taskStates": [],
+      "elapsedMs": 87.35680000000002
+    },
+    {
+      "index": 8,
+      "seed": 20262008,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "vertex_conflict",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        },
+        {
+          "x": 8,
+          "y": 10
+        },
+        {
+          "x": 8,
+          "y": 7
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262008-0",
+          "requester": "scenario-runner",
+          "priority": 2,
+          "drop_location_id": "14de95f3-cab5-4919-a9f3-a763a3741382",
+          "lines": [
+            {
+              "sku_id": "c0d8c8c9-9148-44aa-a5ac-a706095aaf27",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262008-1",
+          "requester": "scenario-runner",
+          "priority": 5,
+          "drop_location_id": "e3e1a28b-e549-4345-aa43-66e65a6e3f37",
+          "lines": [
+            {
+              "sku_id": "2a28593c-47ed-45eb-a647-172c2ce97beb",
+              "qty": 5
+            }
+          ]
+        },
+        {
+          "code": "SC-20262008-2",
+          "requester": "scenario-runner",
+          "priority": 2,
+          "drop_location_id": "14de95f3-cab5-4919-a9f3-a763a3741382",
+          "lines": [
+            {
+              "sku_id": "d04999cd-9f1a-4c1c-a77b-338e4dd50c22",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "code": "SC-20262008-3",
+          "requester": "scenario-runner",
+          "priority": 2,
+          "drop_location_id": "14de95f3-cab5-4919-a9f3-a763a3741382",
+          "lines": [
+            {
+              "sku_id": "d04999cd-9f1a-4c1c-a77b-338e4dd50c22",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "code": "SC-20262008-4",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "e3e1a28b-e549-4345-aa43-66e65a6e3f37",
+          "lines": [
+            {
+              "sku_id": "c0d8c8c9-9148-44aa-a5ac-a706095aaf27",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 13,
+        "y": 3
+      },
+      "checks": 2160,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 7,
+        "y": 2,
+        "action": "scenario_hold",
+        "dwell": 12
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "vertex_conflict",
+        "blocker": "4d58aa02-cd0b-41a8-aa9d-7fa9d9e96379",
+        "tick": 2,
+        "cell": "7,2"
+      },
+      "resolvedRoute": [
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 3,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 4,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 5,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 10,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 11,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 12,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 13,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 14,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 15,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 16,
+          "action": "scenario_hold"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 17,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 18,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 19,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 20,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 21,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 22,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 23,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 24,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 25,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 26,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 27,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 28,
+          "action": "move"
+        }
+      ],
+      "ticks": 48,
+      "taskCount": 5,
+      "completed": 5,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 5,
+        "tasks": 5,
+        "agvs": 10,
+        "completed": 5,
+        "cancelled": 0,
+        "effectiveTasks": 5,
+        "throughput": 375,
+        "averageTaskTicks": 24.6,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "5bac0e0d-ff4a-4159-ab7d-4a8f6993e8e3",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "0659d8af-3790-4fcc-a030-662645310877",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "62bd0e60-0614-48c6-a7b3-891f4e126fe4",
+            "code": "AGV-03",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "658e1613-adc1-4f4d-a242-f3c6b67402d9",
+            "code": "AGV-04",
+            "utilization": 0.5208333333333334,
+            "completed": 1
+          },
+          {
+            "id": "20b30d26-c417-4805-a5a8-f9ab5eebf61a",
+            "code": "AGV-05",
+            "utilization": 0.3541666666666667,
+            "completed": 1
+          },
+          {
+            "id": "4d58aa02-cd0b-41a8-aa9d-7fa9d9e96379",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "1f92c55b-db8d-4e09-a5af-95e8195e5d03",
+            "code": "AGV-07",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "3e295b8d-1bc6-4aba-af33-1b349b9462e5",
+            "code": "AGV-08",
+            "utilization": 0.6666666666666666,
+            "completed": 1
+          },
+          {
+            "id": "9613854e-0c47-4dd2-a40a-8ca88a63f022",
+            "code": "AGV-09",
+            "utilization": 0.4166666666666667,
+            "completed": 1
+          },
+          {
+            "id": "369fe9fe-f1d0-4f55-a2ab-aa1955bcf21b",
+            "code": "AGV-10",
+            "utilization": 0.6041666666666666,
+            "completed": 1
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "13,4",
+            "count": 5
+          },
+          {
+            "cell": "14,4",
+            "count": 5
+          },
+          {
+            "cell": "4,11",
+            "count": 5
+          },
+          {
+            "cell": "4,12",
+            "count": 5
+          },
+          {
+            "cell": "4,3",
+            "count": 5
+          },
+          {
+            "cell": "7,2",
+            "count": 5
+          },
+          {
+            "cell": "12,3",
+            "count": 4
+          },
+          {
+            "cell": "12,4",
+            "count": 4
+          }
+        ]
+      },
+      "elapsedMs": 912.9031000000004
+    },
+    {
+      "index": 9,
+      "seed": 20262009,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "opposite_edge",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        }
+      ],
+      "orders": [],
+      "injectedBlock": null,
+      "checks": 0,
+      "safetyViolations": 0,
+      "success": false,
+      "target": {
+        "x": 8,
+        "y": 1
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "opposite_edge",
+        "blocker": "1b27a2d4-6ab1-484e-a150-0176cae30ec9",
+        "tick": 0,
+        "cell": "8,1"
+      },
+      "error": {
+        "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+        "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///E:/%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/implementations/member-3/scripts/conflict-scenarios.js:56:12\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:633:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
+        "tick": 0
+      },
+      "taskStates": [],
+      "elapsedMs": 79.30879999999979
+    }
+  ]
+}

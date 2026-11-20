@@ -1,0 +1,18 @@
+{
+  "seed": 20261119,
+  "epoch": "2026-11-19T00:00:00.000Z",
+  "width": 22,
+  "height": 16,
+  "agv_count": 10,
+  "battery_threshold": 22,
+  "charging_per_tick": 5,
+  "move_cost": 0.12,
+  "max_wait_ticks": 90,
+  "max_retries": 4,
+  "skus": [
+    { "code": "SKU-001", "name": "工业传感器", "spec": "标准型 / 箱", "batch_rule": "fifo" },
+    { "code": "SKU-002", "name": "精密轴承", "spec": "6205 / 箱", "batch_rule": "none" },
+    { "code": "SKU-003", "name": "电子模组", "spec": "控制板 / 箱", "batch_rule": "fefo" }
+  ],
+  "closable": [{"x":7,"y":7},{"x":12,"y":7},{"x":17,"y":7}]
+}

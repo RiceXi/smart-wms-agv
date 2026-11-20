@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-11-20T09:01:31.437Z",
+  "remoteMain": "e6071d919b132ec309140be5b9a18b36b84d36a1",
+  "publicFiles": [
+    {
+      "path": "README.md",
+      "ref": "e6071d919b132ec309140be5b9a18b36b84d36a1",
+      "equal": true,
+      "remoteSha256": "16b7dc51d8dc301c2dd776eaf4834f103126f367a7a4b5ae2ef43cc7a905b3c6",
+      "localSha256": "16b7dc51d8dc301c2dd776eaf4834f103126f367a7a4b5ae2ef43cc7a905b3c6"
+    },
+    {
+      "path": "AGENTS.md",
+      "ref": "e6071d919b132ec309140be5b9a18b36b84d36a1",
+      "equal": true,
+      "remoteSha256": "ff904bb78bb11b40886ac6ebaa2bdec79c4cbcbd2d453c92836059fcf653d64e",
+      "localSha256": "ff904bb78bb11b40886ac6ebaa2bdec79c4cbcbd2d453c92836059fcf653d64e"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "ref": "e6071d919b132ec309140be5b9a18b36b84d36a1",
+      "equal": true,
+      "remoteSha256": "8740d8d511cf20f9507081d23f5b121a5d6a5ce3b7fbdc5f123e20983283ca8a",
+      "localSha256": "8740d8d511cf20f9507081d23f5b121a5d6a5ce3b7fbdc5f123e20983283ca8a"
+    },
+    {
+      "path": "docs/requirement.md",
+      "ref": "e6071d919b132ec309140be5b9a18b36b84d36a1",
+      "equal": true,
+      "remoteSha256": "32985c5749fd0af8ce9505ad407824fac284acebc9bdbea451877bb9d7586a0e",
+      "localSha256": "32985c5749fd0af8ce9505ad407824fac284acebc9bdbea451877bb9d7586a0e"
+    },
+    {
+      "path": "docs/data-schema.md",
+      "ref": "e6071d919b132ec309140be5b9a18b36b84d36a1",
+      "equal": true,
+      "remoteSha256": "13ad779468901989a56b7facae44a8f4db17bb13058a3ea9b174ab35361c9dae",
+      "localSha256": "13ad779468901989a56b7facae44a8f4db17bb13058a3ea9b174ab35361c9dae"
+    },
+    {
+      "path": "docs/acceptance.md",
+      "ref": "e6071d919b132ec309140be5b9a18b36b84d36a1",
+      "equal": true,
+      "remoteSha256": "79d810ca81efae5e069280a5d073edd7c5b53f4f8b127bdba65229368235fafd",
+      "localSha256": "79d810ca81efae5e069280a5d073edd7c5b53f4f8b127bdba65229368235fafd"
+    },
+    {
+      "path": "docs/development-contract.md",
+      "ref": "e6071d919b132ec309140be5b9a18b36b84d36a1",
+      "equal": true,
+      "remoteSha256": "28c26567cfe0fc50f1eb24043b0fd5c58d6e5a100e2ca4eaca7df0944c947a00",
+      "localSha256": "28c26567cfe0fc50f1eb24043b0fd5c58d6e5a100e2ca4eaca7df0944c947a00"
+    }
+  ],
+  "allEqual": true
+}

@@ -1,0 +1,226 @@
+TAP version 13
+# Subtest: AC1 HTTP 启动、健康检查、JSON-RPC 和断线重连完整快照
+ok 1 - AC1 HTTP 启动、健康检查、JSON-RPC 和断线重连完整快照
+  ---
+  duration_ms: 148.1237
+  type: 'test'
+  ...
+# Subtest: AC2 新增3个SKU和5库位，拒绝重复编码/越界/负库存，支持编辑删除
+ok 2 - AC2 新增3个SKU和5库位，拒绝重复编码/越界/负库存，支持编辑删除
+  ---
+  duration_ms: 119.5862
+  type: 'test'
+  ...
+# Subtest: AC3 多行订单、原子预占、幂等释放、取消释放及FIFO/FEFO
+ok 3 - AC3 多行订单、原子预占、幂等释放、取消释放及FIFO/FEFO
+  ---
+  duration_ms: 42.0412
+  type: 'test'
+  ...
+# Subtest: AC4 任务状态只能由调度/仿真推进，终态拒绝重启
+ok 4 - AC4 任务状态只能由调度/仿真推进，终态拒绝重启
+  ---
+  duration_ms: 379.8596
+  type: 'test'
+  ...
+# Subtest: AC5 单车连续路径经过真实取放货点，拒绝货架/越界/对角路径
+ok 5 - AC5 单车连续路径经过真实取放货点，拒绝货架/越界/对角路径
+  ---
+  duration_ms: 202.9021
+  type: 'test'
+  ...
+# Subtest: AC6 同格冲突原子失败不残留预约键，时空A*等待避让
+ok 6 - AC6 同格冲突原子失败不残留预约键，时空A*等待避让
+  ---
+  duration_ms: 9.8006
+  type: 'test'
+  ...
+# Subtest: AC7 相向穿边被拒绝，AC8 允许首尾相接，预约到期清理
+ok 7 - AC7 相向穿边被拒绝，AC8 允许首尾相接，预约到期清理
+  ---
+  duration_ms: 7.2857
+  type: 'test'
+  ...
+# Subtest: AC9 三车真实目标占用产生环，回退释放预约后恢复前进
+ok 8 - AC9 三车真实目标占用产生环，回退释放预约后恢复前进
+  ---
+  duration_ms: 97.4642
+  type: 'test'
+  ...
+# Subtest: AC10 运行中封闭未来路径，地图不可变且计划版本递增
+ok 9 - AC10 运行中封闭未来路径，地图不可变且计划版本递增
+  ---
+  duration_ms: 1449.8489
+  type: 'test'
+  ...
+# Subtest: AC11 低电量充电排队、容量约束、充满离开充电位
+ok 10 - AC11 低电量充电排队、容量约束、充满离开充电位
+  ---
+  duration_ms: 458.812
+  type: 'test'
+  ...
+# Subtest: AC12 急单比已排队低优先级任务先指派
+ok 11 - AC12 急单比已排队低优先级任务先指派
+  ---
+  duration_ms: 458.0127
+  type: 'test'
+  ...
+# Subtest: AC13 同seed和输入三次关键事件与业务结果完全一致
+ok 12 - AC13 同seed和输入三次关键事件与业务结果完全一致
+  ---
+  duration_ms: 2719.18
+  type: 'test'
+  ...
+# Subtest: AC15 暂停、单步、继续、速度校验，回放保存真实事件顺序
+ok 13 - AC15 暂停、单步、继续、速度校验，回放保存真实事件顺序
+  ---
+  duration_ms: 915.8817
+  type: 'test'
+  ...
+# Subtest: AC16 独立Node进程关闭重启恢复SKU/库存/订单/任务/路径快照
+ok 14 - AC16 独立Node进程关闭重启恢复SKU/库存/订单/任务/路径快照
+  ---
+  duration_ms: 1672.1303
+  type: 'test'
+  ...
+# Subtest: AC17 订单/任务/事件状态、单号、AGV、优先级和UTC日期组合筛选
+ok 15 - AC17 订单/任务/事件状态、单号、AGV、优先级和UTC日期组合筛选
+  ---
+  duration_ms: 756.6724
+  type: 'test'
+  ...
+# Subtest: AC18 统计、取消数、利用率、吞吐、耗时与库存流水守恒
+ok 16 - AC18 统计、取消数、利用率、吞吐、耗时与库存流水守恒
+  ---
+  duration_ms: 949.4035
+  type: 'test'
+  ...
+# Subtest: 故障重派：assigned撤销回pending，running失败保留终态并建替代任务
+ok 17 - 故障重派：assigned撤销回pending，running失败保留终态并建替代任务
+  ---
+  duration_ms: 7718.8427
+  type: 'test'
+  ...
+# Subtest: 日期、容量、状态、电量与旧计划校验，库位迁移更新旧格
+ok 18 - 日期、容量、状态、电量与旧计划校验，库位迁移更新旧格
+  ---
+  duration_ms: 29.8312
+  type: 'test'
+  ...
+# Subtest: 回归：取消多行订单任务后停车预约安全且重启可恢复
+ok 19 - 回归：取消多行订单任务后停车预约安全且重启可恢复
+  ---
+  duration_ms: 763.6298
+  type: 'test'
+  ...
+# Subtest: 回归：替代库存到期后仍保留故障事实并给出重派失败原因
+ok 20 - 回归：替代库存到期后仍保留故障事实并给出重派失败原因
+  ---
+  duration_ms: 18.8247
+  type: 'test'
+  ...
+# Subtest: 回归：已预占订单放货点不能改为货架
+ok 21 - 回归：已预占订单放货点不能改为货架
+  ---
+  duration_ms: 432.1041
+  type: 'test'
+  ...
+# Subtest: 回归：封路不打断已在桩上的充电，充满正常回岗
+ok 22 - 回归：封路不打断已在桩上的充电，充满正常回岗
+  ---
+  duration_ms: 294.4768
+  type: 'test'
+  ...
+# Subtest: 在线竞争演示实际驱动两车，告警含真实竞争原因
+ok 23 - 在线竞争演示实际驱动两车，告警含真实竞争原因
+  ---
+  duration_ms: 370.856
+  type: 'test'
+  ...
+# Subtest: 有界恢复：回退次数耗尽不再追加路线，等待超限明确失败并释放库存
+ok 24 - 有界恢复：回退次数耗尽不再追加路线，等待超限明确失败并释放库存
+  ---
+  duration_ms: 28.1085
+  type: 'test'
+  ...
+# Subtest: 回归：多车连带超时后跳过失效循环条目，不回滚失败事实
+ok 25 - 回归：多车连带超时后跳过失效循环条目，不回滚失败事实
+  ---
+  duration_ms: 487.6705
+  type: 'test'
+  ...
+# Subtest: 回归：回退中故障不得虚记死锁恢复
+ok 26 - 回归：回退中故障不得虚记死锁恢复
+  ---
+  duration_ms: 16.5168
+  type: 'test'
+  ...
+# Subtest: FR7 局部重规划：无关封路及解封保留全部原路径与任务计划
+ok 27 - FR7 局部重规划：无关封路及解封保留全部原路径与任务计划
+  ---
+  duration_ms: 1029.6138
+  type: 'test'
+  ...
+# Subtest: FR7 局部重规划：受影响车避障，依赖范围外计划与预约保留
+ok 28 - FR7 局部重规划：受影响车避障，依赖范围外计划与预约保留
+  ---
+  duration_ms: 1459.7188
+  type: 'test'
+  ...
+# Subtest: FR7 局部重规划：清除原路径后的停车冲突按依赖递归扩展
+ok 29 - FR7 局部重规划：清除原路径后的停车冲突按依赖递归扩展
+  ---
+  duration_ms: 293.533
+  type: 'test'
+  ...
+# Subtest: AC17 回归：完整历史日志跨200条后按车辆、任务、UTC日期查询及分页
+ok 30 - AC17 回归：完整历史日志跨200条后按车辆、任务、UTC日期查询及分页
+  ---
+  duration_ms: 660.5191
+  type: 'test'
+  ...
+# Subtest: 货架全封超时只取消本单并释放一次预占，另一订单继续完成
+ok 31 - 货架全封超时只取消本单并释放一次预占，另一订单继续完成
+  ---
+  duration_ms: 145.1326
+  type: 'test'
+  ...
+# Subtest: 派车前封路，真实HTTP启动后持续推进，解封后原任务完成
+ok 32 - 派车前封路，真实HTTP启动后持续推进，解封后原任务完成
+  ---
+  duration_ms: 2387.9328
+  type: 'test'
+  ...
+# Subtest: 取货途中全封，解封后完成
+ok 33 - 取货途中全封，解封后完成
+  ---
+  duration_ms: 163.1506
+  type: 'test'
+  ...
+# Subtest: 取货途中全封，超时失败并归还库存
+ok 34 - 取货途中全封，超时失败并归还库存
+  ---
+  duration_ms: 53.3038
+  type: 'test'
+  ...
+# Subtest: 首选货架面可站立但与通道隔绝时从另一面取货
+ok 35 - 首选货架面可站立但与通道隔绝时从另一面取货
+  ---
+  duration_ms: 652.7646
+  type: 'test'
+  ...
+# Subtest: 资源写入必须匹配文档中的方法、资源、ID和操作
+ok 36 - 资源写入必须匹配文档中的方法、资源、ID和操作
+  ---
+  duration_ms: 30.7557
+  type: 'test'
+  ...
+1..36
+# tests 36
+# suites 0
+# pass 36
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 24141.874

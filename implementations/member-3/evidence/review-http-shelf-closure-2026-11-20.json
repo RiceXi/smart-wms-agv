@@ -1,0 +1,561 @@
+{
+  "checkedAt": "2026-11-20T09:05:04.775Z",
+  "database": ":memory:",
+  "browserTested": false,
+  "config": {
+    "seed": 20261119,
+    "epoch": "2026-11-19T00:00:00.000Z",
+    "width": 22,
+    "height": 16,
+    "agv_count": 1,
+    "battery_threshold": 22,
+    "charging_per_tick": 5,
+    "move_cost": 0.12,
+    "max_wait_ticks": 2,
+    "max_retries": 1,
+    "skus": [
+      {
+        "code": "SKU-001",
+        "name": "工业传感器",
+        "spec": "标准型 / 箱",
+        "batch_rule": "fifo"
+      },
+      {
+        "code": "SKU-002",
+        "name": "精密轴承",
+        "spec": "6205 / 箱",
+        "batch_rule": "none"
+      },
+      {
+        "code": "SKU-003",
+        "name": "电子模组",
+        "spec": "控制板 / 箱",
+        "batch_rule": "fefo"
+      }
+    ],
+    "closable": [
+      {
+        "x": 7,
+        "y": 7
+      },
+      {
+        "x": 12,
+        "y": 7
+      },
+      {
+        "x": 17,
+        "y": 7
+      }
+    ]
+  },
+  "afterStart": {
+    "tick": 0,
+    "running": true
+  },
+  "afterTimer": {
+    "tick": 0,
+    "running": false,
+    "errors": [
+      {
+        "id": "8cbd0f9b-e5e6-4e70-a613-ed99beeb85f6",
+        "type": "simulation.error",
+        "occurredAt": "2026-11-19T00:00:00.000Z",
+        "tick": 0,
+        "aggregateId": "e0156b97-3f99-4b8e-a58b-f6c4a55237ed",
+        "payload": {
+          "message": "货架 SHELF-A 没有可用相邻取货点"
+        }
+      }
+    ],
+    "order": {
+      "id": "98af169f-fb47-4273-af4e-cff85e397a68",
+      "created_at": "2026-11-19T00:00:00.000Z",
+      "updated_at": "2026-11-19T00:00:00.000Z",
+      "version": 3,
+      "code": "REVIEW-HTTP-ORDER",
+      "type": "outbound",
+      "status": "released",
+      "priority": 5,
+      "requester": "review",
+      "lines": [
+        {
+          "id": "c475604f-cb8d-4bdd-aa26-f4625e016837",
+          "sku_id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+          "qty": 1
+        }
+      ],
+      "drop_location_id": "94182ebf-ff35-4547-abb5-e73b46af859f",
+      "allocations": [
+        {
+          "stock_id": "4835da7b-542f-4c98-a2e0-cff97d9b3bec",
+          "sku_id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+          "location_id": "3675e169-d784-44a9-afa1-8efeb7cbd12c",
+          "qty": 1,
+          "consumed": false,
+          "released": false
+        }
+      ],
+      "created_tick": 0
+    },
+    "tasks": [
+      {
+        "id": "ab3b44db-37d3-4f9d-a550-9ff2e564d716",
+        "created_at": "2026-11-19T00:00:00.000Z",
+        "updated_at": "2026-11-19T00:00:00.000Z",
+        "version": 1,
+        "order_id": "98af169f-fb47-4273-af4e-cff85e397a68",
+        "type": "pick_and_drop",
+        "priority": 5,
+        "status": "pending",
+        "pickup_location_id": "3675e169-d784-44a9-afa1-8efeb7cbd12c",
+        "drop_location_id": "94182ebf-ff35-4547-abb5-e73b46af859f",
+        "assigned_agv_id": null,
+        "plan_version": 0,
+        "retry_count": 0,
+        "created_tick": 0,
+        "allocation_index": 0,
+        "sku_id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+        "qty": 1
+      }
+    ]
+  },
+  "afterManualUnblockAndStep": {
+    "tick": 1,
+    "running": false,
+    "order": {
+      "id": "98af169f-fb47-4273-af4e-cff85e397a68",
+      "created_at": "2026-11-19T00:00:00.000Z",
+      "updated_at": "2026-11-19T00:00:00.000Z",
+      "version": 3,
+      "code": "REVIEW-HTTP-ORDER",
+      "type": "outbound",
+      "status": "released",
+      "priority": 5,
+      "requester": "review",
+      "lines": [
+        {
+          "id": "c475604f-cb8d-4bdd-aa26-f4625e016837",
+          "sku_id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+          "qty": 1
+        }
+      ],
+      "drop_location_id": "94182ebf-ff35-4547-abb5-e73b46af859f",
+      "allocations": [
+        {
+          "stock_id": "4835da7b-542f-4c98-a2e0-cff97d9b3bec",
+          "sku_id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+          "location_id": "3675e169-d784-44a9-afa1-8efeb7cbd12c",
+          "qty": 1,
+          "consumed": false,
+          "released": false
+        }
+      ],
+      "created_tick": 0
+    },
+    "tasks": [
+      {
+        "id": "ab3b44db-37d3-4f9d-a550-9ff2e564d716",
+        "created_at": "2026-11-19T00:00:00.000Z",
+        "updated_at": "2026-11-19T00:00:01.000Z",
+        "version": 4,
+        "order_id": "98af169f-fb47-4273-af4e-cff85e397a68",
+        "type": "pick_and_drop",
+        "priority": 5,
+        "status": "running",
+        "pickup_location_id": "3675e169-d784-44a9-afa1-8efeb7cbd12c",
+        "drop_location_id": "94182ebf-ff35-4547-abb5-e73b46af859f",
+        "assigned_agv_id": "b3748d78-7d95-4cb1-a05b-5d6a6359dd2b",
+        "plan_version": 1,
+        "retry_count": 0,
+        "created_tick": 0,
+        "allocation_index": 0,
+        "sku_id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+        "qty": 1,
+        "plan": {
+          "taskId": "ab3b44db-37d3-4f9d-a550-9ff2e564d716",
+          "agvId": "b3748d78-7d95-4cb1-a05b-5d6a6359dd2b",
+          "mapVersion": "9a307a26-8052-4137-a441-5397e04f76af",
+          "planVersion": 1,
+          "ticks": [
+            {
+              "x": 1,
+              "y": 1,
+              "tick": 0,
+              "action": "wait"
+            },
+            {
+              "x": 2,
+              "y": 1,
+              "tick": 1,
+              "action": "move"
+            },
+            {
+              "x": 3,
+              "y": 1,
+              "tick": 2,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 1,
+              "tick": 3,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 2,
+              "tick": 4,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 3,
+              "tick": 5,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 4,
+              "tick": 6,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 4,
+              "tick": 7,
+              "action": "loading"
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "tick": 8,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 6,
+              "tick": 9,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 7,
+              "tick": 10,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 8,
+              "tick": 11,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 9,
+              "tick": 12,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 10,
+              "tick": 13,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 11,
+              "tick": 14,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 12,
+              "tick": 15,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 13,
+              "tick": 16,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 13,
+              "tick": 17,
+              "action": "unloading"
+            },
+            {
+              "x": 4,
+              "y": 13,
+              "tick": 18,
+              "action": "complete"
+            },
+            {
+              "x": 4,
+              "y": 12,
+              "tick": 19,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 11,
+              "tick": 20,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 10,
+              "tick": 21,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 9,
+              "tick": 22,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 8,
+              "tick": 23,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 7,
+              "tick": 24,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 6,
+              "tick": 25,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "tick": 26,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 4,
+              "tick": 27,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 3,
+              "tick": 28,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 2,
+              "tick": 29,
+              "action": "move"
+            },
+            {
+              "x": 4,
+              "y": 1,
+              "tick": 30,
+              "action": "move"
+            },
+            {
+              "x": 3,
+              "y": 1,
+              "tick": 31,
+              "action": "move"
+            },
+            {
+              "x": 2,
+              "y": 1,
+              "tick": 32,
+              "action": "move"
+            },
+            {
+              "x": 1,
+              "y": 1,
+              "tick": 33,
+              "action": "move"
+            }
+          ],
+          "edges": [
+            {
+              "tick": 0,
+              "from": "1,1",
+              "to": "2,1"
+            },
+            {
+              "tick": 1,
+              "from": "2,1",
+              "to": "3,1"
+            },
+            {
+              "tick": 2,
+              "from": "3,1",
+              "to": "4,1"
+            },
+            {
+              "tick": 3,
+              "from": "4,1",
+              "to": "4,2"
+            },
+            {
+              "tick": 4,
+              "from": "4,2",
+              "to": "4,3"
+            },
+            {
+              "tick": 5,
+              "from": "4,3",
+              "to": "4,4"
+            },
+            {
+              "tick": 6,
+              "from": "4,4",
+              "to": "4,4"
+            },
+            {
+              "tick": 7,
+              "from": "4,4",
+              "to": "4,5"
+            },
+            {
+              "tick": 8,
+              "from": "4,5",
+              "to": "4,6"
+            },
+            {
+              "tick": 9,
+              "from": "4,6",
+              "to": "4,7"
+            },
+            {
+              "tick": 10,
+              "from": "4,7",
+              "to": "4,8"
+            },
+            {
+              "tick": 11,
+              "from": "4,8",
+              "to": "4,9"
+            },
+            {
+              "tick": 12,
+              "from": "4,9",
+              "to": "4,10"
+            },
+            {
+              "tick": 13,
+              "from": "4,10",
+              "to": "4,11"
+            },
+            {
+              "tick": 14,
+              "from": "4,11",
+              "to": "4,12"
+            },
+            {
+              "tick": 15,
+              "from": "4,12",
+              "to": "4,13"
+            },
+            {
+              "tick": 16,
+              "from": "4,13",
+              "to": "4,13"
+            },
+            {
+              "tick": 17,
+              "from": "4,13",
+              "to": "4,13"
+            },
+            {
+              "tick": 18,
+              "from": "4,13",
+              "to": "4,12"
+            },
+            {
+              "tick": 19,
+              "from": "4,12",
+              "to": "4,11"
+            },
+            {
+              "tick": 20,
+              "from": "4,11",
+              "to": "4,10"
+            },
+            {
+              "tick": 21,
+              "from": "4,10",
+              "to": "4,9"
+            },
+            {
+              "tick": 22,
+              "from": "4,9",
+              "to": "4,8"
+            },
+            {
+              "tick": 23,
+              "from": "4,8",
+              "to": "4,7"
+            },
+            {
+              "tick": 24,
+              "from": "4,7",
+              "to": "4,6"
+            },
+            {
+              "tick": 25,
+              "from": "4,6",
+              "to": "4,5"
+            },
+            {
+              "tick": 26,
+              "from": "4,5",
+              "to": "4,4"
+            },
+            {
+              "tick": 27,
+              "from": "4,4",
+              "to": "4,3"
+            },
+            {
+              "tick": 28,
+              "from": "4,3",
+              "to": "4,2"
+            },
+            {
+              "tick": 29,
+              "from": "4,2",
+              "to": "4,1"
+            },
+            {
+              "tick": 30,
+              "from": "4,1",
+              "to": "3,1"
+            },
+            {
+              "tick": 31,
+              "from": "3,1",
+              "to": "2,1"
+            },
+            {
+              "tick": 32,
+              "from": "2,1",
+              "to": "1,1"
+            }
+          ],
+          "estimatedTicks": 33,
+          "waitTicks": 1
+        },
+        "started_tick": 1
+      }
+    ]
+  },
+  "defectReproduced": true,
+  "scope": "真实HTTP命令与服务定时器；未测试浏览器；手动解封后单步可推进不等于自动恢复或已验证任务完成"
+}

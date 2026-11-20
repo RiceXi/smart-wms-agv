@@ -1,0 +1,149 @@
+{
+  "checkedAt": "2026-11-20T09:02:17.876Z",
+  "fixture": "shelf-neighbor-closures-after-task-release",
+  "config": {
+    "agv_count": 1,
+    "max_wait_ticks": 2,
+    "max_retries": 1
+  },
+  "closureResults": [
+    {
+      "point": {
+        "x": 4,
+        "y": 4
+      },
+      "result": "3e1f8c33-6b26-4707-ae4f-14995c5ec29d"
+    },
+    {
+      "point": {
+        "x": 5,
+        "y": 3
+      },
+      "result": "8b039cf5-bde2-4b5a-a390-61029fd77506"
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "tick": 0,
+      "ok": false,
+      "code": "inaccessible_pickup",
+      "message": "货架 SHELF-A 没有可用相邻取货点"
+    },
+    {
+      "attempt": 2,
+      "tick": 0,
+      "ok": false,
+      "code": "inaccessible_pickup",
+      "message": "货架 SHELF-A 没有可用相邻取货点"
+    },
+    {
+      "attempt": 3,
+      "tick": 0,
+      "ok": false,
+      "code": "inaccessible_pickup",
+      "message": "货架 SHELF-A 没有可用相邻取货点"
+    },
+    {
+      "attempt": 4,
+      "tick": 0,
+      "ok": false,
+      "code": "inaccessible_pickup",
+      "message": "货架 SHELF-A 没有可用相邻取货点"
+    },
+    {
+      "attempt": 5,
+      "tick": 0,
+      "ok": false,
+      "code": "inaccessible_pickup",
+      "message": "货架 SHELF-A 没有可用相邻取货点"
+    },
+    {
+      "attempt": 6,
+      "tick": 0,
+      "ok": false,
+      "code": "inaccessible_pickup",
+      "message": "货架 SHELF-A 没有可用相邻取货点"
+    },
+    {
+      "attempt": 7,
+      "tick": 0,
+      "ok": false,
+      "code": "inaccessible_pickup",
+      "message": "货架 SHELF-A 没有可用相邻取货点"
+    },
+    {
+      "attempt": 8,
+      "tick": 0,
+      "ok": false,
+      "code": "inaccessible_pickup",
+      "message": "货架 SHELF-A 没有可用相邻取货点"
+    }
+  ],
+  "order": {
+    "id": "98af169f-fb47-4273-af4e-cff85e397a68",
+    "created_at": "2026-11-19T00:00:00.000Z",
+    "updated_at": "2026-11-19T00:00:00.000Z",
+    "version": 3,
+    "code": "REVIEW-SHELF-ORDER",
+    "type": "outbound",
+    "status": "released",
+    "priority": 5,
+    "requester": "review",
+    "lines": [
+      {
+        "id": "c475604f-cb8d-4bdd-aa26-f4625e016837",
+        "sku_id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+        "qty": 1
+      }
+    ],
+    "drop_location_id": "94182ebf-ff35-4547-abb5-e73b46af859f",
+    "allocations": [
+      {
+        "stock_id": "4835da7b-542f-4c98-a2e0-cff97d9b3bec",
+        "sku_id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+        "location_id": "3675e169-d784-44a9-afa1-8efeb7cbd12c",
+        "qty": 1,
+        "consumed": false,
+        "released": false
+      }
+    ],
+    "created_tick": 0
+  },
+  "tasks": [
+    {
+      "id": "ab3b44db-37d3-4f9d-a550-9ff2e564d716",
+      "created_at": "2026-11-19T00:00:00.000Z",
+      "updated_at": "2026-11-19T00:00:00.000Z",
+      "version": 1,
+      "order_id": "98af169f-fb47-4273-af4e-cff85e397a68",
+      "type": "pick_and_drop",
+      "priority": 5,
+      "status": "pending",
+      "pickup_location_id": "3675e169-d784-44a9-afa1-8efeb7cbd12c",
+      "drop_location_id": "94182ebf-ff35-4547-abb5-e73b46af859f",
+      "assigned_agv_id": null,
+      "plan_version": 0,
+      "retry_count": 0,
+      "created_tick": 0,
+      "allocation_index": 0,
+      "sku_id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+      "qty": 1
+    }
+  ],
+  "inventory": [
+    {
+      "id": "4835da7b-542f-4c98-a2e0-cff97d9b3bec",
+      "created_at": "2026-11-19T00:00:00.000Z",
+      "updated_at": "2026-11-19T00:00:00.000Z",
+      "version": 2,
+      "sku_id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+      "location_id": "3675e169-d784-44a9-afa1-8efeb7cbd12c",
+      "qty": 5,
+      "reserved_qty": 1,
+      "batch": "",
+      "expire_at": null
+    }
+  ],
+  "tick": 0
+}

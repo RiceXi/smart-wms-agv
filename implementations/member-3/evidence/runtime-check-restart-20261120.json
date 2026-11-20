@@ -1,0 +1,19 @@
+{
+  "testedAt": "2026-11-20T09:17:42.166Z",
+  "runtime": "v24.16.0",
+  "isolatedDb": "E:\\新软件工程\\implementations\\member-3\\runtime\\runtime-check-TVu5zo\\demo.db",
+  "homepage": 200,
+  "agvs": 10,
+  "restartAtTick": 3,
+  "restoredFields": [
+    "tick",
+    "orders",
+    "tasks",
+    "inventory",
+    "agvs"
+  ],
+  "finalTick": 35,
+  "completedOrders": 6,
+  "completedTasks": 6,
+  "allReservationsReleased": true
+}

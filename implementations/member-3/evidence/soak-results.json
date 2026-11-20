@@ -1,0 +1,18 @@
+{
+  "measuredAt": "2026-11-19T08:23:14.089Z",
+  "runtime": "v24.16.0",
+  "requestedWallSeconds": 1800,
+  "elapsedWallSeconds": 1800.0032213000002,
+  "ticks": 1800,
+  "agvs": 10,
+  "tasks": 174,
+  "completed": 174,
+  "unfinished": 0,
+  "failed": 0,
+  "maximumStepMs": 75.40810000000056,
+  "safetyChecks": 81000,
+  "safetyViolations": 0,
+  "error": null,
+  "fullThirtyMinuteRun": true,
+  "scope": "真实墙钟持续运行、内存SQLite、关闭逐帧回放；10台车，每60ticks创建6单。不是持久化文件长期写入或浏览器30分钟帧率实测。"
+}

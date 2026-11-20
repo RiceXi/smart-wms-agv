@@ -1,0 +1,392 @@
+{
+  "measuredAt": "2026-11-19T08:02:02.707Z",
+  "hardware": {
+    "os": "Windows_NT 10.0.26200",
+    "cpu": "AMD Ryzen 9 8940HX with Radeon Graphics        ",
+    "logicalProcessors": 32,
+    "memoryBytes": 16340283392,
+    "runtime": "v24.16.0"
+  },
+  "conflictCases": {
+    "scenarios": 500,
+    "vertexCases": 250,
+    "oppositeEdgeCases": 250,
+    "rejectedOriginalConflict": 500,
+    "solved": 500,
+    "successRate": 1,
+    "elapsedMs": 70.184,
+    "scope": "固定9x9网格局部双车竞争微场景；不代表任意仓库拓扑或全车队场景的成功率",
+    "failures": []
+  },
+  "fleets": [
+    {
+      "agvCount": 10,
+      "ticks": 1800,
+      "simulatedSeconds": 1800,
+      "elapsedMs": 20871.783,
+      "taskCount": 60,
+      "completed": 60,
+      "failed": 0,
+      "unfinished": 0,
+      "assignmentSamples": 60,
+      "assignmentP95Ms": 7.8849999999997635,
+      "invariantChecks": 81000,
+      "safetyViolations": 0,
+      "stats": {
+        "orders": 60,
+        "tasks": 60,
+        "agvs": 10,
+        "completed": 60,
+        "cancelled": 0,
+        "effectiveTasks": 60,
+        "throughput": 120,
+        "averageTaskTicks": 24.3,
+        "conflicts": 0,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "b3748d78-7d95-4cb1-a05b-5d6a6359dd2b",
+            "code": "AGV-01",
+            "utilization": 0.014444444444444444,
+            "completed": 1
+          },
+          {
+            "id": "e72e2d2a-b691-4888-a6b7-997caee4b1ac",
+            "code": "AGV-02",
+            "utilization": 0.028888888888888888,
+            "completed": 2
+          },
+          {
+            "id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+            "code": "AGV-03",
+            "utilization": 0.07555555555555556,
+            "completed": 6
+          },
+          {
+            "id": "4835da7b-542f-4c98-a2e0-cff97d9b3bec",
+            "code": "AGV-04",
+            "utilization": 0.058333333333333334,
+            "completed": 7
+          },
+          {
+            "id": "95a14ad0-fbfb-4de1-a356-dd4d761bb64b",
+            "code": "AGV-05",
+            "utilization": 0.052222222222222225,
+            "completed": 4
+          },
+          {
+            "id": "efba9982-6a67-4f93-a047-74433248d4c2",
+            "code": "AGV-06",
+            "utilization": 0.09166666666666666,
+            "completed": 5
+          },
+          {
+            "id": "c475604f-cb8d-4bdd-aa26-f4625e016837",
+            "code": "AGV-07",
+            "utilization": 0.08888888888888889,
+            "completed": 5
+          },
+          {
+            "id": "98af169f-fb47-4273-af4e-cff85e397a68",
+            "code": "AGV-08",
+            "utilization": 0.12777777777777777,
+            "completed": 10
+          },
+          {
+            "id": "ad104adc-ce44-4318-aee2-73de50de6e0d",
+            "code": "AGV-09",
+            "utilization": 0.1111111111111111,
+            "completed": 10
+          },
+          {
+            "id": "e24d1af9-e4a5-4122-a7ea-2005335d164f",
+            "code": "AGV-10",
+            "utilization": 0.16111111111111112,
+            "completed": 10
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "4,12",
+            "count": 87
+          },
+          {
+            "cell": "4,11",
+            "count": 74
+          },
+          {
+            "cell": "4,13",
+            "count": 69
+          },
+          {
+            "cell": "4,10",
+            "count": 64
+          },
+          {
+            "cell": "4,3",
+            "count": 64
+          },
+          {
+            "cell": "4,4",
+            "count": 64
+          },
+          {
+            "cell": "4,5",
+            "count": 64
+          },
+          {
+            "cell": "4,6",
+            "count": 64
+          }
+        ]
+      }
+    },
+    {
+      "agvCount": 30,
+      "ticks": 1800,
+      "simulatedSeconds": 1800,
+      "elapsedMs": 35176.9227,
+      "taskCount": 60,
+      "completed": 60,
+      "failed": 0,
+      "unfinished": 0,
+      "assignmentSamples": 60,
+      "assignmentP95Ms": 9.39429999999993,
+      "invariantChecks": 783000,
+      "safetyViolations": 0,
+      "stats": {
+        "orders": 60,
+        "tasks": 60,
+        "agvs": 30,
+        "completed": 60,
+        "cancelled": 0,
+        "effectiveTasks": 60,
+        "throughput": 120,
+        "averageTaskTicks": 23.933333333333334,
+        "conflicts": 0,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "b3748d78-7d95-4cb1-a05b-5d6a6359dd2b",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "e72e2d2a-b691-4888-a6b7-997caee4b1ac",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "d4f8546c-a974-4391-a2df-c71a705a0d3b",
+            "code": "AGV-03",
+            "utilization": 0.015555555555555555,
+            "completed": 1
+          },
+          {
+            "id": "4835da7b-542f-4c98-a2e0-cff97d9b3bec",
+            "code": "AGV-04",
+            "utilization": 0.03388888888888889,
+            "completed": 2
+          },
+          {
+            "id": "95a14ad0-fbfb-4de1-a356-dd4d761bb64b",
+            "code": "AGV-05",
+            "utilization": 0.017222222222222222,
+            "completed": 1
+          },
+          {
+            "id": "efba9982-6a67-4f93-a047-74433248d4c2",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "c475604f-cb8d-4bdd-aa26-f4625e016837",
+            "code": "AGV-07",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "98af169f-fb47-4273-af4e-cff85e397a68",
+            "code": "AGV-08",
+            "utilization": 0.019444444444444445,
+            "completed": 1
+          },
+          {
+            "id": "ad104adc-ce44-4318-aee2-73de50de6e0d",
+            "code": "AGV-09",
+            "utilization": 0.05333333333333334,
+            "completed": 4
+          },
+          {
+            "id": "e24d1af9-e4a5-4122-a7ea-2005335d164f",
+            "code": "AGV-10",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "73e221c8-da4c-4b34-ace4-c47754957e36",
+            "code": "AGV-11",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "5750f3de-2a47-4b09-a768-06f7f52ef1f1",
+            "code": "AGV-12",
+            "utilization": 0.050555555555555555,
+            "completed": 3
+          },
+          {
+            "id": "ab3b44db-37d3-4f9d-a550-9ff2e564d716",
+            "code": "AGV-13",
+            "utilization": 0.065,
+            "completed": 4
+          },
+          {
+            "id": "30a55e3a-129f-4f02-a69b-8ef2e3dba7c9",
+            "code": "AGV-14",
+            "utilization": 0.09722222222222222,
+            "completed": 7
+          },
+          {
+            "id": "c66fa1fd-38c1-49b7-a1bb-6d7831181841",
+            "code": "AGV-15",
+            "utilization": 0.08388888888888889,
+            "completed": 5
+          },
+          {
+            "id": "3e1f8c33-6b26-4707-ae4f-14995c5ec29d",
+            "code": "AGV-16",
+            "utilization": 0.02,
+            "completed": 1
+          },
+          {
+            "id": "aae3c0ee-536d-47a1-a8c9-b0f017e3dd9c",
+            "code": "AGV-17",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "b6f08588-8a47-4777-a103-6c292ca1f9e3",
+            "code": "AGV-18",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "1441e0d7-b837-49e5-a952-ad5020be1918",
+            "code": "AGV-19",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "8b039cf5-bde2-4b5a-a390-61029fd77506",
+            "code": "AGV-20",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "9b9fffb9-9e22-4e05-ae34-b65da3b976d9",
+            "code": "AGV-21",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "4ef8a61f-6ec8-4106-a0af-c0100f498364",
+            "code": "AGV-22",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "27680315-85ab-4491-aa05-ae11be048961",
+            "code": "AGV-23",
+            "utilization": 0.06333333333333334,
+            "completed": 5
+          },
+          {
+            "id": "8cbd0f9b-e5e6-4e70-a613-ed99beeb85f6",
+            "code": "AGV-24",
+            "utilization": 0.04666666666666667,
+            "completed": 6
+          },
+          {
+            "id": "9a307a26-8052-4137-a441-5397e04f76af",
+            "code": "AGV-25",
+            "utilization": 0.03222222222222222,
+            "completed": 3
+          },
+          {
+            "id": "0c86896d-f627-49e0-ac3b-f097532c911b",
+            "code": "AGV-26",
+            "utilization": 0.028333333333333332,
+            "completed": 2
+          },
+          {
+            "id": "52c223b8-b5f4-41eb-a9ce-a9162dbc19df",
+            "code": "AGV-27",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "4b32162b-7fa6-43d7-a3fb-fbe200544bc3",
+            "code": "AGV-28",
+            "utilization": 0.04666666666666667,
+            "completed": 4
+          },
+          {
+            "id": "e2956ba4-6107-4bd8-a5cb-79deb212ac97",
+            "code": "AGV-29",
+            "utilization": 0.08444444444444445,
+            "completed": 8
+          },
+          {
+            "id": "f3cb9355-8519-43e4-a04e-e3f6f1a54f7c",
+            "code": "AGV-30",
+            "utilization": 0.04,
+            "completed": 3
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "4,12",
+            "count": 87
+          },
+          {
+            "cell": "4,3",
+            "count": 80
+          },
+          {
+            "cell": "8,3",
+            "count": 78
+          },
+          {
+            "cell": "7,3",
+            "count": 76
+          },
+          {
+            "cell": "4,11",
+            "count": 74
+          },
+          {
+            "cell": "4,4",
+            "count": 74
+          },
+          {
+            "cell": "4,5",
+            "count": 74
+          },
+          {
+            "cell": "4,6",
+            "count": 74
+          }
+        ]
+      }
+    }
+  ],
+  "elapsedMs": 56169.0842,
+  "wallClockThirtyMinuteSoak": "未执行。1800 ticks为30分钟仿真时间，不能等同于30分钟墙钟运行。",
+  "frontendFps": "见 browser-results.json，单独以真实 requestAnimationFrame 计时。"
+}

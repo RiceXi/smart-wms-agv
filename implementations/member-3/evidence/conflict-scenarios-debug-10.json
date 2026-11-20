@@ -1,0 +1,3629 @@
+{
+  "measuredAt": "2026-11-20T08:24:22.071Z",
+  "hardware": {
+    "os": "Windows_NT 10.0.26200",
+    "cpu": "AMD Ryzen 9 8940HX with Radeon Graphics        ",
+    "logicalProcessors": 32,
+    "memoryBytes": 16340283392,
+    "runtime": "v24.16.0"
+  },
+  "scenarios": 10,
+  "successes": 10,
+  "successRate": 1,
+  "rejectedOriginalConflict": 10,
+  "vertexScenarios": 5,
+  "oppositeEdgeScenarios": 5,
+  "totalTasks": 53,
+  "completedTasks": 53,
+  "safetyChecks": 22905,
+  "safetyViolations": 0,
+  "elapsedMs": 8930.5266,
+  "scope": "10 fixed-seed full 22x16 warehouse Engine fixtures with 10 physical AGVs, 1-3 initial closures, live route closure/unblock, varied orders/priority/drop points and periodic urgent orders. Controlled online pair requests seed vertex and opposite-edge conflicts before tick execution; all vehicles then move through real Engine ticks with WMS traffic. In-memory SQLite, replay disabled, accelerated simulation. Not arbitrary topology or natural deadlock success probability.",
+  "failures": [],
+  "results": [
+    {
+      "index": 0,
+      "seed": 20262000,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "vertex_conflict",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262000-0",
+          "requester": "scenario-runner",
+          "priority": 3,
+          "drop_location_id": "f9cff5c0-99f0-42f0-a535-620da5675143",
+          "lines": [
+            {
+              "sku_id": "29c42bca-df1a-4ca0-abf0-3a519bfb96ae",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262000-1",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "f9cff5c0-99f0-42f0-a535-620da5675143",
+          "lines": [
+            {
+              "sku_id": "f0b2bc35-ef79-47eb-a73c-c3fe355d3a6a",
+              "qty": 5
+            }
+          ]
+        },
+        {
+          "code": "SC-20262000-2",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "cfe618a8-4432-4a41-a149-bf352f252e15",
+          "lines": [
+            {
+              "sku_id": "bb584caf-e92d-4f03-ac7d-109957183dfc",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 9,
+        "y": 7
+      },
+      "checks": 2115,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 10,
+        "y": 2,
+        "action": "scenario_hold",
+        "dwell": 19
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "vertex_conflict",
+        "blocker": "a26d5658-67cc-4401-a0cf-c53d5fc582ac",
+        "tick": 2,
+        "cell": "10,2"
+      },
+      "resolvedRoute": [
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 3,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 4,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 5,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 10,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 11,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 12,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 13,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 14,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 15,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 16,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 17,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 18,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 19,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 20,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 21,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 22,
+          "action": "move"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 23,
+          "action": "scenario_hold"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 24,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 25,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 26,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 27,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 28,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 29,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 30,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 31,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 32,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 33,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 34,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 35,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 36,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 37,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 38,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 39,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 40,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "tick": 41,
+          "action": "wait"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "tick": 42,
+          "action": "move"
+        }
+      ],
+      "ticks": 47,
+      "taskCount": 4,
+      "completed": 4,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 4,
+        "tasks": 4,
+        "agvs": 10,
+        "completed": 4,
+        "cancelled": 0,
+        "effectiveTasks": 4,
+        "throughput": 306.3829787234043,
+        "averageTaskTicks": 21.5,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "eb39c676-35f7-4373-a2d4-1748039230ad",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "6e713f6b-3f3e-4ce9-a4d8-f7c89ca3556e",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "7e6bbf2b-43a9-4280-a40d-8cf058402390",
+            "code": "AGV-03",
+            "utilization": 0.3829787234042553,
+            "completed": 1
+          },
+          {
+            "id": "028ea7e1-fec9-4269-ac06-4ff62363edd4",
+            "code": "AGV-04",
+            "utilization": 0.5319148936170213,
+            "completed": 1
+          },
+          {
+            "id": "e568274f-8270-4679-a2d6-7443aea237ab",
+            "code": "AGV-05",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "a86f91f2-49e6-4fa0-a7b0-41dc89329348",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "da03caf4-0e8a-4072-a4f7-1b017db47909",
+            "code": "AGV-07",
+            "utilization": 0.46808510638297873,
+            "completed": 1
+          },
+          {
+            "id": "244ec434-6c44-43b1-a1cf-915305841853",
+            "code": "AGV-08",
+            "utilization": 0.44680851063829785,
+            "completed": 1
+          },
+          {
+            "id": "a26d5658-67cc-4401-a0cf-c53d5fc582ac",
+            "code": "AGV-09",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "59e6fa32-6dda-4b4d-a787-6099875f1312",
+            "code": "AGV-10",
+            "utilization": 0,
+            "completed": 0
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "9,2",
+            "count": 6
+          },
+          {
+            "cell": "4,2",
+            "count": 5
+          },
+          {
+            "cell": "4,3",
+            "count": 5
+          },
+          {
+            "cell": "4,9",
+            "count": 5
+          },
+          {
+            "cell": "4,10",
+            "count": 4
+          },
+          {
+            "cell": "4,11",
+            "count": 4
+          },
+          {
+            "cell": "4,12",
+            "count": 4
+          },
+          {
+            "cell": "4,4",
+            "count": 4
+          }
+        ]
+      },
+      "elapsedMs": 768.6641999999999
+    },
+    {
+      "index": 1,
+      "seed": 20262001,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "opposite_edge",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        },
+        {
+          "x": 8,
+          "y": 5
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262001-0",
+          "requester": "scenario-runner",
+          "priority": 4,
+          "drop_location_id": "85129503-9dbc-44d3-a610-218aed27ae68",
+          "lines": [
+            {
+              "sku_id": "84d64062-db57-4e8e-ab62-d85a8c62d575",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "code": "SC-20262001-1",
+          "requester": "scenario-runner",
+          "priority": 9,
+          "drop_location_id": "85129503-9dbc-44d3-a610-218aed27ae68",
+          "lines": [
+            {
+              "sku_id": "22a6bb8b-0cd4-4920-aca3-721888534b77",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "code": "SC-20262001-2",
+          "requester": "scenario-runner",
+          "priority": 7,
+          "drop_location_id": "713dad71-be87-4c25-ab37-c86011429808",
+          "lines": [
+            {
+              "sku_id": "b0280077-2f6e-426f-a92f-be2086534647",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "code": "SC-20262001-3",
+          "requester": "scenario-runner",
+          "priority": 5,
+          "drop_location_id": "713dad71-be87-4c25-ab37-c86011429808",
+          "lines": [
+            {
+              "sku_id": "22a6bb8b-0cd4-4920-aca3-721888534b77",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 11,
+        "y": 3
+      },
+      "checks": 2250,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 5,
+        "y": 1
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "opposite_edge",
+        "blocker": "e5a4623a-d727-4242-a4fe-55ee81e6f9ae",
+        "tick": 0,
+        "cell": "5,1"
+      },
+      "resolvedRoute": [
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 3,
+          "action": "move"
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "tick": 4,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 5,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 10,
+          "action": "move"
+        }
+      ],
+      "ticks": 50,
+      "taskCount": 4,
+      "completed": 4,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 4,
+        "tasks": 4,
+        "agvs": 10,
+        "completed": 4,
+        "cancelled": 0,
+        "effectiveTasks": 4,
+        "throughput": 288,
+        "averageTaskTicks": 23.25,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "1add6d47-cd6d-4213-adc0-97479217e182",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "16a3303a-f865-41ab-a84d-12c221a36af4",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "dd184bf7-73fd-4ce2-a60b-f20178aa42a2",
+            "code": "AGV-03",
+            "utilization": 0.54,
+            "completed": 1
+          },
+          {
+            "id": "90392aed-d7fa-4848-a90b-3942e41b6699",
+            "code": "AGV-04",
+            "utilization": 0.3,
+            "completed": 1
+          },
+          {
+            "id": "e5a4623a-d727-4242-a4fe-55ee81e6f9ae",
+            "code": "AGV-05",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "9c8c44d1-1320-4820-a334-ad64446a2a90",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "8f83858f-5f38-4066-a2a6-d52d370d7529",
+            "code": "AGV-07",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "7b360ead-437c-42da-a288-e8efa3764a02",
+            "code": "AGV-08",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "14958e67-5959-4c7e-a30c-ef3c76be9c16",
+            "code": "AGV-09",
+            "utilization": 0.44,
+            "completed": 1
+          },
+          {
+            "id": "f4326a2b-1607-4d4c-a1ee-29436bd108fa",
+            "code": "AGV-10",
+            "utilization": 0.58,
+            "completed": 1
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "13,3",
+            "count": 4
+          },
+          {
+            "cell": "13,4",
+            "count": 4
+          },
+          {
+            "cell": "13,5",
+            "count": 4
+          },
+          {
+            "cell": "14,12",
+            "count": 4
+          },
+          {
+            "cell": "4,12",
+            "count": 4
+          },
+          {
+            "cell": "4,2",
+            "count": 4
+          },
+          {
+            "cell": "4,3",
+            "count": 4
+          },
+          {
+            "cell": "14,10",
+            "count": 3
+          }
+        ]
+      },
+      "elapsedMs": 739.7168
+    },
+    {
+      "index": 2,
+      "seed": 20262002,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "vertex_conflict",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 13,
+          "y": 6
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262002-0",
+          "requester": "scenario-runner",
+          "priority": 8,
+          "drop_location_id": "f0530355-a388-448b-a1a3-93bb290afa8d",
+          "lines": [
+            {
+              "sku_id": "da86a473-6b67-43c9-a604-29117d02b0fd",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "code": "SC-20262002-1",
+          "requester": "scenario-runner",
+          "priority": 1,
+          "drop_location_id": "f0530355-a388-448b-a1a3-93bb290afa8d",
+          "lines": [
+            {
+              "sku_id": "6bd55495-5596-4e69-abb4-5cdfd6befffa",
+              "qty": 5
+            }
+          ]
+        },
+        {
+          "code": "SC-20262002-2",
+          "requester": "scenario-runner",
+          "priority": 5,
+          "drop_location_id": "f0530355-a388-448b-a1a3-93bb290afa8d",
+          "lines": [
+            {
+              "sku_id": "da86a473-6b67-43c9-a604-29117d02b0fd",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262002-3",
+          "requester": "scenario-runner",
+          "priority": 1,
+          "drop_location_id": "4689c349-8f8b-440c-a9dc-38d79a5d19a5",
+          "lines": [
+            {
+              "sku_id": "103d65f5-87b7-4a97-a415-f30a643c046d",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "code": "SC-20262002-4",
+          "requester": "scenario-runner",
+          "priority": 6,
+          "drop_location_id": "f0530355-a388-448b-a1a3-93bb290afa8d",
+          "lines": [
+            {
+              "sku_id": "103d65f5-87b7-4a97-a415-f30a643c046d",
+              "qty": 5
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 12,
+        "y": 3
+      },
+      "checks": 2295,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 5,
+        "y": 2,
+        "action": "scenario_hold",
+        "dwell": 12
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "vertex_conflict",
+        "blocker": "d3af9109-b77d-4047-af13-1078c531061e",
+        "tick": 2,
+        "cell": "5,2"
+      },
+      "resolvedRoute": [
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 3,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 4,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 5,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 10,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 11,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 12,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 13,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 14,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 15,
+          "action": "move"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 16,
+          "action": "scenario_hold"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 17,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 18,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 19,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 20,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 21,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 22,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 23,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 24,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 25,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 26,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "tick": 27,
+          "action": "wait"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 28,
+          "action": "move"
+        }
+      ],
+      "ticks": 51,
+      "taskCount": 5,
+      "completed": 5,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 5,
+        "tasks": 5,
+        "agvs": 10,
+        "completed": 5,
+        "cancelled": 0,
+        "effectiveTasks": 5,
+        "throughput": 352.94117647058823,
+        "averageTaskTicks": 23.2,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "f371592a-af42-42d8-ad05-f3b1067e663f",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "8e2e8fe4-91a0-4b8e-a144-469b1e7e5087",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "e90e4818-a407-45c9-aa01-fc748fd5a230",
+            "code": "AGV-03",
+            "utilization": 0.5490196078431373,
+            "completed": 1
+          },
+          {
+            "id": "d3af9109-b77d-4047-af13-1078c531061e",
+            "code": "AGV-04",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "d5a8f2f1-de4f-4988-aceb-7d5e061ac562",
+            "code": "AGV-05",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "63acd694-f3e9-4833-a96a-60855bca21b5",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "c821d949-30c0-419d-a6e7-21c2e4deab95",
+            "code": "AGV-07",
+            "utilization": 0.43137254901960786,
+            "completed": 1
+          },
+          {
+            "id": "65238b1f-3096-4393-aeb8-6fce147a1538",
+            "code": "AGV-08",
+            "utilization": 0.49019607843137253,
+            "completed": 1
+          },
+          {
+            "id": "8b86ae04-1faf-4897-a868-1a7f0ea4900f",
+            "code": "AGV-09",
+            "utilization": 0.43137254901960786,
+            "completed": 1
+          },
+          {
+            "id": "0aa1c339-0410-458b-a31a-84293354a9fd",
+            "code": "AGV-10",
+            "utilization": 0.37254901960784315,
+            "completed": 1
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "14,10",
+            "count": 6
+          },
+          {
+            "cell": "14,11",
+            "count": 6
+          },
+          {
+            "cell": "14,12",
+            "count": 6
+          },
+          {
+            "cell": "14,2",
+            "count": 6
+          },
+          {
+            "cell": "14,3",
+            "count": 6
+          },
+          {
+            "cell": "14,4",
+            "count": 6
+          },
+          {
+            "cell": "14,5",
+            "count": 6
+          },
+          {
+            "cell": "14,6",
+            "count": 6
+          }
+        ]
+      },
+      "elapsedMs": 912.2219
+    },
+    {
+      "index": 3,
+      "seed": 20262003,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "opposite_edge",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262003-0",
+          "requester": "scenario-runner",
+          "priority": 9,
+          "drop_location_id": "38390b3f-4097-4023-a852-40446d194a93",
+          "lines": [
+            {
+              "sku_id": "3980e40e-c9b1-4ba6-ab6c-69caa1238625",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "code": "SC-20262003-1",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "7e73d98a-be32-4542-a984-70a9fd25ab4b",
+          "lines": [
+            {
+              "sku_id": "238aef0a-8ca6-4a53-a01e-bc1d86ea3d4a",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "code": "SC-20262003-2",
+          "requester": "scenario-runner",
+          "priority": 3,
+          "drop_location_id": "7e73d98a-be32-4542-a984-70a9fd25ab4b",
+          "lines": [
+            {
+              "sku_id": "3980e40e-c9b1-4ba6-ab6c-69caa1238625",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "code": "SC-20262003-3",
+          "requester": "scenario-runner",
+          "priority": 9,
+          "drop_location_id": "38390b3f-4097-4023-a852-40446d194a93",
+          "lines": [
+            {
+              "sku_id": "3980e40e-c9b1-4ba6-ab6c-69caa1238625",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "code": "SC-20262003-4",
+          "requester": "scenario-runner",
+          "priority": 6,
+          "drop_location_id": "38390b3f-4097-4023-a852-40446d194a93",
+          "lines": [
+            {
+              "sku_id": "238aef0a-8ca6-4a53-a01e-bc1d86ea3d4a",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "code": "SC-20262003-5",
+          "requester": "scenario-runner",
+          "priority": 3,
+          "drop_location_id": "7e73d98a-be32-4542-a984-70a9fd25ab4b",
+          "lines": [
+            {
+              "sku_id": "3980e40e-c9b1-4ba6-ab6c-69caa1238625",
+              "qty": 5
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 12,
+        "y": 3
+      },
+      "checks": 2340,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 3,
+        "y": 1
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "opposite_edge",
+        "blocker": "1035b01b-9428-4e08-aeeb-b22ed912f3fb",
+        "tick": 0,
+        "cell": "3,1"
+      },
+      "resolvedRoute": [
+        {
+          "x": 4,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "tick": 3,
+          "action": "move"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "tick": 4,
+          "action": "move"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "tick": 5,
+          "action": "move"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "tick": 10,
+          "action": "move"
+        }
+      ],
+      "ticks": 52,
+      "taskCount": 6,
+      "completed": 6,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 6,
+        "tasks": 6,
+        "agvs": 10,
+        "completed": 6,
+        "cancelled": 0,
+        "effectiveTasks": 6,
+        "throughput": 415.38461538461536,
+        "averageTaskTicks": 26.833333333333332,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "3c8885df-a38b-448a-a993-1d1e9b104aed",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "da56b623-7a4b-42a5-a90f-5fd47b53b27f",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "1035b01b-9428-4e08-aeeb-b22ed912f3fb",
+            "code": "AGV-03",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "6d4d5043-52e5-44f6-a789-34bcc416d466",
+            "code": "AGV-04",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "ed6cb0fe-f8d8-4041-a69e-bd4fa0ac3b0d",
+            "code": "AGV-05",
+            "utilization": 0.5,
+            "completed": 1
+          },
+          {
+            "id": "fadbc4cf-18e4-473c-ac12-aebb39d238d1",
+            "code": "AGV-06",
+            "utilization": 0.34615384615384615,
+            "completed": 1
+          },
+          {
+            "id": "44046bb4-d9e4-429c-a039-8d4fb22c8ad3",
+            "code": "AGV-07",
+            "utilization": 0.4423076923076923,
+            "completed": 1
+          },
+          {
+            "id": "b7f47857-b80a-4de2-a6d2-79de6ddb96a9",
+            "code": "AGV-08",
+            "utilization": 0.5576923076923077,
+            "completed": 1
+          },
+          {
+            "id": "276efacc-b11b-460f-af82-3272c404488c",
+            "code": "AGV-09",
+            "utilization": 0.5961538461538461,
+            "completed": 1
+          },
+          {
+            "id": "06c7e5b9-939e-4785-a7e1-e1ce492f662f",
+            "code": "AGV-10",
+            "utilization": 0.6538461538461539,
+            "completed": 1
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "4,12",
+            "count": 6
+          },
+          {
+            "cell": "10,1",
+            "count": 5
+          },
+          {
+            "cell": "11,1",
+            "count": 5
+          },
+          {
+            "cell": "12,1",
+            "count": 5
+          },
+          {
+            "cell": "13,1",
+            "count": 5
+          },
+          {
+            "cell": "13,7",
+            "count": 5
+          },
+          {
+            "cell": "14,10",
+            "count": 5
+          },
+          {
+            "cell": "14,11",
+            "count": 5
+          }
+        ]
+      },
+      "elapsedMs": 940.9593999999997
+    },
+    {
+      "index": 4,
+      "seed": 20262004,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "vertex_conflict",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        },
+        {
+          "x": 12,
+          "y": 7
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262004-0",
+          "requester": "scenario-runner",
+          "priority": 4,
+          "drop_location_id": "822c5f46-fb46-4a65-a62c-15254cd78243",
+          "lines": [
+            {
+              "sku_id": "ff12d549-8bd0-451e-a457-e481dbfd2b8c",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262004-1",
+          "requester": "scenario-runner",
+          "priority": 6,
+          "drop_location_id": "822c5f46-fb46-4a65-a62c-15254cd78243",
+          "lines": [
+            {
+              "sku_id": "6813bcb7-7ebc-4c94-a4eb-46acac84987c",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262004-2",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "822c5f46-fb46-4a65-a62c-15254cd78243",
+          "lines": [
+            {
+              "sku_id": "79cba9b3-fe4c-4160-a8f4-c21f24a7a467",
+              "qty": 5
+            }
+          ]
+        },
+        {
+          "code": "SC-20262004-3",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "822c5f46-fb46-4a65-a62c-15254cd78243",
+          "lines": [
+            {
+              "sku_id": "6813bcb7-7ebc-4c94-a4eb-46acac84987c",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "code": "SC-20262004-4",
+          "requester": "scenario-runner",
+          "priority": 8,
+          "drop_location_id": "69460076-4b96-47e6-af63-06693b24dc39",
+          "lines": [
+            {
+              "sku_id": "6813bcb7-7ebc-4c94-a4eb-46acac84987c",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262004-5",
+          "requester": "scenario-runner",
+          "priority": 2,
+          "drop_location_id": "822c5f46-fb46-4a65-a62c-15254cd78243",
+          "lines": [
+            {
+              "sku_id": "6813bcb7-7ebc-4c94-a4eb-46acac84987c",
+              "qty": 5
+            }
+          ]
+        },
+        {
+          "code": "SC-20262004-6",
+          "requester": "scenario-runner",
+          "priority": 9,
+          "drop_location_id": "822c5f46-fb46-4a65-a62c-15254cd78243",
+          "lines": [
+            {
+              "sku_id": "79cba9b3-fe4c-4160-a8f4-c21f24a7a467",
+              "qty": 5
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 12,
+        "y": 3
+      },
+      "checks": 2385,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 7,
+        "y": 2,
+        "action": "scenario_hold",
+        "dwell": 15
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "vertex_conflict",
+        "blocker": "b0fa7749-bbbe-4996-af18-29195fc4e734",
+        "tick": 2,
+        "cell": "7,2"
+      },
+      "resolvedRoute": [
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 3,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 4,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 5,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 10,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 11,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 12,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 13,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 14,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 15,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 16,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 17,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 18,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 19,
+          "action": "scenario_hold"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 20,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 21,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 22,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 23,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 24,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 25,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 26,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 27,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 28,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 29,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 30,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 31,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 32,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 33,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 34,
+          "action": "move"
+        }
+      ],
+      "ticks": 53,
+      "taskCount": 7,
+      "completed": 7,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 7,
+        "tasks": 7,
+        "agvs": 10,
+        "completed": 7,
+        "cancelled": 0,
+        "effectiveTasks": 7,
+        "throughput": 475.47169811320754,
+        "averageTaskTicks": 25.714285714285715,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "e1cfae62-7090-41ed-a28a-5298e4bccdbf",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "3fa141f7-fa60-44d1-a8c9-84154e178f33",
+            "code": "AGV-02",
+            "utilization": 0.7358490566037735,
+            "completed": 1
+          },
+          {
+            "id": "eac3036e-8d02-499e-a808-eee1c7d85f7d",
+            "code": "AGV-03",
+            "utilization": 0.3584905660377358,
+            "completed": 1
+          },
+          {
+            "id": "bd7ad838-08f0-4354-ad4b-c9a4c7f0596c",
+            "code": "AGV-04",
+            "utilization": 0.2830188679245283,
+            "completed": 1
+          },
+          {
+            "id": "1cb564d4-2cd8-4acc-ac97-69e4498cb30c",
+            "code": "AGV-05",
+            "utilization": 0.4528301886792453,
+            "completed": 1
+          },
+          {
+            "id": "b0fa7749-bbbe-4996-af18-29195fc4e734",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "1d2ae0d8-804b-48b7-abf7-ae3b4c7376f2",
+            "code": "AGV-07",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "2a17d68a-110d-45fb-aee0-7eb5f1260c68",
+            "code": "AGV-08",
+            "utilization": 0.6226415094339622,
+            "completed": 1
+          },
+          {
+            "id": "0c9cd43e-f681-4a1c-a06a-11157d0a7468",
+            "code": "AGV-09",
+            "utilization": 0.39622641509433965,
+            "completed": 1
+          },
+          {
+            "id": "a7129309-177e-4966-aa2d-35b2cdc9f44d",
+            "code": "AGV-10",
+            "utilization": 0.5471698113207547,
+            "completed": 1
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "4,12",
+            "count": 10
+          },
+          {
+            "cell": "4,10",
+            "count": 8
+          },
+          {
+            "cell": "4,11",
+            "count": 8
+          },
+          {
+            "cell": "4,2",
+            "count": 8
+          },
+          {
+            "cell": "4,3",
+            "count": 8
+          },
+          {
+            "cell": "4,4",
+            "count": 8
+          },
+          {
+            "cell": "4,5",
+            "count": 8
+          },
+          {
+            "cell": "4,6",
+            "count": 8
+          }
+        ]
+      },
+      "elapsedMs": 1067.6565999999998
+    },
+    {
+      "index": 5,
+      "seed": 20262005,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "opposite_edge",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        },
+        {
+          "x": 7,
+          "y": 8
+        },
+        {
+          "x": 18,
+          "y": 6
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262005-0",
+          "requester": "scenario-runner",
+          "priority": 1,
+          "drop_location_id": "832f9514-4ca4-44e6-a0a7-2ff94ac0210b",
+          "lines": [
+            {
+              "sku_id": "3c04a37f-7157-474a-abea-31568020fdaf",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "code": "SC-20262005-1",
+          "requester": "scenario-runner",
+          "priority": 1,
+          "drop_location_id": "73dad7ed-0a9c-441e-a4d2-f49cdadfa73c",
+          "lines": [
+            {
+              "sku_id": "6ca6c11b-e74e-42e7-adfa-caad9e0af166",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "code": "SC-20262005-2",
+          "requester": "scenario-runner",
+          "priority": 9,
+          "drop_location_id": "73dad7ed-0a9c-441e-a4d2-f49cdadfa73c",
+          "lines": [
+            {
+              "sku_id": "6ca6c11b-e74e-42e7-adfa-caad9e0af166",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "code": "SC-20262005-3",
+          "requester": "scenario-runner",
+          "priority": 2,
+          "drop_location_id": "73dad7ed-0a9c-441e-a4d2-f49cdadfa73c",
+          "lines": [
+            {
+              "sku_id": "6ca6c11b-e74e-42e7-adfa-caad9e0af166",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "code": "SC-20262005-4",
+          "requester": "scenario-runner",
+          "priority": 5,
+          "drop_location_id": "73dad7ed-0a9c-441e-a4d2-f49cdadfa73c",
+          "lines": [
+            {
+              "sku_id": "df76ad74-542a-4c89-a6d3-de6d1ee9a489",
+              "qty": 5
+            }
+          ]
+        },
+        {
+          "code": "SC-20262005-5",
+          "requester": "scenario-runner",
+          "priority": 3,
+          "drop_location_id": "832f9514-4ca4-44e6-a0a7-2ff94ac0210b",
+          "lines": [
+            {
+              "sku_id": "df76ad74-542a-4c89-a6d3-de6d1ee9a489",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262005-6",
+          "requester": "scenario-runner",
+          "priority": 7,
+          "drop_location_id": "832f9514-4ca4-44e6-a0a7-2ff94ac0210b",
+          "lines": [
+            {
+              "sku_id": "3c04a37f-7157-474a-abea-31568020fdaf",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "code": "SC-20262005-7",
+          "requester": "scenario-runner",
+          "priority": 5,
+          "drop_location_id": "73dad7ed-0a9c-441e-a4d2-f49cdadfa73c",
+          "lines": [
+            {
+              "sku_id": "df76ad74-542a-4c89-a6d3-de6d1ee9a489",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 4,
+        "y": 9
+      },
+      "checks": 2430,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 5,
+        "y": 1
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "opposite_edge",
+        "blocker": "d8418d91-244d-48b7-ab27-d9ef632d75c3",
+        "tick": 0,
+        "cell": "5,1"
+      },
+      "resolvedRoute": [
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "tick": 3,
+          "action": "move"
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "tick": 4,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 5,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 10,
+          "action": "move"
+        }
+      ],
+      "ticks": 54,
+      "taskCount": 9,
+      "completed": 9,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 9,
+        "tasks": 9,
+        "agvs": 10,
+        "completed": 9,
+        "cancelled": 0,
+        "effectiveTasks": 9,
+        "throughput": 600,
+        "averageTaskTicks": 23.22222222222222,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "8e1b3254-be98-4cd5-acca-165cce1aee22",
+            "code": "AGV-01",
+            "utilization": 0.5555555555555556,
+            "completed": 1
+          },
+          {
+            "id": "01ad8097-3b36-4063-a13d-d8f057f9abb6",
+            "code": "AGV-02",
+            "utilization": 0.5555555555555556,
+            "completed": 1
+          },
+          {
+            "id": "0226d31d-5f19-4af7-aec6-0068b49830a2",
+            "code": "AGV-03",
+            "utilization": 0.5,
+            "completed": 1
+          },
+          {
+            "id": "19f63661-fe0d-4dda-af78-af4a14ec33c6",
+            "code": "AGV-04",
+            "utilization": 0.3148148148148148,
+            "completed": 1
+          },
+          {
+            "id": "d8418d91-244d-48b7-ab27-d9ef632d75c3",
+            "code": "AGV-05",
+            "utilization": 0.3333333333333333,
+            "completed": 1
+          },
+          {
+            "id": "c3c23651-434b-457d-a1ac-b2744d2df289",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "c2af1e03-5f07-46da-a60d-f2affd458679",
+            "code": "AGV-07",
+            "utilization": 0.4444444444444444,
+            "completed": 1
+          },
+          {
+            "id": "3fea529f-3c9b-4fb0-aac1-9fe7d0478bf9",
+            "code": "AGV-08",
+            "utilization": 0.4444444444444444,
+            "completed": 1
+          },
+          {
+            "id": "670bb40a-b2f9-4f56-a6ad-57b91b6c2e8f",
+            "code": "AGV-09",
+            "utilization": 0.37037037037037035,
+            "completed": 1
+          },
+          {
+            "id": "09c6d513-e03a-4d56-a7d1-142e9cea66af",
+            "code": "AGV-10",
+            "utilization": 0.35185185185185186,
+            "completed": 1
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "3,10",
+            "count": 10
+          },
+          {
+            "cell": "3,8",
+            "count": 10
+          },
+          {
+            "cell": "3,9",
+            "count": 10
+          },
+          {
+            "cell": "4,11",
+            "count": 8
+          },
+          {
+            "cell": "3,2",
+            "count": 7
+          },
+          {
+            "cell": "4,10",
+            "count": 7
+          },
+          {
+            "cell": "4,12",
+            "count": 7
+          },
+          {
+            "cell": "4,13",
+            "count": 7
+          }
+        ]
+      },
+      "elapsedMs": 1216.0299999999997
+    },
+    {
+      "index": 6,
+      "seed": 20262006,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "vertex_conflict",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262006-0",
+          "requester": "scenario-runner",
+          "priority": 5,
+          "drop_location_id": "c888fe4f-3292-44b3-a0b0-06379dd9ceb9",
+          "lines": [
+            {
+              "sku_id": "9c3c06c9-42f3-44f0-a5a0-fae3c4afa836",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "code": "SC-20262006-1",
+          "requester": "scenario-runner",
+          "priority": 5,
+          "drop_location_id": "c888fe4f-3292-44b3-a0b0-06379dd9ceb9",
+          "lines": [
+            {
+              "sku_id": "d6673129-73e2-43df-ad35-9357cc6b0d35",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262006-2",
+          "requester": "scenario-runner",
+          "priority": 1,
+          "drop_location_id": "c888fe4f-3292-44b3-a0b0-06379dd9ceb9",
+          "lines": [
+            {
+              "sku_id": "d6673129-73e2-43df-ad35-9357cc6b0d35",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 11,
+        "y": 3
+      },
+      "checks": 2295,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 6,
+        "y": 2,
+        "action": "scenario_hold",
+        "dwell": 20
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "vertex_conflict",
+        "blocker": "e62bb3fd-4ccf-485d-a4b8-575ebe7d3aa3",
+        "tick": 2,
+        "cell": "6,2"
+      },
+      "resolvedRoute": [
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 3,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 4,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 5,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 10,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 11,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 12,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 13,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 14,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 15,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 16,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 17,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 18,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 19,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 20,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 21,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 22,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 23,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 24,
+          "action": "scenario_hold"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 25,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 26,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 27,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 28,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 29,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 30,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 31,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 32,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 33,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 34,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 35,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 36,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 37,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 38,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 39,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 40,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 41,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 42,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "tick": 43,
+          "action": "wait"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 44,
+          "action": "move"
+        }
+      ],
+      "ticks": 51,
+      "taskCount": 3,
+      "completed": 3,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 3,
+        "tasks": 3,
+        "agvs": 10,
+        "completed": 3,
+        "cancelled": 0,
+        "effectiveTasks": 3,
+        "throughput": 211.76470588235293,
+        "averageTaskTicks": 24,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "2d9a9eed-dc84-497f-a93a-6d3c64a8cb8b",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "d2e016cb-da92-4edb-a816-40f3cddcffaa",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "162ec858-83a4-4697-a071-ff38d7a02df4",
+            "code": "AGV-03",
+            "utilization": 0.5490196078431373,
+            "completed": 1
+          },
+          {
+            "id": "ff36e16b-2617-4c40-a668-7f267f59eabc",
+            "code": "AGV-04",
+            "utilization": 0.49019607843137253,
+            "completed": 1
+          },
+          {
+            "id": "e62bb3fd-4ccf-485d-a4b8-575ebe7d3aa3",
+            "code": "AGV-05",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "9dba2b44-66b4-4d83-a9f6-9ac9e75dd9e1",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "011a4523-b856-4d9c-a34f-15302ae98609",
+            "code": "AGV-07",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "da979c4e-4517-4a74-afad-2a42f14df44a",
+            "code": "AGV-08",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "c0086c08-d79c-48f3-a685-17757b75eced",
+            "code": "AGV-09",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "4eabe4dc-cff4-454e-a181-dd062ab541ca",
+            "code": "AGV-10",
+            "utilization": 0.37254901960784315,
+            "completed": 1
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "14,12",
+            "count": 5
+          },
+          {
+            "cell": "6,2",
+            "count": 5
+          },
+          {
+            "cell": "14,10",
+            "count": 4
+          },
+          {
+            "cell": "14,11",
+            "count": 4
+          },
+          {
+            "cell": "14,2",
+            "count": 4
+          },
+          {
+            "cell": "14,3",
+            "count": 4
+          },
+          {
+            "cell": "14,4",
+            "count": 4
+          },
+          {
+            "cell": "14,5",
+            "count": 4
+          }
+        ]
+      },
+      "elapsedMs": 683.8269
+    },
+    {
+      "index": 7,
+      "seed": 20262007,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "opposite_edge",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        },
+        {
+          "x": 17,
+          "y": 9
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262007-0",
+          "requester": "scenario-runner",
+          "priority": 6,
+          "drop_location_id": "94714d87-3137-44cf-aeb9-4ab6336a7d9c",
+          "lines": [
+            {
+              "sku_id": "ade8f1a6-15d8-44ff-ae65-d058dac389d2",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262007-1",
+          "requester": "scenario-runner",
+          "priority": 4,
+          "drop_location_id": "94714d87-3137-44cf-aeb9-4ab6336a7d9c",
+          "lines": [
+            {
+              "sku_id": "ade8f1a6-15d8-44ff-ae65-d058dac389d2",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "code": "SC-20262007-2",
+          "requester": "scenario-runner",
+          "priority": 8,
+          "drop_location_id": "54e37ba4-5ea3-4d89-ac26-b3f42e1893fc",
+          "lines": [
+            {
+              "sku_id": "eb6f4bc9-baa6-44b2-a3c3-6471c2c6cef2",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262007-3",
+          "requester": "scenario-runner",
+          "priority": 3,
+          "drop_location_id": "94714d87-3137-44cf-aeb9-4ab6336a7d9c",
+          "lines": [
+            {
+              "sku_id": "eb6f4bc9-baa6-44b2-a3c3-6471c2c6cef2",
+              "qty": 4
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 13,
+        "y": 3
+      },
+      "checks": 2115,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 6,
+        "y": 1
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "opposite_edge",
+        "blocker": "85cde8d4-cf20-44a5-acf7-f6449cf8aa6c",
+        "tick": 0,
+        "cell": "6,1"
+      },
+      "resolvedRoute": [
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 0,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "tick": 3,
+          "action": "move"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "tick": 4,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 0,
+          "tick": 5,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 0,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 0,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 0,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 0,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 10,
+          "action": "move"
+        }
+      ],
+      "ticks": 47,
+      "taskCount": 4,
+      "completed": 4,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 4,
+        "tasks": 4,
+        "agvs": 10,
+        "completed": 4,
+        "cancelled": 0,
+        "effectiveTasks": 4,
+        "throughput": 306.3829787234043,
+        "averageTaskTicks": 21.25,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "0d876706-1e95-43b2-ad72-9a5b24725550",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "2c07e047-cae3-4187-a416-7d0d22c1e4b4",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "f268006d-45e2-4dad-a8e9-18d0545680ff",
+            "code": "AGV-03",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "1fb74ff4-85f2-4e4d-a1e1-66f8f33bab5e",
+            "code": "AGV-04",
+            "utilization": 0.5319148936170213,
+            "completed": 1
+          },
+          {
+            "id": "b4a10733-b4ff-473e-a2d5-b7821c43f21e",
+            "code": "AGV-05",
+            "utilization": 0.3617021276595745,
+            "completed": 1
+          },
+          {
+            "id": "85cde8d4-cf20-44a5-acf7-f6449cf8aa6c",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "1f9a3a5f-5ccd-4f1d-a7db-23a72a65d785",
+            "code": "AGV-07",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "23645329-697d-4038-ab1f-e0ea9c24a68a",
+            "code": "AGV-08",
+            "utilization": 0.48936170212765956,
+            "completed": 1
+          },
+          {
+            "id": "d2131662-a0e9-495b-a460-0d80fd97f0be",
+            "code": "AGV-09",
+            "utilization": 0.425531914893617,
+            "completed": 1
+          },
+          {
+            "id": "504783dc-b675-479f-a63c-10e5c0d4e131",
+            "code": "AGV-10",
+            "utilization": 0,
+            "completed": 0
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "4,2",
+            "count": 6
+          },
+          {
+            "cell": "4,10",
+            "count": 4
+          },
+          {
+            "cell": "4,11",
+            "count": 4
+          },
+          {
+            "cell": "4,12",
+            "count": 4
+          },
+          {
+            "cell": "4,3",
+            "count": 4
+          },
+          {
+            "cell": "4,7",
+            "count": 4
+          },
+          {
+            "cell": "4,8",
+            "count": 4
+          },
+          {
+            "cell": "4,9",
+            "count": 4
+          }
+        ]
+      },
+      "elapsedMs": 666.8384999999998
+    },
+    {
+      "index": 8,
+      "seed": 20262008,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "vertex_conflict",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        },
+        {
+          "x": 8,
+          "y": 10
+        },
+        {
+          "x": 8,
+          "y": 7
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262008-0",
+          "requester": "scenario-runner",
+          "priority": 2,
+          "drop_location_id": "14de95f3-cab5-4919-a9f3-a763a3741382",
+          "lines": [
+            {
+              "sku_id": "c0d8c8c9-9148-44aa-a5ac-a706095aaf27",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "code": "SC-20262008-1",
+          "requester": "scenario-runner",
+          "priority": 5,
+          "drop_location_id": "e3e1a28b-e549-4345-aa43-66e65a6e3f37",
+          "lines": [
+            {
+              "sku_id": "2a28593c-47ed-45eb-a647-172c2ce97beb",
+              "qty": 5
+            }
+          ]
+        },
+        {
+          "code": "SC-20262008-2",
+          "requester": "scenario-runner",
+          "priority": 2,
+          "drop_location_id": "14de95f3-cab5-4919-a9f3-a763a3741382",
+          "lines": [
+            {
+              "sku_id": "d04999cd-9f1a-4c1c-a77b-338e4dd50c22",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "code": "SC-20262008-3",
+          "requester": "scenario-runner",
+          "priority": 2,
+          "drop_location_id": "14de95f3-cab5-4919-a9f3-a763a3741382",
+          "lines": [
+            {
+              "sku_id": "d04999cd-9f1a-4c1c-a77b-338e4dd50c22",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "code": "SC-20262008-4",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "e3e1a28b-e549-4345-aa43-66e65a6e3f37",
+          "lines": [
+            {
+              "sku_id": "c0d8c8c9-9148-44aa-a5ac-a706095aaf27",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 13,
+        "y": 3
+      },
+      "checks": 2160,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 7,
+        "y": 2,
+        "action": "scenario_hold",
+        "dwell": 12
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "vertex_conflict",
+        "blocker": "4d58aa02-cd0b-41a8-aa9d-7fa9d9e96379",
+        "tick": 2,
+        "cell": "7,2"
+      },
+      "resolvedRoute": [
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 3,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 4,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 5,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 10,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 11,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 12,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 13,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 14,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 15,
+          "action": "move"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 16,
+          "action": "scenario_hold"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 17,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 18,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 19,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 20,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 21,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 22,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 23,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 24,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 25,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 26,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "tick": 27,
+          "action": "wait"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "tick": 28,
+          "action": "move"
+        }
+      ],
+      "ticks": 48,
+      "taskCount": 5,
+      "completed": 5,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 5,
+        "tasks": 5,
+        "agvs": 10,
+        "completed": 5,
+        "cancelled": 0,
+        "effectiveTasks": 5,
+        "throughput": 375,
+        "averageTaskTicks": 24.6,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "5bac0e0d-ff4a-4159-ab7d-4a8f6993e8e3",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "0659d8af-3790-4fcc-a030-662645310877",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "62bd0e60-0614-48c6-a7b3-891f4e126fe4",
+            "code": "AGV-03",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "658e1613-adc1-4f4d-a242-f3c6b67402d9",
+            "code": "AGV-04",
+            "utilization": 0.5208333333333334,
+            "completed": 1
+          },
+          {
+            "id": "20b30d26-c417-4805-a5a8-f9ab5eebf61a",
+            "code": "AGV-05",
+            "utilization": 0.3541666666666667,
+            "completed": 1
+          },
+          {
+            "id": "4d58aa02-cd0b-41a8-aa9d-7fa9d9e96379",
+            "code": "AGV-06",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "1f92c55b-db8d-4e09-a5af-95e8195e5d03",
+            "code": "AGV-07",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "3e295b8d-1bc6-4aba-af33-1b349b9462e5",
+            "code": "AGV-08",
+            "utilization": 0.6666666666666666,
+            "completed": 1
+          },
+          {
+            "id": "9613854e-0c47-4dd2-a40a-8ca88a63f022",
+            "code": "AGV-09",
+            "utilization": 0.4166666666666667,
+            "completed": 1
+          },
+          {
+            "id": "369fe9fe-f1d0-4f55-a2ab-aa1955bcf21b",
+            "code": "AGV-10",
+            "utilization": 0.6041666666666666,
+            "completed": 1
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "13,4",
+            "count": 5
+          },
+          {
+            "cell": "14,4",
+            "count": 5
+          },
+          {
+            "cell": "4,11",
+            "count": 5
+          },
+          {
+            "cell": "4,12",
+            "count": 5
+          },
+          {
+            "cell": "4,3",
+            "count": 5
+          },
+          {
+            "cell": "7,2",
+            "count": 5
+          },
+          {
+            "cell": "12,3",
+            "count": 4
+          },
+          {
+            "cell": "12,4",
+            "count": 4
+          }
+        ]
+      },
+      "elapsedMs": 873.2124999999996
+    },
+    {
+      "index": 9,
+      "seed": 20262009,
+      "mapSize": [
+        22,
+        16
+      ],
+      "agvs": 10,
+      "kind": "opposite_edge",
+      "staticBlocks": [
+        {
+          "x": 12,
+          "y": 11
+        }
+      ],
+      "orders": [
+        {
+          "code": "SC-20262009-0",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "1507f8f5-b13c-4a4a-ae92-e12848405a69",
+          "lines": [
+            {
+              "sku_id": "eb6d361e-c7f9-483f-abdc-af0850b304b8",
+              "qty": 5
+            }
+          ]
+        },
+        {
+          "code": "SC-20262009-1",
+          "requester": "scenario-runner",
+          "priority": 6,
+          "drop_location_id": "7832d289-fdeb-4f27-a02c-e90d8cceecd1",
+          "lines": [
+            {
+              "sku_id": "2516654e-57b9-482c-ade0-49ce6d26a563",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "code": "SC-20262009-2",
+          "requester": "scenario-runner",
+          "priority": 10,
+          "drop_location_id": "7832d289-fdeb-4f27-a02c-e90d8cceecd1",
+          "lines": [
+            {
+              "sku_id": "eb6d361e-c7f9-483f-abdc-af0850b304b8",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "code": "SC-20262009-3",
+          "requester": "scenario-runner",
+          "priority": 3,
+          "drop_location_id": "7832d289-fdeb-4f27-a02c-e90d8cceecd1",
+          "lines": [
+            {
+              "sku_id": "eb6d361e-c7f9-483f-abdc-af0850b304b8",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "code": "SC-20262009-4",
+          "requester": "scenario-runner",
+          "priority": 4,
+          "drop_location_id": "1507f8f5-b13c-4a4a-ae92-e12848405a69",
+          "lines": [
+            {
+              "sku_id": "2516654e-57b9-482c-ade0-49ce6d26a563",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "code": "SC-20262009-5",
+          "requester": "scenario-runner",
+          "priority": 3,
+          "drop_location_id": "7832d289-fdeb-4f27-a02c-e90d8cceecd1",
+          "lines": [
+            {
+              "sku_id": "eb6d361e-c7f9-483f-abdc-af0850b304b8",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "injectedBlock": {
+        "x": 13,
+        "y": 3
+      },
+      "checks": 2520,
+      "safetyViolations": 0,
+      "success": true,
+      "target": {
+        "x": 8,
+        "y": 1
+      },
+      "rejection": {
+        "ok": false,
+        "reason": "opposite_edge",
+        "blocker": "1b27a2d4-6ab1-484e-a150-0176cae30ec9",
+        "tick": 0,
+        "cell": "8,1"
+      },
+      "resolvedRoute": [
+        {
+          "x": 9,
+          "y": 1,
+          "tick": 0,
+          "action": "wait"
+        },
+        {
+          "x": 9,
+          "y": 0,
+          "tick": 1,
+          "action": "move"
+        },
+        {
+          "x": 8,
+          "y": 0,
+          "tick": 2,
+          "action": "move"
+        },
+        {
+          "x": 8,
+          "y": 1,
+          "tick": 3,
+          "action": "move"
+        },
+        {
+          "x": 8,
+          "y": 0,
+          "tick": 4,
+          "action": "move"
+        },
+        {
+          "x": 9,
+          "y": 0,
+          "tick": 5,
+          "action": "move"
+        },
+        {
+          "x": 9,
+          "y": 0,
+          "tick": 6,
+          "action": "wait"
+        },
+        {
+          "x": 9,
+          "y": 0,
+          "tick": 7,
+          "action": "wait"
+        },
+        {
+          "x": 9,
+          "y": 0,
+          "tick": 8,
+          "action": "wait"
+        },
+        {
+          "x": 9,
+          "y": 0,
+          "tick": 9,
+          "action": "wait"
+        },
+        {
+          "x": 9,
+          "y": 1,
+          "tick": 10,
+          "action": "move"
+        }
+      ],
+      "ticks": 56,
+      "taskCount": 6,
+      "completed": 6,
+      "failed": 0,
+      "unfinished": 0,
+      "metrics": {
+        "orders": 6,
+        "tasks": 6,
+        "agvs": 10,
+        "completed": 6,
+        "cancelled": 0,
+        "effectiveTasks": 6,
+        "throughput": 385.7142857142857,
+        "averageTaskTicks": 29.666666666666668,
+        "conflicts": 1,
+        "deadlocks": 0,
+        "recoveries": 0,
+        "utilization": [
+          {
+            "id": "5ffd808a-b08a-480b-a653-8ac9528d3849",
+            "code": "AGV-01",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "e4954594-1263-440c-a2cf-416a8dc96fde",
+            "code": "AGV-02",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "f92c4e10-9ba7-4b7b-a037-438214414560",
+            "code": "AGV-03",
+            "utilization": 0.6964285714285714,
+            "completed": 1
+          },
+          {
+            "id": "f1483cf1-f9d8-4cad-acd7-63eeeb97e457",
+            "code": "AGV-04",
+            "utilization": 0.26785714285714285,
+            "completed": 1
+          },
+          {
+            "id": "7eac8cd3-2f9a-43f0-a1d1-c22bbb8cf4ae",
+            "code": "AGV-05",
+            "utilization": 0.48214285714285715,
+            "completed": 1
+          },
+          {
+            "id": "776fb380-7dd3-4326-a018-10271b548b53",
+            "code": "AGV-06",
+            "utilization": 0.75,
+            "completed": 1
+          },
+          {
+            "id": "1b23f998-5aca-4557-aa1d-07b2057fd9b8",
+            "code": "AGV-07",
+            "utilization": 0.6428571428571429,
+            "completed": 1
+          },
+          {
+            "id": "1b27a2d4-6ab1-484e-a150-0176cae30ec9",
+            "code": "AGV-08",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "ed8ab1f7-50df-4f94-af80-7f43e33cebe3",
+            "code": "AGV-09",
+            "utilization": 0,
+            "completed": 0
+          },
+          {
+            "id": "2c8a136b-8bfd-40bf-a453-03b3fb3388a6",
+            "code": "AGV-10",
+            "utilization": 0.3392857142857143,
+            "completed": 1
+          }
+        ],
+        "bottlenecks": [
+          {
+            "cell": "14,4",
+            "count": 6
+          },
+          {
+            "cell": "4,10",
+            "count": 6
+          },
+          {
+            "cell": "4,11",
+            "count": 6
+          },
+          {
+            "cell": "4,12",
+            "count": 6
+          },
+          {
+            "cell": "4,2",
+            "count": 6
+          },
+          {
+            "cell": "4,7",
+            "count": 6
+          },
+          {
+            "cell": "4,8",
+            "count": 6
+          },
+          {
+            "cell": "4,9",
+            "count": 6
+          }
+        ]
+      },
+      "elapsedMs": 986.7794999999996
+    }
+  ]
+}
