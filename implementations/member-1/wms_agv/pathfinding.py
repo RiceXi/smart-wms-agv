@@ -64,6 +64,14 @@ class ReservationTable:
             opposite is None or opposite == owner
         )
 
+    def vertex_owner(self, point: Point, tick: int) -> str | None:
+        return self.vertices.get((point[0], point[1], tick))
+
+    def edge_owner(self, start: Point, end: Point, tick: int) -> str | None:
+        forward = self.edges.get((start[0], start[1], end[0], end[1], tick))
+        reverse = self.edges.get((end[0], end[1], start[0], start[1], tick))
+        return forward or reverse
+
     def reserve_plan(self, steps: list[dict], owner: str) -> bool:
         """Reserve a complete path atomically."""
         if not steps:
@@ -124,6 +132,7 @@ def find_leg(
     goal: Point,
     start_tick: int,
     max_ticks: int = 240,
+    hold_ticks: int = 0,
 ) -> list[dict] | None:
     """Find a deterministic time-space A* path for one AGV leg."""
     if not grid.passable(start) or not grid.passable(goal):
@@ -139,8 +148,11 @@ def find_leg(
         frontier,
         (_manhattan(start, goal), 0, start_tick, counter, start[0], start[1]),
     )
-    parents: dict[tuple[int, int, int], tuple[tuple[int, int, int] | None, str]] = {
-        (start[0], start[1], start_tick): (None, "start")
+    parents: dict[
+        tuple[int, int, int],
+        tuple[tuple[int, int, int] | None, str, str | None],
+    ] = {
+        (start[0], start[1], start_tick): (None, "start", None)
     }
     best_g: dict[tuple[int, int, int], int] = {(start[0], start[1], start_tick): 0}
 
@@ -149,13 +161,20 @@ def find_leg(
         state = (x, y, tick)
         if g != best_g.get(state):
             continue
-        if (x, y) == goal:
+        hold_available = all(
+            reservations.vertex_free(goal, tick + offset, owner)
+            for offset in range(1, hold_ticks + 1)
+        )
+        if (x, y) == goal and hold_available:
             path: list[dict] = []
             cursor: tuple[int, int, int] | None = state
             while cursor is not None:
                 px, py, pt = cursor
-                previous, action = parents[cursor]
-                path.append({"tick": pt, "x": px, "y": py, "action": action})
+                previous, action, blocked_by = parents[cursor]
+                step = {"tick": pt, "x": px, "y": py, "action": action}
+                if blocked_by:
+                    step["blocked_by"] = blocked_by
+                path.append(step)
                 cursor = previous
             path.reverse()
             return path
@@ -164,8 +183,15 @@ def find_leg(
 
         next_tick = tick + 1
         candidates: list[tuple[Point, str]] = []
+        blocked_owners: set[str] = set()
         for dx, dy in ((0, -1), (1, 0), (0, 1), (-1, 0)):
-            candidates.append(((x + dx, y + dy), "move"))
+            target = (x + dx, y + dy)
+            blocker = reservations.vertex_owner(target, next_tick)
+            if blocker is None or blocker == owner:
+                blocker = reservations.edge_owner((x, y), target, tick)
+            if blocker and blocker != owner:
+                blocked_owners.add(blocker)
+            candidates.append((target, "move"))
         candidates.append(((x, y), "wait"))
 
         for target, action in candidates:
@@ -181,7 +207,11 @@ def find_leg(
             if new_g >= best_g.get(target_state, 10**9):
                 continue
             best_g[target_state] = new_g
-            parents[target_state] = (state, action)
+            parents[target_state] = (
+                state,
+                action,
+                min(blocked_owners) if action == "wait" and blocked_owners else None,
+            )
             counter += 1
             heapq.heappush(
                 frontier,

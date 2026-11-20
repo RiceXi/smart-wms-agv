@@ -37,6 +37,8 @@ def require(data: dict[str, Any], field: str) -> Any:
 
 
 class WmsService:
+    PLAN_RESERVATION_HORIZON = 120
+    PLAN_TAIL_HOLD = 5
     ALLOWED_TASK_TRANSITIONS = {
         "pending": {"assigned", "cancelled"},
         "assigned": {"running", "pending", "cancelled"},
@@ -51,11 +53,13 @@ class WmsService:
         db_path: Path,
         seed_demo: bool = True,
         agv_count: int = 10,
-        map_width: int = 12,
-        map_height: int = 8,
+        map_width: int | None = None,
+        map_height: int | None = None,
     ) -> None:
         if agv_count < 1:
             raise ValueError("agv_count must be positive")
+        map_width = map_width or (20 if agv_count > 10 else 12)
+        map_height = map_height or (12 if agv_count > 10 else 8)
         if map_width < 5 or map_height < 4:
             raise ValueError("map dimensions are too small")
         self.repo = Repository(db_path)
@@ -103,6 +107,7 @@ class WmsService:
         plans = self.repo.get_state("plans", {})
         self.runtime = runtime
         self.plans = plans
+        self._batching = False
 
     @property
     def tick(self) -> int:
@@ -118,7 +123,8 @@ class WmsService:
         return entity
 
     def _save_entity(self, kind: str, entity: dict[str, Any]) -> None:
-        self.repo.upsert_entity(kind, entity)
+        if not self._batching:
+            self.repo.upsert_entity(kind, entity)
 
     def _add_event(
         self,
@@ -147,6 +153,24 @@ class WmsService:
         return event
 
     def _persist_runtime_locked(self) -> None:
+        if self._batching:
+            return
+        self.repo.set_state("runtime", self.runtime)
+        self.repo.set_state("plans", self.plans)
+
+    def _flush_all_locked(self) -> None:
+        self._batching = False
+        for kind, entities in (
+            ("sku", self.skus.values()),
+            ("location", self.locations.values()),
+            ("inventory", self.inventory.values()),
+            ("order", self.orders.values()),
+            ("task", self.tasks.values()),
+            ("agv", self.agvs.values()),
+            ("event", self.events),
+        ):
+            for entity in entities:
+                self.repo.upsert_entity(kind, entity)
         self.repo.set_state("runtime", self.runtime)
         self.repo.set_state("plans", self.plans)
 
@@ -257,12 +281,17 @@ class WmsService:
             for location in self.locations.values()
             if location["type"] in {"shelf", "blocked"}
         }
-        starts = [
+        available_starts = [
             (x, y)
             for y in range(self.map_height)
             for x in range(self.map_width)
             if (x, y) not in occupied and (x, y) not in obstacles
-        ][: self.agv_count]
+        ]
+        starts = [
+            point for point in available_starts if (point[0] + point[1]) % 2 == 0
+        ]
+        starts.extend(point for point in available_starts if point not in starts)
+        starts = starts[: self.agv_count]
         if len(starts) < self.agv_count:
             raise ServiceError("VALIDATION_FAILED", "地图空间不足，无法放置全部 AGV")
         for index, (x, y) in enumerate(starts, start=1):
@@ -317,12 +346,16 @@ class WmsService:
             if location["type"] != "floor"
         }
         used = {(int(agv["x"]), int(agv["y"])) for agv in self.agvs.values()}
-        free = [
+        all_free = [
             (x, y)
             for y in range(self.map_height)
             for x in range(self.map_width)
             if (x, y) not in occupied and (x, y) not in used
         ]
+        free = [
+            point for point in all_free if (point[0] + point[1]) % 2 == 0
+        ]
+        free.extend(point for point in all_free if point not in free)
         needed = self.agv_count - len(self.agvs)
         if len(free) < needed:
             raise ServiceError("VALIDATION_FAILED", "地图空间不足，无法补足 AGV")
@@ -857,32 +890,36 @@ class WmsService:
 
     def _build_reservations_locked(self) -> ReservationTable:
         reservations = ReservationTable()
-        future_limit = self.tick + 180
-        for agv in self.agvs.values():
-            if agv["status"] in {"idle", "fault", "offline"}:
-                for tick in range(self.tick, future_limit + 1):
-                    reservations.add_vertex(
-                        (int(agv["x"]), int(agv["y"])), tick, agv["id"]
-                    )
+        future_limit = self.tick + self.PLAN_RESERVATION_HORIZON
         for plan in self.plans.values():
             owner = plan["agv_id"]
             reservations.reserve_plan(plan["steps"], owner)
+            last = plan["steps"][-1]
+            last_point = (int(last["x"]), int(last["y"]))
+            tail_limit = min(
+                future_limit, int(last["tick"]) + self.PLAN_TAIL_HOLD
+            )
+            for tick in range(int(last["tick"]) + 1, tail_limit + 1):
+                reservations.add_vertex(last_point, tick, owner)
         return reservations
 
     def _target_cell_locked(
-        self, location: dict[str, Any], origin: tuple[int, int]
-    ) -> tuple[int, int]:
+        self,
+        location: dict[str, Any],
+        origin: tuple[int, int],
+        planning_grid: GridMap | None = None,
+    ) -> tuple[int, int] | None:
         point = (int(location["x"]), int(location["y"]))
         if location["type"] != "shelf":
             return point
-        grid = self._grid_locked()
+        grid = planning_grid or self._grid_locked()
         neighbors = [
             (point[0] + dx, point[1] + dy)
             for dx, dy in ((0, -1), (1, 0), (0, 1), (-1, 0))
             if grid.passable((point[0] + dx, point[1] + dy))
         ]
         if not neighbors:
-            raise ServiceError("PATH_CONFLICT", "货架周围没有可通行格点", 409)
+            return None
         return min(
             neighbors,
             key=lambda cell: (
@@ -896,12 +933,21 @@ class WmsService:
         self, agv: dict[str, Any], task: dict[str, Any], reservations: ReservationTable
     ) -> dict[str, Any] | None:
         grid = self._grid_locked()
+        for other in self.agvs.values():
+            if other["id"] == agv["id"]:
+                continue
+            if other["status"] in {"idle", "fault", "offline"}:
+                grid.blocked.add((int(other["x"]), int(other["y"])))
         pickup = self._location_by_id(task["pickup_location_id"])
         drop = self._location_by_id(task["drop_location_id"])
         owner = agv["id"]
         start = (int(agv["x"]), int(agv["y"]))
-        pickup_cell = self._target_cell_locked(pickup, start)
-        drop_cell = self._target_cell_locked(drop, pickup_cell)
+        pickup_cell = self._target_cell_locked(pickup, start, grid)
+        if pickup_cell is None:
+            return None
+        drop_cell = self._target_cell_locked(drop, pickup_cell, grid)
+        if drop_cell is None:
+            return None
         to_pickup = find_leg(
             grid,
             reservations,
@@ -909,6 +955,7 @@ class WmsService:
             start,
             pickup_cell,
             self.tick,
+            hold_ticks=1,
         )
         if to_pickup is None:
             return None
@@ -933,10 +980,11 @@ class WmsService:
             pickup_cell,
             drop_cell,
             pickup_tick + 2,
+            hold_ticks=1,
         )
         if to_drop is None:
             return None
-        steps.extend({**step, "phase": "to_dropoff"} for step in to_drop[1:])
+        steps.extend({**step, "phase": "to_dropoff"} for step in to_drop)
         drop_tick = int(steps[-1]["tick"])
         steps.append(
             {
@@ -959,6 +1007,7 @@ class WmsService:
         }
 
     def _dispatch_pending_locked(self) -> None:
+        self.runtime["last_dispatch_tick"] = self.tick
         candidates_tasks = sorted(
             [task for task in self.tasks.values() if task["status"] == "pending"],
             key=lambda task: (-int(task["priority"]), task["created_at"], task["id"]),
@@ -985,6 +1034,13 @@ class WmsService:
                 plan = self._build_plan_locked(agv, task, reservations)
                 if plan:
                     candidates.append((int(plan["estimated_ticks"]), agv["id"], plan))
+            if not candidates:
+                for agv in idle_agvs[4:]:
+                    plan = self._build_plan_locked(agv, task, reservations)
+                    if plan:
+                        candidates.append(
+                            (int(plan["estimated_ticks"]), agv["id"], plan)
+                        )
             if not candidates:
                 if any(
                     agv["status"] in {"idle", "charging"}
@@ -1049,9 +1105,12 @@ class WmsService:
         ticks = max(1, min(int(ticks), 1000))
         with self.lock:
             self.runtime["paused"] = True
-            for _ in range(ticks):
-                self._tick_once_locked()
-            self._persist_runtime_locked()
+            self._batching = True
+            try:
+                for _ in range(ticks):
+                    self._tick_once_locked()
+            finally:
+                self._flush_all_locked()
             return self.snapshot()
 
     def _simulation_loop(self) -> None:
@@ -1059,9 +1118,12 @@ class WmsService:
             time.sleep(0.25)
             with self.lock:
                 if not self.paused:
-                    for _ in range(int(self.runtime.get("speed", 1))):
-                        self._tick_once_locked()
-                    self._persist_runtime_locked()
+                    self._batching = True
+                    try:
+                        for _ in range(int(self.runtime.get("speed", 1))):
+                            self._tick_once_locked()
+                    finally:
+                        self._flush_all_locked()
 
     def stop(self) -> None:
         self._stop_event.set()
@@ -1074,8 +1136,10 @@ class WmsService:
         for plan_key, plan in list(self.plans.items()):
             if plan["kind"] == "task":
                 self._advance_task_plan_locked(plan_key, plan)
-            else:
+            elif plan["kind"] == "charge":
                 self._advance_charge_plan_locked(plan_key, plan)
+            else:
+                self._advance_park_plan_locked(plan_key, plan)
         for agv in self.agvs.values():
             if agv["status"] == "charging" and not any(
                 plan["kind"] == "charge" and plan["agv_id"] == agv["id"]
@@ -1088,7 +1152,11 @@ class WmsService:
                 self._touch(agv)
                 self._save_entity("agv", agv)
         self._check_deadlocks_locked()
-        self._dispatch_pending_locked()
+        if (
+            any(task["status"] == "pending" for task in self.tasks.values())
+            and self.tick - int(self.runtime.get("last_dispatch_tick", -999)) >= 5
+        ):
+            self._dispatch_pending_locked()
 
     def _advance_task_plan_locked(self, plan_key: str, plan: dict[str, Any]) -> None:
         task = self.tasks.get(plan["task_id"])
@@ -1103,11 +1171,37 @@ class WmsService:
         if action in {"start"}:
             return
         if action == "move":
+            occupied_by = {
+                (int(other["x"]), int(other["y"])): other_id
+                for other_id, other in self.agvs.items()
+                if other_id != agv["id"]
+            }
+            target = (int(step["x"]), int(step["y"]))
+            blocker = occupied_by.get(target)
+            if blocker:
+                self._release_task_from_agv_locked(task)
+                task["status"] = "pending"
+                task["retry_count"] = int(task.get("retry_count", 0)) + 1
+                self._touch(task)
+                self._save_entity("task", task)
+                agv["waiting_on"] = blocker
+                agv["waiting_ticks"] = int(agv.get("waiting_ticks", 0)) + 1
+                self._touch(agv)
+                self._save_entity("agv", agv)
+                self.runtime["counters"]["conflicts_prevented"] += 1
+                self._add_event(
+                    "conflict.prevented",
+                    f"{agv['id']} 准备进入被 {blocker} 占用的格点，任务已重新排队",
+                    {"cell": list(target)},
+                    task["id"],
+                )
+                return
             agv["x"] = int(step["x"])
             agv["y"] = int(step["y"])
             agv["status"] = (
                 "to_dropoff" if step.get("phase") == "to_dropoff" else "to_pickup"
             )
+            agv["waiting_on"] = None
             agv["battery"] = max(0.0, float(agv["battery"]) - 0.08)
             agv["busy_ticks"] = int(agv.get("busy_ticks", 0)) + 1
             cell = f"{step['x']},{step['y']}"
@@ -1118,16 +1212,20 @@ class WmsService:
                 self._touch(task)
                 self._save_entity("task", task)
         elif action == "wait":
-            agv["status"] = agv["status"]
             agv["waiting_ticks"] = int(agv.get("waiting_ticks", 0)) + 1
+            agv["waiting_on"] = step.get("blocked_by")
             agv["battery"] = max(0.0, float(agv["battery"]) - 0.02)
         elif action == "load":
             agv["status"] = "loading"
             agv["payload_sku"] = task["sku_id"]
+            agv["waiting_on"] = None
         elif action == "unload":
             agv["status"] = "unloading"
+            agv["waiting_on"] = None
             self._complete_task_locked(task, agv)
             self.plans.pop(plan_key, None)
+            if agv["status"] == "idle":
+                self._start_parking_locked(agv)
             return
         agv["last_tick"] = self.tick
         self._touch(agv)
@@ -1241,11 +1339,113 @@ class WmsService:
             agv["x"] = int(step["x"])
             agv["y"] = int(step["y"])
             agv["battery"] = max(0.0, float(agv["battery"]) - 0.05)
+            agv["waiting_on"] = None
             agv["last_tick"] = self.tick
             self._touch(agv)
             self._save_entity("agv", agv)
         if self.tick >= int(plan["steps"][-1]["tick"]):
             self.plans.pop(plan_key, None)
+
+    def _start_parking_locked(self, agv: dict[str, Any]) -> dict[str, Any] | None:
+        grid = self._grid_locked()
+        occupied = {
+            (int(other["x"]), int(other["y"]))
+            for other in self.agvs.values()
+            if other["id"] != agv["id"]
+        }
+        grid.blocked.update(occupied)
+        location_cells = {
+            (int(location["x"]), int(location["y"]))
+            for location in self.locations.values()
+        }
+        candidates = [
+            (x, y)
+            for y in range(self.map_height)
+            for x in range(self.map_width)
+            if grid.passable((x, y))
+            and (x, y) not in occupied
+            and (x, y) not in location_cells
+        ]
+        if not candidates:
+            return None
+        start = (int(agv["x"]), int(agv["y"]))
+        candidates.sort(
+            key=lambda cell: (
+                abs(cell[0] - start[0]) + abs(cell[1] - start[1]),
+                cell[1],
+                cell[0],
+            )
+        )
+        reservations = self._build_reservations_locked()
+        for target in candidates[:8]:
+            steps = find_leg(
+                grid,
+                reservations,
+                agv["id"],
+                start,
+                target,
+                self.tick,
+            )
+            if not steps:
+                continue
+            plan = {
+                "kind": "park",
+                "task_id": None,
+                "agv_id": agv["id"],
+                "plan_version": 1,
+                "map_version": self.runtime["map_version"],
+                "steps": steps,
+                "estimated_ticks": int(steps[-1]["tick"]) - self.tick,
+                "wait_ticks": sum(1 for step in steps if step["action"] == "wait"),
+            }
+            self.plans[f"park:{agv['id']}"] = plan
+            agv["status"] = "to_dropoff"
+            agv["active_task_id"] = None
+            self._touch(agv)
+            self._save_entity("agv", agv)
+            return plan
+        return None
+
+    def _advance_park_plan_locked(self, plan_key: str, plan: dict[str, Any]) -> None:
+        agv = self.agvs.get(plan["agv_id"])
+        if not agv:
+            self.plans.pop(plan_key, None)
+            return
+        step = next((s for s in plan["steps"] if int(s["tick"]) == self.tick), None)
+        if step and step["action"] == "move":
+            occupied_by = {
+                (int(other["x"]), int(other["y"])): other_id
+                for other_id, other in self.agvs.items()
+                if other_id != agv["id"]
+            }
+            target = (int(step["x"]), int(step["y"]))
+            blocker = occupied_by.get(target)
+            if blocker:
+                self.plans.pop(plan_key, None)
+                agv["status"] = "idle"
+                agv["waiting_on"] = blocker
+                self._touch(agv)
+                self._save_entity("agv", agv)
+                self.runtime["counters"]["conflicts_prevented"] += 1
+                self._add_event(
+                    "conflict.prevented",
+                    f"{agv['id']} 停靠路径被 {blocker} 占用，已取消停靠",
+                    {"cell": list(target)},
+                    agv["id"],
+                )
+                return
+            agv["x"] = int(step["x"])
+            agv["y"] = int(step["y"])
+            agv["battery"] = max(0.0, float(agv["battery"]) - 0.03)
+            agv["last_tick"] = self.tick
+            self._touch(agv)
+            self._save_entity("agv", agv)
+        if self.tick >= int(plan["steps"][-1]["tick"]):
+            self.plans.pop(plan_key, None)
+            agv["status"] = "idle"
+            agv["active_task_id"] = None
+            self._touch(agv)
+            self._save_entity("agv", agv)
 
     def _check_deadlocks_locked(self) -> None:
         wait_graph = {

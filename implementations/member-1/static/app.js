@@ -6,6 +6,7 @@ const state = {
   selectedAgvId: null,
   blockMode: false,
   refreshing: false,
+  fps: 0,
 };
 
 const statusText = {
@@ -307,7 +308,6 @@ function renderAnalytics() {
     .join("") || '<p class="muted">暂无任务</p>';
 
   document.getElementById("utilizationList").innerHTML = analytics.utilization
-    .slice(0, 10)
     .map(
       (row) => `
       <div class="util-row">
@@ -328,6 +328,25 @@ function renderAnalytics() {
       </div>`
     )
     .join("") || '<p class="muted">暂无移动数据</p>';
+}
+
+function startRenderLoop() {
+  let frames = 0;
+  let startedAt = Date.now();
+  function frame() {
+    drawMap();
+    frames += 1;
+    const now = Date.now();
+    if (now - startedAt >= 1000) {
+      state.fps = Math.round((frames * 1000) / (now - startedAt));
+      window.__wmsFPS = state.fps;
+      document.getElementById("metricFps").textContent = String(state.fps);
+      frames = 0;
+      startedAt = now;
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 }
 
 function populateSelects() {
@@ -678,4 +697,5 @@ bindEvents();
 connectEventStream();
 document.getElementById("orderForm").elements.code.value = `OUT-${Date.now().toString().slice(-6)}`;
 refresh();
+startRenderLoop();
 window.setInterval(refresh, 5000);

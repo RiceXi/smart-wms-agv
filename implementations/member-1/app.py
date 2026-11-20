@@ -23,6 +23,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--agvs", type=int, default=10, help="Number of demo AGVs (up to map capacity)"
     )
+    parser.add_argument("--map-width", type=int, default=None)
+    parser.add_argument("--map-height", type=int, default=None)
     parser.add_argument(
         "--no-seed", action="store_true", help="Do not create demo data for an empty DB"
     )
@@ -32,7 +34,11 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     service = WmsService(
-        Path(args.db), seed_demo=not args.no_seed, agv_count=args.agvs
+        Path(args.db),
+        seed_demo=not args.no_seed,
+        agv_count=args.agvs,
+        map_width=args.map_width,
+        map_height=args.map_height,
     )
     server = create_server(service, args.host, args.port, ROOT / "static")
 

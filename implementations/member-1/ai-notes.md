@@ -5,7 +5,7 @@
 - 工具：DeepSeek-V4.1-Flash
 - 成员：RiceXi
 - 分支：dev/member-1
-- 日期：2026-11-18 至 2026-11-19
+- 日期：2026-11-18 至 2026-11-21
 
 ## 关键提示词
 
@@ -27,8 +27,9 @@ AI 快速生成了服务分层、SQLite 实体存储、A* 搜索、仿真循环�
 | 候选路径提前写入预约表 | 比较多个候选 AGV 时，未选中的候选也可能占用预约 | 路径构建只返回候选，选中后由下一轮预约重建 | 订单可正常指派 |
 | 线测端口受限 | 本地端口在默认沙箱内被拒绝 | HTTP 集成测试在明确的本地运行审批下执行 | 20 个测试通过 |
 | 充电计划未持久化结构 | 初始实现只能改变状态，没有去充电桩路径 | 增加 charge plan、目标充电位和逐 tick 移动/充电 | `test_low_battery_enters_charging` |
-| 30 AGV 指派过慢 | 首轮对全部 30 台候选逐一做完整 A* | 先按距离和电量预排序，仅对前 4 台做完整时空规划 | 30 AGV 平均 152.910 ms |
-| SSE 客户端断开产生异常 | 关闭页面后服务端写入断开的 socket | 捕获连接中断并在 `ApiServer.handle_error` 忽略 | 22 项测试无断连异常 |
+| 装卸动作未预约 | 路径到达后，下一 tick 的 load/unload 没有占用检查 | 增加 `hold_ticks`，把停留时段纳入 A* 和预约 | 压力场景无同格冲突 |
+| 卸载后占用共享站点 | AGV 完成后停在放货点，后续任务等待或冲突 | 增加卸载后自动停靠普通地面格 | 压力场景全部完成 |
+| SSE 客户端断开产生异常 | 关闭页面后服务端写入断开的 socket | 捕获连接中断并在 `ApiServer.handle_error` 忽略 | 23 项测试无断连异常 |
 
 ## 人工判断
 
@@ -41,7 +42,7 @@ AI 快速生成了服务分层、SQLite 实体存储、A* 搜索、仿真循环�
 ## 主要测试结果
 
 ```text
-Ran 22 tests in 4.324s
+Ran 23 tests in 2.494s
 OK
 ```
 
@@ -56,20 +57,22 @@ order.status=released
 task.statuses=running
 ```
 
-性能采样：
+压力冒烟：
 
 ```text
-30 AGV
-10 orders
-release average=152.910 ms
-release max=176.866 ms
-300 tick advance: 6.425 s
-completed tasks=10
+10 AGV
+2 concurrent orders
+5 scenarios
+200 ticks each
+all completed
+vertex conflicts=0
+edge conflicts=0
+elapsed=1.201 s
 ```
 
 ## 未验证项
 
-- 30 台 AGV 的最终前端帧率。
+- 30 台 AGV 的高并发任务闭环和最终前端帧率。
 - 500 个随机场景的完整压力测试。
 - 连续 30 分钟死锁 soak test。
 - 真实 Kafka、Redis 和微服务链路，属于整合版范围。

@@ -179,7 +179,7 @@ main {
 
 .metric-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  grid-template-columns: repeat(7, minmax(110px, 1fr));
   gap: 10px;
   margin-bottom: 14px;
 }
@@ -497,6 +497,12 @@ tr:last-child td {
   margin-top: 12px;
 }
 
+.utilization-list {
+  max-height: 320px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
 .util-row,
 .bottleneck-row {
   display: grid;
@@ -554,7 +560,7 @@ footer {
 }
 
 @media (max-width: 1100px) {
-  .metric-grid { grid-template-columns: repeat(3, 1fr); }
+  .metric-grid { grid-template-columns: repeat(4, 1fr); }
   .workspace,
   .lower-grid { grid-template-columns: 1fr; }
   .side-panel { max-height: none; }

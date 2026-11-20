@@ -55,6 +55,22 @@ class PathfindingTests(unittest.TestCase):
         graph = {"a": "b", "b": "c", "c": "a", "d": None}
         self.assertEqual([["a", "b", "c"]], find_cycles(graph))
 
+    def test_wait_step_records_blocking_agv(self) -> None:
+        self.grid = GridMap(5, 3)
+        for point in ((1, 1), (2, 0), (3, 1), (2, 2)):
+            self.reservations.add_vertex(point, 1, "agv-block")
+        path = find_leg(
+            self.grid,
+            self.reservations,
+            "agv-self",
+            (2, 1),
+            (4, 1),
+            start_tick=0,
+        )
+        self.assertIsNotNone(path)
+        wait = next(step for step in path if step["action"] == "wait")
+        self.assertEqual("agv-block", wait["blocked_by"])
+
 
 if __name__ == "__main__":
     unittest.main()
