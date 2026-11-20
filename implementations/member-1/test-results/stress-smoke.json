@@ -1,0 +1,68 @@
+{
+  "elapsed_seconds": 1.201,
+  "scenarios": 5,
+  "agvs": 10,
+  "orders": 2,
+  "ticks": 200,
+  "successful": 5,
+  "vertex_conflicts": 0,
+  "edge_conflicts": 0,
+  "stuck_tasks": 0,
+  "results": [
+    {
+      "scenario": 0,
+      "agvs": 10,
+      "orders": 2,
+      "tasks": 2,
+      "completed": 2,
+      "stuck": 0,
+      "vertex_conflicts": 0,
+      "edge_conflicts": 0,
+      "tick": 200
+    },
+    {
+      "scenario": 1,
+      "agvs": 10,
+      "orders": 2,
+      "tasks": 2,
+      "completed": 2,
+      "stuck": 0,
+      "vertex_conflicts": 0,
+      "edge_conflicts": 0,
+      "tick": 200
+    },
+    {
+      "scenario": 2,
+      "agvs": 10,
+      "orders": 2,
+      "tasks": 2,
+      "completed": 2,
+      "stuck": 0,
+      "vertex_conflicts": 0,
+      "edge_conflicts": 0,
+      "tick": 200
+    },
+    {
+      "scenario": 3,
+      "agvs": 10,
+      "orders": 2,
+      "tasks": 2,
+      "completed": 2,
+      "stuck": 0,
+      "vertex_conflicts": 0,
+      "edge_conflicts": 0,
+      "tick": 200
+    },
+    {
+      "scenario": 4,
+      "agvs": 10,
+      "orders": 2,
+      "tasks": 2,
+      "completed": 2,
+      "stuck": 0,
+      "vertex_conflicts": 0,
+      "edge_conflicts": 0,
+      "tick": 200
+    }
+  ]
+}
