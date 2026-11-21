@@ -92,6 +92,28 @@ python app.py --port 8765 --db data\system-foundation.sqlite --log-level warning
 
 结果：5 个 YAML 文件全部通过语法解析。
 
+## GitHub Actions
+
+- 工作流：`system-foundation-ci`
+- 运行：`44948642855`
+- 结果：通过
+
+CI 在 Ubuntu 和 Docker 环境中实际执行：
+
+- Python 完整测试。
+- 稳定性冒烟。
+- JavaScript 语法。
+- OpenAPI 和压测结果 JSON 校验。
+- `docker compose config`。
+- 应用镜像构建。
+- Prometheus `promtool` 配置校验。
+
+运行记录：
+
+```text
+https://github.com/RiceXi/smart-wms-agv/actions/runs/44948642855
+```
+
 ## SQLite 运维
 
 已实际执行：
@@ -102,14 +124,13 @@ verify source -> backup -> restore -> verify restored
 
 原库、备份和恢复库均包含 `entities`、`state` 表。
 
-## 未完成运行验证
+## 运行验证边界
 
-本机没有 Docker 和监控组件，因此以下内容只完成配置编写和 YAML 校验：
+本机没有 Docker 和监控组件。GitHub Actions 已经完成 Compose 模型、应用镜像和 Prometheus 配置验证，但以下内容仍需要在安装 Docker 的环境中做端到端启动验收：
 
-- `docker compose config`。
-- 应用镜像构建。
-- Nginx 容器启动。
-- Prometheus 容器启动和实际抓取。
-- Grafana 容器启动和面板加载。
+- `docker compose up` 完整四服务启动。
+- Nginx 实际反向代理和 SSE 连接。
+- Prometheus 实际抓取应用指标。
+- Grafana 数据源和面板加载。
 
-CI 工作流已经配置这些步骤，需要在安装 Docker 的环境或 GitHub Actions 中取得最终运行证据。不得在课程报告中把未运行的容器组件标记为已运行验收。
+上述运行项未完成前，不得在课程报告中把完整容器栈标记为端到端运行验收。

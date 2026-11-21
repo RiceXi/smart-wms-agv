@@ -186,5 +186,5 @@ Redis、Kafka、Eureka、服务网格和多节点调度属于后续规模扩展�
 - 当前是单节点、单写入者系统。
 - SQLite 适合课程演示和单实例部署，不适合多实例共享写入。
 - 30 AGV 高并发、500 场景完整压测和 30 分钟 soak test 仍应作为整合阶段验收项。
-- Docker 和监控配置需要在安装 Docker 的环境或 CI 中完成运行验证。
+- Docker 镜像构建、Compose 模型和 Prometheus 配置已经由 CI 验证；完整四服务栈仍需在安装 Docker 的环境中做端到端启动验收。
 - SSE 是实时主链路，不是 WebSocket。
