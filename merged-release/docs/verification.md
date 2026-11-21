@@ -95,8 +95,9 @@ python app.py --port 8765 --db data\system-foundation.sqlite --log-level warning
 ## GitHub Actions
 
 - 工作流：`system-foundation-ci`
-- 运行：`44948642855`
-- 结果：通过
+- 已验证代码提交：`8fe0b54`
+- 分支运行：`44948774420`，通过
+- PR 运行：`44948842115`，通过
 
 CI 在 Ubuntu 和 Docker 环境中实际执行：
 
@@ -111,7 +112,8 @@ CI 在 Ubuntu 和 Docker 环境中实际执行：
 运行记录：
 
 ```text
-https://github.com/RiceXi/smart-wms-agv/actions/runs/44948642855
+https://github.com/RiceXi/smart-wms-agv/actions/runs/44948774420
+https://github.com/RiceXi/smart-wms-agv/actions/runs/44948842115
 ```
 
 ## SQLite 运维
