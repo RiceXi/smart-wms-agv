@@ -31,8 +31,11 @@ coverage/
 data.json
 data.sqlite
 data.sqlite3
+*.sqlite
 *.db
 *.log
+backups/
+.env
 
 # Runtime captures
 captures/

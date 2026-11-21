@@ -1,0 +1,507 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SmartWMS API",
+    "version": "1.0.0",
+    "description": "Warehouse management, AGV dispatch, simulation and observability API."
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8000",
+      "description": "Local development"
+    }
+  ],
+  "tags": [
+    {"name": "system"},
+    {"name": "master-data"},
+    {"name": "orders"},
+    {"name": "tasks"},
+    {"name": "agvs"},
+    {"name": "simulation"},
+    {"name": "analytics"}
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": ["system"],
+        "summary": "Liveness check",
+        "responses": {"200": {"description": "Process is alive"}}
+      }
+    },
+    "/ready": {
+      "get": {
+        "tags": ["system"],
+        "summary": "Readiness check",
+        "responses": {
+          "200": {"description": "Database and application are ready"},
+          "503": {"$ref": "#/components/responses/ServiceUnavailable"}
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "tags": ["system"],
+        "summary": "Prometheus metrics",
+        "responses": {
+          "200": {
+            "description": "Prometheus text exposition",
+            "content": {"text/plain": {"schema": {"type": "string"}}}
+          }
+        }
+      }
+    },
+    "/openapi.json": {
+      "get": {
+        "tags": ["system"],
+        "summary": "OpenAPI contract",
+        "responses": {"200": {"description": "OpenAPI document"}}
+      }
+    },
+    "/api/state": {
+      "get": {
+        "tags": ["system"],
+        "summary": "Complete system snapshot",
+        "responses": {
+          "200": {
+            "description": "Current entities, runtime, plans, events and analytics",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/Snapshot"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stream": {
+      "get": {
+        "tags": ["system"],
+        "summary": "Server-Sent Events snapshot stream",
+        "responses": {
+          "200": {
+            "description": "SSE stream",
+            "content": {"text/event-stream": {"schema": {"type": "string"}}}
+          }
+        }
+      }
+    },
+    "/api/skus": {
+      "get": {
+        "tags": ["master-data"],
+        "summary": "List SKUs",
+        "responses": {"200": {"description": "SKU list"}}
+      },
+      "post": {
+        "tags": ["master-data"],
+        "summary": "Create SKU",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {"$ref": "#/components/schemas/SkuCreate"}
+            }
+          }
+        },
+        "responses": {
+          "201": {"description": "SKU created"},
+          "409": {"$ref": "#/components/responses/Conflict"}
+        }
+      }
+    },
+    "/api/skus/{id}": {
+      "put": {
+        "tags": ["master-data"],
+        "summary": "Update SKU",
+        "parameters": [{"$ref": "#/components/parameters/EntityId"}],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {"$ref": "#/components/schemas/SkuCreate"}
+            }
+          }
+        },
+        "responses": {"200": {"description": "SKU updated"}}
+      },
+      "delete": {
+        "tags": ["master-data"],
+        "summary": "Delete SKU",
+        "parameters": [{"$ref": "#/components/parameters/EntityId"}],
+        "responses": {"200": {"description": "SKU deleted"}}
+      }
+    },
+    "/api/locations": {
+      "get": {
+        "tags": ["master-data"],
+        "summary": "List locations",
+        "responses": {"200": {"description": "Location list"}}
+      },
+      "post": {
+        "tags": ["master-data"],
+        "summary": "Create location",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {"$ref": "#/components/schemas/LocationCreate"}
+            }
+          }
+        },
+        "responses": {"201": {"description": "Location created"}}
+      }
+    },
+    "/api/locations/{id}": {
+      "put": {
+        "tags": ["master-data"],
+        "summary": "Update location",
+        "parameters": [{"$ref": "#/components/parameters/EntityId"}],
+        "responses": {"200": {"description": "Location updated"}}
+      },
+      "delete": {
+        "tags": ["master-data"],
+        "summary": "Delete location",
+        "parameters": [{"$ref": "#/components/parameters/EntityId"}],
+        "responses": {"200": {"description": "Location deleted"}}
+      }
+    },
+    "/api/inventory": {
+      "get": {
+        "tags": ["master-data"],
+        "summary": "List inventory",
+        "responses": {"200": {"description": "Inventory list"}}
+      },
+      "post": {
+        "tags": ["master-data"],
+        "summary": "Create inventory record",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {"$ref": "#/components/schemas/InventoryCreate"}
+            }
+          }
+        },
+        "responses": {"201": {"description": "Inventory created"}}
+      }
+    },
+    "/api/orders": {
+      "get": {
+        "tags": ["orders"],
+        "summary": "List orders",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {"type": "string"}
+          }
+        ],
+        "responses": {"200": {"description": "Order list"}}
+      },
+      "post": {
+        "tags": ["orders"],
+        "summary": "Create outbound order",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {"$ref": "#/components/schemas/OrderCreate"}
+            }
+          }
+        },
+        "responses": {"201": {"description": "Order created"}}
+      }
+    },
+    "/api/orders/{id}/release": {
+      "post": {
+        "tags": ["orders"],
+        "summary": "Release order and reserve inventory",
+        "parameters": [{"$ref": "#/components/parameters/EntityId"}],
+        "responses": {"200": {"description": "Order released"}}
+      }
+    },
+    "/api/orders/{id}/cancel": {
+      "post": {
+        "tags": ["orders"],
+        "summary": "Cancel order",
+        "parameters": [{"$ref": "#/components/parameters/EntityId"}],
+        "responses": {"200": {"description": "Order cancelled"}}
+      }
+    },
+    "/api/tasks": {
+      "get": {
+        "tags": ["tasks"],
+        "summary": "List tasks",
+        "parameters": [
+          {"name": "status", "in": "query", "schema": {"type": "string"}},
+          {"name": "agv_id", "in": "query", "schema": {"type": "string"}}
+        ],
+        "responses": {"200": {"description": "Task list"}}
+      }
+    },
+    "/api/tasks/{id}/priority": {
+      "post": {
+        "tags": ["tasks"],
+        "summary": "Set task priority",
+        "parameters": [{"$ref": "#/components/parameters/EntityId"}],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["priority"],
+                "properties": {"priority": {"type": "integer", "minimum": 1, "maximum": 10}}
+              }
+            }
+          }
+        },
+        "responses": {"200": {"description": "Priority updated"}}
+      }
+    },
+    "/api/tasks/{id}/cancel": {
+      "post": {
+        "tags": ["tasks"],
+        "summary": "Cancel task",
+        "parameters": [{"$ref": "#/components/parameters/EntityId"}],
+        "responses": {"200": {"description": "Task cancelled"}}
+      }
+    },
+    "/api/tasks/{id}/reassign": {
+      "post": {
+        "tags": ["tasks"],
+        "summary": "Reassign task",
+        "parameters": [{"$ref": "#/components/parameters/EntityId"}],
+        "responses": {"200": {"description": "Task reassigned"}}
+      }
+    },
+    "/api/agvs": {
+      "get": {
+        "tags": ["agvs"],
+        "summary": "List AGVs",
+        "responses": {"200": {"description": "AGV list"}}
+      }
+    },
+    "/api/agvs/{id}/fault": {
+      "post": {
+        "tags": ["agvs"],
+        "summary": "Inject AGV fault",
+        "parameters": [{"$ref": "#/components/parameters/EntityId"}],
+        "responses": {"200": {"description": "Fault injected"}}
+      }
+    },
+    "/api/agvs/{id}/recover": {
+      "post": {
+        "tags": ["agvs"],
+        "summary": "Recover AGV",
+        "parameters": [{"$ref": "#/components/parameters/EntityId"}],
+        "responses": {"200": {"description": "AGV recovered"}}
+      }
+    },
+    "/api/agvs/{id}/battery": {
+      "post": {
+        "tags": ["agvs"],
+        "summary": "Set AGV battery for testing",
+        "parameters": [{"$ref": "#/components/parameters/EntityId"}],
+        "responses": {"200": {"description": "Battery updated"}}
+      }
+    },
+    "/api/events": {
+      "get": {
+        "tags": ["analytics"],
+        "summary": "List recent events",
+        "parameters": [
+          {"name": "tick_from", "in": "query", "schema": {"type": "integer"}},
+          {"name": "tick_to", "in": "query", "schema": {"type": "integer"}}
+        ],
+        "responses": {"200": {"description": "Event list"}}
+      }
+    },
+    "/api/analytics": {
+      "get": {
+        "tags": ["analytics"],
+        "summary": "Get project analytics",
+        "responses": {"200": {"description": "Analytics snapshot"}}
+      }
+    },
+    "/api/sim/start": {
+      "post": {
+        "tags": ["simulation"],
+        "summary": "Start simulation",
+        "responses": {"200": {"description": "Simulation running"}}
+      }
+    },
+    "/api/sim/pause": {
+      "post": {
+        "tags": ["simulation"],
+        "summary": "Pause simulation",
+        "responses": {"200": {"description": "Simulation paused"}}
+      }
+    },
+    "/api/sim/step": {
+      "post": {
+        "tags": ["simulation"],
+        "summary": "Advance one or more ticks",
+        "responses": {"200": {"description": "Simulation advanced"}}
+      }
+    },
+    "/api/sim/speed": {
+      "post": {
+        "tags": ["simulation"],
+        "summary": "Set simulation speed",
+        "responses": {"200": {"description": "Speed updated"}}
+      }
+    },
+    "/api/sim/roadblock": {
+      "post": {
+        "tags": ["simulation"],
+        "summary": "Apply or clear a roadblock",
+        "responses": {"200": {"description": "Roadblock updated"}}
+      }
+    },
+    "/api/sim/deadlock": {
+      "post": {
+        "tags": ["simulation"],
+        "summary": "Run deterministic deadlock demonstration",
+        "responses": {"200": {"description": "Deadlock demonstration completed"}}
+      }
+    },
+    "/api/sim/reset": {
+      "post": {
+        "tags": ["simulation"],
+        "summary": "Reset simulation runtime",
+        "responses": {"200": {"description": "Simulation reset"}}
+      }
+    },
+    "/api/demo/order": {
+      "post": {
+        "tags": ["simulation"],
+        "summary": "Create and release a demo order",
+        "responses": {"201": {"description": "Demo order created"}}
+      }
+    },
+    "/api/demo/reset": {
+      "post": {
+        "tags": ["simulation"],
+        "summary": "Reset all demo data",
+        "responses": {"200": {"description": "Demo data reset"}}
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "EntityId": {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {"type": "string"}
+      }
+    },
+    "responses": {
+      "Conflict": {
+        "description": "Business conflict",
+        "content": {
+          "application/json": {
+            "schema": {"$ref": "#/components/schemas/Error"}
+          }
+        }
+      },
+      "ServiceUnavailable": {
+        "description": "Dependency is not ready",
+        "content": {
+          "application/json": {
+            "schema": {"$ref": "#/components/schemas/Error"}
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": ["error"],
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": ["code", "message"],
+            "properties": {
+              "code": {"type": "string"},
+              "message": {"type": "string"}
+            }
+          }
+        }
+      },
+      "SkuCreate": {
+        "type": "object",
+        "required": ["code", "name"],
+        "properties": {
+          "code": {"type": "string"},
+          "name": {"type": "string"},
+          "spec": {"type": "string"},
+          "batch_rule": {"type": "string", "enum": ["none", "fifo", "fefo"]}
+        }
+      },
+      "LocationCreate": {
+        "type": "object",
+        "required": ["code", "zone", "x", "y", "type", "capacity"],
+        "properties": {
+          "code": {"type": "string"},
+          "zone": {"type": "string"},
+          "x": {"type": "integer", "minimum": 0},
+          "y": {"type": "integer", "minimum": 0},
+          "type": {
+            "type": "string",
+            "enum": ["floor", "shelf", "pick", "drop", "charger", "blocked"]
+          },
+          "capacity": {"type": "integer", "minimum": 1}
+        }
+      },
+      "InventoryCreate": {
+        "type": "object",
+        "required": ["sku_id", "location_id", "qty"],
+        "properties": {
+          "sku_id": {"type": "string"},
+          "location_id": {"type": "string"},
+          "qty": {"type": "integer", "minimum": 0},
+          "batch": {"type": "string"},
+          "expire_at": {"type": "string", "format": "date-time"}
+        }
+      },
+      "OrderCreate": {
+        "type": "object",
+        "required": ["code", "priority", "requester", "lines"],
+        "properties": {
+          "code": {"type": "string"},
+          "priority": {"type": "integer", "minimum": 1, "maximum": 10},
+          "requester": {"type": "string"},
+          "lines": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["sku_id", "qty"],
+              "properties": {
+                "sku_id": {"type": "string"},
+                "qty": {"type": "integer", "minimum": 1}
+              }
+            }
+          }
+        }
+      },
+      "Snapshot": {
+        "type": "object",
+        "properties": {
+          "runtime": {"type": "object"},
+          "map": {"type": "object"},
+          "skus": {"type": "array", "items": {"type": "object"}},
+          "locations": {"type": "array", "items": {"type": "object"}},
+          "inventory": {"type": "array", "items": {"type": "object"}},
+          "orders": {"type": "array", "items": {"type": "object"}},
+          "tasks": {"type": "array", "items": {"type": "object"}},
+          "agvs": {"type": "array", "items": {"type": "object"}},
+          "plans": {"type": "array", "items": {"type": "object"}},
+          "events": {"type": "array", "items": {"type": "object"}},
+          "analytics": {"type": "object"}
+        }
+      }
+    }
+  }
+}
