@@ -20,7 +20,7 @@ python -m unittest discover -s tests -v
 结果：
 
 ```text
-Ran 28 tests in 4.738s
+Ran 28 tests in 4.805s
 OK
 ```
 

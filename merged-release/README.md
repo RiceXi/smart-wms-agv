@@ -102,7 +102,7 @@ docker compose down --volumes
 python -m unittest discover -s tests -v
 ```
 
-当前结果：`Ran 28 tests in 4.738s / OK`。
+当前结果：`Ran 28 tests in 4.805s / OK`。
 
 稳定性冒烟：
 
